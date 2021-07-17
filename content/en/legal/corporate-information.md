@@ -19,13 +19,14 @@ GERMANY
 
 ### Members of the Board of Management
 
-Dr. Volkmar Denner, Prof. Dr. Stefan Asenkerschbaumer, Filiz Albrecht, 
-Dr. Michael Bolle, Dr. Christian Fischer, Dr. Stefan Hartung, Dr. Markus Heyn, 
-Harald Kröger, Rolf Najork, Uwe Raschke
+Dr. Volkmar Denner, Prof. Dr. Stefan Asenkerschbaumer, Filiz Albrecht,
+Dr. Christian Fischer, Dr. Stefan Hartung, Dr. Markus Heyn, Harald Kröger,
+Rolf Najork
 
 ### Your contact at Robert Bosch GmbH
 
-<i class="fas fa-envelope"></i> [sven.trieflinger.ext@de.bosch.com][1]
+<i class="fas fa-envelope"></i>
+Sven Trieflinger ([sven.trieflinger.ext@de.bosch.com][1])
 
 ### Register Entries
 
