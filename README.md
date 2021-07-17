@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/33cf522c-00d8-4c3c-81f1-9ee3ecae08db/deploy-status)](https://app.netlify.com/sites/tender-goodall-23496d/deploys)
 
-This repository contains the source code for [carbynestack.io][1].
+This repository contains the source code for the [carbynestack.io][1] website.
 
 ## Developing
 
