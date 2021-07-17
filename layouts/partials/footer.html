@@ -40,6 +40,8 @@
                     <small class="text-white">
                         {{ with .Site.GetPage "legal/corporate-information"}}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{end}}
                         |
+                        {{ with .Site.GetPage "legal/export-control"}}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{end}}
+                        |
                         {{ with .Site.GetPage "legal/privacy-policy"}}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{end}}
                     </small>
                 </div>
