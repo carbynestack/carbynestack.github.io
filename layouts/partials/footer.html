@@ -36,6 +36,13 @@
                 {{ if not .Site.Params.ui.footer_about_disable }}
                 {{ with .Site.GetPage "about" }}<p class="mt-2"><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>{{ end }}
                 {{ end }}
+                <div>
+                    <small class="text-white">
+                        {{ with .Site.GetPage "legal/corporate-information"}}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{end}}
+                        |
+                        {{ with .Site.GetPage "legal/privacy-policy"}}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{end}}
+                    </small>
+                </div>
             </div>
         </div>
     </div>
