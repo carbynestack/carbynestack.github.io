@@ -1,7 +1,7 @@
 # Copyright Holders and Authors
 
-For instructions how to maintain this file see the [NOTICE][1] file in the 
-Carbyne Stack [umbrella repository][2].
+For instructions how to maintain this file see the [NOTICE](https://github.com/carbynestack/carbynestack/blob/master/NOTICE.md) 
+file in the Carbyne Stack [umbrella repository](https://github.com/carbynestack/carbynestack).
 
 ## Contributors
 
@@ -10,6 +10,3 @@ Carbyne Stack [umbrella repository][2].
 ### Robert Bosch GmbH
 
 - Trieflinger Sven <sven.trieflinger@de.bosch.com>
-
-[1]: (https://github.com/carbynestack/carbynestack/blob/master/NOTICE.md)
-[2]: (https://github.com/carbynestack/carbynestack)

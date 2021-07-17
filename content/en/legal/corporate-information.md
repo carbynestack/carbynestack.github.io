@@ -25,8 +25,8 @@ Rolf Najork
 
 ### Your contact at Robert Bosch GmbH
 
-<i class="fas fa-envelope"></i>
-Sven Trieflinger ([sven.trieflinger.ext@de.bosch.com][1])
+Sven Trieflinger (<i class="fas fa-envelope"></i>
+[sven.trieflinger.ext@de.bosch.com](mailto:sven.trieflinger.ext@de.bosch.com))
 
 ### Register Entries
 
@@ -44,5 +44,3 @@ Sven Trieflinger
 Robert-Bosch-Campus 1  
 71272 Renningen  
 GERMANY
-
-[1]: (mailto:sven.trieflinger.ext@de.bosch.com)
