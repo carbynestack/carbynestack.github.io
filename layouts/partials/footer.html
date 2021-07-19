@@ -24,7 +24,12 @@
                 {{ end }}
             </div>
             <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-                {{ with .Site.Params.copyright }}<small class="text-white">&copy; {{ now.Year}} {{ .}}. {{ T "footer_all_rights_reserved" }}.</small>{{ end }}
+                {{ with .Site.Params.copyright }}
+                <small class="text-white">
+                    &copy; {{ now.Year}} {{ .}} The Carbyne Stack
+                    <a href="https://github.com/carbynestack/carbynestack/blob/master/NOTICE.md">Contributors</a>.
+                    {{ T "footer_all_rights_reserved" }}.
+                </small>{{ end }}
                 <div>
                     <small class="text-white">
                         Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a>,
