@@ -6,7 +6,7 @@ copyright: >
 title: "Privacy Policy"
 linkTitle: "Privacy Policy"
 type: "docs"
-weight: 20
+weight: 30
 ---
 
 ### Netlify Hosting Service
