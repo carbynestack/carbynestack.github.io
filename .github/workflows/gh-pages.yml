@@ -8,7 +8,7 @@ name: Deploy to Github Pages
 on:
   push:
     branches:
-      - main  # Set a branch to deploy
+      - master  # Set a branch to deploy
   pull_request:
 jobs:
   deploy:
@@ -41,7 +41,7 @@ jobs:
         run: hugo --minify
       - name: Deploy Site
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/master'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
