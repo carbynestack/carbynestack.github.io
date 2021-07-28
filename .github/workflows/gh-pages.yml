@@ -38,7 +38,7 @@ jobs:
       - name: Run Node Install
         run: npm ci
       - name: Build Site
-        run: hugo --minify
+        run: hugo -b https://www.carbynestack.io/ --minify
       - name: Deploy Site
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/master'
