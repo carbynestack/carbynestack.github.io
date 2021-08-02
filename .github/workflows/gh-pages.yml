@@ -40,7 +40,7 @@ jobs:
       - name: Build Site
         run: hugo -b https://www.carbynestack.io/ --minify
         env:
-          - HUGO_ENV="production"
+          HUGO_ENV: production
       - name: Deploy Site
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/master'
