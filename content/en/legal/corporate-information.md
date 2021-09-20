@@ -24,8 +24,9 @@ Rolf Najork
 
 ### Your contact at Robert Bosch GmbH
 
-Carbyne Stack Maintainers (<i class="fas fa-envelope"></i>
-[rng_cr_carbynestack@bosch.com](mailto:rng_cr_carbynestack@bosch.com))
+Carbyne Stack Maintainers \
+<i class="fas fa-envelope"></i> [rng_cr_carbynestack@bosch.com](mailto:rng_cr_carbynestack@bosch.com) \
+<i class="fas fa-phone"></i> +49(711)811-0
 
 ### Register Entries
 
