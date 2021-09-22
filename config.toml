@@ -1,3 +1,13 @@
+#
+# Copyright (c) 2021 - for information on the respective copyright owner
+# see the NOTICE file and/or the repository https://github.com/carbynestack/carbynestack.io.
+# SPDX-License-Identifier: Apache-2.0
+#
+# Derived from the google/docsy-example template (https://github.com/google/docsy-example) with the following
+# changes:
+#
+#   - Adjusted various properties to customize for the Carbyne Stack website
+#
 baseURL = "/"
 title = "Carbyne Stack"
 
