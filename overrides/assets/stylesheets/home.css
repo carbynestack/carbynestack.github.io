@@ -6,132 +6,132 @@
  * 2021/09/28: Removed unnecessary parts, renamed classes, addition of directives (sven.trieflinger@de.bosch.com)
  */
 .md-grid {
-    /* Reduce the width of the content somewhat (original value is 61rem) */
-    max-width: 50rem;
+  /* Reduce the width of the content somewhat (original value is 61rem) */
+  max-width: 50rem;
 }
 
 .md-main__inner {
-    margin: 0;
-    max-width: 100%;
+  margin: 0;
+  max-width: 100%;
 }
 
 .md-main__inner .md-content__inner,
 .md-sidebar--primary:not([hidden]) ~ .md-content > .md-content__inner {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .md-main__inner .md-content__inner:before {
-    display: none;
+  display: none;
 }
 
 @media screen and (min-width: 60em) {
-    .md-sidebar--secondary {
-        display: none;
-    }
+  .md-sidebar--secondary {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 76.25em) {
-    .md-sidebar--primary {
-        display: none;
-    }
+  .md-sidebar--primary {
+    display: none;
+  }
 }
 
 .md-typeset img,
 .md-typeset svg {
-    max-width: initial;
+  max-width: initial;
 }
 
 section.hero-section {
-    min-height: 435px;
-    justify-content: center;
-    color: #fff;
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding-bottom: 0;
-    padding-top: 0;
+  min-height: 435px;
+  justify-content: center;
+  color: #fff;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-bottom: 0;
+  padding-top: 0;
 }
 
 .hero-section > .md-typeset {
-    flex-grow: 2;
+  flex-grow: 2;
 }
 
 body {
-    color: #fff;
-    background: #fff;
+  color: #fff;
+  background: #fff;
 }
 
 .hero-section,
 .image-with-text {
-    margin: 0;
-    border: 0;
-    padding-top: 2em;
-    padding-bottom: 1em;
+  margin: 0;
+  border: 0;
+  padding-top: 2em;
+  padding-bottom: 1em;
 }
 
 .hero-section .md-button {
-    margin-top: 0.5rem;
-    margin-right: 0.5rem;
-    color: var(--md-primary-bg-color);
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  color: var(--md-primary-bg-color);
 }
 
 .hero-section .md-button--primary {
-    background-color: var(--md-primary-bg-color);
-    color: hsla(280deg, 37%, 48%, 1);
-    border-color: var(--md-primary-bg-color);
+  background-color: var(--md-primary-bg-color);
+  color: hsla(280deg, 37%, 48%, 1);
+  border-color: var(--md-primary-bg-color);
 }
 
 .hero-section h1 {
-    color: #fff;
-    font-weight: bolder;
-    margin-top: 1em;
-    margin-bottom: 0;
+  color: #fff;
+  font-weight: bolder;
+  margin-top: 1em;
+  margin-bottom: 0;
 }
 
 .hero-section h2 {
-    margin: 0;
+  margin: 0;
 }
 
 .image-with-text {
-    color: black
+  color: black;
 }
 
 .image-with-text .left {
-    height: 15em;
-    float: left;
-    margin: 0 2em 0 0;
+  height: 15em;
+  float: left;
+  margin: 0 2em 0 0;
 }
 
 .image-with-text .right {
-    height: 15em;
-    float: right;
-    margin: 0 0 0 2em;
+  height: 15em;
+  float: right;
+  margin: 0 0 0 2em;
 }
 
 .image-with-text div div {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .image-with-text h3 {
-    font-weight: bolder;
+  font-weight: bolder;
 }
 
-@media only screen and (max-width: 1440x) {
-    .hero-section,
-    .image-with-text {
-        padding: 40px;
-    }
+@media only screen and (max-width: 1440px) {
+  .hero-section,
+  .image-with-text {
+    padding: 40px;
+  }
 }
 
 @media only screen and (max-width: 800px) {
-    .component-flex {
-        flex-wrap: wrap;
-    }
+  .component-flex {
+    flex-wrap: wrap;
+  }
 
-    .image-with-text img {
-        display: block;
-        margin: 0 auto;
-        float: none;
-    }
+  .image-with-text img {
+    display: block;
+    margin: 0 auto;
+    float: none;
+  }
 }
