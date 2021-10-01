@@ -21,7 +21,7 @@
   padding: 0;
 }
 
-.md-main__inner .md-content__inner:before {
+.md-main__inner .md-content__inner::before {
   display: none;
 }
 
