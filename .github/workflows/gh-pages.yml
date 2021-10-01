@@ -1,6 +1,6 @@
 #
 # Copyright (c) 2021 - for information on the respective copyright owner
-# see the NOTICE file and/or the repository https://github.com/carbynestack/carbynestack.io.
+# see the NOTICE file and/or the repository https://github.com/carbynestack/carbynestack.github.io.
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -8,42 +8,18 @@ name: Deploy to Github Pages
 on:
   push:
     branches:
-      - master  # Set a branch to deploy
-  pull_request:
+      - master
 jobs:
   deploy:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout Source Code
         uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
         with:
-          submodules: recursive
-          fetch-depth: 0
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: 'latest'
-          extended: true
-      - name: Setup Node
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-      - name: Cache dependencies
-        uses: actions/cache@v1
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-      - name: Run Node Install
-        run: npm ci
-      - name: Build Site
-        run: hugo -b https://www.carbynestack.io/ --minify
-        env:
-          HUGO_ENV: production
-      - name: Deploy Site
-        uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/master'
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          python-version: 3.x
+      - name: Install Material for MkDocs
+        run: pip install mkdocs-material mkdocs-minify-plugin
+      - name: Deploy site
+        run: mkdocs gh-deploy --force

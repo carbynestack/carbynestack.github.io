@@ -4,8 +4,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
-repos:
-  - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.28.0
-    hooks:
-      - id: markdownlint
+MD013:
+  code_blocks : false
+  tables : false
+MD046: false
