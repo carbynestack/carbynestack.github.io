@@ -1,7 +1,7 @@
 {
   "private": true,
   "devDependencies": {
-    "autoprefixer": "^9.8.6",
+    "autoprefixer": "^9.8.8",
     "postcss-cli": "^7.1.2"
   }
 }
