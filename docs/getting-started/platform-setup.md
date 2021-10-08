@@ -1,9 +1,9 @@
 # Platform Setup Guide
 
-This guide describes how to prepare a `kind` cluster suitable for deploying a
-Carbyne Stack Virtual Cloud Provider (see the [Stack Deployment Guide](../deployment/)
-for installation instructions). After completing the steps described below, you
-should have the following pods deployed in your kind K8s cluster:
+This guide describes how to prepare K8s clusters using `kind` that are suitable
+for deploying a two-party Carbyne Stack Virtual Cloud. After completing the
+steps described below, you should have two kind K8s clusters called `apollo` and
+`starbuck` with the following pods deployed:
 
 ```shell
 kubectl get pods -A
@@ -37,48 +37,59 @@ metallb-system       speaker-c8lq5                                  1/1     Runn
 ## Prerequisites
 
 !!! warning
-    Carbyne Stack has been tested using the **exact versions**
-    of the tools specified below. Deviating from this _battle tested_
-    configuration may create all kinds of issues.
+    Carbyne Stack has been tested using the **exact versions** of the tools
+    specified below. Deviating from this _battle tested_ configuration may
+    create all kinds of issues.
 
 - [Docker Engine](https://docs.docker.com/engine/) v20.10.6
 - [Kind](https://kind.sigs.k8s.io/) v0.11.0
 - [kubectl](https://kubernetes.io/docs/tasks/tools/) v1.21.1
 - [Helm](https://helm.sh/) v3.4.1
 
-## Setting up a Cluster
+## Setting up the Clusters
 
-### Kind Cluster
+### Kind Clusters
 
-Start a kind cluster using:
+You will need two Carbyne Stack Virtual Cloud Providers deployed to separate K8s
+clusters to complete this getting started guide. The clusters are called
+`apollo` and `starbuck`. You can use the `--name <name>` option to launch
+a kind cluster with K8s context name `kind-<name>`, as follows:
 
-```shell
-kind create cluster --image kindest/node:v1.18.19
-```
+=== "Apollo"
 
-For local testing you will typically need two Carbyne Stack Virtual Cloud
-Providers deployed to separate K8s clusters. Assuming your clusters are called
-`apollo` and `starbuck`, you can use the `--name <name>` option to launch a kind
-cluster with K8s context name `kind-<name>`, e.g.:
+    ```shell
+    kind create cluster --name apollo --image kindest/node:v1.18.19
+    ```
 
-```shell
-kind create cluster --name apollo --image kindest/node:v1.18.19
-```
+=== "Starbuck"
 
-You can switch between clusters easily using:
+    ```shell
+    kind create cluster --name starbuck --image kindest/node:v1.18.19
+    ```
 
-!!! attention
-    Replace `<name>` with the name you have chosen above for your cluster
-    (e.g., `apollo`).
+You can switch between the clusters easily using:
 
-```shell
-kubectl config use-context kind-<name>
-```
+=== "Apollo"
+
+    ```shell
+    kubectl config use-context kind-apollo
+    ```
+
+=== "Starbuck"
+
+    ```shell
+    kubectl config use-context kind-starbuck
+    ```
+
+!!! important
+    Complete the remaining steps of this guide for the `apollo` cluster and then
+    repeat for `starbuck`.
 
 ### Istio
 
-1. Install the [Istio Operator](https://istio.io/latest/docs/setup/install/operator/)
-v1.7.3 using:
+1. Install
+   the [Istio Operator](https://istio.io/latest/docs/setup/install/operator/)
+   v1.7.3 using:
 
     ```shell
     curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.7.3 TARGET_ARCH=x86_64 sh -
@@ -188,32 +199,49 @@ v1.7.3 using:
 
 2. Configure MetalLB using:
 
-    !!! attention
-        Replace the `<i>` in the below snippet with a value between `1` and
-        `254`. Choose a different value for each of your clusters. For
-        conveniently deploying Carbyne Stack as described in the
-        [Deployment Guide](../deployment/), consider using `1` and `2`,
-        respectively.
+    === "Apollo"
 
-    ```shell
-    export SUBNET=172.18.<i>.255/25
-    cat <<EOF | envsubst > metallb.yaml
-    apiVersion: v1
-    kind: ConfigMap
-    metadata:
-      namespace: metallb-system
-      name: config
-    data:
-      config: |
-        address-pools:
-        - name: default
-          protocol: layer2
-          addresses:
-          - ${SUBNET}
-          avoid-buggy-ips: true
-    EOF
-    kubectl apply -f metallb.yaml
-    ```
+        ```shell
+        export SUBNET=172.18.1.255/25
+        cat <<EOF | envsubst > metallb.yaml
+        apiVersion: v1
+        kind: ConfigMap
+        metadata:
+          namespace: metallb-system
+          name: config
+        data:
+          config: |
+            address-pools:
+            - name: default
+              protocol: layer2
+              addresses:
+              - ${SUBNET}
+              avoid-buggy-ips: true
+        EOF
+        kubectl apply -f metallb.yaml
+        ```
+
+    === "Starbuck"
+
+        ```shell
+        export SUBNET=172.18.2.255/25
+        cat <<EOF | envsubst > metallb.yaml
+        apiVersion: v1
+        kind: ConfigMap
+        metadata:
+          namespace: metallb-system
+          name: config
+        data:
+          config: |
+            address-pools:
+            - name: default
+              protocol: layer2
+              addresses:
+              - ${SUBNET}
+              avoid-buggy-ips: true
+        EOF
+        kubectl apply -f metallb.yaml
+        ```
 
 3. Export the external IP assigned to the Istio Ingress Gateway for later use:
 
@@ -276,13 +304,17 @@ helm install postgres-operator postgres-operator-1.5.0/charts/postgres-operator
 
 If you no longer need the cluster you can tear it down using:
 
-!!! attention
-    Replace `<name>` with the name you have chosen when creating your cluster
-    (e.g., `apollo`).
+=== "Apollo"
 
-```shell
-kind delete cluster --name <name>
-```
+    ```shell
+    kind delete cluster --name apollo
+    ```
+
+=== "Starbuck"
+
+    ```shell
+    kind delete cluster --name starbuck
+    ```
 
 ## Troubleshooting
 
