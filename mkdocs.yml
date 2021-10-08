@@ -1,0 +1,65 @@
+#
+# Copyright (c) 2021 - for information on the respective copyright owner
+# see the NOTICE file and/or the repository https://github.com/carbynestack/carbynestack.github.io.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+INHERIT: config/nav.yml
+
+site_name: Carbyne Stack
+site_url: https://carbynestack.io/
+site_author: Carbyne Stack Community
+site_description: >-
+  Carbyne Stack Documentation
+copyright: "Copyright © 2021 The Carbyne Stack Authors"
+
+repo_url: https://github.com/carbynestack/carbynestack.github.io
+edit_uri: edit/main/docs
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: en
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+  logo: images/logo/carbynestack.svg
+  favicon: images/favicon.png
+  font:
+    text: lato
+    code: Roboto Mono
+  palette:
+    - scheme: default
+      primary: black
+      accent: red
+
+markdown_extensions:
+  - admonition
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - toc:
+      permalink: true
+      slugify: !!python/name:pymdownx.slugs.uslugify
+      toc_depth: 3
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
+      minify_js: true
+      htmlmin_opts:
+        remove_comments: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/carbynestack/carbynestack
+      name: Carbyne Stack Community on Github

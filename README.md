@@ -11,9 +11,17 @@ This repository contains the source code for the
 ## Developing
 
 See the
-[Docsy Docker Quickstart](https://www.docsy.dev/docs/getting-started/quickstart-docker/)
-tutorial for instructions on how to launch a local copy of the Carbyne Stack
-website.
+[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/getting-started/)
+getting started for instructions on how to get prepared for running a local copy
+of the Carbyne Stack website.
+
+After tool setup is done you can launch the preview server using:
+
+```shell
+git clone git@github.com:carbynestack/carbynestack.github.io.git
+cd carbynestack.github.io
+mkdocs serve
+```
 
 ## License
 
@@ -23,9 +31,8 @@ The Carbyne Stack website is open-sourced under the Apache License 2.0. See the
 ### 3rd Party Licenses
 
 For information on how license obligations for 3rd party OSS dependencies are
-handled in a legally compliant way see the
-[README](https://github.com/carbynestack/carbynestack) file of the Carbyne Stack
-repository.
+fulfilled see the [README](https://github.com/carbynestack/carbynestack) file of
+the Carbyne Stack repository.
 
 ## Contributing
 
