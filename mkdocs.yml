@@ -13,6 +13,9 @@ site_description: >-
   Carbyne Stack Documentation
 copyright: "Copyright © 2021 The Carbyne Stack Authors"
 
+extra_css:
+  - stylesheets/extra.css
+
 repo_url: https://github.com/carbynestack/carbynestack.github.io
 edit_uri: edit/main/docs
 
