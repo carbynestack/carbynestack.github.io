@@ -97,14 +97,16 @@ body {
   color: black;
 }
 
-.image-with-text .left {
-  height: 15em;
+.left {
   float: left;
   margin: 0 2em 0 0;
 }
 
-.image-with-text .right {
+.image-with-text img {
   height: 15em;
+}
+
+.right {
   float: right;
   margin: 0 0 0 2em;
 }
@@ -124,7 +126,7 @@ body {
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1024px) {
   .component-flex {
     flex-wrap: wrap;
   }

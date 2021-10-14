@@ -1,0 +1,18 @@
+/*
+ * Copyright (c) 2021 - for information on the respective copyright owner
+ * see the NOTICE file and/or the repository https://github.com/carbynestack/carbynestack.github.io.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+:root {
+  --nav-item-color: #4d4d4d;
+}
+
+.md-nav__item--nested > .md-nav__link,
+.md-nav__item a {
+  color: var(--nav-item-color);
+}
+
+.md-nav__item--nested > .md-nav__link:hover {
+  color: var(--md-accent-fg-color);
+}
