@@ -44,6 +44,11 @@ metallb-system       speaker-c8lq5                                  1/1     Runn
     Do not forget to perform the [post installation steps](https://docs.docker.com/engine/install/linux-postinstall/ ) 
     for Docker.
 
+!!! info
+    You'll need at least 3 GB of memory and 1 CPU core per kind cluster to
+    deploy Carbyne Stack. Depending on the actual workloads you are going to
+    deploy, these numbers can be considerably higher.
+
 - [Docker Engine](https://docs.docker.com/engine/) v20.10.6
 - [Kind](https://kind.sigs.k8s.io/) v0.11.0
 - [kubectl](https://kubernetes.io/docs/tasks/tools/) v1.21.1
