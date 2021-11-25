@@ -100,7 +100,7 @@ You can switch between the clusters easily using:
       --set tag="1.7.3"
     ```
 
-2. Create an Istio Control Plane in a dedicated namespace using:
+1. Create an Istio Control Plane in a dedicated namespace using:
 
     ```shell
     cat <<EOF > istio-control-plane.yaml
@@ -197,7 +197,7 @@ You can switch between the clusters easily using:
     kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
     ```
 
-2. Configure MetalLB using:
+1. Configure MetalLB using:
 
     === "Apollo"
 
@@ -243,7 +243,16 @@ You can switch between the clusters easily using:
         kubectl apply -f metallb.yaml
         ```
 
-3. Export the external IP assigned to the Istio Ingress Gateway for later use:
+1. Wait until an external IP has been assigned to the Istio Ingress Gateway by
+   MetalLB:
+
+    ```shell
+    kubectl get services --namespace istio-system istio-ingressgateway -w
+    ```
+
+The public IP eventually appears in column `EXTERNAL-IP`.
+
+1. Export the external IP for later use:
 
     ```shell
     export EXTERNAL_IP=$(kubectl get services --namespace istio-system istio-ingressgateway --output jsonpath='{.status.loadBalancer.ingress[0].ip}')
