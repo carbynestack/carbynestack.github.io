@@ -41,6 +41,9 @@ metallb-system       speaker-c8lq5                                  1/1     Runn
     specified below. Deviating from this _battle tested_ configuration may
     create all kinds of issues.
 
+    Do not forget to perform the [post installation steps](https://docs.docker.com/engine/install/linux-postinstall/ ) 
+    for Docker.
+
 - [Docker Engine](https://docs.docker.com/engine/) v20.10.6
 - [Kind](https://kind.sigs.k8s.io/) v0.11.0
 - [kubectl](https://kubernetes.io/docs/tasks/tools/) v1.21.1
