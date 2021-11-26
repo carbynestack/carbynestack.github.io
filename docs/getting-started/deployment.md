@@ -42,7 +42,7 @@ clusters using the kind tool as described in the
     VCP deployments.
 
 1. Checkout out the [carbynestack repository](https://github.com/carbynestack/carbynestack)
-   and descend into to repository root directory using:
+   and descend into the repository root directory using:
 
     === "HTTP"
 
