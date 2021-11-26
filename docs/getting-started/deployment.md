@@ -41,6 +41,23 @@ clusters using the kind tool as described in the
     way you have to download the images only once and then reuse them across
     VCP deployments.
 
+1. Checkout out the [carbynestack repository](https://github.com/carbynestack/carbynestack)
+   and descend into the repository root directory using:
+
+    === "HTTP"
+
+        ```shell
+        git clone https://github.com/carbynestack/carbynestack.git
+        cd carbynestack
+        ```
+
+    === "SSH"
+
+        ```shell
+        git clone git@github.com:carbynestack/carbynestack.git
+        cd carbynestack
+        ```
+
 1. Before deploying the virtual cloud providers make some common configuration
    available using:
 

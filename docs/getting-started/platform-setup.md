@@ -41,6 +41,14 @@ metallb-system       speaker-c8lq5                                  1/1     Runn
     specified below. Deviating from this _battle tested_ configuration may
     create all kinds of issues.
 
+    Do not forget to perform the [post installation steps](https://docs.docker.com/engine/install/linux-postinstall/ ) 
+    for Docker.
+
+!!! info
+    You'll need at least 3 GB of memory and 1 CPU core per kind cluster to
+    deploy Carbyne Stack. Depending on the actual workloads you are going to
+    deploy, these numbers can be considerably higher.
+
 - [Docker Engine](https://docs.docker.com/engine/) v20.10.6
 - [Kind](https://kind.sigs.k8s.io/) v0.11.0
 - [kubectl](https://kubernetes.io/docs/tasks/tools/) v1.21.1
@@ -100,7 +108,7 @@ You can switch between the clusters easily using:
       --set tag="1.7.3"
     ```
 
-2. Create an Istio Control Plane in a dedicated namespace using:
+1. Create an Istio Control Plane in a dedicated namespace using:
 
     ```shell
     cat <<EOF > istio-control-plane.yaml
@@ -197,7 +205,7 @@ You can switch between the clusters easily using:
     kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
     ```
 
-2. Configure MetalLB using:
+1. Configure MetalLB using:
 
     === "Apollo"
 
@@ -243,7 +251,16 @@ You can switch between the clusters easily using:
         kubectl apply -f metallb.yaml
         ```
 
-3. Export the external IP assigned to the Istio Ingress Gateway for later use:
+1. Wait until an external IP has been assigned to the Istio Ingress Gateway by
+   MetalLB:
+
+    ```shell
+    kubectl get services --namespace istio-system istio-ingressgateway -w
+    ```
+
+The public IP eventually appears in column `EXTERNAL-IP`.
+
+1. Export the external IP for later use:
 
     ```shell
     export EXTERNAL_IP=$(kubectl get services --namespace istio-system istio-ingressgateway --output jsonpath='{.status.loadBalancer.ingress[0].ip}')
