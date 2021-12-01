@@ -10,8 +10,8 @@ of two Virtual Cloud Providers (VCP).
     specified below. Deviating from this _battle tested_ configuration may
     create all kinds of issues.
 
-- [Helmfile](https://github.com/roboll/helmfile) v0.140.0
-- [Helm](https://helm.sh/) v3.4.1
+- [Helmfile](https://github.com/roboll/helmfile) v0.142.0
+- [Helm](https://helm.sh/) v3.7.1
 - [Helm Diff Plugin](https://github.com/databus23/helm-diff) v3.1.3
 
 In addition, this guide assumes you have access to two properly configured K8s

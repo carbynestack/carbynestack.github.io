@@ -52,7 +52,7 @@ metallb-system       speaker-c8lq5                                  1/1     Runn
 - [Docker Engine](https://docs.docker.com/engine/) v20.10.6
 - [Kind](https://kind.sigs.k8s.io/) v0.11.0
 - [kubectl](https://kubernetes.io/docs/tasks/tools/) v1.21.1
-- [Helm](https://helm.sh/) v3.4.1
+- [Helm](https://helm.sh/) v3.7.1
 
 ## Setting up the Clusters
 
