@@ -103,7 +103,7 @@ clusters using the kind tool as described in the
    cloud from the command line. Install the CLI using:
 
     ```shell
-    export CLI_VERSION=0.1-SNAPSHOT-1258699431-2-e5f3f7a
+    export CLI_VERSION=0.1-SNAPSHOT-1576571202-7-cf3db5b
     curl -o cs.jar -L https://github.com/carbynestack/cli/releases/download/$CLI_VERSION/cli-$CLI_VERSION-jar-with-dependencies.jar
     ```
 
