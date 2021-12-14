@@ -20,6 +20,6 @@ jobs:
         with:
           python-version: 3.x
       - name: Install Material for MkDocs
-        run: pip install mkdocs-material mkdocs-minify-plugin
+        run: pip install mkdocs-material==8.1.1 mkdocs-minify-plugin==0.5.0
       - name: Deploy site
         run: mkdocs gh-deploy --force

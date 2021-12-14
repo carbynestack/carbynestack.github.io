@@ -17,7 +17,7 @@ extra_css:
   - stylesheets/extra.css
 
 repo_url: https://github.com/carbynestack/carbynestack.github.io
-edit_uri: edit/main/docs
+edit_uri: edit/master/docs
 
 theme:
   name: material
@@ -48,7 +48,8 @@ markdown_extensions:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.highlight
-  - pymdownx.tabbed
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.superfences
   - toc:
       permalink: true
