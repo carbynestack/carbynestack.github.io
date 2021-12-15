@@ -78,8 +78,14 @@ body {
 
 .hero-section .md-button--primary {
   background-color: var(--md-primary-bg-color);
-  color: hsla(280deg, 37%, 48%, 1);
+  color: black;
   border-color: var(--md-primary-bg-color);
+}
+
+.hero-section .md-typeset .md-button--primary:where(:focus, :hover) {
+  background-color: var(--md-accent-fg-color);
+  color: white;
+  border-color: var(--md-accent-fg-color);
 }
 
 .hero-section h1 {
