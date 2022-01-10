@@ -9,9 +9,8 @@ GERMANY
 
 ## Members of the Board of Management
 
-Dr. Volkmar Denner, Prof. Dr. Stefan Asenkerschbaumer, Filiz Albrecht, Dr.
-Christian Fischer, Dr. Stefan Hartung, Dr. Markus Heyn, Harald Kröger, Rolf
-Najork
+Dr. Stefan Hartung, Dr. Christian Fischer, Filiz Albrecht, Dr. Markus Forschner,
+Dr. Markus Heyn, Rolf Najork
 
 ## Your contact at Robert Bosch GmbH
 
