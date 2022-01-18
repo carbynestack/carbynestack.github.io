@@ -1,7 +1,21 @@
 # Getting Started with Carbyne Stack
 
-The tutorials in this section will walk you through the basics of the Carbyne
-Stack Native MPC platform and how to set up and run simple experiments with it.
+## TL;DR
+
+Watch the following video to learn about the core concepts and services of the
+Carbyne Stack MPC Cloud Platform and how they can be used to solve the
+Millionaires' Problem or to recognize handwritten letters via privacy-friendly
+Machine Learning.
+
+<video controls style="width: 100% !important; height: auto !important;">
+    <source src="https://d1g2d0fr19rt5z.cloudfront.net/kVOD/streaming.video.bosch.com/pd/p/102/sp/10200/serveFlavor/entryId/0_grchatrr/v/2/ev/4/flavorId/0_imfgecx3/name/a.mp4">
+    Sorry, your browser doesn't support embedded videos.
+</video>
+
+## Hands-On Tutorials
+
+Our hands-on tutorials will walk you through the basics of the Carbyne Stack
+Native MPC platform and how to set up and run simple experiments with it.
 
 You will
 
