@@ -12,6 +12,8 @@ nav:
       - Platform Setup: getting-started/platform-setup.md
       - Stack Deployment: getting-started/deployment.md
       - Millionaires Problem: getting-started/millionaires.md
+  - Community:
+      - Opportunities: community/opportunities.md
   - Legal Information:
       - Privacy Policy: legal/privacy-policy.md
       - Corporate Information: legal/corporate-information.md
