@@ -185,6 +185,7 @@ knowledge of a single or a few components.
         
         - [Sebastian Becker](https://github.com/sbckr) (Robert Bosch GmbH)
         - [Sven Trieflinger](https://github.com/strieflin) (Robert Bosch GmbH)
+        - [Jared Weinfurtner](https://github.com/jaredweinfurtner) (Robert Bosch GmbH)
 
     === "Migrate to gRPC"
 
@@ -227,6 +228,7 @@ knowledge of a single or a few components.
 
         - [Sebastian Becker](https://github.com/sbckr) (Robert Bosch GmbH)        
         - [Sven Trieflinger](https://github.com/strieflin) (Robert Bosch GmbH)
+        - [Jared Weinfurtner](https://github.com/jaredweinfurtner) (Robert Bosch GmbH)
 
 === "Infrastructure & Automation"
 
