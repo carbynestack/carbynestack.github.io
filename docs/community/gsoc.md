@@ -71,9 +71,9 @@ A promising application will contain at least:
 
 We have an attractive mix of potential GSoC project proposals. Each project is
 rated according to effort (:material-timer-sand-empty:, either `175h` or `350h`)
-and complexity (:material-certificate-outline:, one of `Low`, `Medium`, or
-`High`). While projects rated low complexity tend to require adapting a
-single or a small number of Carbyne Stack software components (like a
+and difficulty / complexity (:material-certificate-outline:, one of `Easy`,
+`Medium`, or `Hard`). While projects rated low complexity tend to require
+adapting a single or a small number of Carbyne Stack software components (like a
 microservice) only, those with high complexity require contributors to get a
 good understanding of the Carbyne Stack system as a whole or require in-depth
 knowledge of a single or a few components.
@@ -101,7 +101,7 @@ knowledge of a single or a few components.
         <span class="gsoc-topic-section-title">Carbyne Stack Operator</span>
 
         :material-timer-sand-empty: <span class="gsoc-legend">175h (Basic), 350h (Extended)</span>
-        :material-certificate-outline: <span class="gsoc-legend">High</span>
+        :material-certificate-outline: <span class="gsoc-legend">Hard</span>
 
         Operators are software extensions to Kubernetes that make use of custom
         resources to manage applications and their components. Carbyne Stack is 
@@ -192,7 +192,7 @@ knowledge of a single or a few components.
         <span class="gsoc-topic-section-title">Migrate to gRPC</span>
 
         :material-timer-sand-empty: <span class="gsoc-legend">175h (Basic), 350h (Extended)</span>
-        :material-certificate-outline: <span class="gsoc-legend">Low</span>
+        :material-certificate-outline: <span class="gsoc-legend">Easy</span>
 
         As of today, communication in Carbyne Stack is based on a mix of REST
         and WebSockets. In this project, you get your feets wet with gRPC, the
@@ -294,7 +294,7 @@ knowledge of a single or a few components.
         <span class="gsoc-topic-section-title">Public Cloud Deployment</span>
 
         :material-timer-sand-empty: <span class="gsoc-legend">175h</span>
-        :material-certificate-outline: <span class="gsoc-legend">Low</span>
+        :material-certificate-outline: <span class="gsoc-legend">Easy</span>
 
         Carbyne Stack currently comes along with instructions for local
         deployment of a virtual cloud on kind clusters using MetalLB as the
