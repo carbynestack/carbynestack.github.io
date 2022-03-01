@@ -143,3 +143,13 @@ body {
     float: none;
   }
 }
+
+.used-by-logo-banner {
+  display: block;
+}
+
+.used-by-logo {
+  width: auto;
+  height: 40px;
+  margin: 20px;
+}
