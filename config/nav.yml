@@ -13,6 +13,7 @@ nav:
       - Stack Deployment: getting-started/deployment.md
       - Millionaires Problem: getting-started/millionaires.md
   - Community:
+      - Ecosystem: community/ecosystem.md
       - Opportunities: community/opportunities.md
       - Google Summer of Code: community/gsoc.md
   - Legal Information:

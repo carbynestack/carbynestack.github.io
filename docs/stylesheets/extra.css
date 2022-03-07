@@ -36,3 +36,12 @@
   font-weight: bolder;
   padding-right: 30px;
 }
+
+.ecosystem-logo {
+  width: auto;
+  height: 50px;
+}
+
+.invert {
+  filter: invert(1);
+}
