@@ -9,7 +9,7 @@ to conduct proof-of-concepts in multiple domains with various partners.
 
 ---
 
-![Image title](../images/uts-logo.png){ class="ecosystem-logo invert" }
+![Image title](../images/uts-logo.png){ class="ecosystem-logo" }
 
 University of Technology Sydney, Bosch, and Food Agility CRC have joined forces
 to work on the publicly funded project [Collaborative privacy-preserving Digital
