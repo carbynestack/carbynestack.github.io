@@ -1,5 +1,17 @@
 # Google Summer of Code
 
+!!! warning "Rejected for GSoC 2022"
+
+    Sadly, we have not been accepted for GSoC 2022. We plan to apply again in
+    2023 and hope that we have better luck then. Stay tuned!
+
+    Still the topics mentioned below are very relevant for the Carbyne Stack
+    community. In case you are interested in working on one of them or you have
+    your own ideas on how to advance the Carbyne Stack project or community,
+    please do not hesitate to get in touch. We'll probably find a way to get you
+    supported by one of the backing organizations. Please also have a look at
+    the [opportunities](../opportunities) page for open positions. 
+
 Carbyne Stack is applying to become a [Google Summer of Code (GSoC) 2022][gsoc]
 mentoring organization. For those not aware of what GSoC is, here comes the
 official description from Google:
