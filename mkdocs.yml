@@ -11,13 +11,14 @@ site_url: https://carbynestack.io/
 site_author: Carbyne Stack Community
 site_description: >-
   Carbyne Stack Documentation
-copyright: "Copyright © 2021 The Carbyne Stack Authors"
+copyright: "Copyright © 2021-2022 The Carbyne Stack Authors"
 
 extra_css:
   - stylesheets/extra.css
 
-repo_url: https://github.com/carbynestack/carbynestack.github.io
-edit_uri: edit/master/docs
+repo_url: https://github.com/carbynestack/carbynestack
+repo_name: carbynestack/carbynestack
+edit_uri: https://github.com/carbynestack/carbynestack.github.io/edit/master/docs
 
 theme:
   name: material
