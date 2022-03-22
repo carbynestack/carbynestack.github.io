@@ -144,6 +144,12 @@ body {
   }
 }
 
+.svg-icon-in-button {
+  margin-right: 10px;
+  font-size: x-large;
+  vertical-align: top;
+}
+
 .used-by-logo-banner {
   display: block;
 }
