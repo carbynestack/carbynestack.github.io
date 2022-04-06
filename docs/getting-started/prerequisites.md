@@ -1,6 +1,11 @@
 # Setting up the prerequisites
 
-This guideline includes the steps to install the prerequisites with specified versions for the Carbyne Stack. All installation procedures are done with the Terminal application of Ubuntu. **Please open the Terminal application before you proceed.**
+This guide describes how to install the prerequisites required to deploy Carbyne Stack.
+
+!!! warning
+    Carbyne Stack has been tested using the **exact versions** of the tools
+    specified below. Deviating from this _battle tested_ configuration may
+    create all kinds of issues.
 
 ## Prerequisites
 
@@ -10,42 +15,52 @@ This part of the tutorial is developed and tested with Ubuntu 20.04. Please refe
 
 Software to be installed:
 
-- [go](https://go.dev/doc/install)
+- [go](https://go.dev/doc/install) 1.18
 - [Docker Engine](https://docs.docker.com/engine/install/ubuntu/) v20.10.6
 - [Kind](https://kind.sigs.k8s.io/) v0.11.0
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/) v1.21.1
 - [Helm](https://helm.sh/docs/intro/install/) v3.7.1
 
+Please set the following software version strings before you continue with our installation instructions.
+
+```shell
+export go_ver=1.18
+export dock_ver=5:20.10.6~3-0~ubuntu-focal
+export kind_ver=0.11.0
+export kub_ver=1.21.1
+export helm_ver=3.7.1
+```
+
 ### go
 
-The go language is a prerequisite for the Docker Engine. In this guideline go 1.18 will be installed.
+The go language is a prerequisite for the Kind package. In this guideline go 1.18 will be installed. Detailed installation instructions for go can be found [here](https://go.dev/doc/install). Alternatively, you can install go by following the instructions below.
 
-1. Download go for Linux.
-
-    ```shell
-    wget https://go.dev/dl/go1.18.linux-amd64.tar.gz
-    ```
-
-2. Extract to /usr/local. You may need to insert the password for sudo permissions.
+1. Download go language for Linux.
 
     ```shell
-    sudo tar -C /usr/local -xzf go1.18.linux-amd64.tar.gz
+    wget https://go.dev/dl/go$go_ver.linux-amd64.tar.gz
     ```
 
-3. Check if there is a “go” folder in "/usr/local".
+2. Extract to `/usr/local`. You may need to insert the password for sudo permissions.
+
+    ```shell
+    sudo tar -C /usr/local -xzf go$go_ver.linux-amd64.tar.gz
+    ```
+
+3. Check if there is a `go` folder in `/usr/local`.
 
     ```shell
     ls /usr/local
     ```
  
-4. Update PATH for go.
+4. Update `PATH` for go with the commands below.
 
     ```shell
     echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
     source ~/.bashrc
     ```
 
-5. Verify if PATH is updated. Now go 1.18 is successfully installed.
+5. Verify if `PATH` is updated. Now go 1.18 is successfully installed.
 
     ```shell
     go version
@@ -53,7 +68,9 @@ The go language is a prerequisite for the Docker Engine. In this guideline go 1.
 
 ### Docker Engine
 
-1. Update repository index.
+Detailed installation instructions for Docker Engine can be found [here](https://docs.docker.com/engine/install/ubuntu/). Alternatively, you can install Docker Engine by following the instructions below.
+
+1. Update repository index and install dependencies.
 
     ```shell
     sudo apt-get update
@@ -74,11 +91,11 @@ The go language is a prerequisite for the Docker Engine. In this guideline go 1.
       $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
     ```
 
-4. Install Docker Engine.
+4. Install Docker Engine with the commands below.
 
     ```shell
     sudo apt-get update
-    sudo apt-get install docker-ce=5:20.10.6~3-0~ubuntu-focal docker-ce-cli=5:20.10.6~3-0~ubuntu-focal containerd.io
+    sudo apt-get install docker-ce=$dock_ver docker-ce-cli=$dock_ver containerd.io
     ```
 
 5. Manage Docker as a non-root user.
@@ -97,13 +114,15 @@ The go language is a prerequisite for the Docker Engine. In this guideline go 1.
 
 ### Kind
 
+Detailed installation instructions for Kind can be found [here](https://kind.sigs.k8s.io/). Alternatively, you can install Kind by following the instructions below.
+
 1. Install Kind 0.11.0.
 
     ```shell
-    go install sigs.k8s.io/kind@v0.11.0
+    go install sigs.k8s.io/kind@v$kind_ver
     ```
 
-2. Add the go path to PATH. You may have a different go path. Please check “GOPATH” with “go env” and replace “~/go” in the below command with your GOPATH.
+2. Add the local go path to PATH. You may have a different go path. Please check `GOPATH` with `go env` and replace `~/go` in the below command with your GOPATH.
 
     ```shell
     echo 'export PATH=$PATH:~/go/bin' >> ~/.bashrc 
@@ -118,13 +137,15 @@ The go language is a prerequisite for the Docker Engine. In this guideline go 1.
 
 ### kubectl
 
+Detailed installation instructions for kubectl can be found [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/). Alternatively, you can install kubectl by following the instructions below.
+
 1. Download kubectl 1.21.1.
 
     ```shell
-    curl -LO https://dl.k8s.io/release/v1.21.1/bin/linux/amd64/kubectl
+    curl -LO https://dl.k8s.io/release/v$kub_ver/bin/linux/amd64/kubectl
     ```
 
-2. Install kubectl.
+2. Install kubectl with the command below.
 
     ```shell
     sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
@@ -138,25 +159,27 @@ The go language is a prerequisite for the Docker Engine. In this guideline go 1.
 
 ### Helm
 
-1. Download Helm.
+Detailed installation instructions for the Helm package manager can be found [here](https://helm.sh/docs/intro/install/). Alternatively, you can install Helm by following the instructions below.
+
+1. Download the Helm package manager.
 
     ```shell
-    wget https://get.helm.sh/helm-v3.7.1-linux-amd64.tar.gz
+    wget https://get.helm.sh/helm-v$helm_ver-linux-amd64.tar.gz
     ```
 
-2. Unpack.
+2. Unpack the downloaded compressed file.
 
     ```shell
-    tar -zxvf helm-v3.7.1-linux-amd64.tar.gz
+    tar -zxvf helm-v$helm_ver-linux-amd64.tar.gz
     ```
 
-3. Move to PATH.
+3. Move the unpacked content (the `helm` file) to `PATH`.
 
     ```shell
     sudo mv linux-amd64/helm /usr/local/bin/helm
     ```
 
-4. Verify Installation.
+4. Verify your installation.
 
     ```shell
     helm version
@@ -170,27 +193,36 @@ Software to be installed:
 - [Helm Diff Plugin](https://github.com/databus23/helm-diff) v3.1.3
 - [OpenJDK](https://openjdk.java.net/install/) 8
 
+Please set the following software version strings before you continue with our installation instructions.
+
+```shell
+export helmfile_ver=0.142.0
+export helmdiff_ver=3.1.3
+```
+
 ### Helmfile
 
-1. Download Helmfile.
+Detailed installation instructions for the Helmfile package can be found [here](https://github.com/roboll/helmfile). Alternatively, you can install Helmfile by following the instructions below.
+
+1. Download the Helmfile package.
 
     ```shell
-    wget https://github.com/roboll/helmfile/releases/download/v0.142.0/helmfile_linux_amd64
+    wget https://github.com/roboll/helmfile/releases/download/v$helmfile_ver/helmfile_linux_amd64
     ```
 
-2. Give execution permission.
+2. Give execution permission to Helmfile.
 
     ```shell
     chmod +x helmfile_linux_amd64
     ```
 
-3. Move to PATH.
+3. Move Helmfile to `PATH`.
 
     ```shell
     sudo mv helmfile_linux_amd64 /usr/local/bin/helmfile
     ```
 
-4. Verify Installation.
+4. Verify your installation.
 
     ```shell
     helmfile -v
@@ -198,25 +230,27 @@ Software to be installed:
 
 ### Helm Diff Plugin
 
-1. Download Helm Diff Plugin.
+Detailed installation instructions for the Helm Diff plugin can be found [here](https://github.com/databus23/helm-diff). Alternatively, you can install Helm Diff by following the instructions below.
+
+1. Download Helm Diff plugin compressed file.
 
     ```shell
-    wget https://github.com/databus23/helm-diff/releases/download/v3.1.3/helm-diff-linux.tgz
+    wget https://github.com/databus23/helm-diff/releases/download/v$helmdiff_ver/helm-diff-linux.tgz
     ```
 
-2. Unpack.
+2. Unpack the compressed file.
 
     ```shell
     tar -zxvf helm-diff-linux.tgz
     ```
 
-3. Put the unpacked contents into the helm plugins folder. You may have a different folder. Please check “HELM_PLUGINS” with “helm env” command. Please create the folders if they do not exist. Note that the "diff" folder must not exist in the helm plugins folder before executing the command below.
+3. Put the unpacked contents into the helm plugins folder. You may have a different folder. Please check `HELM_PLUGINS` with `helm env` command. Please create the folders if they do not exist. Note that the `diff` folder must not exist in the helm plugins folder before executing the command below.
 
     ```shell
     mv diff ~/.local/share/helm/plugins/diff
     ```
 
-4. Verify the installation.
+4. Verify your installation.
 
     ```shell
     helm plugin list
@@ -224,13 +258,15 @@ Software to be installed:
 
 ### OpenJDK
 
-1. Install with command.
+Detailed installation instructions for OpenJDK can be found [here](https://openjdk.java.net/install/). Alternatively, you can install OpenJDK by following the instructions below.
+
+1. Install with the command.
 
     ```shell
     sudo apt-get install openjdk-8-jdk
     ```
 
-2. Verify installation.
+2. Verify your installation.
 
     ```shell
     java -version
