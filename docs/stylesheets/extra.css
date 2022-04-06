@@ -42,6 +42,15 @@
   height: 50px;
 }
 
+.event-title {
+  font-size: x-large;
+}
+
+.event-logo {
+  width: auto;
+  height: 70px;
+}
+
 .invert {
   filter: invert(1);
 }
