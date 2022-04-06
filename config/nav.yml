@@ -16,6 +16,7 @@ nav:
   - Community:
       - Participate: community/participate.md
       - Ecosystem: community/ecosystem.md
+      - Events: community/events.md
       - Opportunities: community/opportunities.md
       - Google Summer of Code: community/gsoc.md
   - Legal Information:
