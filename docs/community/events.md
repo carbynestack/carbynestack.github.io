@@ -19,7 +19,7 @@ JUNE 7 - 10, 2022 | AARHUS (DENMARK).
 ### [StackConf '22][stackconf22]
 
 <span class="event-title">Scaling the Grail - Cloud-Native Computing on
-Encrypted Data using Carbyne Stack (Contributed Talk)</span>
+Encrypted Data using Carbyne Stack ([Contributed Talk][stackconf22-talk])</span>
 
 ![Stackconf Logo](../images/events/stackconf22.png){ class="event-logo" }
 
@@ -73,3 +73,4 @@ APRIL 4 – 7, 2022 | VIRTUAL (Bosch internal)
 
 [tpmpc22]: https://www.multipartycomputation.com/tpmpc-2022
 [stackconf22]: https://stackconf.eu/
+[stackconf22-talk]: https://stackconf.eu/talks/scaling-the-grail-cloud-native-computing-on-encrypted-data-using-carbyne-stack/
