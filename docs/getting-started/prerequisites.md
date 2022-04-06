@@ -122,7 +122,7 @@ Detailed installation instructions for Kind can be found [here](https://kind.sig
     go install sigs.k8s.io/kind@v$kind_ver
     ```
 
-2. Add the local go path to PATH. You may have a different go path. Please check `GOPATH` with `go env` and replace `~/go` in the below command with your GOPATH.
+2. Add the local go path to `PATH`. You may have a different go path. Please check `GOPATH` with `go env` and replace `~/go` in the below command with your `GOPATH`.
 
     ```shell
     echo 'export PATH=$PATH:~/go/bin' >> ~/.bashrc 
