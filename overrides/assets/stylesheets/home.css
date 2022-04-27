@@ -159,3 +159,7 @@ body {
   height: 40px;
   margin: 20px;
 }
+
+.announcement-bar {
+  font-size: medium;
+}
