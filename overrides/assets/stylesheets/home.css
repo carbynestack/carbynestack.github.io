@@ -45,12 +45,12 @@
 section.hero-section {
   min-height: 435px;
   justify-content: center;
-  color: #fff;
+  color: var(--md-primary-bg-color);
   position: relative;
   display: flex;
   align-items: center;
-  padding-bottom: 0;
-  padding-top: 0;
+  background: linear-gradient(to bottom, var(--md-accent-fg-color), #504886);
+  padding-bottom: 40px;
 }
 
 .hero-section > .md-typeset {
@@ -58,8 +58,8 @@ section.hero-section {
 }
 
 body {
-  color: #fff;
-  background: #fff;
+  color: var(--md-primary-bg-color);
+  background: var(--md-primary-bg-color);
 }
 
 .hero-section,
@@ -78,18 +78,18 @@ body {
 
 .hero-section .md-button--primary {
   background-color: var(--md-primary-bg-color);
-  color: black;
+  color: var(--md-primary-fg-color);
   border-color: var(--md-primary-bg-color);
 }
 
 .hero-section .md-typeset .md-button--primary:where(:focus, :hover) {
   background-color: var(--md-accent-fg-color);
-  color: white;
+  color: var(--md-primary-bg-color);
   border-color: var(--md-accent-fg-color);
 }
 
 .hero-section h1 {
-  color: #fff;
+  color: var(--md-primary-bg-color);
   font-weight: bolder;
   margin-top: 1em;
   margin-bottom: 0;
@@ -100,7 +100,7 @@ body {
 }
 
 .image-with-text {
-  color: black;
+  color: var(--md-primary-fg-color);
 }
 
 .left {
@@ -158,4 +158,16 @@ body {
   width: auto;
   height: 40px;
   margin: 20px;
+}
+
+.announcement-bar {
+  font-size: medium;
+}
+
+.announcement-bar a {
+  color: var(--md-accent-fg-color);
+}
+
+.announcement-bar a:where(:focus, :hover) {
+  color: var(--md-typeset-a-color);
 }

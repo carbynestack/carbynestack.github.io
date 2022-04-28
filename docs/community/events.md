@@ -16,6 +16,36 @@ JUNE 7 - 10, 2022 | AARHUS (DENMARK).
 
 ---
 
+### [OSS-NA '22][ossna22]
+
+<span class="event-title">Carbyne Stack - Cloud Native Computing on Encrypted
+Data ([Contributed Talk][ossna22-talk])</span>
+
+![OSS-NA Logo](../images/events/ossna22.svg){ class="event-logo" }
+
+JUNE 21 - 24, 2022 | AUSTIN, TEXAS (US).
+
+!!! abstract
+
+    Data has become a strategic asset that is pooled with others for joint 
+    processing, monetized on data platforms, and used to fuel the AI revolution.
+    As the ability to leverage internal and external data is becoming a major
+    factor for business success, protecting valuable data is more important than
+    ever. Enter Computing On Encrypted Data technologies (COEDs). COEDs pave the
+    way for strong end-to-end protection of data by enabling encryption in use.
+    One roadblock for the wider adoption of COEDs so far has been the lack of
+    integration with state-of-the-art cloud technology to enable scalable,
+    resilient, and easy to operate COED deployments. The Carbyne Stack
+    open-source project has set out to close this gap by lifting a specific COED
+    technology called Secure Multiparty Computation (MPC) into the cloud. Sven
+    will take the audience down the rabbit hole of COED technologies and explain
+    how Carbyne Stack blends cloud-native technology (including Kubernetes,
+    Istio, Knative, and others) to solve the specific challenges of deploying
+    MPC in the cloud like cross-cluster orchestration of MPC services and
+    serverless provisioning of MPC workloads. 
+
+---
+
 ### [StackConf '22][stackconf22]
 
 <span class="event-title">Scaling the Grail - Cloud-Native Computing on
@@ -72,5 +102,7 @@ APRIL 4 – 7, 2022 | VIRTUAL (Bosch internal)
 ---
 
 [tpmpc22]: https://www.multipartycomputation.com/tpmpc-2022
+[ossna22]: https://events.linuxfoundation.org/open-source-summit-north-america/
+[ossna22-talk]: https://sched.co/11NhT
 [stackconf22]: https://stackconf.eu/
 [stackconf22-talk]: https://stackconf.eu/talks/scaling-the-grail-cloud-native-computing-on-encrypted-data-using-carbyne-stack/

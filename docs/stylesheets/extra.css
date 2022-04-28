@@ -42,6 +42,11 @@
   height: 50px;
 }
 
+.acknowledgements-logo {
+  width: auto;
+  height: 200px;
+}
+
 .event-title {
   font-size: x-large;
   font-weight: bold;
