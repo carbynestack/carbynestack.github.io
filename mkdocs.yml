@@ -39,7 +39,7 @@ theme:
     code: Roboto Mono
   palette:
     - scheme: default
-      primary: black
+      primary: indigo
       accent: red
 
 markdown_extensions:

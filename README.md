@@ -23,6 +23,11 @@ cd carbynestack.github.io
 mkdocs serve
 ```
 
+### MkDocs Material Insiders
+
+We use components of the MkDocs Material Insiders sponsorware. Installation
+instructions can be found [here](https://squidfunk.github.io/mkdocs-material/insiders/getting-started/#installation).
+
 ## License
 
 The Carbyne Stack website is open-sourced under the Apache License 2.0. See the
