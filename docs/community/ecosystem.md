@@ -1,6 +1,6 @@
 # Carbyne Stack Ecosystem
 
-![Image title](../images/bosch-logo.png){ class="ecosystem-logo" }
+![Bosch Logo](../images/ecosystem/bosch-logo.png){ class="ecosystem-logo" }
 
 [Robert Bosch GmbH][bosch] started the Carbyne Stack open source project in
 September 2021 by contributing an internally developed code base, and now
@@ -9,7 +9,13 @@ to conduct proof-of-concepts in multiple domains with various partners.
 
 ---
 
-![Image title](../images/uts-logo.png){ class="ecosystem-logo" }
+![HRI Logo](../images/ecosystem/hri-logo.png){ class="ecosystem-logo" }
+
+The [Honda Research Institute Europe][hri] ...
+
+---
+
+![UTS Logo](../images/ecosystem/uts-logo.png){ class="ecosystem-logo" }
 
 University of Technology Sydney, Bosch, and Food Agility CRC have joined forces
 to work on the publicly funded project [Collaborative privacy-preserving Digital
@@ -19,5 +25,6 @@ eventually be implemented by a UTS engineering team based on Carbyne Stack.
 
 ---
 
-[fa117]: https://www.foodagility.com/research/protecting-data-in-digital-agriculture
 [bosch]: https://www.bosch.com
+[fa117]: https://www.foodagility.com/research/protecting-data-in-digital-agriculture
+[hri]: https://www.honda-ri.de/
