@@ -25,6 +25,7 @@ theme:
   custom_dir: overrides
   language: en
   features:
+    - announce.dismiss
     - navigation.instant
     - navigation.tracking
     - navigation.tabs
