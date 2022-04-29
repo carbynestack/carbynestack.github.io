@@ -26,6 +26,7 @@ theme:
   language: en
   features:
     - announce.dismiss
+    - content.tabs.link
     - navigation.instant
     - navigation.tracking
     - navigation.tabs
