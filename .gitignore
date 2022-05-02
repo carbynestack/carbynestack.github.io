@@ -5,3 +5,6 @@ out
 gen
 target
 
+# MkDocs files
+.cache
+

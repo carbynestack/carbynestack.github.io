@@ -25,6 +25,8 @@ theme:
   custom_dir: overrides
   language: en
   features:
+    - announce.dismiss
+    - content.tabs.link
     - navigation.instant
     - navigation.tracking
     - navigation.tabs
@@ -39,7 +41,7 @@ theme:
     code: Roboto Mono
   palette:
     - scheme: default
-      primary: black
+      primary: indigo
       accent: red
 
 markdown_extensions:
@@ -61,6 +63,9 @@ markdown_extensions:
       toc_depth: 3
 
 plugins:
+  - privacy:
+      externals_exclude:
+        - holiday-van.carbynestack.io/*
   - search
   - minify:
       minify_html: true

@@ -17,6 +17,14 @@
   color: var(--md-accent-fg-color);
 }
 
+.md-header {
+  background-color: black;
+}
+
+.md-tabs {
+  background-color: black;
+}
+
 .gsoc-topic-section-title {
   font-size: 1.4em;
   padding-bottom: -1.2em;
@@ -39,7 +47,7 @@
 
 .ecosystem-logo {
   width: auto;
-  height: 50px;
+  height: 50px !important;
 }
 
 .acknowledgements-logo {
@@ -54,9 +62,21 @@
 
 .event-logo {
   width: auto;
-  height: 70px;
+  height: 70px !important;
 }
 
 .invert {
   filter: invert(1);
+}
+
+.announcement-bar {
+  font-size: medium;
+}
+
+.announcement-bar a {
+  color: var(--md-accent-fg-color);
+}
+
+.announcement-bar a:where(:focus, :hover) {
+  color: var(--md-typeset-a-color) !important;
 }
