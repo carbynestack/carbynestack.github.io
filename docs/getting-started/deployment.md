@@ -168,7 +168,7 @@ time-consuming process, we provide pre-generated material.
 1. Download and decompress the archive containing the material using:
 
     ```shell
-    curl -O -L https://raw.githubusercontent.com/carbynestack/base-images/master/fake-crypto-material.zip
+    curl -O -L https://github.com/carbynestack/base-images/raw/3595c5427915b2f9e1f22804e3f742cda9e72312/fake-crypto-material.zip
     unzip -d crypto-material fake-crypto-material.zip
     rm fake-crypto-material.zip
     ```
