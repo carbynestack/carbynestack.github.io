@@ -162,13 +162,13 @@ to upload cryptographic material. As generating offline material is a very
 time-consuming process, we provide pre-generated material.
 
 !!! danger
-    Using pre-generated offline material is not secure at all. ***DO NOT DO THIS
-    IN A PRODUCTION SETTING***.
+    Using pre-generated offline material is not secure at all. **_DO NOT DO THIS
+    IN A PRODUCTION SETTING_**.
 
 1. Download and decompress the archive containing the material using:
 
     ```shell
-    curl -O -L https://raw.githubusercontent.com/carbynestack/base-images/master/fake-crypto-material.zip
+    curl -O -L https://github.com/carbynestack/base-images/raw/3595c5427915b2f9e1f22804e3f742cda9e72312/fake-crypto-material.zip
     unzip -d crypto-material fake-crypto-material.zip
     rm fake-crypto-material.zip
     ```
@@ -177,7 +177,7 @@ time-consuming process, we provide pre-generated material.
 
     !!! tip
         Adapt the `NUMBER_OF_CHUNKS` variable in the following snippet to tune
-        the number of uploaded tuples. In case`NUMBER_OF_CHUNKS > 1` the *same*
+        the number of uploaded tuples. In case`NUMBER_OF_CHUNKS > 1` the **same**
         tuples are uploaded repeatedly.
 
     ```shell
