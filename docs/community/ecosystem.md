@@ -11,7 +11,14 @@ to conduct proof-of-concepts in multiple domains with various partners.
 
 ![HRI Logo](../images/ecosystem/hri-logo.png){ class="ecosystem-logo" }
 
-The [Honda Research Institute Europe][hri] ...
+The [Honda Research Institute Europe][hri] (HRI-EU) researches future
+technologies advancing cooperative intelligent systems that will shape our
+future in many ways, ranging from autonomous and accident-free driving to
+personal robots and from smart design and manufacturing to the
+privacy-preserving use of data. The privacy of users and customers is one of
+HRI's essential goals, and they aim to live up to the trust of their customers.
+HRI-EU contributes together with academic and innovative partners to Carbyne
+Stack to implement this vision.
 
 ---
 
