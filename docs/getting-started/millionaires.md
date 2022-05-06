@@ -73,9 +73,10 @@ program that does the job:
 ```shell
 cat << 'EOF' > billionaires.mpc
 # Prologue to read in the inputs
-listen(10000)
+port=regint(10000)
+listen(port)
 socket_id = regint()
-acceptclientconnection(socket_id, 10000)
+acceptclientconnection(socket_id, port)
 v = sint.read_from_socket(socket_id, 2)
 
 # The logic
