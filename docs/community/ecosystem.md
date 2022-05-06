@@ -1,5 +1,6 @@
 # Carbyne Stack Ecosystem
 
+<a name="bosch"></a>
 ![Bosch Logo](../images/ecosystem/bosch-logo.png){ class="ecosystem-logo" }
 
 [Robert Bosch GmbH][bosch] started the Carbyne Stack open source project in
@@ -9,7 +10,8 @@ to conduct proof-of-concepts in multiple domains with various partners.
 
 ---
 
-![HRI Logo](../images/ecosystem/hri-logo.png){ class="ecosystem-logo" }
+<a name="hri"></a>
+![HRI Logo](../images/ecosystem/hri-logo-black.png){ class="ecosystem-logo" }
 
 The [Honda Research Institute Europe][hri] (HRI-EU) researches future
 technologies advancing cooperative intelligent systems that will shape our
@@ -22,6 +24,7 @@ Stack to implement this vision.
 
 ---
 
+<a name="uts"></a>
 ![UTS Logo](../images/ecosystem/uts-logo.png){ class="ecosystem-logo" }
 
 University of Technology Sydney, Bosch, and Food Agility CRC have joined forces
