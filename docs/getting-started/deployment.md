@@ -103,7 +103,7 @@ clusters using the kind tool as described in the
    cloud from the command line. Install the CLI using:
 
     ```shell
-    export CLI_VERSION=0.1-SNAPSHOT-1576571202-7-cf3db5b
+    export CLI_VERSION=0.2-SNAPSHOT-2336890983-14-a4260ab
     curl -o cs.jar -L https://github.com/carbynestack/cli/releases/download/$CLI_VERSION/cli-$CLI_VERSION-jar-with-dependencies.jar
     ```
 
@@ -168,9 +168,9 @@ time-consuming process, we provide pre-generated material.
 1. Download and decompress the archive containing the material using:
 
     ```shell
-    curl -O -L https://github.com/carbynestack/base-images/raw/3595c5427915b2f9e1f22804e3f742cda9e72312/fake-crypto-material.zip
-    unzip -d crypto-material fake-crypto-material.zip
-    rm fake-crypto-material.zip
+    curl -O -L https://github.com/carbynestack/carbynestack/raw/9c0c17599ae08253398a000f2a23b3ded8611499/tuples/fake-crypto-material-0.2.zip
+    unzip -d crypto-material fake-crypto-material-0.2.zip
+    rm fake-crypto-material-0.2.zip
     ```
 
 2. Upload and activate tuples using:
@@ -184,7 +184,7 @@ time-consuming process, we provide pre-generated material.
     cat << 'EOF' > upload-tuples.sh
     #!/bin/bash
     SCRIPT_PATH="$( cd "$(dirname "$0")" ; pwd -P )"
-    TUPLE_FOLDER=${SCRIPT_PATH}/crypto-material/2-128-40
+    TUPLE_FOLDER=${SCRIPT_PATH}/crypto-material/2-p-128
     CLI_PATH=${SCRIPT_PATH}
     NUMBER_OF_CHUNKS=1
 

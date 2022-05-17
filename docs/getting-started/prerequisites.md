@@ -1,6 +1,7 @@
 # Setting up the prerequisites
 
-This guide describes how to install the prerequisites required to deploy Carbyne Stack.
+This guide describes how to install the prerequisites required to deploy
+Carbyne Stack.
 
 !!! warning
     Carbyne Stack has been tested using the **exact versions** of the tools
@@ -9,7 +10,9 @@ This guide describes how to install the prerequisites required to deploy Carbyne
 
 ## Prerequisites
 
-This part of the tutorial is developed and tested with Ubuntu 20.04. Please refer to this [link](https://ubuntu.com/tutorials/install-ubuntu-desktop) for Ubuntu installation steps.
+This part of the tutorial is developed and tested with Ubuntu 20.04.
+Please refer to this [link](https://ubuntu.com/tutorials/install-ubuntu-desktop)
+for Ubuntu installation steps.
 
 ## Platform Setup Prerequisites
 
@@ -21,7 +24,8 @@ Software to be installed:
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/) v1.21.1
 - [Helm](https://helm.sh/docs/intro/install/) v3.7.1
 
-Please set the following software version strings before you continue with our installation instructions.
+Please set the following software version strings before you continue with our
+installation instructions.
 
 ```shell
 export go_ver=1.18
@@ -33,7 +37,10 @@ export helm_ver=3.7.1
 
 ### go
 
-The go language is a prerequisite for the Kind package. In this guideline go 1.18 will be installed. Detailed installation instructions for go can be found [here](https://go.dev/doc/install). Alternatively, you can install go by following the instructions below.
+The go language is a prerequisite for the Kind package.
+In this guideline go 1.18 will be installed.
+Detailed installation instructions for go can be found [here](https://go.dev/doc/install).
+Alternatively, you can install go by following the instructions below.
 
 1. Download go language for Linux.
 
@@ -52,7 +59,7 @@ The go language is a prerequisite for the Kind package. In this guideline go 1.1
     ```shell
     ls /usr/local
     ```
- 
+
 4. Update `PATH` for go with the commands below.
 
     ```shell
@@ -68,7 +75,9 @@ The go language is a prerequisite for the Kind package. In this guideline go 1.1
 
 ### Docker Engine
 
-Detailed installation instructions for Docker Engine can be found [here](https://docs.docker.com/engine/install/ubuntu/). Alternatively, you can install Docker Engine by following the instructions below.
+Detailed installation instructions for Docker Engine can be found
+[here](https://docs.docker.com/engine/install/ubuntu/).
+Alternatively, you can install Docker Engine by following the instructions below.
 
 1. Update repository index and install dependencies.
 
@@ -114,7 +123,8 @@ Detailed installation instructions for Docker Engine can be found [here](https:/
 
 ### Kind
 
-Detailed installation instructions for Kind can be found [here](https://kind.sigs.k8s.io/). Alternatively, you can install Kind by following the instructions below.
+Detailed installation instructions for Kind can be found [here](https://kind.sigs.k8s.io/).
+Alternatively, you can install Kind by following the instructions below.
 
 1. Install Kind 0.11.0.
 
@@ -122,7 +132,10 @@ Detailed installation instructions for Kind can be found [here](https://kind.sig
     go install sigs.k8s.io/kind@v$kind_ver
     ```
 
-2. Add the local go path to `PATH`. You may have a different go path. Please check `GOPATH` with `go env` and replace `~/go` in the below command with your `GOPATH`.
+2. Add the local go path to `PATH`.
+   You may have a different go path.
+   Please check `GOPATH` with `go env` and replace `~/go` in the below
+   command with your `GOPATH`.
 
     ```shell
     echo 'export PATH=$PATH:~/go/bin' >> ~/.bashrc 
@@ -137,7 +150,9 @@ Detailed installation instructions for Kind can be found [here](https://kind.sig
 
 ### kubectl
 
-Detailed installation instructions for kubectl can be found [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/). Alternatively, you can install kubectl by following the instructions below.
+Detailed installation instructions for kubectl can be found
+[here](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/).
+Alternatively, you can install kubectl by following the instructions below.
 
 1. Download kubectl 1.21.1.
 
@@ -159,7 +174,9 @@ Detailed installation instructions for kubectl can be found [here](https://kuber
 
 ### Helm
 
-Detailed installation instructions for the Helm package manager can be found [here](https://helm.sh/docs/intro/install/). Alternatively, you can install Helm by following the instructions below.
+Detailed installation instructions for the Helm package manager can be found
+[here](https://helm.sh/docs/intro/install/).
+Alternatively, you can install Helm by following the instructions below.
 
 1. Download the Helm package manager.
 
@@ -193,7 +210,8 @@ Software to be installed:
 - [Helm Diff Plugin](https://github.com/databus23/helm-diff) v3.1.3
 - [OpenJDK](https://openjdk.java.net/install/) 8
 
-Please set the following software version strings before you continue with our installation instructions.
+Please set the following software version strings before you continue with our
+installation instructions.
 
 ```shell
 export helmfile_ver=0.142.0
@@ -202,7 +220,9 @@ export helmdiff_ver=3.1.3
 
 ### Helmfile
 
-Detailed installation instructions for the Helmfile package can be found [here](https://github.com/roboll/helmfile). Alternatively, you can install Helmfile by following the instructions below.
+Detailed installation instructions for the Helmfile package can be found
+[here](https://github.com/roboll/helmfile).
+Alternatively, you can install Helmfile by following the instructions below.
 
 1. Download the Helmfile package.
 
@@ -230,7 +250,9 @@ Detailed installation instructions for the Helmfile package can be found [here](
 
 ### Helm Diff Plugin
 
-Detailed installation instructions for the Helm Diff plugin can be found [here](https://github.com/databus23/helm-diff). Alternatively, you can install Helm Diff by following the instructions below.
+Detailed installation instructions for the Helm Diff plugin can be found
+[here](https://github.com/databus23/helm-diff).
+Alternatively, you can install Helm Diff by following the instructions below.
 
 1. Download Helm Diff plugin compressed file.
 
@@ -244,7 +266,12 @@ Detailed installation instructions for the Helm Diff plugin can be found [here](
     tar -zxvf helm-diff-linux.tgz
     ```
 
-3. Put the unpacked contents into the helm plugins folder. You may have a different folder. Please check `HELM_PLUGINS` with `helm env` command. Please create the folders if they do not exist. Note that the `diff` folder must not exist in the helm plugins folder before executing the command below.
+3. Put the unpacked contents into the helm plugins folder.
+   You may have a different folder.
+   Please check `HELM_PLUGINS` with `helm env` command.
+   Please create the folders if they do not exist.
+   Note that the `diff` folder must not exist in the helm plugins folder before
+   executing the command below.
 
     ```shell
     mv diff ~/.local/share/helm/plugins/diff
@@ -258,7 +285,9 @@ Detailed installation instructions for the Helm Diff plugin can be found [here](
 
 ### OpenJDK
 
-Detailed installation instructions for OpenJDK can be found [here](https://openjdk.java.net/install/). Alternatively, you can install OpenJDK by following the instructions below.
+Detailed installation instructions for OpenJDK can be found
+[here](https://openjdk.java.net/install/).
+Alternatively, you can install OpenJDK by following the instructions below.
 
 1. Install with the command.
 
@@ -271,4 +300,3 @@ Detailed installation instructions for OpenJDK can be found [here](https://openj
     ```shell
     java -version
     ```
-    
