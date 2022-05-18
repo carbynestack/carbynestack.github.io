@@ -12,7 +12,27 @@ JUNE 7 - 10, 2022 | AARHUS (DENMARK).
 
 !!! abstract
 
-    Not available yet.
+    Data has become a strategic asset that is pooled with others for joint 
+    processing, monetized on data platforms, and used to fuel the AI revolution. 
+    As the ability to leverage internal and external data is becoming a major
+    factor for business success, protecting valuable data is more important than
+    ever. Computing on Encrypted Data technologies in general and Secure
+    Multiparty Computation (MPC) in particular pave the way for strong
+    end-to-end protection of data by enabling encryption in use.
+
+    One roadblock for the wider adoption of MPC so far has been the lack of
+    integration with state-of-the-art cloud technology to enable resilient,
+    observable, and manageable MPC deployments at scale. The Carbyne Stack
+    open-source project has set out to close this gap by lifting MPC into the
+    cloud.
+
+    This talk will shed light on various aspects of Carbyne Stack: Why did Bosch
+    Research start this initiative? How does the architecture and design of
+    Carbyne Stack reflect the special characteristics of MPC? How can
+    cloud-native technologies help in solving the challenges of scaling MPC
+    workloads? In addition, the audience will get an outlook on what's next for
+    Carbyne Stack and how interested individuals, institutions, and companies
+    can contribute to the Carbyne Stack open-source project.
 
 ---
 
