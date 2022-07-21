@@ -1,0 +1,82 @@
+/*
+ * Copyright (c) 2021 - for information on the respective copyright owner
+ * see the NOTICE file and/or the repository https://github.com/carbynestack/carbynestack.github.io.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+:root {
+  --nav-item-color: #4d4d4d;
+}
+
+.md-nav__item--nested > .md-nav__link,
+.md-nav__item a {
+  color: var(--nav-item-color);
+}
+
+.md-nav__item--nested > .md-nav__link:hover {
+  color: var(--md-accent-fg-color);
+}
+
+.md-header {
+  background-color: black;
+}
+
+.md-tabs {
+  background-color: black;
+}
+
+.gsoc-topic-section-title {
+  font-size: 1.4em;
+  padding-bottom: -1.2em;
+}
+
+.gsoc-topic-section-h1 {
+  font-size: 1.2em;
+}
+
+.gsoc-topic-section-h2 {
+  font-size: 1.1em;
+  font-style: italic;
+}
+
+.gsoc-legend {
+  font-size: 0.8em;
+  font-weight: bolder;
+  padding-right: 30px;
+}
+
+.ecosystem-logo {
+  width: auto;
+  height: 50px !important;
+}
+
+.acknowledgements-logo {
+  width: auto;
+  height: 200px;
+}
+
+.event-title {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.event-logo {
+  width: auto;
+  height: 70px !important;
+}
+
+.invert {
+  filter: invert(1);
+}
+
+.announcement-bar {
+  font-size: medium;
+}
+
+.announcement-bar a {
+  color: var(--md-accent-fg-color);
+}
+
+.announcement-bar a:where(:focus, :hover) {
+  color: var(--md-typeset-a-color) !important;
+}
