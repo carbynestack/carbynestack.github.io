@@ -184,24 +184,43 @@ time-consuming process, we provide pre-generated material.
     cat << 'EOF' > upload-tuples.sh
     #!/bin/bash
     SCRIPT_PATH="$( cd "$(dirname "$0")" ; pwd -P )"
-    TUPLE_FOLDER=${SCRIPT_PATH}/crypto-material/2-p-128
-    CLI_PATH=${SCRIPT_PATH}
+    TUPLE_FOLDER=${SCRIPT_PATH}/crypto-material/
+    cs="java -jar ${SCRIPT_PATH}/cs.jar"
     NUMBER_OF_CHUNKS=1
+
+    tuples=(
+      "BIT_GFP,2-p-128/Bits-p"
+      "BIT_GF2N,2-2-40/Bits-2"
+      "INPUT_MASK_GFP,2-p-128/Triples-p"
+      "INPUT_MASK_GF2N,2-2-40/Triples-2"
+      "INVERSE_TUPLE_GFP,2-p-128/Inverses-p"
+      "INVERSE_TUPLE_GF2N,2-2-40/Inverses-2"
+      "SQUARE_TUPLE_GFP,2-p-128/Squares-p"
+      "SQUARE_TUPLE_GF2N,2-2-40/Squares-2"
+      "MULTIPLICATION_TRIPLE_GFP,2-p-128/Triples-p"
+      "MULTIPLICATION_TRIPLE_GF2N,2-2-40/Triples-2"
+    )
 
     function uploadTuples {
        echo ${NUMBER_OF_CHUNKS}
-       for type in INPUT_MASK_GFP MULTIPLICATION_TRIPLE_GFP; do
+       for t in ${tuples[@]}; do
+          OLDIFS=$IFS
+          IFS=','
+          set -- $t
+          type=$1
+          tuple_file=$2
+          IFS=$OLDIFS
           for (( i=0; i<${NUMBER_OF_CHUNKS}; i++ )); do
              local chunkId=$(uuidgen)
              echo "Uploading ${type} to http://${APOLLO_FQDN}/castor (Apollo)"
-             java -jar ${CLI_PATH}/cs.jar castor upload-tuple -f ${TUPLE_FOLDER}/Triples-p-P0 -t ${type} -i ${chunkId} 1
+             $cs castor upload-tuple -f ${TUPLE_FOLDER}/${tuple_file}-P0 -t ${type} -i ${chunkId} 1
              local statusMaster=$?
              echo "Uploading ${type} to http://${STARBUCK_FQDN}/castor (Starbuck)"
-             java -jar ${CLI_PATH}/cs.jar castor upload-tuple -f ${TUPLE_FOLDER}/Triples-p-P1 -t ${type} -i ${chunkId} 2
+             $cs castor upload-tuple -f ${TUPLE_FOLDER}/${tuple_file}-P1 -t ${type} -i ${chunkId} 2
              local statusSlave=$?
              if [[ "${statusMaster}" -eq 0 && "${statusSlave}" -eq 0 ]]; then
-                java -jar ${CLI_PATH}/cs.jar castor activate-chunk -i ${chunkId} 1
-                java -jar ${CLI_PATH}/cs.jar castor activate-chunk -i ${chunkId} 2
+                $cs castor activate-chunk -i ${chunkId} 1
+                $cs castor activate-chunk -i ${chunkId} 2
              else
                 echo "ERROR: Failed to upload one tuple chunk - not activated"
              fi
