@@ -30,26 +30,26 @@ We are in the process of putting together an exciting and fun program for
 CarbyneStackCon '22. See below for the **current draft**. Stay tuned for further
 updates. Note that all times are Central European Summer Time (CEST).
 
-| Time         | Agenda Item                                                                                                                                                             |
-|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 8:00 am      | Registration                                                                                                                                                            |
-| 9:00 am      | Opening                                                                                                                                                                 |
-| 9:15 am      | **Keynote** <br> _Secure multi-party computation. When? Which kind? For whom?_ <br> Dr. Dan Bogdanov (Cybernetica / MPC Alliance)                                       |
-| 9:45 am      | **Keynote** <br> _Carbyne Stack - Open Source cloud-native MPC_ (working title) <br> Dr. Sven Trieflinger (Bosch Research)                                              |
-| 10:15 am     | Coffee break and group photo                                                                                                                                            |
-| 10:45 am     | **Industry Talk** <br> _TBD_ <br> Dr. Axel Schröpfer (SAP Research)                                                                                                     |
-| 11:15 am     | **Industry Talk** <br> _TBD_ <br> Dr. Kalman Graffi (Honda Research Institut Europe)                                                                                    |
-| 11:45 am     | Community awards and announcements                                                                                                                                      |
-| 12:00 am     | Lunch                                                                                                                                                                   |
-| 1:00 pm      | **Hands-on Session** <br> _Vision, Mission, Roadmap for Carbyne Stack_                                                                                                  |
-| 2:30 pm      | Coffee break                                                                                                                                                            |
-| 3:00 pm      | **Research Talk** <br> _Towards a fast and efficient offline phase for Carbyne Stack_ (working title) <br> Vincent Rieder (Bosch Research)                              |
-| 3:30 pm      | **Research Talk** <br> _MPC-based Analytics for Carbyne Stack based on the Secrecy MPC-DBMS_ (working title) <br> Assist. Prof. Dr. John Liagouris (Boston University)  |
-| 4:00 pm      | **Research Talk** <br>_Generalized Tuples for MP-SPDZ_ (working title) <br> Dr. Pascal Reisert (University of Stuttgart)                                                |
-| 4:30 pm      | Coffee break                                                                                                                                                            |
-| 5:00 pm      | **Hands-on Session** <br> _Carbyne Stack Open Source Community Vision_                                                                                                  |
-| 6:00 pm      | Closing and feedback                                                                                                                                                    |
-| from 6:30 pm | Dinner (see [below](#dinner))                                                                                                                                           |
+| Time         | Agenda Item                                                                                                                                                                             |
+|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 8:00 am      | Registration                                                                                                                                                                            |
+| 9:00 am      | Opening                                                                                                                                                                                 |
+| 9:15 am      | **Keynote** <br> _Secure multi-party computation. When? Which kind? For whom?_ <br> Dr. Dan Bogdanov (Chief Science Officer at Cybernetica, Board Member at the MPC Alliance)           |
+| 9:45 am      | **Keynote** <br> _One year of Carbyne Stack - Retrospective and Outlook_ <br> Dr. Sven Trieflinger (Senior Research Project Manager and Carbyne Stack Maintainer at Bosch Research)     |
+| 10:15 am     | Coffee break and group photo                                                                                                                                                            |
+| 10:45 am     | **Industry Talk** <br> _Privacy-preserving Cross-company Data Collaborations_ <br> Dr. Jonas Böhler (Senior Researcher at SAP Security Research)                                        |
+| 11:15 am     | **Industry Talk** <br> _Multi-cloud multi-party computation for multiple data providers_ <br> Dr.-Ing. Kalman Graffi (Principal Scientist at Honda Research Institute Europe)           |
+| 11:45 am     | Community awards and announcements                                                                                                                                                      |
+| 12:00 am     | Lunch                                                                                                                                                                                   |
+| 1:00 pm      | **Hands-on Session** <br> _Vision, Mission, Roadmap for Carbyne Stack_                                                                                                                  |
+| 2:30 pm      | Coffee break                                                                                                                                                                            |
+| 3:00 pm      | **Research Talk** <br> _Cost-effective MPC from an offline phase with low communication_ <br> Vincent Rieder (PhD Candidate at Bosch Research)                                          |
+| 3:30 pm      | **Research Talk** <br> _Secrecy: Secure collaborative analytics in untrusted clouds_ <br> Dr. John Liagouris (Assistant Professor at Boston University)                                 |
+| 4:00 pm      | **Research Talk** <br> _Generalized Tuples for MP-SPDZ_ (working title) <br> Dr. Pascal Reisert (Postdoctoral Researcher at Institute of Information Security, University of Stuttgart) |
+| 4:30 pm      | Coffee break                                                                                                                                                                            |
+| 5:00 pm      | **Hands-on Session** <br> _Carbyne Stack Open Source Community Vision_                                                                                                                  |
+| 6:00 pm      | Closing and feedback                                                                                                                                                                    |
+| from 6:30 pm | Dinner (see [below](#dinner))                                                                                                                                                           |
 
 ## Venue Information
 
