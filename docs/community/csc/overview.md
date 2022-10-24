@@ -15,6 +15,11 @@ discussion and knowledge sharing within the Carbyne Stack community.
 
 ## Registration
 
+!!! warning "In-person registration closed"
+
+    In-person registration is closed since 6 pm, October 24, 2022 (CEST).
+    **Registration for virtual attendance is still possible**.
+
 CarbyneStackCon '22 (CSC22) is an open event sponsored by Bosch Research.
 Everyone interested is welcome to attend! However, seats for in-person
 participation are limited and registration is required in order to facilitate
@@ -319,7 +324,7 @@ Vision</span>
 ---
 :octicons-clock-16: <span class="gsoc-legend">6:00 pm</span>
 
-<span class="gsoc-topic-section-title">Close and feedback session</span>
+<span class="gsoc-topic-section-title">Closing and feedback session</span>
 
 ---
 :octicons-clock-16: <span class="gsoc-legend">from 6:30 pm</span>
