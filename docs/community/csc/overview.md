@@ -5,6 +5,8 @@ hide:
 
 # CarbyneStackCon '22
 
+!!! warning "CarbyneStackCon '22 is over. Stay tuned for CarbyneStackCon '23!"
+
 <p style="text-align: center; margin: 5em 0 5em 0;">
   <img alt="CarbyneStackCon Logo" src="/images/events/csc/csc22-logo.png">
 </p>
@@ -12,6 +14,20 @@ hide:
 The _Carbyne Stack Conference_ (or _CarbyneStackCon_) is the annual meetup of
 the Carbyne Stack Open Source Community. It is designed to foster collaboration,
 discussion and knowledge sharing within the Carbyne Stack community.
+
+## Retrospective
+
+<p style="text-align: center;">
+  <img alt="CarbyneStackCon Logo" src="/images/events/csc/csc22-collage.png">
+</p>
+
+CarbyneStackCon '22 was a blast. We had an engaged audience of 20 MPC
+enthusiasts on site and another 40 who dialed in from all over the world. In
+addition to awesome talks on use cases and business ideas around MPC and Carbyne
+Stack (we'll be making recordings available in the coming weeks), we used the
+opportunity to work on a shared vision and roadmap for Carbyne Stack. It was a
+pleasure to have you all as our guests. We look forward to seeing you all next
+year at CarbyneStackCon '23!
 
 ## Registration
 
