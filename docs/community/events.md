@@ -2,6 +2,22 @@
 
 ## Upcoming Events
 
+N/A
+
+## Past Events
+
+### [German IT Security Award][gitsa22]
+
+<figure markdown>
+  ![GITSA_Image](../images/events/gitsa22.png)
+  <figcaption>Copyright: Horst Goertz Institute, Schwettmann</figcaption>
+</figure>
+
+Carbyne Stack has won 3rd place at this year's prestigious German IT Security
+Award. The award ceremony took place on November 10 in Bochum as part of the 2nd
+Cybersecurity Innovation Conference under the patronage of Federal Minister of
+the Interior Nancy Faeser. See [here][gitsa22] for additional information.
+
 ### [CarbyneStackCon '22][csc22]
 
 ![CSC_Logo](../images/events/csc/csc22-logo-no-dates.png){ class="event-logo" }
@@ -10,8 +26,6 @@ See the dedicated [event page][csc22] for detailed information about our
 upcoming hybrid Carbyne Stack community gathering in Stuttgart.
 
 ---
-
-## Past Events
 
 ### [StackConf '22][stackconf22]
 
@@ -138,6 +152,7 @@ APRIL 4 – 7, 2022 | VIRTUAL (Bosch internal)
 
 ---
 
+[gitsa22]: https://www.deutscher-it-sicherheitspreis.de/
 [csc22]: /community/csc/overview/
 [tpmpc22]: https://www.multipartycomputation.com/tpmpc-2022
 [ossna22]: https://events.linuxfoundation.org/open-source-summit-north-america/
