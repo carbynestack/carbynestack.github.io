@@ -285,6 +285,9 @@ Alternatively, you can install Helm Diff by following the instructions below.
 
 ### OpenJDK
 
+!!! tip
+    For easy installation and management of parallel JDK versions check [sdkman](https://sdkman.io/).
+
 Detailed installation instructions for OpenJDK can be found
 [here](https://openjdk.java.net/install/).
 Alternatively, you can install OpenJDK by following the instructions below.
