@@ -12,3 +12,4 @@ file in the Carbyne Stack
 ### Robert Bosch GmbH
 
 - Trieflinger Sven <sven.trieflinger@de.bosch.com>
+- Veselin Vlasakiev <veselin@veselin.org>
