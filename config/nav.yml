@@ -16,7 +16,10 @@ nav:
   - Community:
       - Participate: community/participate.md
       - Ecosystem: community/ecosystem.md
-      - Events: community/events.md
+      - Events:
+          - community/events/index.md
+          - CarbyneStackCon'22:
+              - community/events/csc22/index.md
       - Media Coverage: community/media-coverage.md
       - Opportunities: community/opportunities.md
       - Google Summer of Code: community/gsoc.md
