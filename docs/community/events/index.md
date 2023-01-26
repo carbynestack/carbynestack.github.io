@@ -9,7 +9,7 @@ N/A
 ### [German IT Security Award][gitsa22]
 
 <figure markdown>
-  ![GITSA_Image](../images/events/gitsa22.png)
+  ![GITSA_Image](/images/events/gitsa22.png)
   <figcaption>Copyright: Horst Goertz Institute, Schwettmann</figcaption>
 </figure>
 
@@ -20,7 +20,7 @@ the Interior Nancy Faeser. See [here][gitsa22] for additional information.
 
 ### [CarbyneStackCon '22][csc22]
 
-![CSC_Logo](../images/events/csc/csc22-logo-no-dates.png){ class="event-logo" }
+![CSC_Logo](/images/events/csc/csc22-logo-no-dates.png){ class="event-logo" }
 
 See the dedicated [event page][csc22] for detailed information about our
 upcoming hybrid Carbyne Stack community gathering in Stuttgart.
@@ -32,7 +32,7 @@ upcoming hybrid Carbyne Stack community gathering in Stuttgart.
 <span class="event-title">Scaling the Grail - Cloud-Native Computing on
 Encrypted Data using Carbyne Stack ([Contributed Talk][stackconf22-talk])</span>
 
-![Stackconf Logo](../images/events/stackconf22.png){ class="event-logo" }
+![Stackconf Logo](/images/events/stackconf22.png){ class="event-logo" }
 
 JULY 19 – 20, 2022 | BERLIN (GERMANY)
 
@@ -55,13 +55,13 @@ JULY 19 – 20, 2022 | BERLIN (GERMANY)
 <span class="event-title">Carbyne Stack - Cloud Native Computing on Encrypted
 Data ([Contributed Talk][ossna22-talk])</span>
 
-![OSS-NA Logo](../images/events/ossna22.svg){ class="event-logo" }
+![OSS-NA Logo](/images/events/ossna22.svg){ class="event-logo" }
 
 JUNE 21 - 24, 2022 | AUSTIN, TEXAS (US).
 
 !!! abstract
 
-    Data has become a strategic asset that is pooled with others for joint 
+    Data has become a strategic asset that is pooled with others for joint
     processing, monetized on data platforms, and used to fuel the AI revolution.
     As the ability to leverage internal and external data is becoming a major
     factor for business success, protecting valuable data is more important than
@@ -76,7 +76,7 @@ JUNE 21 - 24, 2022 | AUSTIN, TEXAS (US).
     how Carbyne Stack blends cloud-native technology (including Kubernetes,
     Istio, Knative, and others) to solve the specific challenges of deploying
     MPC in the cloud like cross-cluster orchestration of MPC services and
-    serverless provisioning of MPC workloads. 
+    serverless provisioning of MPC workloads.
 
 :material-presentation: [Slides](https://static.sched.com/hosted_files/ossna2022/6b/20220623%20Carbyne%20Stack%20-%20Cloud%20Native%20Computing%20on%20Encrypted%20Data.pdf)
 
@@ -86,14 +86,14 @@ JUNE 21 - 24, 2022 | AUSTIN, TEXAS (US).
 
 <span class="event-title">Open Source Cloud-Native MPC (Invited Talk)</span>
 
-![TPMPC Logo](../images/events/tpmpc22.png){ class="event-logo" }
+![TPMPC Logo](/images/events/tpmpc22.png){ class="event-logo" }
 
 JUNE 7 - 10, 2022 | AARHUS (DENMARK).
 
 !!! abstract
 
-    Data has become a strategic asset that is pooled with others for joint 
-    processing, monetized on data platforms, and used to fuel the AI revolution. 
+    Data has become a strategic asset that is pooled with others for joint
+    processing, monetized on data platforms, and used to fuel the AI revolution.
     As the ability to leverage internal and external data is becoming a major
     factor for business success, protecting valuable data is more important than
     ever. Computing on Encrypted Data technologies in general and Secure
@@ -126,7 +126,7 @@ JUNE 7 - 10, 2022 | AARHUS (DENMARK).
 using the Open Source Carbyne Stack Secure Multiparty Computation Platform
 (Tutorial)</span>
 
-![BoCSE '22 Logo](../images/events/bocse22.png){ class="event-logo" }
+![BoCSE '22 Logo](/images/events/bocse22.png){ class="event-logo" }
 
 APRIL 4 – 7, 2022 | VIRTUAL (Bosch internal)
 
@@ -153,7 +153,7 @@ APRIL 4 – 7, 2022 | VIRTUAL (Bosch internal)
 ---
 
 [gitsa22]: https://www.deutscher-it-sicherheitspreis.de/
-[csc22]: /community/csc/overview/
+[csc22]: /community/events/csc22/
 [tpmpc22]: https://www.multipartycomputation.com/tpmpc-2022
 [ossna22]: https://events.linuxfoundation.org/open-source-summit-north-america/
 [ossna22-talk]: https://sched.co/11NhT

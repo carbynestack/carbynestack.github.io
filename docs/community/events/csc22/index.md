@@ -1,8 +1,3 @@
----
-hide:
-- navigation
----
-
 # CarbyneStackCon '22
 
 !!! warning "CarbyneStackCon '22 is over. Stay tuned for CarbyneStackCon '23!"
@@ -72,6 +67,8 @@ all times are Central European Summer Time (CEST).
 <span class="gsoc-topic-section-title">Secure multi-party computation. When?
 Which kind? For whom?</span>
 
+:material-video: [Recording](https://media.video.bosch.com/media/Secure+multi-party+computation.+WhenF+Which+kindF+For+whomF/0_odgv7xjj)
+
 ???+ info "Dr. Dan Bogdanov (Chief Science Officer at Cybernetica, Board Member at the MPC Alliance)"
 
     Dan is the inventor of Sharemind, a secure multi-party computation system
@@ -95,6 +92,8 @@ Which kind? For whom?</span>
 
 <span class="gsoc-topic-section-title">One year of Carbyne Stack -
 Retrospective and Outlook</span>
+
+:material-video: [Recording](https://media.video.bosch.com/media/One+year+of+Carbyne+Stack+-+Retrospective+and+Outlook/0_0bf5i0td)
 
 ???+ info "Dr. Sven Trieflinger (Senior Research Project Manager for Privacy-Preserving Computing Technologies at Bosch Research)"
 
@@ -130,6 +129,8 @@ Retrospective and Outlook</span>
 <span class="gsoc-topic-section-title">Privacy-preserving Cross-company Data
 Collaborations</span>
 
+:material-video: [Recording](https://media.video.bosch.com/media/Privacy-preserving+Cross-company+Data+Collaborations/0_g33vpqqt)
+
 ???+ info "Dr. Jonas Böhler (Senior Researcher at SAP Security Research)"
 
     Jonas is a senior researcher at SAP security research. He received his PhD
@@ -154,12 +155,14 @@ Collaborations</span>
 <span class="gsoc-topic-section-title">Multi-cloud multi-party computation for
 multiple data providers</span>
 
+:material-video: [Recording](https://media.video.bosch.com/media/Multi-cloud+multi-party+computation+for+multiple+data+providers/0_htlkp4q4)
+
 ???+ info "Dr.-Ing. Kalman Graffi (Principal Scientist at Honda Research Institute Europe)"
 
     Kalman is Principal Scientist at Honda Research Institute Europe. His work
     focuses specifically on scalable privacy-preserving computation approaches
     and concepts for vulnerability modeling and detection. Previously, he was a
-    professor (W1) at the University of Düsseldorf. 
+    professor (W1) at the University of Düsseldorf.
 
 ???+ abstract
 
@@ -208,6 +211,8 @@ Features for Carbyne Stack</span>
 <span class="gsoc-topic-section-title">Cost-effective MPC from an offline phase
 with low communication</span>
 
+:material-video: [Recording](https://media.video.bosch.com/media/Cost-effective+MPC+from+an+offline+phase+with+low+communication/0_r7o1ieng)
+
 ???+ info "Vincent Rieder (PhD Candidate at Bosch Research)"
 
     Vincent Rieder is a Phd student at Bosch, working on the topic of
@@ -234,6 +239,8 @@ with low communication</span>
 
 <span class="gsoc-topic-section-title">Secrecy: Secure collaborative analytics
 in untrusted clouds</span>
+
+:material-video: [Recording](https://media.video.bosch.com/media/SecrecyA+Secure+collaborative+analytics+in+untrusted+clouds/0_xj7lq4or)
 
 ???+ info "Dr. John Liagouris (Assistant Professor at Boston University)"
 
@@ -267,6 +274,8 @@ in untrusted clouds</span>
 
 <span class="gsoc-topic-section-title">Generalized Tuples for MP-SPDZ</span>
 
+:material-video: [Recording](https://media.video.bosch.com/media/Generalized+Tuples+for+MP-SPDZ/0_xbchnv9y)
+
 ???+ info "Dr. Pascal Reisert (Postdoctoral Researcher at Institute of Information Security, University of Stuttgart)"
 
     Pascal studied Mathematics and Physics at the Ludwig-Maximilians
@@ -297,6 +306,8 @@ in untrusted clouds</span>
 
 <span class="gsoc-topic-section-title">Decentralized Cosmos-based
 MPC-as-a-Service powered by Carbyne Stack</span>
+
+:material-video: [Recording](https://media.video.bosch.com/media/Decentralized+Cosmos-based+MPC-as-a-Service+powered+by+Carbyne+Stack/0_ssnahlrz)
 
 ???+ info "Jared Weinfurtner (Full-Stack Software Engineer for Privacy-Preserving Computing Technologies, Robert Bosch GmbH)"
 

@@ -31,7 +31,6 @@ theme:
     - navigation.tracking
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.expand
     - navigation.indexes
     - navigation.top
   logo: images/logo/carbynestack.svg
