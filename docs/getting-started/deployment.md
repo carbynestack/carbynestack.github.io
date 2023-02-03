@@ -1,5 +1,10 @@
 # Stack Deployment Guide
 
+!!! danger
+    Klyshko currently supports insecure offline material generation only. Using
+    this material is not secure at all. **_DO NOT DO THIS IN A PRODUCTION
+    SETTING_**.
+
 This guide describes how to set up a Carbyne Stack Virtual Cloud (VC) consisting
 of two Virtual Cloud Providers (VCP).
 
@@ -97,7 +102,9 @@ clusters using the kind tool as described in the
 
 1. Wait until all pods in both clusters are in the `ready` state.
 
-## Preparing the Virtual Cloud
+You now have a fully functional Carbyne Stack Virtual Cloud at your hands.
+
+## Configuring the CLI
 
 1. Carbyne Stack comes with a CLI that can be used to interact with a virtual
    cloud from the command line. Install the CLI using:
@@ -137,7 +144,7 @@ clusters using the kind tool as described in the
     ```
 
     Alternatively, you can use the CLI tool itself to do the configuration by
-    providing the respective values (as seen above in the HEREDOC) when asked
+    providing the respective values (as seen above in the HEREDOC) when prompted
     using:
 
     ```shell
@@ -154,98 +161,6 @@ clusters using the kind tool as described in the
     ```shell
     java -jar cs.jar castor get-telemetry <#>
     ```
-
-### Upload Offline Material
-
-Before you can actually use the services provided by the Virtual Cloud, you have
-to upload cryptographic material. As generating offline material is a very
-time-consuming process, we provide pre-generated material.
-
-!!! danger
-    Using pre-generated offline material is not secure at all. **_DO NOT DO THIS
-    IN A PRODUCTION SETTING_**.
-
-1. Download and decompress the archive containing the material using:
-
-    ```shell
-    curl -O -L https://github.com/carbynestack/carbynestack/raw/9c0c17599ae08253398a000f2a23b3ded8611499/tuples/fake-crypto-material-0.2.zip
-    unzip -d crypto-material fake-crypto-material-0.2.zip
-    rm fake-crypto-material-0.2.zip
-    ```
-
-2. Upload and activate tuples using:
-
-    !!! tip
-        Adapt the `NUMBER_OF_CHUNKS` variable in the following snippet to tune
-        the number of uploaded tuples. In case`NUMBER_OF_CHUNKS > 1` the **same**
-        tuples are uploaded repeatedly.
-
-    ```shell
-    cat << 'EOF' > upload-tuples.sh
-    #!/bin/bash
-    SCRIPT_PATH="$( cd "$(dirname "$0")" ; pwd -P )"
-    TUPLE_FOLDER=${SCRIPT_PATH}/crypto-material/
-    cs="java -jar ${SCRIPT_PATH}/cs.jar"
-    NUMBER_OF_CHUNKS=1
-
-    tuples=(
-      "BIT_GFP,2-p-128/Bits-p"
-      "BIT_GF2N,2-2-40/Bits-2"
-      "INPUT_MASK_GFP,2-p-128/Triples-p"
-      "INPUT_MASK_GF2N,2-2-40/Triples-2"
-      "INVERSE_TUPLE_GFP,2-p-128/Inverses-p"
-      "INVERSE_TUPLE_GF2N,2-2-40/Inverses-2"
-      "SQUARE_TUPLE_GFP,2-p-128/Squares-p"
-      "SQUARE_TUPLE_GF2N,2-2-40/Squares-2"
-      "MULTIPLICATION_TRIPLE_GFP,2-p-128/Triples-p"
-      "MULTIPLICATION_TRIPLE_GF2N,2-2-40/Triples-2"
-    )
-
-    function uploadTuples {
-       echo ${NUMBER_OF_CHUNKS}
-       for t in ${tuples[@]}; do
-          OLDIFS=$IFS
-          IFS=','
-          set -- $t
-          type=$1
-          tuple_file=$2
-          IFS=$OLDIFS
-          for (( i=0; i<${NUMBER_OF_CHUNKS}; i++ )); do
-             local chunkId=$(uuidgen)
-             echo "Uploading ${type} to http://${APOLLO_FQDN}/castor (Apollo)"
-             $cs castor upload-tuple -f ${TUPLE_FOLDER}/${tuple_file}-P0 -t ${type} -i ${chunkId} 1
-             local statusMaster=$?
-             echo "Uploading ${type} to http://${STARBUCK_FQDN}/castor (Starbuck)"
-             $cs castor upload-tuple -f ${TUPLE_FOLDER}/${tuple_file}-P1 -t ${type} -i ${chunkId} 2
-             local statusSlave=$?
-             if [[ "${statusMaster}" -eq 0 && "${statusSlave}" -eq 0 ]]; then
-                $cs castor activate-chunk -i ${chunkId} 1
-                $cs castor activate-chunk -i ${chunkId} 2
-             else
-                echo "ERROR: Failed to upload one tuple chunk - not activated"
-             fi
-          done
-       done
-    }
-
-    uploadTuples
-    EOF
-    chmod 755 upload-tuples.sh
-    ./upload-tuples.sh
-    ```
-
-3. You can verify that the uploaded tuples are now available for use by the
-   Carbyne Stack services using:
-
-    !!! attention
-        Replace `<#>` with either `1` for the `apollo` cluster or `2` for the
-        `starbuck` cluster.
-
-    ```shell
-    java -jar cs.jar castor get-telemetry <#>
-    ```
-
-You now have a fully functional Carbyne Stack Virtual Cloud at your hands.
 
 ## Teardown the Virtual Cloud
 
