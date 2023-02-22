@@ -16,23 +16,23 @@ for Ubuntu installation steps.
 
 ## Platform Setup Prerequisites
 
-Software to be installed:
+Software to be installed throughout this tutorial step:
 
 - [go](https://go.dev/doc/install) 1.18
-- [Docker Engine](https://docs.docker.com/engine/install/ubuntu/) v20.10.6
-- [Kind](https://kind.sigs.k8s.io/) v0.11.0
-- [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/) v1.21.1
-- [Helm](https://helm.sh/docs/intro/install/) v3.7.1
+- [Docker Engine](https://docs.docker.com/engine/install/ubuntu/) v23.0.1
+- [Kind](https://kind.sigs.k8s.io/) v0.17.0
+- [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/) v1.26.1
+- [Helm](https://helm.sh/docs/intro/install/) v3.11.1
 
 Please set the following software version strings before you continue with our
 installation instructions.
 
 ```shell
 export go_ver=1.18
-export dock_ver=5:20.10.6~3-0~ubuntu-focal
-export kind_ver=0.11.0
-export kub_ver=1.21.1
-export helm_ver=3.7.1
+export dock_ver=5:23.0.1-1~ubuntu.20.04~focal
+export kind_ver=0.17.0
+export kub_ver=1.26.1
+export helm_ver=3.11.1
 ```
 
 ### go
@@ -48,7 +48,7 @@ Alternatively, you can install go by following the instructions below.
     wget https://go.dev/dl/go$go_ver.linux-amd64.tar.gz
     ```
 
-2. Extract to `/usr/local`. You may need to insert the password for sudo permissions.
+2. Extract to `/usr/local`. You may need to provide the password for sudo permissions.
 
     ```shell
     sudo tar -C /usr/local -xzf go$go_ver.linux-amd64.tar.gz
@@ -67,7 +67,7 @@ Alternatively, you can install go by following the instructions below.
     source ~/.bashrc
     ```
 
-5. Verify if `PATH` is updated. Now go 1.18 is successfully installed.
+5. Verify if `PATH` is updated. Now go is successfully installed.
 
     ```shell
     go version
@@ -126,7 +126,7 @@ Alternatively, you can install Docker Engine by following the instructions below
 Detailed installation instructions for Kind can be found [here](https://kind.sigs.k8s.io/).
 Alternatively, you can install Kind by following the instructions below.
 
-1. Install Kind 0.11.0.
+1. Install Kind
 
     ```shell
     go install sigs.k8s.io/kind@v$kind_ver
@@ -154,7 +154,7 @@ Detailed installation instructions for kubectl can be found
 [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/).
 Alternatively, you can install kubectl by following the instructions below.
 
-1. Download kubectl 1.21.1.
+1. Download kubectl
 
     ```shell
     curl -LO https://dl.k8s.io/release/v$kub_ver/bin/linux/amd64/kubectl

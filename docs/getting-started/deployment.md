@@ -11,18 +11,18 @@ of two Virtual Cloud Providers (VCP).
     create all kinds of issues.
 
 - [Helmfile](https://github.com/roboll/helmfile) v0.142.0
-- [Helm](https://helm.sh/) v3.7.1
+- [Helm](https://helm.sh/) v3.11.1
 - [Helm Diff Plugin](https://github.com/databus23/helm-diff) v3.1.3
 
 In addition, this guide assumes you have access to two properly configured K8s
 clusters (herein referred to as `apollo` and `starbuck`) with the following
 components:
 
-- Kubernetes v1.18.19
-- Istio v1.7.3
-- MetalLB v0.9.3
-- Knative v0.19.0
-- Zalando Postgres Operator v1.5.0
+- Kubernetes v1.26.0
+- Istio v1.17.0
+- MetalLB v0.13.9
+- Knative v1.8.2
+- Zalando Postgres Operator v1.9.0
 
 Throughout the remainder of this guide, we assume that you have set up local
 clusters using the kind tool as described in the

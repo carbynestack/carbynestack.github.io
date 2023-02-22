@@ -7,31 +7,32 @@ steps described below, you should have two kind K8s clusters called `apollo` and
 
 ```shell
 kubectl get pods -A
-NAMESPACE            NAME                                           READY   STATUS    RESTARTS   AGE
-default              knative-operator-7fc877bffd-f9qdh              1/1     Running   0          115s
-default              postgres-operator-74f9948c5f-l8mpd             1/1     Running   0          24s
-istio-operator       istio-operator-6d7958b7bf-j5f78                1/1     Running   0          4m10s
-istio-system         istio-ingressgateway-7b757f7699-4sjk9          1/1     Running   0          3m10s
-istio-system         istiod-7556f7fddf-4gg6t                        1/1     Running   0          3m26s
-knative-serving      activator-749f4f58bd-bvgvk                     1/1     Running   0          66s
-knative-serving      autoscaler-848955c655-7ndxc                    1/1     Running   0          65s
-knative-serving      controller-8c7b5f59c-d7brb                     1/1     Running   0          65s
-knative-serving      istio-webhook-566b5df9f-6fhvt                  1/1     Running   0          61s
-knative-serving      net-certmanager-webhook-5886f5f5cb-26sbr       1/1     Running   0          59s
-knative-serving      networking-certmanager-6b5cb4b9d6-c4gl2        1/1     Running   0          60s
-knative-serving      networking-istio-795f8cd665-27vcs              1/1     Running   0          61s
-knative-serving      webhook-5fd89bbf5-gghtq                        1/1     Running   0          64s
-kube-system          coredns-66bff467f8-ht8hb                       1/1     Running   0          4m20s
-kube-system          coredns-66bff467f8-vsndf                       1/1     Running   0          4m20s
-kube-system          etcd-apollo-control-plane                      1/1     Running   0          4m30s
-kube-system          kindnet-jht6w                                  1/1     Running   0          4m20s
-kube-system          kube-apiserver-apollo-control-plane            1/1     Running   0          4m30s
-kube-system          kube-controller-manager-apollo-control-plane   1/1     Running   0          4m30s
-kube-system          kube-proxy-w5dfw                               1/1     Running   0          4m20s
-kube-system          kube-scheduler-apollo-control-plane            1/1     Running   0          4m30s
-local-path-storage   local-path-provisioner-59c6df4d-962pq          1/1     Running   0          4m20s
-metallb-system       controller-57f648cb96-vgtsp                    1/1     Running   0          3m15s
-metallb-system       speaker-c8lq5                                  1/1     Running   0          3m15s
+NAMESPACE            NAME                                             READY   STATUS    RESTARTS   AGE
+default              istio-operator-7cf558f694-nmm9b                  1/1     Running   0          10m
+default              knative-operator-f6c995cb7-bfpfq                 1/1     Running   0          7m42s
+default              operator-webhook-54bfbccdf9-7fc5w                1/1     Running   0          7m42s
+default              postgres-operator-5b6b676464-m22w2               1/1     Running   0          7m17s
+istio-system         istio-ingressgateway-5b57d7fd4f-qhrkp            1/1     Running   0          9m30s
+istio-system         istiod-5f7d759f66-h29xw                          1/1     Running   0          9m42s
+knative-serving      activator-6f7db96dc5-54lqv                       1/1     Running   0          7m13s
+knative-serving      autoscaler-d9c7cc55c-qbc4n                       1/1     Running   0          7m12s
+knative-serving      controller-6456dbd66f-nd6nl                      1/1     Running   0          7m12s
+knative-serving      domain-mapping-769cfb7fb5-d2mwc                  1/1     Running   0          7m11s
+knative-serving      domainmapping-webhook-54f4564c48-86z6d           1/1     Running   0          7m11s
+knative-serving      net-istio-controller-d5977cfbb-m7ttl             1/1     Running   0          7m8s
+knative-serving      net-istio-webhook-5dff88bdb8-ktbgq               1/1     Running   0          7m8s
+knative-serving      webhook-6447645d8d-6k4xp                         1/1     Running   0          7m10s
+kube-system          coredns-787d4945fb-c8dkg                         1/1     Running   0          10m
+kube-system          coredns-787d4945fb-lgjjg                         1/1     Running   0          10m
+kube-system          etcd-starbuck-control-plane                      1/1     Running   0          10m
+kube-system          kindnet-z7vwz                                    1/1     Running   0          10m
+kube-system          kube-apiserver-starbuck-control-plane            1/1     Running   0          10m
+kube-system          kube-controller-manager-starbuck-control-plane   1/1     Running   0          10m
+kube-system          kube-proxy-t5259                                 1/1     Running   0          10m
+kube-system          kube-scheduler-starbuck-control-plane            1/1     Running   0          10m
+local-path-storage   local-path-provisioner-c8855d4bb-zhl9t           1/1     Running   0          10m
+metallb-system       metallb-controller-777d84cdd5-2jjkd              1/1     Running   0          8m44s
+metallb-system       metallb-speaker-vmqj4                            1/1     Running   0          8m44s
 ```
 
 ## Prerequisites
@@ -49,10 +50,16 @@ metallb-system       speaker-c8lq5                                  1/1     Runn
     deploy Carbyne Stack. Depending on the actual workloads you are going to
     deploy, these numbers can be considerably higher.
 
-- [Docker Engine](https://docs.docker.com/engine/) v20.10.6
-- [Kind](https://kind.sigs.k8s.io/) v0.11.0
-- [kubectl](https://kubernetes.io/docs/tasks/tools/) v1.21.1
-- [Helm](https://helm.sh/) v3.7.1
+- [Docker Engine](https://docs.docker.com/engine/install/ubuntu/) v23.0.1
+- [Kind](https://kind.sigs.k8s.io/) v0.17.0
+- [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/) v1.26.1
+- [Helm](https://helm.sh/docs/intro/install/) v3.11.1
+- [Helmfile](https://github.com/roboll/helmfile) v0.142.0
+- [Helm Diff Plugin](https://github.com/databus23/helm-diff) v3.1.3
+- [OpenJDK](https://openjdk.java.net/install/) 8
+
+For installation instructions for these tools see the
+[Prerequisites](../prerequisites) section.
 
 ## Setting up the Clusters
 
@@ -66,13 +73,13 @@ a kind cluster with K8s context name `kind-<name>`, as follows:
 === "Apollo"
 
     ```shell
-    kind create cluster --name apollo --image kindest/node:v1.18.19
+    kind create cluster --name apollo --image kindest/node:v1.26.0
     ```
 
 === "Starbuck"
 
     ```shell
-    kind create cluster --name starbuck --image kindest/node:v1.18.19
+    kind create cluster --name starbuck --image kindest/node:v1.26.0
     ```
 
 You can switch between the clusters easily using:
@@ -97,15 +104,15 @@ You can switch between the clusters easily using:
 
 1. Install
    the [Istio Operator](https://istio.io/latest/docs/setup/install/operator/)
-   v1.7.3 using:
+   v1.17.0 using:
 
     ```shell
-    curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.7.3 TARGET_ARCH=x86_64 sh -
-    helm install istio-operator istio-1.7.3/manifests/charts/istio-operator \
+    curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.17.0 TARGET_ARCH=x86_64 sh -
+    helm install istio-operator istio-1.17.0/manifests/charts/istio-operator \
       --set operatorNamespace=istio-operator \
       --set watchedNamespaces="istio-system" \
       --set hub="docker.io/istio" \
-      --set tag="1.7.3"
+      --set tag="1.17.0"
     ```
 
 1. Create an Istio Control Plane in a dedicated namespace using:
@@ -197,12 +204,22 @@ You can switch between the clusters easily using:
 
 ### MetalLB
 
-1. Install [MetalLB](https://metallb.universe.tf/) v0.9.3 using:
+1. Install [MetalLB](https://metallb.universe.tf/) v0.13.9 using:
 
     ```shell
-    kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/namespace.yaml
-    kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/metallb.yaml
-    kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
+    helm repo add metallb https://metallb.github.io/metallb
+    kubectl create namespace metallb-system
+    cat <<EOF | envsubst > metallb-values.yaml
+    apiVersion: v1
+    kind: Namespace
+    metadata:
+      labels:
+        pod-security.kubernetes.io/audit: privileged
+        pod-security.kubernetes.io/enforce: privileged
+        pod-security.kubernetes.io/warn: privileged
+      name: metallb-system
+    EOF
+    helm install metallb metallb/metallb --version 0.13.9 -n metallb-system -f metallb-values.yaml
     ```
 
 1. Configure MetalLB using:
@@ -212,19 +229,20 @@ You can switch between the clusters easily using:
         ```shell
         export SUBNET=172.18.1.255/25
         cat <<EOF | envsubst > metallb.yaml
-        apiVersion: v1
-        kind: ConfigMap
+        apiVersion: metallb.io/v1beta1
+        kind: IPAddressPool
         metadata:
+          name: default
           namespace: metallb-system
-          name: config
-        data:
-          config: |
-            address-pools:
-            - name: default
-              protocol: layer2
-              addresses:
-              - ${SUBNET}
-              avoid-buggy-ips: true
+        spec:
+          addresses:
+          - ${SUBNET}
+        ---
+        apiVersion: metallb.io/v1beta1
+        kind: L2Advertisement
+        metadata:
+          name: empty
+          namespace: metallb-system
         EOF
         kubectl apply -f metallb.yaml
         ```
@@ -234,19 +252,20 @@ You can switch between the clusters easily using:
         ```shell
         export SUBNET=172.18.2.255/25
         cat <<EOF | envsubst > metallb.yaml
-        apiVersion: v1
-        kind: ConfigMap
+        apiVersion: metallb.io/v1beta1
+        kind: IPAddressPool
         metadata:
+          name: default
           namespace: metallb-system
-          name: config
-        data:
-          config: |
-            address-pools:
-            - name: default
-              protocol: layer2
-              addresses:
-              - ${SUBNET}
-              avoid-buggy-ips: true
+        spec:
+          addresses:
+          - ${SUBNET}
+        ---
+        apiVersion: metallb.io/v1beta1
+        kind: L2Advertisement
+        metadata:
+          name: empty
+          namespace: metallb-system
         EOF
         kubectl apply -f metallb.yaml
         ```
@@ -269,11 +288,11 @@ The public IP eventually appears in column `EXTERNAL-IP`.
 ### Knative
 
 1. Install the
-   [Knative Operator](https://knative.dev/docs/install/knative-with-operators/)
-   v0.19.0 using:
+   [Knative Operator](https://knative.dev/docs/install/operator/knative-with-operators/)
+   v1.8.2 using:
 
     ```shell
-    kubectl apply -f https://github.com/knative/operator/releases/download/v0.19.0/operator.yaml
+    kubectl apply -f https://github.com/knative/operator/releases/download/knative-v1.8.2/operator.yaml
     ```
 
 1. Create a namespace for Knative Serving using:
@@ -287,18 +306,18 @@ The public IP eventually appears in column `EXTERNAL-IP`.
 
     ```shell
     cat <<EOF | envsubst > knative-serving.yaml
-    apiVersion: operator.knative.dev/v1alpha1
+    apiVersion: operator.knative.dev/v1beta1
     kind: KnativeServing
     metadata:
       name: knative-serving
       namespace: knative-serving
     spec:
-      version: 0.19.0
+      version: 1.8.2
       manifests:
-        - URL: https://github.com/carbynestack/serving/releases/download/v0.19.0_multiport-patch/serving-crds.yaml
-        - URL: https://github.com/carbynestack/serving/releases/download/v0.19.0_multiport-patch/serving-core.yaml
-        - URL: https://github.com/knative/net-istio/releases/download/v0.19.0/release.yaml
-        - URL: https://github.com/knative/net-certmanager/releases/download/v0.19.0/release.yaml
+        - URL: https://github.com/carbynestack/serving/releases/download/v1.8.2-multiport-patch/serving-crds.yaml
+        - URL: https://github.com/carbynestack/serving/releases/download/v1.8.2-multiport-patch/serving-core.yaml
+        - URL: https://github.com/knative/net-istio/releases/download/v1.8.2/release.yaml
+        - URL: https://github.com/knative/net-certmanager/releases/download/v1.8.2/release.yaml
       config:
          domain:
             ${EXTERNAL_IP}.sslip.io: ""
@@ -309,12 +328,12 @@ The public IP eventually appears in column `EXTERNAL-IP`.
 ### Postgres Operator
 
 Deploy the
-[Zalando Postgres operator](https://github.com/zalando/postgres-operator) v1.5.0
+[Zalando Postgres operator](https://github.com/zalando/postgres-operator) v1.9.0
 using:
 
 ```shell
-curl -sL https://github.com/zalando/postgres-operator/archive/refs/tags/v1.5.0.tar.gz | tar -xz
-helm install postgres-operator postgres-operator-1.5.0/charts/postgres-operator
+curl -sL https://github.com/zalando/postgres-operator/archive/refs/tags/v1.9.0.tar.gz | tar -xz
+helm install postgres-operator postgres-operator-1.9.0/charts/postgres-operator
 ```
 
 ## Clean Up
