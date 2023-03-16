@@ -12,7 +12,7 @@ Carbyne Stack.
 
 This part of the tutorial is developed and tested with Ubuntu 20.04.
 Please refer to this [link](https://ubuntu.com/tutorials/install-ubuntu-desktop)
-for Ubuntu installation steps.
+for Ubuntu installation steps. Your cloud hardware should have atleast 4 AWS vCPUs or 4 GCP Cores or 4 Azure vCores or equivalent.
 
 ## Platform Setup Prerequisites
 
