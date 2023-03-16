@@ -169,6 +169,7 @@ time-consuming process, we provide pre-generated material.
 
     ```shell
     curl -O -L https://github.com/carbynestack/carbynestack/raw/9c0c17599ae08253398a000f2a23b3ded8611499/tuples/fake-crypto-material-0.2.zip
+    sudo apt install unzip
     unzip -d crypto-material fake-crypto-material-0.2.zip
     rm fake-crypto-material-0.2.zip
     ```
