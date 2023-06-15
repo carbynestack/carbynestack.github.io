@@ -6,6 +6,45 @@ N/A
 
 ## Past Events
 
+### [Flower Summit '23][flower23]
+
+<span class="event-title">Nettle - Privacy-Preserving Federated Learning based
+on Flower and Carbyne Stack (Contributed Talk)</span>
+
+![Flower Summit Logo](/images/events/flowersummit23.avif){ class="event-logo" }
+
+May 30 – 31, 2023 | Cambridge (UK)
+
+!!! abstract
+
+    With speed, cost, and privacy advantages, federated learning is emerging as
+    an alternative to centralized ML approaches. However, without additional
+    safeguards, federated learning won't live up to its promise, as it is
+    vulnerable to privacy attacks and model theft.
+
+    Our open-source Flower extension for privacy-preserving federated learning
+    called Nettle fills this gap by deploying additional layers of defense. By
+    integrating with our open-source Carbyne Stack Secure Multiparty
+    Computation (MPC) platform, Nettle can effectively protect against privacy
+    attacks via MPC-based Secure Aggregation. In addition, Nettle deploys
+    Confidential Computing to protect valuable ML models from unauthorized
+    model extraction on the client.
+
+    In this talk, we describe the concepts behind Nettle, which are based on
+    the idea of splitting the role of the Flower server into the three distinct
+    roles of model owner, orchestrator, and aggregator. We show how we
+    leveraged Flower's extensibility mechanisms to enable straightforward
+    integration with the Carbyne Stack MPC services providing a scalable
+    backend for Secure Aggregation. We describe how Confidential Computing
+    enclaves and remote attestation are used in Nettle to ensure that the model
+    owner retains full control over the ML model throughout the whole
+    distributed learning process. Finally, we give a preview on what is to
+    come for Nettle and Carbyne Stack in the future.
+
+:material-video: [Recording](https://youtu.be/jtqMTbf77E8)
+
+[flower23]: https://flower.dev/conf/flower-summit-2023/
+
 ### [German IT Security Award][gitsa22]
 
 <figure markdown>
