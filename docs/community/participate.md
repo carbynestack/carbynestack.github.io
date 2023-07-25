@@ -4,7 +4,7 @@
 
 We host public Carbyne Stack Community Meetings on :fontawesome-brands-discord:
 [Discord][discord], open to anyone interested in the Carbyne Stack open source
-project, every first and third Monday of the month at 3pm CE(S)T.
+project, every first Monday of the month at 3pm CE(S)T.
 
 Everyone interested is welcome to attend!
 
