@@ -10,8 +10,13 @@ nav:
       - getting-started/index.md
       - Overview: getting-started/overview.md
       - Prerequisites: getting-started/prerequisites.md
-      - Platform Setup: getting-started/platform-setup.md
-      - Stack Deployment: getting-started/deployment.md
+      - Deployment:
+          - Infrastructure as Code:
+              - Overview: getting-started/deployment/infrastructure-as-code/overview.md
+              - Local: getting-started/deployment/infrastructure-as-code/local.md
+          - Manual:
+              - Platform Setup: getting-started/deployment/manual/platform-setup.md
+              - Stack: getting-started/deployment/manual/stack.md
       - Millionaires Problem: getting-started/millionaires.md
   - Blog: https://blog.carbynestack.io
   - Community:
