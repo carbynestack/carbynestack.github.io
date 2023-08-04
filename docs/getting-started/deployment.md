@@ -42,11 +42,11 @@ clusters using the kind tool as described in the
     kind load docker-image <image> --name <cluster-name>
     ```
 
-    to load images from your local docker registry into the kind clusters. This 
+    to load images from your local docker registry into the kind clusters. This
     way you have to download the images only once and then reuse them across
     VCP deployments.
 
-1. Checkout out the [carbynestack repository](https://github.com/carbynestack/carbynestack)
+1. Clone the [carbynestack repository](https://github.com/carbynestack/carbynestack)
    and descend into the repository root directory using:
 
     === "HTTP"
@@ -62,6 +62,12 @@ clusters using the kind tool as described in the
         git clone git@github.com:carbynestack/carbynestack.git
         cd carbynestack
         ```
+
+1. Checkout Carbyne Stack sdk version 0.2.0 using:
+
+    ```shell
+    git checkout sdk-v0.2.0
+    ```
 
 1. Before deploying the virtual cloud providers make some common configuration
    available using:
@@ -110,8 +116,8 @@ You now have a fully functional Carbyne Stack Virtual Cloud at your hands.
    cloud from the command line. Install the CLI using:
 
     ```shell
-    export CLI_VERSION=0.2-SNAPSHOT-2336890983-14-a4260ab
-    curl -o cs.jar -L https://github.com/carbynestack/cli/releases/download/$CLI_VERSION/cli-$CLI_VERSION-jar-with-dependencies.jar
+    export CLI_VERSION=0.4.1
+    curl -o cs.jar -L https://github.com/carbynestack/cli/releases/download/cli-v$CLI_VERSION/cli-$CLI_VERSION.jar
     ```
 
 2. Next configure the CLI to talk to the just deployed virtual cloud by creating
