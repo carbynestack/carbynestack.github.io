@@ -42,7 +42,7 @@ metallb-system       metallb-speaker-vmqj4                            1/1     Ru
     specified below. Deviating from this _battle tested_ configuration may
     create all kinds of issues.
 
-    Do not forget to perform the [post installation steps](https://docs.docker.com/engine/install/linux-postinstall/ ) 
+    Do not forget to perform the [post installation steps](https://docs.docker.com/engine/install/linux-postinstall/ )
     for Docker.
 
 !!! info
@@ -143,11 +143,11 @@ You can switch between the clusters easily using:
                   memory: 40Mi
               service:
                 ports:
-                  ## You can add custom gateway ports in user values overrides, 
+                  ## You can add custom gateway ports in user values overrides,
                   # but it must include those ports since helm replaces.
-                  # Note that AWS ELB will by default perform health checks on 
-                  # the first port on this list. Setting this to the health 
-                  # check port will ensure that health checks always work. 
+                  # Note that AWS ELB will by default perform health checks on
+                  # the first port on this list. Setting this to the health
+                  # check port will ensure that health checks always work.
                   # https://github.com/istio/istio/issues/12503
                   - port: 15021
                     targetPort: 15021
@@ -321,9 +321,17 @@ The public IP eventually appears in column `EXTERNAL-IP`.
       config:
          domain:
             ${EXTERNAL_IP}.sslip.io: ""
+         defaults:
+            max-revision-timeout-seconds: "36000"
     EOF
     kubectl apply -f knative-serving.yaml
     ```
+
+    The configuration above will also increase Knative's default
+    [max-revision-timeout-seconds](https://knative.dev/v1.9-docs/serving/configuration/config-defaults/#revision-timeout-seconds)
+    from `600` to `36000` seconds (10h). This is required as ephemeral
+    computations are executed as so-called Knative activations and are therefore
+    subject to its configuration.
 
 ### Postgres Operator
 
