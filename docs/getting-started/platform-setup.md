@@ -327,10 +327,10 @@ The public IP eventually appears in column `EXTERNAL-IP`.
     kubectl apply -f knative-serving.yaml
     ```
 
-    The configuration above will also increase knative's default
+    The configuration above will also increase Knative's default
     [max-revision-timeout-seconds](https://knative.dev/v1.9-docs/serving/configuration/config-defaults/#revision-timeout-seconds)
     from `600` to `36000` seconds (10h). This is required as ephemeral
-    computations are executed as -called knative activations and are therefore
+    computations are executed as so-called Knative activations and are therefore
     subject to its configuration.
 
 ### Postgres Operator
