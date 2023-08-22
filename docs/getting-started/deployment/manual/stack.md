@@ -53,14 +53,14 @@ clusters using the kind tool as described in the
 
         ```shell
         git clone https://github.com/carbynestack/carbynestack.git
-        cd carbynestack
+        cd carbynestack/deployments
         ```
 
     === "SSH"
 
         ```shell
         git clone git@github.com:carbynestack/carbynestack.git
-        cd carbynestack
+        cd carbynestack/deployments
         ```
 
 1. Checkout Carbyne Stack sdk version 0.2.0 using:
