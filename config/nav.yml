@@ -17,6 +17,7 @@ nav:
           - Manual:
               - Platform Setup: getting-started/deployment/manual/platform-setup.md
               - Stack: getting-started/deployment/manual/stack.md
+      - Configuring the CLI: getting-started/cli.md
       - Millionaires Problem: getting-started/millionaires.md
   - Blog: https://blog.carbynestack.io
   - Community:
