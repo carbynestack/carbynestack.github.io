@@ -9,7 +9,7 @@ manner.
 ## Terraform
 
 Carbyne Stack uses [Terraform by Hashicorp](https://www.terraform.io/) to
-provision infrastructure and deploy CarbyneStack on top of it.  Terraform
+provision infrastructure and deploy CarbyneStack on top of it. Terraform
 has a large community and is widely used in the industry, with support for
 most major cloud providers through a large set
 of [providers](https://registry.terraform.io/browse/providers?product_intent=terraform).
@@ -17,9 +17,9 @@ of [providers](https://registry.terraform.io/browse/providers?product_intent=ter
 ## Cloud Development Kit for Terraform (CDKTF)
 
 Terraform uses a custom syntax for their configuration language called HCL
-(HashiCorp Configuration Language).  While this is great for simple use
+(HashiCorp Configuration Language). While this is great for simple use
 cases, it can become difficult to manage as the complexity of the
-infrastructure grows.  To address this, CarbyneStack uses
+infrastructure grows. To address this, CarbyneStack uses
 [CDKTF](https://learn.hashicorp.com/tutorials/terraform/cdktf), which
 allows you to use a common programming language, in CarbyneStack's
 case, Typescript, to define the infrastructure. This allows you to
@@ -41,8 +41,8 @@ deploying the CarbyneStack on top of it.
 In CDKTF,
 [constructs](https://developer.hashicorp.com/terraform/cdktf/concepts/constructs)
 are the building blocks of the CarbyneStack infrastructure.Constructs are used
-to define resources, modules, and data sources.  CarbyneStack uses constructs
+to define resources, modules, and data sources. CarbyneStack uses constructs
 to define the resources that make up the infrastructure, including the
-Kubernetes cluster, networking, and storage.  Constructs are also used to
+Kubernetes cluster, networking, and storage. Constructs are also used to
 define the CarbyneStack Helm chart, which is used to deploy the
 CarbyneStack on top of the infrastructure.
