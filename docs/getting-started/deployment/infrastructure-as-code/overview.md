@@ -1,6 +1,6 @@
 # Infrastructure as Code
 
-CarbyneStack has adopted Infrastructure as Code (IaC) as a core principle.
+Carbyne Stack has adopted Infrastructure as Code (IaC) as a core principle.
 IaC is the process of managing and provisioning infrastructure through code
 instead of manually deploying resources via kubectl, helm, etc. This allows
 for the infrastructure to be versioned, tested, and deployed in a repeatable
@@ -8,7 +8,7 @@ manner.
 
 ## Terraform
 
-CarbyneStack uses [Terraform by Hashicorp](https://www.terraform.io/) to
+Carbyne Stack uses [Terraform by Hashicorp](https://www.terraform.io/) to
 provision infrastructure and deploy CarbyneStack on top of it.  Terraform
 has a large community and is widely used in the industry, with support for
 most major cloud providers through a large set
