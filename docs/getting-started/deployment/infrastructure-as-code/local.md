@@ -3,6 +3,10 @@
 This guide describes how to deploy a two-party Carbyne Stack Virtual Cloud
 onto a local Kubernetes cluster using CDKTF.
 
+> **DISCLAIMER**: Carbyne Stack Infrastructure as Code (IaC) is in
+> *proof-of-concept* stage. The software is not ready for production
+> use. It has neither been developed nor tested for a specific use case.
+
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
