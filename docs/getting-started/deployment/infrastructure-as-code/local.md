@@ -24,19 +24,31 @@ Before you begin, ensure you have met the following requirements:
     git clone git@github.com:carbynestack/carbynestack.git
     ```
 
-2) Change directory to the `deployments` folder
+1) Change into the `carbynestack` directory
 
     ```shell
-    cd carbynestack/deployments
+    cd carbynestack
     ```
 
-3) Install npm dependencies:
+1) Checkout the tag `sdk-v0.4.0`
+
+    ```shell
+    git checkout tags/sdk-v0.4.0
+    ```
+
+1) Change directory to the `deployments` folder
+
+    ```shell
+    cd deployments
+    ```
+
+1) Install npm dependencies:
 
     ```shell
     npm install
     ```
 
-4) Generate CDKTF provider bindings and import modules (located in the `.gen` folder):
+1) Generate CDKTF provider bindings and import modules (located in the `.gen` folder):
 
     ```shell
     cdktf get
