@@ -18,37 +18,37 @@ Before you begin, ensure you have met the following requirements:
 
 ## Setup
 
-1) Clone the carbynestack/carbynestack repository
+1. Clone the carbynestack/carbynestack repository
 
     ```shell
     git clone git@github.com:carbynestack/carbynestack.git
     ```
 
-1) Change into the `carbynestack` directory
+1. Change into the `carbynestack` directory
 
     ```shell
     cd carbynestack
     ```
 
-1) Checkout the tag `sdk-v0.4.0`
+1. Checkout the tag `sdk-v0.4.0`
 
     ```shell
     git checkout tags/sdk-v0.4.0
     ```
 
-1) Change directory to the `deployments` folder
+1. Change directory to the `deployments` folder
 
     ```shell
     cd deployments
     ```
 
-1) Install npm dependencies:
+1. Install npm dependencies:
 
     ```shell
     npm install
     ```
 
-1) Generate CDKTF provider bindings and import modules (located in the `.gen` folder):
+1. Generate CDKTF provider bindings and import modules (located in the `.gen` folder):
 
     ```shell
     cdktf get
@@ -58,7 +58,7 @@ Before you begin, ensure you have met the following requirements:
 
 In the `./deployments` folder:
 
-1) Deploy the stack using
+1. Deploy the stack using
 
 ```shell
 cdktf deploy local-kind
