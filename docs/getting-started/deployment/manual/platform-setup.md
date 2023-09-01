@@ -42,7 +42,7 @@ metallb-system       metallb-speaker-vmqj4                            1/1     Ru
     specified below. Deviating from this _battle tested_ configuration may
     create all kinds of issues.
 
-    Do not forget to perform the [post installation steps](https://docs.docker.com/engine/install/linux-postinstall/ )
+    Do not forget to perform the [post installation steps](https://docs.docker.com/engine/install/linux-postinstall/)
     for Docker.
 
 !!! info
@@ -73,13 +73,13 @@ a kind cluster with K8s context name `kind-<name>`, as follows:
 === "Apollo"
 
     ```shell
-    kind create cluster --name apollo --image kindest/node:v1.26.0
+    kind create cluster --name apollo --image kindest/node:v1.26.6
     ```
 
 === "Starbuck"
 
     ```shell
-    kind create cluster --name starbuck --image kindest/node:v1.26.0
+    kind create cluster --name starbuck --image kindest/node:v1.26.6
     ```
 
 You can switch between the clusters easily using:

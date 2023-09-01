@@ -11,12 +11,14 @@ nav:
       - Overview: getting-started/overview.md
       - Prerequisites: getting-started/prerequisites.md
       - Deployment:
-          - Infrastructure as Code:
-              - Overview: getting-started/deployment/infrastructure-as-code/overview.md
-              - Local: getting-started/deployment/infrastructure-as-code/local.md
+          - getting-started/deployment/index.md
           - Manual:
+              - getting-started/deployment/manual/index.md
               - Platform Setup: getting-started/deployment/manual/platform-setup.md
               - Stack: getting-started/deployment/manual/stack.md
+          - Infrastructure as Code:
+              - getting-started/deployment/infrastructure-as-code/index.md
+              - Local: getting-started/deployment/infrastructure-as-code/local.md
       - Configuring the CLI: getting-started/cli.md
       - Millionaires Problem: getting-started/millionaires.md
   - Blog: https://blog.carbynestack.io

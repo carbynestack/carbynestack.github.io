@@ -1,6 +1,6 @@
 # Solving the Millionaires Problem
 
-In this tutorial, you will learn how to solve the millionaires problem using an
+In this guide, you will learn how to solve the millionaires problem using an
 MPC function deployed on Carbyne Stack.
 
 ## Prerequisites
