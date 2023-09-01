@@ -21,12 +21,11 @@ You will
 
 1. Understand the [basic architecture and abstractions](overview) of the Carbyne
    Stack platform.
-2. [Set up Kubernetes clusters](platform-setup) with all the prerequisites
-   required for deploying a Carbyne Stack Virtual Cloud Provider including Istio
-   and Knative.
-3. [Deploy a fully functional Carbyne Stack Virtual Cloud](deployment) to these
-   clusters.
-4. Learn how to [solve the canonical Millionaires Problem](millionaires)
+1. [Deploy a fully functional 2-party Carbyne Stack Virtual Cloud](deployment)
+   on your machine.
+1. [Install and configure the Carbyne Stack CLI](cli) that is used to interact
+   with a Carbyne Stack Virtual Cloud.
+1. Learn how to [solve the canonical Millionaires Problem](millionaires)
    leveraging the [Carbyne Stack CLI](https://github.com/carbynestack/cli).
 
 !!! tip

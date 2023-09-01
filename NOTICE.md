@@ -13,3 +13,4 @@ file in the Carbyne Stack
 
 - Trieflinger Sven <sven.trieflinger@de.bosch.com>
 - Veselin Vlasakiev <veselin@veselin.org>
+- Weinfurtner Jared <jared.weinfurtner@de.bosch.com>
