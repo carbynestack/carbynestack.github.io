@@ -1,10 +1,5 @@
 # Stack Deployment Guide
 
-!!! danger
-    Klyshko currently supports insecure offline material generation only. Using
-    this material is not secure at all. **_DO NOT DO THIS IN A PRODUCTION
-    SETTING_**.
-
 This guide describes how to set up a Carbyne Stack Virtual Cloud (VC) consisting
 of two Virtual Cloud Providers (VCP).
 
@@ -63,10 +58,10 @@ clusters using the kind tool as described in the
         cd carbynestack/deployments
         ```
 
-1. Checkout Carbyne Stack SDK version 0.4.0 using:
+1. Checkout Carbyne Stack SDK version 0.5.0 using:
 
     ```shell
-    git checkout sdk-v0.4.0
+    git checkout sdk-v0.5.0
     ```
 
 1. Before deploying the virtual cloud providers make some common configuration
@@ -84,6 +79,38 @@ clusters using the kind tool as described in the
     export DISCOVERY_MASTER_HOST=$APOLLO_FQDN
     export NO_SSL_VALIDATION=true
     ```
+
+1. Configure the _Correlated Randomness Generator_ (CRG) used by Klyshko
+
+    === "Insecure"
+
+        !!! danger
+            **_DO NOT USE THIS IN A PRODUCTION SETTING_**.
+    
+        By default, correlated randomness is generated using a cheap but
+        *insecure* fake offline phase implementation. Using this CRG is
+        recommended for development and demo purposes only.
+
+    === "Secure"
+
+        !!! warning
+            In this configuration, CR generation will consume a substantial
+            amount of resources (CPU and bandwidth). In addition, the offline
+            phase docker container used is platform-dependent. This means
+            execution may fail on your platform (see 
+            [here](https://github.com/carbynestack/klyshko/issues/78) for more 
+            information).
+    
+        Carbyne Stack comes with an *experimental* correlated randomness
+        generator based on the MP-SPDZ CowGear offline phase implementation. To
+        enable this CRG, invoke
+    
+        ```shell
+        export KLYSHKO_GENERATOR_IMAGE_REPOSITORY=carbynestack/klyshko-mp-spdz-cowgear
+        export KLYSHKO_GENERATOR_IMAGE_TAG=0.2.0
+        ```
+
+        before you proceed.
 
 1. Launch the `starbuck` VCP using:
 

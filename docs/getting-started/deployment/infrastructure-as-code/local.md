@@ -17,10 +17,10 @@ onto local [kind](https://kind.sigs.k8s.io/) cluster using CDKTF.
     cd carbynestack
     ```
 
-1. Checkout the tag `sdk-v0.4.0`
+1. Checkout the tag `sdk-v0.5.0`
 
     ```shell
-    git checkout tags/sdk-v0.4.0
+    git checkout tags/sdk-v0.5.0
     ```
 
 1. Change directory to the `deployments` folder
