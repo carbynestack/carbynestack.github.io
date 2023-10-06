@@ -24,6 +24,20 @@ Stack to implement this vision.
 
 ---
 
+<a name="sap"></a>
+![SAP Logo](../images/ecosystem/sap-logo.png){ class="ecosystem-logo" }
+
+From quantum technologies and blockchain, to cryptofinance and beyond,
+[SAP][sap] is continuously exploring new ideas, business models and pioneering
+technologies to shape the next generation of enterprise software, deliver
+real-world innovation, and enable sustainability. SAP Reasearch is using
+Carbyne Stack in the [Glaciation][glaciation] EU Horizon Europe publicly funded
+project to provide services for green and privacy-preserving data operations
+across the edge-to-cloud architecture and contributes to Carbyne Stack in the
+areas of usability and operations.
+
+---
+
 <a name="uts"></a>
 ![UTS Logo](../images/ecosystem/uts-logo.png){ class="ecosystem-logo" }
 
@@ -37,4 +51,6 @@ eventually be implemented by a UTS engineering team based on Carbyne Stack.
 
 [bosch]: https://www.bosch.com
 [fa117]: https://www.foodagility.com/research/protecting-data-in-digital-agriculture
+[glaciation]: https://glaciation-project.eu/
 [hri]: https://www.honda-ri.de/
+[sap]: https://www.sap.com/
