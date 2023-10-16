@@ -26,6 +26,7 @@ for both in-person and virtual attendance in order to facilitate our planning.
     Registration will close on November 24th for both in-person and virtual
     attendance.
 
+
 ## Program
 
 We are in the process of putting together an exciting CSC23 program for you.
