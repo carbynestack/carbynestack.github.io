@@ -27,6 +27,8 @@ nav:
       - Ecosystem: community/ecosystem.md
       - Events:
           - community/events/index.md
+          - CarbyneStackCon'23:
+              - community/events/csc23/index.md
           - CarbyneStackCon'22:
               - community/events/csc22/index.md
       - Media Coverage: community/media-coverage.md
