@@ -10,14 +10,21 @@ discussion and knowledge sharing within the Carbyne Stack community.
 
 ## Registration
 
-CarbyneStackCon '23 (CSC23) is an open event sponsored by Bosch Research.
-Everyone interested is welcome to attend! However, seats for in-person
-participation are limited and registration is required in order to facilitate
-our planning.
+CarbyneStackCon '23 (CSC23) is an open event sponsored by Bosch Research taking
+place on November 30th. Everyone interested is welcome to attend! However,
+seats for in-person participation are limited and registration is required
+for both in-person and virtual attendance in order to facilitate our planning.
 
-<a href="https://to-be-added" class="md-button md-button--primary">
+!!! important
+    Please use the eventcode **CSC23** to register on the EventXP platform.
+
+<a href="https://register.event-xp.com" class="md-button md-button--primary">
     Register
 </a>
+
+!!! warning
+    Registration will close on November 24th for both in-person and virtual
+    attendance.
 
 ## Program
 
