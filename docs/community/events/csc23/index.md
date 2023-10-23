@@ -36,6 +36,28 @@ We are in the process of putting together an exciting CSC23 program for you.
 Take a look at the [CSC22 program][csc22-program] to get an idea of what to
 expect. Stay tuned!
 
+Here is what is known already to facilitate your planning:
+
+---
+:octicons-clock-16: <span class="gsoc-legend">8:30 am</span>
+
+<span class="gsoc-topic-section-title">Registration</span>
+
+---
+:octicons-clock-16: <span class="gsoc-legend">9:30 am</span>
+
+<span class="gsoc-topic-section-title">Opening</span>
+
+---
+:octicons-clock-16: <span class="gsoc-legend">5:00 pm</span>
+
+<span class="gsoc-topic-section-title">Closing and feedback session</span>
+
+---
+:octicons-clock-16: <span class="gsoc-legend">from 6:30 pm</span>
+
+<span class="gsoc-topic-section-title">Dinner</span>
+
 ## Venue Information
 
 <div class="grid cards" markdown>
