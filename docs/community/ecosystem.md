@@ -30,11 +30,12 @@ Stack to implement this vision.
 From quantum technologies and blockchain, to cryptofinance and beyond,
 [SAP][sap] is continuously exploring new ideas, business models and pioneering
 technologies to shape the next generation of enterprise software, deliver
-real-world innovation, and enable sustainability. SAP Reasearch is using
-Carbyne Stack in the [Glaciation][glaciation] EU Horizon Europe publicly funded
-project to provide services for green and privacy-preserving data operations
-across the edge-to-cloud architecture and contributes to Carbyne Stack in the
-areas of usability and operations.
+real-world innovation, and enable sustainability. SAP Security Research is
+using Carbyne Stack in the [Glaciation][glaciation] EU Horizon Europe publicly
+funded project and additionally explores the potential of secure multi-party
+computation for various use cases, that are currently limited by security and
+privacy concerns. SAP contributes to Carbyne Stack in the areas of usability
+and operations.
 
 ---
 
