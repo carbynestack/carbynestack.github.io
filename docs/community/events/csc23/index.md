@@ -37,6 +37,9 @@ an attractive mix of talks from industry, academia, developers, and a fair
 amount of time for networking, discussions, and having fun. Note that
 all times are Central European Time (CET).
 
+This year we will also have [workshops](#workshops-dec-1) the day after
+CarbyneStackCon to discuss technical topics around Carbyne Stack in more depth.
+
 <!-- markdownlint-capture -->
 <!-- markdownlint-disable MD013 -->
 
