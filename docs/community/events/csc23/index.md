@@ -43,7 +43,7 @@ CarbyneStackCon to discuss technical topics around Carbyne Stack in more depth.
 <!-- markdownlint-capture -->
 <!-- markdownlint-disable MD013 -->
 
-### Conference (Nov 30)
+### Conference Day (Nov 30)
 
 ---
 :octicons-clock-16: <span class="gsoc-legend">8:30 am</span>
@@ -59,8 +59,7 @@ CarbyneStackCon to discuss technical topics around Carbyne Stack in more depth.
 :octicons-clock-16: <span class="gsoc-legend">9:45 am</span>
 :material-factory: <span class="gsoc-legend">Keynote</span>
 
-<span class="gsoc-topic-section-title">Carbyne Stack - Towards Open
-Cloud-Native Secure Multiparty Computation</span>
+<span class="gsoc-topic-section-title">Carbyne Stack - Towards an Ecosystem for Open Cloud-Native Secure Multiparty Computation</span>
 
 ???+ info "Dr. Sven Trieflinger (Senior Project Manager at Bosch Research, Carbyne Stack Maintainer)"
 
@@ -74,26 +73,38 @@ Cloud-Native Secure Multiparty Computation</span>
 
 ???+ abstract "Abstract"
 
-    In the making!
+    Technically, Carbyne Stack is envisioned as a cloud-native operating system
+    for MPC workloads, managing resources to make them run as efficiently as
+    possible in real-world multi-cloud deployments. From a business
+    perspective, it's the seed for an upcoming open ecosystem of technology
+    building blocks that will accelerate the development and adoption of MPC
+    technology across industries. This talk will cover various aspects of this
+    vision and review how far the Carbyne Stack community has come towards
+    making the vision a reality.
 
 ---
 :octicons-clock-16: <span class="gsoc-legend">10:15 am</span>
 :material-factory: <span class="gsoc-legend">Technical Talk</span>
 
-<span class="gsoc-topic-section-title">Deploying Carbyne Stack using IaC</span>
+<span class="gsoc-topic-section-title">Deploying Carbyne Stack using Infrastructure as Code</span>
 
-???+ info "Jared Weinfurtner (Full-Stack Software Engineer for Privacy-Preserving Computing Technologies, Bosch Digital)"
+???+ info "Jared Weinfurtner (Software Consultant/Engineer, Bosch Digital)"
 
-    Jared is a Full-Stack Software Engineer with over 15 years of experience,
-    focusing on rapid prototyping and the developer experience. Prior to joining
-    Carbyne Stack, Jared was a researcher on Bosch's Economy of Things project in
-    the area of decentralized energy trading incorporating self-sovereign
-    identities and combining privacy-preserving computing technologies for
-    day-ahead trading.
+    Jared is a Software Consultant & Engineer at Bosch with over 15 years of
+    experience.  He is a part of the Innovation Execution department at Bosch
+    Digital, focusing on building better developer experiences in the areas of
+    Web3 and Privacy-Preserving Computing Technologies. He has been an active
+    contributor to Carbyne Stack for almost 2 years.  
 
 ???+ abstract "Abstract"
 
-    In the making!
+    We set out to make deploying Carbyne Stack as simple as running a single
+    script to launch an entire infrastructure on every major cloud, including
+    on your local machine.  _Infrastructure as Code_ (IaC) transforms the
+    deployment experience by shifting from manual infrastructure management
+    to code-driven automation. _Cloud Development Kit for Terraform_ (CDKTF)
+    takes this evolution further, offering developers an intuitive and familiar
+    programming language interface to define infrastructure.  
 
 ---
 :octicons-clock-16: <span class="gsoc-legend">10:30 am</span>
@@ -123,7 +134,7 @@ Distributed Encrypted Learning</span>
     In this talk, I'll share some real world challenges faced in deploying
     multi-party-computation in machine learning (from time at Dropout Labs 
     working on tf-encrypted and Moose). Some of these challenges are likely
-    familiar to the audience or users of CarbyneStack, including:
+    familiar to the audience or users of Carbyne Stack, including:
 
     - Authorization and Identity Services in a Multi-Trust Environment
     - Data Preprocessing
@@ -146,7 +157,7 @@ Carbyne Stack on Constellation</span>
     Otto is a Security Software Engineer with Edgeless Systems and works on
     making Confidential Computing more user friendly. Part of that work is
     implementing remote attestation flows, benchmarking Kubernetes cluster
-    performance and dealing with pesky Heisenbugs. 
+    performance and dealing with pesky _Heisenbugs_. 
 
 ???+ abstract "Abstract"
 
@@ -171,7 +182,7 @@ Stack</span>
 
 ???+ info "Riivo Talviste (Cybernetica AS)"
 
-    In the making!
+    Will be available soon.
 
 ???+ abstract "Abstract"
 
@@ -188,7 +199,7 @@ Stack</span>
 :octicons-clock-16: <span class="gsoc-legend">1:45 pm</span>
 :material-factory: <span class="gsoc-legend">Technical Talk</span>
 
-<span class="gsoc-topic-section-title">Kubernetes-native MPC Correlated
+<span class="gsoc-topic-section-title">Kubernetes-native Correlated
 Randomness Generation with Klyshko</span>
 
 ???+ info "Dr. Sven Trieflinger (Senior Project Manager at Bosch Research, Carbyne Stack Maintainer)"
@@ -203,7 +214,14 @@ Randomness Generation with Klyshko</span>
 
 ???+ abstract "Abstract"
 
-    In the making!
+    State-of-the-art MPC protocols consist of two phases: An input-independent
+    offline phase, which uses heavyweight cryptographic tools to generate
+    so-called _cryptographic randomness_ in advance, which is consumed later
+    during an online phase, where the actual function is computed very
+    efficiently using only lightweight operations. This talk will cover how
+    Carbyne Stack implements the offline phase in a scalable, extensible, and
+    Kubernetes-native way by relying on the well-known Kubernetes Operator
+    pattern.
 
 ---
 :octicons-clock-16: <span class="gsoc-legend">2:00 pm</span>
@@ -218,7 +236,7 @@ Computation</span>
     in the Department of Computer Science at Technical University of Darmstadt,
     Germany. Before, he was independent research group leader at TU Darmstadt
     (2012-2018), did a PhD in IT Security at Ruhr-University Bochum
-    (2008- 2011), and wrote his Master thesis during a research internship at
+    (2008-2011), and wrote his Master thesis during a research internship at
     Alcatel-Lucent Bell Labs, NJ, USA (2007). His research focuses on privacy,
     cryptographic protocols, applied cryptography, and computer security. He
     heads the Cryptography and Privacy Engineering Group (ENCRYPTO), whose
@@ -250,7 +268,7 @@ Computation</span>
 <span class="gsoc-topic-section-title">Coffee break</span>
 
 ---
-:octicons-clock-16: <span class="gsoc-legend">3:00 pm</span>
+:octicons-clock-16: <span class="gsoc-legend">2:45 pm</span>
 :material-factory: <span class="gsoc-legend">Technical Talk</span>
 
 <span class="gsoc-topic-section-title">Continuous Load Testing using Caliper
@@ -258,14 +276,26 @@ Computation</span>
 
 ???+ info "Julian Grewe (Working Student, Bosch Research)"
 
-    In the making!
+    Julian is pursuing his Master's degree in Business Informatics at the
+    University of Stuttgart. Prior to joining the Carbyne Stack team, he worked
+    on multiple DevOps projects focusing on building and releasing
+    microservices in the automotive domain.
 
 ???+ abstract "Abstract"
 
-    In the making!
+    Load testing is an integral part of the software development lifecycle,
+    allowing for the evaluation of system performance under stress in a
+    controlled environment. Caliper is our custom-tailored 
+    _Load-Testing-as-Code_ (LTaC) tool based on Gatling, developed to test
+    Carbyne Stack's robustness and enable continuous performance validation.
+    This talk will cover how Caliper is used to assess the effectiveness of a
+    Carbyne Stack VPC deployment by allowing scenario testing that mirrors
+    actual operational loads, as well as Caliper's integration into an
+    automated testing process, to match the continuous evolution of the Carbyne
+    Stack platform.
 
 ---
-:octicons-clock-16: <span class="gsoc-legend">3:15 pm</span>
+:octicons-clock-16: <span class="gsoc-legend">3:00 pm</span>
 :material-factory: <span class="gsoc-legend">Industry Talk</span>
 
 <span class="gsoc-topic-section-title">Secure and Private Collaborative
@@ -295,7 +325,7 @@ Learning</span>
     and the technological foundation and enabler that is Carbyne Stack.
 
 ---
-:octicons-clock-16: <span class="gsoc-legend">3:45 pm</span>
+:octicons-clock-16: <span class="gsoc-legend">3:30 pm</span>
 :material-factory: <span class="gsoc-legend">Technical Talk</span>
 
 <span class="gsoc-topic-section-title">Privacy-Preserving Federated Learning
@@ -303,14 +333,68 @@ with Nettle</span>
 
 ???+ info "Sebastian Becker (Research Engineer, Bosch Research)"
 
-    In the making!
+    Sebastian is a Research Engineer at Robert Bosch GmbH. His work focuses on
+    making privacy-enhancing technologies easily adaptable to the needs of the
+    wide range of application domains at Bosch. In this context, Sebastian also
+    works as one of the maintainers of and main contributors to Carbyne Stack.
 
 ???+ abstract "Abstract"
 
-    In the making!
+    With speed, cost, and privacy advantages, federated learning is emerging as
+    an alternative to centralized ML approaches. However, without additional
+    safeguards, federated learning won't live up to its promise, as it is
+    vulnerable to privacy attacks and model theft. Our open-source Flower
+    extension for privacy-preserving federated learning called Nettle fills
+    this gap by deploying additional layers of defense. By integrating with our
+    open-source Carbyne Stack Secure Multiparty Computation (MPC) platform,
+    Nettle can effectively protect against privacy attacks via MPC-based Secure
+    Aggregation. In addition, Nettle deploys Confidential Computing to protect
+    valuable ML models from unauthorized model extraction on the client.
+    In this talk, we describe the concepts behind Nettle, which are based on
+    the idea of splitting the role of the Flower server into the three distinct
+    roles of model owner, orchestrator, and aggregator. We show how we
+    leveraged Flower's extensibility mechanisms to enable straightforward
+    integration with the Carbyne Stack MPC services providing a scalable
+    backend for Secure Aggregation. We describe how Confidential Computing
+    enclaves and remote attestation are used in Nettle to ensure that the model
+    owner retains full control over the ML model throughout the whole
+    distributed learning process. Finally, we give a preview on what is to come
+    for Nettle in the future.
+
+---
+:octicons-clock-16: <span class="gsoc-legend">3:45 pm</span>
+
+<span class="gsoc-topic-section-title">Coffee break</span>
 
 ---
 :octicons-clock-16: <span class="gsoc-legend">4:00 pm</span>
+:material-factory: <span class="gsoc-legend">Technical Talk</span>
+
+<span class="gsoc-topic-section-title">Building Cross-Language Carbyne Stack
+Clients Using WebAssembly</span>
+
+???+ info "Jared Weinfurtner (Software Consultant/Engineer, Bosch Digital), Nicolai Huening (TBD)"
+
+    Jared is a Software Consultant & Engineer at Bosch with over 15 years of
+    experience.  He is a part of the Innovation Execution department at Bosch
+    Digital, focusing on building better developer experiences in the areas of
+    Web3 and Privacy-Preserving Computing Technologies. He has been an active
+    contributor to Carbyne Stack for almost 2 years.
+
+    Nicolai (TBD)
+
+???+ abstract "Abstract"
+
+    With the recent advancements in WebAssembly, specifically the WebAssembly
+    System Interface (WASI), we set out to build cross-language Carbyne Stack
+    clients utilizing Rust as the primary programming language and compiling
+    into WebAssembly (Wasm).  The objective is to create a universal client
+    framework that seamlessly integrates with various programming languages
+    supporting WebAssembly through automated build and release processes.
+    This will allow use cases to be built rapidly without needing glue code.
+
+---
+:octicons-clock-16: <span class="gsoc-legend">4:15 pm</span>
 :material-factory: <span class="gsoc-legend">Industry Talk</span>
 
 <span class="gsoc-topic-section-title">Legal and Policy Dimensions of Secure
@@ -347,18 +431,34 @@ Multiparty Computation in Privacy, Open Source and Responsible AI</span>
     responsible use of AI. 
 
 ---
-:octicons-clock-16: <span class="gsoc-legend">4:45 pm</span>
+:octicons-clock-16: <span class="gsoc-legend">5:00 pm</span>
 :material-factory: <span class="gsoc-legend">Technical Talk</span>
 
-<span class="gsoc-topic-section-title">MPC from the Browser</span>
+<span class="gsoc-topic-section-title">Carbyne Stack for Human Input</span>
 
-???+ info "Jared Weinfurtner (Full-Stack Software Engineer for Privacy-Preserving Computing Technologies, Bosch Digital), Baris Özkal"
+???+ info "Jared Weinfurtner (Software Consultant/Engineer, Bosch Digital), Renas Barış Özkal (Smart Start Software Engineer, Bosch Turkey)"
 
-    In the making!
+    Jared is a Software Consultant & Engineer at Bosch with over 15 years of
+    experience.  He is a part of the Innovation Execution department at Bosch
+    Digital, focusing on building better developer experiences in the areas of
+    Web3 and Privacy-Preserving Computing Technologies. He has been an active
+    contributor to Carbyne Stack for almost 2 years.
+
+    Baris is a senior computer engineering student at TED University. He is a
+    JavaScript enthusiast who loves to learn new stuff and to contribute to
+    open source software as much as he can. Besides his studies, he is a
+    software engineer developing web applications for Bosch Manufacturing
+    Solutions.
 
 ???+ abstract "Abstract"
 
-    In the making!
+    Currently, Carbyne Stack use cases revolve around B2B with organizations
+    providing secrets from databases and machines. To open use cases involving
+    human input, we set out to build a browser extension to perform the secret
+    sharing on captured human input. This approach empowers any web
+    application to solicit secret input from a human without necessitating
+    trust in the web application itself — instead, trust is placed solely in
+    the extension.
 
 ---
 :octicons-clock-16: <span class="gsoc-legend">5:15 pm</span>
@@ -370,17 +470,21 @@ Multiparty Computation in Privacy, Open Source and Responsible AI</span>
 
 <span class="gsoc-topic-section-title">Dinner</span>
 
-### Workshops (Dec 1)
+### Workshop Day (Dec 1)
 
 ---
-:octicons-clock-16: <span class="gsoc-legend">9:00 am</span>
+:octicons-clock-16: <span class="gsoc-legend">9:30 am</span>
 
 <span class="gsoc-topic-section-title">Workshop I: Cloud-Native Authentication
 and Authorization for MPC Systems</span>
 
 ???+ abstract "Abstract"
 
-    In the making!
+    Bosch Research is implementing an authentication system and is working on a
+    proposal to add a flexible authorization layer to Carbyne Stack that
+    specifically takes into account the decentralized and distributed nature of
+    MPC systems. In this workshop, the current state of these initiatives and
+    the way forward towards an implementation will be discussed.
 
 ---
 :octicons-clock-16: <span class="gsoc-legend">11:30 am</span>
@@ -395,7 +499,20 @@ Systems</span>
 
 ???+ abstract "Abstract"
 
-    In the making!
+    In recent years, milestones in the efficiency of MPC protocols have paved
+    the way for the use of MPC in a wide range of applications. However,
+    putting real-world MPC systems into operation is something that has not
+    been the focus of research. It consists of several not-so-easy tasks,
+    including finding the right set of MPC computing parties, deploying the
+    system on heterogeneous infrastructure, and coordinating day-2 operations
+    across administrative boundaries. In this workshop we want to collect
+    and discuss things that make using MPC in the real world a challenging task
+    and ideate on how Carbyne Stack could help solve them.
+
+---
+:octicons-clock-16: <span class="gsoc-legend">2:30 pm</span>
+
+<span class="gsoc-topic-section-title">Closing</span>
 
 <!-- markdownlint-restore -->
 
