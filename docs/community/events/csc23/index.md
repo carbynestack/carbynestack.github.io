@@ -373,7 +373,7 @@ with Nettle</span>
 <span class="gsoc-topic-section-title">Building Cross-Language Carbyne Stack
 Clients Using WebAssembly</span>
 
-???+ info "Jared Weinfurtner (Software Consultant/Engineer, Bosch Digital), Nicolai Huening (TBD)"
+???+ info "Jared Weinfurtner (Software Consultant/Engineer, Bosch Digital), Nicolai Huening (Working Student, SAP Research)"
 
     Jared is a Software Consultant & Engineer at Bosch with over 15 years of
     experience.  He is a part of the Innovation Execution department at Bosch
@@ -381,7 +381,13 @@ Clients Using WebAssembly</span>
     Web3 and Privacy-Preserving Computing Technologies. He has been an active
     contributor to Carbyne Stack for almost 2 years.
 
-    Nicolai (TBD)
+    Nicolai Hüning is a master student at the Karlsruhe Institut of Technologie
+    (KIT) and has been a working student for SAP since 2021. He started in the
+    CoreDNS team on cloud deployments and DNS management tools. On January 2023
+    he transitioned to the SAP security research team evaluating and working on
+    deployment options for Carbyne Stack on SAP Business Technology Platform
+    (BTP). Additionally, since October 2023, Nicolai has been actively involved
+    in the development of the WASI Carbyne Stack client, _elmer_.
 
 ???+ abstract "Abstract"
 
