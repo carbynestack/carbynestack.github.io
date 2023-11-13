@@ -33,9 +33,9 @@ for both in-person and virtual attendance in order to facilitate our planning.
 ## Program
 
 We have put together an exciting and fun program for CarbyneStackCon '23. It's
-an attractive mix of talks from industry, academia, developers, and a fair
-amount of time for networking, discussions, and having fun. Note that
-all times are Central European Time (CET).
+an attractive mix of [talks](#conference-day-nov-30) from industry, academia,
+developers, and a fair amount of time for networking, discussions, and having
+fun. Note that all times are Central European Time (CET).
 
 This year we will also have [workshops](#workshops-dec-1) the day after
 CarbyneStackCon to discuss technical topics around Carbyne Stack in more depth.
@@ -44,6 +44,32 @@ CarbyneStackCon to discuss technical topics around Carbyne Stack in more depth.
 <!-- markdownlint-disable MD013 -->
 
 ### Conference Day (Nov 30)
+
+| Time         | Speaker                              | Title |
+| ------------ | ------------------------------------ | ----- |
+| 8:30 am      | -                                    | Registration |
+| 9:30 am      | -                                    | Opening |
+| 9:45 am      | Dr. Sven Trieflinger                 | [Carbyne Stack - Towards an Ecosystem for Open Cloud-Native Secure Multiparty Computation](#talk-1) |
+| 10:15 am     | Jared Weinfurtner                    | [Deploying Carbyne Stack using Infrastructure as Code](#talk-2) |
+| **10:30 am** | -                                    | **Coffee Break** |
+| 10:45 am     | Katharine Jarmul                     | [Real-World Challenges in Deploying Distributed Encrypted Learning](#talk-3) |
+| 11:30 am     | Otto Bittner                         | [Stacking Stacks: A Case Study on running Carbyne Stack on Constellation](#talk-4) |
+| **12:00 am** | -                                    | **Lunch Break**              |
+| 1:00 pm      | Riivo Talviste                       | [Integrating Sharemind MPC into Carbyne Stack](#talk-5) |
+| 1:45 pm      | Dr. Sven Trieflinger                 | [Kubernetes-native Correlated Randomness Generation with Klyshko](#talk-6) |
+| 2:00 pm      | Prof. Dr-Ing. Thomas Schneider       | [Recent Advances in Secure Two-Party Computation](#talk-7) |
+| **2:30 pm**  | -                                    | **Coffee Break** |
+| 2:45 pm      | Julian Grewe                         | [Continuous Load Testing using Caliper](#talk-8) |
+| 3:00 pm      | Dr. Jonas Böhler                     | [Secure and Private Collaborative Learning](#talk-9) |
+| 3:30 pm      | Sebastian Becker                     | [Privacy-Preserving Federated Learning with Nettle](#talk-10) |
+| **3:45 pm**  | -                                    | **Coffee Break**  |
+| 4:00 pm      | Jared Weinfurtner, Nicolai Huening   | [Building Cross-Language Carbyne Stack Clients Using WebAssembly](#talk-11) |
+| 4:15 pm      | Katharina Koerner, PhD               | [Legal and Policy Dimensions of Secure Multiparty Computation in Privacy, Open Source and Responsible AI](#talk-12) |
+| 5:00 pm      | Jared Weinfurtner, Renas Barış Özkal | [Carbyne Stack for Human Input](#talk-13) |
+| 5:15 pm      | -                                    | Closing |
+| **6:30 pm**  | -                                    | **Dinner** |
+
+#### Talk Details
 
 ---
 :octicons-clock-16: <span class="gsoc-legend">8:30 am</span>
@@ -59,7 +85,7 @@ CarbyneStackCon to discuss technical topics around Carbyne Stack in more depth.
 :octicons-clock-16: <span class="gsoc-legend">9:45 am</span>
 :material-factory: <span class="gsoc-legend">Keynote</span>
 
-<span class="gsoc-topic-section-title">Carbyne Stack - Towards an Ecosystem for Open Cloud-Native Secure Multiparty Computation</span>
+<span id="talk-1" class="gsoc-topic-section-title">Carbyne Stack - Towards an Ecosystem for Open Cloud-Native Secure Multiparty Computation</span>
 
 ???+ info "Dr. Sven Trieflinger (Senior Project Manager at Bosch Research, Carbyne Stack Maintainer)"
 
@@ -73,7 +99,7 @@ CarbyneStackCon to discuss technical topics around Carbyne Stack in more depth.
 
 ???+ abstract "Abstract"
 
-    Technically, Carbyne Stack is envisioned as a cloud-native operating system
+    Carbyne Stack is envisioned as a cloud-native operating system
     for MPC workloads, managing resources to make them run as efficiently as
     possible in real-world multi-cloud deployments. From a business
     perspective, it's the seed for an upcoming open ecosystem of technology
@@ -86,7 +112,7 @@ CarbyneStackCon to discuss technical topics around Carbyne Stack in more depth.
 :octicons-clock-16: <span class="gsoc-legend">10:15 am</span>
 :material-factory: <span class="gsoc-legend">Technical Talk</span>
 
-<span class="gsoc-topic-section-title">Deploying Carbyne Stack using Infrastructure as Code</span>
+<span id="talk-2" class="gsoc-topic-section-title">Deploying Carbyne Stack using Infrastructure as Code</span>
 
 ???+ info "Jared Weinfurtner (Software Consultant/Engineer, Bosch Digital)"
 
@@ -115,7 +141,7 @@ CarbyneStackCon to discuss technical topics around Carbyne Stack in more depth.
 :octicons-clock-16: <span class="gsoc-legend">10:45 am</span>
 :material-factory: <span class="gsoc-legend">Industry Talk</span>
 
-<span class="gsoc-topic-section-title">Real-World Challenges in Deploying
+<span id="talk-3" class="gsoc-topic-section-title">Real-World Challenges in Deploying
 Distributed Encrypted Learning</span>
 
 ???+ info "Katharine Jarmul (Privacy activist and data scientist)"
@@ -149,7 +175,7 @@ Distributed Encrypted Learning</span>
 :octicons-clock-16: <span class="gsoc-legend">11:30 am</span>
 :material-factory: <span class="gsoc-legend">Technical Talk</span>
 
-<span class="gsoc-topic-section-title">Stacking Stacks: A Case Study on running
+<span id="talk-4" class="gsoc-topic-section-title">Stacking Stacks: A Case Study on running
 Carbyne Stack on Constellation</span>
 
 ???+ info "Otto Bittner (Security Software Engineer, Edgeless Systems GmbH)"
@@ -177,12 +203,15 @@ Carbyne Stack on Constellation</span>
 :octicons-clock-16: <span class="gsoc-legend">1:00 pm</span>
 :material-factory: <span class="gsoc-legend">Industry Talk</span>
 
-<span class="gsoc-topic-section-title">Integrating Sharemind MPC into Carbyne
+<span id="talk-5" class="gsoc-topic-section-title">Integrating Sharemind MPC into Carbyne
 Stack</span>
 
-???+ info "Riivo Talviste (Cybernetica AS)"
+???+ info "Riivo Talviste (Product Owner Sharemind, Cybernetica)"
 
-    Will be available soon.
+    Riivo has been part of the Sharemind team since 2009. His main
+    responsibilities have been practical deployments and also various Sharemind
+    MPC integration projects. Now, Riivo is overseeing Sharemind MPC
+    development as a product owner.
 
 ???+ abstract "Abstract"
 
@@ -199,7 +228,7 @@ Stack</span>
 :octicons-clock-16: <span class="gsoc-legend">1:45 pm</span>
 :material-factory: <span class="gsoc-legend">Technical Talk</span>
 
-<span class="gsoc-topic-section-title">Kubernetes-native Correlated
+<span id="talk-6" class="gsoc-topic-section-title">Kubernetes-native Correlated
 Randomness Generation with Klyshko</span>
 
 ???+ info "Dr. Sven Trieflinger (Senior Project Manager at Bosch Research, Carbyne Stack Maintainer)"
@@ -227,7 +256,7 @@ Randomness Generation with Klyshko</span>
 :octicons-clock-16: <span class="gsoc-legend">2:00 pm</span>
 :material-factory: <span class="gsoc-legend">Research Talk</span>
 
-<span class="gsoc-topic-section-title">Recent Advances in Secure Two-Party
+<span id="talk-7" class="gsoc-topic-section-title">Recent Advances in Secure Two-Party
 Computation</span>
 
 ???+ info "Prof. Dr-Ing. Thomas Schneider (Technical University of Darmstadt)"
@@ -271,7 +300,7 @@ Computation</span>
 :octicons-clock-16: <span class="gsoc-legend">2:45 pm</span>
 :material-factory: <span class="gsoc-legend">Technical Talk</span>
 
-<span class="gsoc-topic-section-title">Continuous Load Testing using Caliper
+<span id="talk-8" class="gsoc-topic-section-title">Continuous Load Testing using Caliper
 </span>
 
 ???+ info "Julian Grewe (Working Student, Bosch Research)"
@@ -298,7 +327,7 @@ Computation</span>
 :octicons-clock-16: <span class="gsoc-legend">3:00 pm</span>
 :material-factory: <span class="gsoc-legend">Industry Talk</span>
 
-<span class="gsoc-topic-section-title">Secure and Private Collaborative
+<span id="talk-9" class="gsoc-topic-section-title">Secure and Private Collaborative
 Learning</span>
 
 ???+ info "Dr. Jonas Böhler (Security Researcher, SAP Security Research)"
@@ -328,7 +357,7 @@ Learning</span>
 :octicons-clock-16: <span class="gsoc-legend">3:30 pm</span>
 :material-factory: <span class="gsoc-legend">Technical Talk</span>
 
-<span class="gsoc-topic-section-title">Privacy-Preserving Federated Learning
+<span id="talk-10" class="gsoc-topic-section-title">Privacy-Preserving Federated Learning
 with Nettle</span>
 
 ???+ info "Sebastian Becker (Research Engineer, Bosch Research)"
@@ -370,7 +399,7 @@ with Nettle</span>
 :octicons-clock-16: <span class="gsoc-legend">4:00 pm</span>
 :material-factory: <span class="gsoc-legend">Technical Talk</span>
 
-<span class="gsoc-topic-section-title">Building Cross-Language Carbyne Stack
+<span id="talk-11" class="gsoc-topic-section-title">Building Cross-Language Carbyne Stack
 Clients Using WebAssembly</span>
 
 ???+ info "Jared Weinfurtner (Software Consultant/Engineer, Bosch Digital), Nicolai Huening (Working Student, SAP Research)"
@@ -403,10 +432,10 @@ Clients Using WebAssembly</span>
 :octicons-clock-16: <span class="gsoc-legend">4:15 pm</span>
 :material-factory: <span class="gsoc-legend">Industry Talk</span>
 
-<span class="gsoc-topic-section-title">Legal and Policy Dimensions of Secure
+<span id="talk-12" class="gsoc-topic-section-title">Legal and Policy Dimensions of Secure
 Multiparty Computation in Privacy, Open Source and Responsible AI</span>
 
-???+ info "Katharina Körner, PhD (Responsible AI Advisor at Tech Diplomacy Network and Corporate Development Manager at Daiki)"
+???+ info "Katharina Koerner, PhD (Responsible AI Advisor at Tech Diplomacy Network and Corporate Development Manager at Daiki)"
 
     Katharina Koerner is a multifaceted professional with senior management
     experience, legal acumen, and technical proficiency, focused on tech
@@ -440,7 +469,7 @@ Multiparty Computation in Privacy, Open Source and Responsible AI</span>
 :octicons-clock-16: <span class="gsoc-legend">5:00 pm</span>
 :material-factory: <span class="gsoc-legend">Technical Talk</span>
 
-<span class="gsoc-topic-section-title">Carbyne Stack for Human Input</span>
+<span id="talk-13" class="gsoc-topic-section-title">Carbyne Stack for Human Input</span>
 
 ???+ info "Jared Weinfurtner (Software Consultant/Engineer, Bosch Digital), Renas Barış Özkal (Smart Start Software Engineer, Bosch Turkey)"
 
@@ -478,19 +507,28 @@ Multiparty Computation in Privacy, Open Source and Responsible AI</span>
 
 ### Workshop Day (Dec 1)
 
+| Time          | Title |
+| ------------- | ----- |
+| 9:30 am       | [Cloud-Native Authentication and Authorization for MPC Systems](#workshop-1) |
+| **11:30 am**  | **Lunch Break** |
+| 12:30 am      | [Deploying and Operating MPC Systems](#workshop-2) |
+| 2:30 pm       | Closing |
+
+#### Workshop Details
+
 ---
 :octicons-clock-16: <span class="gsoc-legend">9:30 am</span>
 
-<span class="gsoc-topic-section-title">Workshop I: Cloud-Native Authentication
+<span id="workshop-1" class="gsoc-topic-section-title">Workshop I: Cloud-Native Authentication
 and Authorization for MPC Systems</span>
 
 ???+ abstract "Abstract"
 
-    Bosch Research is implementing an authentication system and is working on a
-    proposal to add a flexible authorization layer to Carbyne Stack that
-    specifically takes into account the decentralized and distributed nature of
-    MPC systems. In this workshop, the current state of these initiatives and
-    the way forward towards an implementation will be discussed.
+    Bosch Research is currently implementing an authentication system for
+    Carbyne Stack and is working on a proposal to add a flexible authorization
+    layer to Carbyne Stack that specifically takes into account the
+    decentralized and distributed nature of MPC systems. In this workshop, the
+    current state of these initiatives and the way forward will be discussed.
 
 ---
 :octicons-clock-16: <span class="gsoc-legend">11:30 am</span>
@@ -500,7 +538,7 @@ and Authorization for MPC Systems</span>
 ---
 :octicons-clock-16: <span class="gsoc-legend">12:30 pm</span>
 
-<span class="gsoc-topic-section-title">Workshop II: Deploying and Operating MPC
+<span id="workshop-2" class="gsoc-topic-section-title">Workshop II: Deploying and Operating MPC
 Systems</span>
 
 ???+ abstract "Abstract"
