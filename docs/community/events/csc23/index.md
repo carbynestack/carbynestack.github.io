@@ -15,20 +15,8 @@ place on November 30th. Everyone interested is welcome to attend! However,
 seats for in-person participation are limited and registration is required
 for both in-person and virtual attendance in order to facilitate our planning.
 
-!!! important
-    Please use the eventcode **CSC23** to register on the EventXP platform.
-    On the desktop version of the EventXP website, you must enter it in the
-    the upper right corner of the UI. For the iOS mobile version, you
-    will find a button at the very top. For Android use the hamburger menu
-    button (:material-menu:).
-
-<a href="https://register.event-xp.com" class="md-button md-button--primary">
-    Register
-</a>
-
-!!! warning
-    Registration will close on November 24th for both in-person and virtual
-    attendance.
+!!! warning "Registration closed"
+    Registration is closed since November 24, 2023 (CET).
 
 ## Program
 
