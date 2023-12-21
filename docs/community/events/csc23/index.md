@@ -1,5 +1,7 @@
 # CarbyneStackCon '23
 
+!!! warning "CarbyneStackCon '23 is over. Stay tuned for CarbyneStackCon '24!"
+
 <p style="text-align: center; margin: 5em 0 5em 0;">
   <img alt="CarbyneStackCon Logo" src="/images/events/csc/23/csc23-logo.png">
 </p>
@@ -75,6 +77,8 @@ CarbyneStackCon to discuss technical topics around Carbyne Stack in more depth.
 
 <span id="talk-1" class="gsoc-topic-section-title">Carbyne Stack - Towards an Ecosystem for Open Cloud-Native Secure Multiparty Computation</span>
 
+:material-video: [Recording](https://bosch-ext.mediaspace.de.kaltura.com/media/Towards+an+Ecosystem+for+Open+Cloud-Native+Secure+Multiparty+Computation/0_3yk5mxli)
+
 ???+ info "Dr. Sven Trieflinger (Senior Project Manager at Bosch Research, Carbyne Stack Maintainer)"
 
     Sven is a Senior Project Manager, Group Manager, Research Engineer, and
@@ -101,6 +105,8 @@ CarbyneStackCon to discuss technical topics around Carbyne Stack in more depth.
 :material-factory: <span class="gsoc-legend">Technical Talk</span>
 
 <span id="talk-2" class="gsoc-topic-section-title">Deploying Carbyne Stack using Infrastructure as Code</span>
+
+:material-video: [Recording](https://bosch-ext.mediaspace.de.kaltura.com/media/Deploying+Carbyne+Stack+using+Infrastructure+as+Code/0_o6nb63uy)
 
 ???+ info "Jared Weinfurtner (Software Consultant/Engineer, Bosch Digital)"
 
@@ -131,6 +137,8 @@ CarbyneStackCon to discuss technical topics around Carbyne Stack in more depth.
 
 <span id="talk-3" class="gsoc-topic-section-title">Real-World Challenges in Deploying
 Distributed Encrypted Learning</span>
+
+:material-video: [Recording](https://bosch-ext.mediaspace.de.kaltura.com/media/Real-World+Challenges+in+Deploying+Distributed+Encrypted+Learning/0_bosdu5qx)
 
 ???+ info "Katharine Jarmul (Privacy activist and data scientist)"
 
@@ -166,6 +174,8 @@ Distributed Encrypted Learning</span>
 <span id="talk-4" class="gsoc-topic-section-title">Stacking Stacks: A Case Study on running
 Carbyne Stack on Constellation</span>
 
+:material-video: [Recording](https://bosch-ext.mediaspace.de.kaltura.com/media/Stacking+StacksA+A+Case+Study+on+running+Carbyne+Stack+on+Constellation/0_0hh1u8fh)
+
 ???+ info "Otto Bittner (Security Software Engineer, Edgeless Systems GmbH)"
 
     Otto is a Security Software Engineer with Edgeless Systems and works on
@@ -194,6 +204,8 @@ Carbyne Stack on Constellation</span>
 <span id="talk-5" class="gsoc-topic-section-title">Integrating Sharemind MPC into Carbyne
 Stack</span>
 
+:material-video: [Recording](https://bosch-ext.mediaspace.de.kaltura.com/media/Integrating+Sharemind+MPC+into+Carbyne+Stack/0_3162zmtq)
+
 ???+ info "Riivo Talviste (Product Owner Sharemind, Cybernetica)"
 
     Riivo has been part of the Sharemind team since 2009. His main
@@ -218,6 +230,8 @@ Stack</span>
 
 <span id="talk-6" class="gsoc-topic-section-title">Kubernetes-native Correlated
 Randomness Generation with Klyshko</span>
+
+:material-video: [Recording](https://bosch-ext.mediaspace.de.kaltura.com/media/Kubernetes-native+Correlated+Randomness+Generation+with+Klyshko/0_4i5hszlo)
 
 ???+ info "Dr. Sven Trieflinger (Senior Project Manager at Bosch Research, Carbyne Stack Maintainer)"
 
@@ -246,6 +260,8 @@ Randomness Generation with Klyshko</span>
 
 <span id="talk-7" class="gsoc-topic-section-title">Recent Advances in Secure Two-Party
 Computation</span>
+
+:material-video: [Recording](https://bosch-ext.mediaspace.de.kaltura.com/media/Recent+Advances+in+Secure+Two-Party+Computation/0_4keqlhry)
 
 ???+ info "Prof. Dr-Ing. Thomas Schneider (Technical University of Darmstadt)"
 
@@ -317,6 +333,8 @@ Computation</span>
 
 <span id="talk-9" class="gsoc-topic-section-title">Secure and Private Collaborative
 Learning</span>
+
+:material-video: [Recording](https://bosch-ext.mediaspace.de.kaltura.com/media/Secure+and+Private+Collaborative+Learning/0_1dnt4bhs)
 
 ???+ info "Dr. Jonas Böhler (Security Researcher, SAP Security Research)"
 
@@ -390,6 +408,9 @@ with Nettle</span>
 <span id="talk-11" class="gsoc-topic-section-title">Building Cross-Language Carbyne Stack
 Clients Using WebAssembly</span>
 
+:material-video: [Recording](https://bosch-ext.mediaspace.de.kaltura.com/media/Building+Cross-Language+Carbyne+Stack+Clients+Using+WebAssembly/0_co61l4ut
+)
+
 ???+ info "Jared Weinfurtner (Software Consultant/Engineer, Bosch Digital), Nicolai Huening (Working Student, SAP Research)"
 
     Jared is a Software Consultant & Engineer at Bosch with over 15 years of
@@ -422,6 +443,8 @@ Clients Using WebAssembly</span>
 
 <span id="talk-12" class="gsoc-topic-section-title">Legal and Policy Dimensions of Secure
 Multiparty Computation in Privacy, Open Source and Responsible AI</span>
+
+:material-video: [Recording](https://bosch-ext.mediaspace.de.kaltura.com/media/Legal+and+Policy+Dimensions+of+Secure+Multiparty+Computation+in+Privacy%2C+Open+Source+and+Responsible+AI/0_c2u5uqm5)
 
 ???+ info "Katharina Koerner, PhD (Responsible AI Advisor at Tech Diplomacy Network and Corporate Development Manager at Daiki)"
 
@@ -458,6 +481,8 @@ Multiparty Computation in Privacy, Open Source and Responsible AI</span>
 :material-factory: <span class="gsoc-legend">Technical Talk</span>
 
 <span id="talk-13" class="gsoc-topic-section-title">Carbyne Stack for Human Input</span>
+
+:material-video: [Recording](https://bosch-ext.mediaspace.de.kaltura.com/media/Carbyne+Stack+for+Human+Input/0_p5ad5sc3)
 
 ???+ info "Jared Weinfurtner (Software Consultant/Engineer, Bosch Digital), Renas Barış Özkal (Smart Start Software Engineer, Bosch Turkey)"
 
