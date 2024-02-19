@@ -36,10 +36,6 @@ Everyone interested is welcome to attend! However, seats for in-person
 participation are limited and registration is required in order to facilitate
 our planning.
 
-<a href="https://forms.office.com/r/Rwh5A8W8Fq" class="md-button md-button--primary">
-    Register
-</a>
-
 ## Program
 
 We have put together an exciting and fun program for CarbyneStackCon '22. It's
@@ -67,7 +63,7 @@ all times are Central European Summer Time (CEST).
 <span class="gsoc-topic-section-title">Secure multi-party computation. When?
 Which kind? For whom?</span>
 
-:material-video: [Recording](https://media.video.bosch.com/media/Secure+multi-party+computation.+WhenF+Which+kindF+For+whomF/0_odgv7xjj)
+:material-video: [Recording](https://bosch-ext.mediaspace.de.kaltura.com/media/Secure+multi-party+computation.+WhenF+Which+kindF+For+whomF/0_uw32hkgd)
 
 ???+ info "Dr. Dan Bogdanov (Chief Science Officer at Cybernetica, Board Member at the MPC Alliance)"
 
@@ -93,7 +89,7 @@ Which kind? For whom?</span>
 <span class="gsoc-topic-section-title">One year of Carbyne Stack -
 Retrospective and Outlook</span>
 
-:material-video: [Recording](https://media.video.bosch.com/media/One+year+of+Carbyne+Stack+-+Retrospective+and+Outlook/0_0bf5i0td)
+:material-video: [Recording](https://bosch-ext.mediaspace.de.kaltura.com/media/One+year+of+Carbyne+Stack+-+Retrospective+and+Outlook/0_n5jqilqq)
 
 ???+ info "Dr. Sven Trieflinger (Senior Research Project Manager for Privacy-Preserving Computing Technologies at Bosch Research)"
 
@@ -129,7 +125,7 @@ Retrospective and Outlook</span>
 <span class="gsoc-topic-section-title">Privacy-preserving Cross-company Data
 Collaborations</span>
 
-:material-video: [Recording](https://media.video.bosch.com/media/Privacy-preserving+Cross-company+Data+Collaborations/0_g33vpqqt)
+:material-video: [Recording](https://bosch-ext.mediaspace.de.kaltura.com/media/Privacy-preserving+Cross-company+Data+Collaborations/0_ir4hw72z)
 
 ???+ info "Dr. Jonas Böhler (Senior Researcher at SAP Security Research)"
 
@@ -155,7 +151,7 @@ Collaborations</span>
 <span class="gsoc-topic-section-title">Multi-cloud multi-party computation for
 multiple data providers</span>
 
-:material-video: [Recording](https://media.video.bosch.com/media/Multi-cloud+multi-party+computation+for+multiple+data+providers/0_htlkp4q4)
+:material-video: [Recording](https://bosch-ext.mediaspace.de.kaltura.com/media/Multi-cloud+multi-party+computation+for+multiple+data+providers/0_qel3l5mf)
 
 ???+ info "Dr.-Ing. Kalman Graffi (Principal Scientist at Honda Research Institute Europe)"
 
@@ -211,7 +207,7 @@ Features for Carbyne Stack</span>
 <span class="gsoc-topic-section-title">Cost-effective MPC from an offline phase
 with low communication</span>
 
-:material-video: [Recording](https://media.video.bosch.com/media/Cost-effective+MPC+from+an+offline+phase+with+low+communication/0_r7o1ieng)
+:material-video: [Recording](https://bosch-ext.mediaspace.de.kaltura.com/media/Cost-effective+MPC+from+an+offline+phase+with+low+communication/0_qcmv50sg)
 
 ???+ info "Vincent Rieder (PhD Candidate at Bosch Research)"
 
@@ -240,7 +236,7 @@ with low communication</span>
 <span class="gsoc-topic-section-title">Secrecy: Secure collaborative analytics
 in untrusted clouds</span>
 
-:material-video: [Recording](https://media.video.bosch.com/media/SecrecyA+Secure+collaborative+analytics+in+untrusted+clouds/0_xj7lq4or)
+:material-video: [Recording](https://bosch-ext.mediaspace.de.kaltura.com/media/SecrecyA+Secure+collaborative+analytics+in+untrusted+clouds/0_j66zkevf)
 
 ???+ info "Dr. John Liagouris (Assistant Professor at Boston University)"
 
@@ -274,7 +270,7 @@ in untrusted clouds</span>
 
 <span class="gsoc-topic-section-title">Generalized Tuples for MP-SPDZ</span>
 
-:material-video: [Recording](https://media.video.bosch.com/media/Generalized+Tuples+for+MP-SPDZ/0_xbchnv9y)
+:material-video: [Recording](https://bosch-ext.mediaspace.de.kaltura.com/media/Generalized+Tuples+for+MP-SPDZ/0_dlltctkh)
 
 ???+ info "Dr. Pascal Reisert (Postdoctoral Researcher at Institute of Information Security, University of Stuttgart)"
 
@@ -307,7 +303,7 @@ in untrusted clouds</span>
 <span class="gsoc-topic-section-title">Decentralized Cosmos-based
 MPC-as-a-Service powered by Carbyne Stack</span>
 
-:material-video: [Recording](https://media.video.bosch.com/media/Decentralized+Cosmos-based+MPC-as-a-Service+powered+by+Carbyne+Stack/0_ssnahlrz)
+:material-video: [Recording](https://bosch-ext.mediaspace.de.kaltura.com/media/Decentralized+Cosmos-based+MPC-as-a-Service+powered+by+Carbyne+Stack/0_1872ha5p)
 
 ???+ info "Jared Weinfurtner (Full-Stack Software Engineer for Privacy-Preserving Computing Technologies, Robert Bosch GmbH)"
 
