@@ -1,0 +1,390 @@
+openapi: 3.1.0
+info:
+  title: Castor Service API
+  description: |
+    This API allows to interact with the Castor service. It provides methods to reserve and consume tuples, and to get
+    telemetry data. The service endpoints are separated into two categories: inter-VCP and intra-VCP.
+
+    - Inter VCP (`/inter-vcp`): \
+      Endpoints for communication with other Virtual Cloud Providers in the same Virtual Cloud.
+    - Intra VCP (`/intra-vcp`): \
+      Endpoints that are to be consumed by the VCP internal services only. These endpoints are not intended to be
+      exposed to the public or other VCPs.
+
+    Please note that Castor does not provide an interface to the clients of a Virtual Cloud. Input tuples required for
+    up- and downloading secrets are channeled through Amphora.
+  version: 0.1.0
+  license:
+    name: Apache-2.0
+    url: https://github.com/carbynestack/castor/blob/eead173d1c28d51dff3aa677f76da2cd74bc81c2/LICENSE
+  contact:
+    name: Carbyne Stack
+    url: https://carbynestack.io/
+tags:
+  - name: Inter VCP
+    description: Endpoints for communication with other Virtual Cloud Providers in the same Virtual Cloud.
+  - name: Intra VCP
+    description: |
+      Endpoints that are to be consumed by the VCP internal services only. These endpoints are not intended to be
+      exposed to the public or other VCPs.
+paths:
+  /inter-vcp/reservation/{reservationId}:
+    put:
+      summary: Update the status of an existing reservation
+      description: Sets the status of the referenced reservation to the provided value.
+      operationId: updateReservationStatus
+      tags:
+        - Inter VCP
+      parameters:
+        - name: reservationId
+          in: path
+          required: true
+          description: ID if the Reservation to be updated
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+              description: The new status of the referenced Reservation
+              enum:
+                - LOCKED
+                - UNLOCKED
+        required: true
+      responses:
+        200:
+          description: OK
+        400:
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                type: string
+        500:
+          description: Internal Server Error
+          content:
+            text/plain:
+              schema:
+                type: string
+  /inter-vcp/reservation:
+    post:
+      summary: Store a shared reservation description
+      description: |
+        Stores a reservation description for a set of tuples. The reservation is not active until it is
+        activated.
+      operationId: reserveTuples
+      tags:
+        - Inter VCP
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Reservation'
+        required: true
+      responses:
+        201:
+          description: Created
+        400:
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                type: string
+        500:
+          description: Internal Server Error
+          content:
+            text/plain:
+              schema:
+                type: string
+  /intra-vcp/telemetry:
+    get:
+      summary: GET intra-vcp/telemetry
+      description: |
+        Retrieves the telemetry data (consumption per second and available tuples) for all types of tuple managed by
+        this Castor service.
+      operationId: getTelemetryData
+      tags:
+        - Intra VCP
+      parameters:
+        - name: interval
+          in: query
+          required: false
+          description: Optional parameter to define the aggregation interval in seconds
+          schema:
+            type: integer
+            format: int64
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TelemetryData'
+        400:
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                type: string
+        500:
+          description: Internal Server Error
+          content:
+            text/plain:
+              schema:
+                type: string
+  /intra-vcp/tuple-chunks/activate/{chunkId}:
+    put:
+      summary: Activate TupleChunk
+      description: Mark a TupleChunk ready for consumption.
+      operationId: activateTupleChunk
+      tags:
+        - Intra VCP
+      parameters:
+        - name: chunkId
+          in: path
+          required: true
+          description: The ID of the referenced TupleChunk
+          schema:
+            type: string
+            format: uuid
+      responses:
+        200:
+          description: OK
+        400:
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                type: string
+        500:
+          description: Internal Server Error
+          content:
+            text/plain:
+              schema:
+                type: string
+  /intra-vcp/tuples:
+    get:
+      summary: Get Tuples
+      description: Download TupleShares stored in this Castor service.
+      operationId: getTuples
+      tags:
+        - Intra VCP
+      parameters:
+        - name: tupletype
+          in: query
+          required: true
+          description: |
+            The requested type of tuples. One of:
+            - BIT_GFP
+            - BIT_GF2N
+            - INPUT_MASK_GFP
+            - INPUT_MASK_GF2N
+            - INVERSE_TUPLE_GFP
+            - INVERSE_TUPLE_GF2N
+            - SQUARE_TUPLE_GFP
+            - SQUARE_TUPLE_GF2N
+            - MULTIPLICATION_TRIPLE_GFP
+            - MULTIPLICATION_TRIPLE_GF2N
+          schema:
+            type: string
+        - name: count
+          in: query
+          required: true
+          description: Number of requested tuples
+          schema:
+            type: integer
+            format: int64
+        - name: reservationId
+          in: query
+          required: true
+          description: The ID of the request. Must be identical for all VCPs to receive related tuple shares
+          schema:
+            type: string
+            format: uuid
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TupleList'
+        400:
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                type: string
+        500:
+          description: Internal Server Error
+          content:
+            text/plain:
+              schema:
+                type: string
+components:
+  schemas:
+    ReservationElement:
+      type: object
+      description: |
+        A ReservationElement is part of a Reservation and provides information about the number of reserved tuple shares
+        and their position in a referenced TupleChunk.
+      properties:
+        tupleChunkId:
+          type: string
+          format: uuid
+          description: Id of the TupleChunk referenced by the ReservationElement
+        reservedTuples:
+          type: integer
+          format: int64
+          description: Number of tuple shares reserved
+        startIndex:
+          type: integer
+          format: int64
+          description: 0-based index of first reserved tuple share in the referenced TupleChunk
+      required:
+        - tupleChunkId
+    Reservation:
+      type: object
+      description: |
+        A Reservation is used to manage the Tuple consumption across all parties participating in the Carbyne Stack
+        MPC-Cluster. Reservations are composed by the master service and distributed to all followers (slaves) in the
+        cluster.
+      properties:
+        reservationId:
+          type: string
+          description: |
+            The identifier of the reservation used to link the reservation to a specific tuple request. The ID is shared
+            across all parties in the Carbyne Stack MPC-CLuster.
+        tupleType:
+          type: string
+          enum:
+            - BIT_GFP
+            - BIT_GF2N
+            - INPUT_MASK_GFP
+            - INPUT_MASK_GF2N
+            - INVERSE_TUPLE_GFP
+            - INVERSE_TUPLE_GF2N
+            - SQUARE_TUPLE_GFP
+            - SQUARE_TUPLE_GF2N
+            - MULTIPLICATION_TRIPLE_GFP
+            - MULTIPLICATION_TRIPLE_GF2N
+        reservations:
+          type: array
+          items:
+            $ref: '#/components/schemas/ReservationElement'
+          description: A set of ReservationElement managed by Reservation
+        status:
+          type: string
+          enum:
+            - LOCKED
+            - UNLOCKED
+          description: |
+            The status of the reservation indicating whether the referenced tuples can be consumed (UNLOCKED) or not
+            LOCKED)
+    TupleMetric:
+      type: object
+      description: |
+        Provides metrics for a given TupleType like the available number of Tuple at the time of request, or how many
+        Tuple of the referenced type have been consumed by clients or internal services within a defined timeframe
+      properties:
+        available:
+          type: integer
+          format: int64
+          description: The number of available Tuple for the referenced type
+        consumptionRate:
+          type: integer
+          format: int64
+          description: The consumption rate for the referenced type of Tuples
+        type:
+          type: string
+          enum:
+            - BIT_GFP
+            - BIT_GF2N
+            - INPUT_MASK_GFP
+            - INPUT_MASK_GF2N
+            - INVERSE_TUPLE_GFP
+            - INVERSE_TUPLE_GF2N
+            - SQUARE_TUPLE_GFP
+            - SQUARE_TUPLE_GF2N
+            - MULTIPLICATION_TRIPLE_GFP
+            - MULTIPLICATION_TRIPLE_GF2N
+          description: The type of Tuples described by this TupleMetrics
+    TelemetryData:
+      type: object
+      description: A set of TupleMetrics for all Tuples managed by this Castor service
+      properties:
+        metrics:
+          type: array
+          items:
+            $ref: '#/components/schemas/TupleMetric'
+        interval:
+          type: integer
+          format: int64
+          description: |
+            Observation period of the plotted metrics for time-dependent characteristics such as the consumption rate
+    Field:
+      type: object
+      description: Describes the algebraic structure and mathematical field of the referenced tuples
+      properties:
+        "@type":
+          type: string
+          enum:
+            - Gfp
+            - Gf2n
+        name:
+          type: string
+          description: Name identifier of the field
+        elementSize:
+          type: integer
+          format: int32
+          description: Byte size of a Share's value and mac in the given Field
+    Share:
+      type: object
+      description: Represents an element of a Tuple and consists of a value and a mac
+      properties:
+        value:
+          type: string
+          description: Base64 encoded value of the share
+        mac:
+          type: string
+          description: Base64 encoded mac value of the share
+    Tuple:
+      type: object
+      description: Object representation of a Tuple Share stored in Castor
+      properties:
+        "@type":
+          type: string
+          description: Defines the class (structure) of the provided tuples
+          enum:
+            - Bit
+            - InputMask
+            - InverseTuple
+            - MultiplicationTriple
+            - SquareTuple
+        field:
+          type: string
+          $ref: '#/components/schemas/Field'
+        shares:
+          type: array
+          items:
+            $ref: '#/components/schemas/Share'
+    TupleList:
+      type: object
+      description: A serialized TupleList holding the requested Tuples
+      properties:
+        tupleCls:
+          type: string
+          description: Defines the class (structure) of the provided tuples
+          enum:
+            - Bit
+            - InputMask
+            - InverseTuple
+            - MultiplicationTriple
+            - SquareTuple
+        field:
+          type: object
+          $ref: '#/components/schemas/Field'
+        tuples:
+          type: array
+          items:
+            $ref: '#/components/schemas/Tuple'

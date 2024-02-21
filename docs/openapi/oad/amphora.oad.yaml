@@ -1,0 +1,856 @@
+openapi: 3.1.0
+info:
+  title: Amphora Service API
+  description: |
+    This API allows to interact with the Amphora service. It provides functionality to store, fetch and manage secret
+    shared data as used for MPC-based distributed computation on encrypted data in the Carbyne Stack platform.
+
+    The endpoints provided by Amphora are divided into three categories:
+    - User facing: \
+      Used by clients for secret sharing, accessing, and managing secret shares and their tags (*/input-masks*,
+      */masked-input*, */secret-shares*).
+    - Intra VCP (`/intra-vcp`): \
+      Used by services running in the same Virtual Cloud Provider to access locally stored secret shares, e.g. for
+      ingesting into a computation.
+    - Inter VCP (`/inter-vcp`): \
+      Used for communication with other Virtual Cloud Providers in the same Virtual Cloud.
+  version: 0.1.0
+  license:
+    name: Apache-2.0
+    url: https://github.com/carbynestack/amphora/blob/0b1866f9fbe1619729fc16fd8f9c7af679eaf979/LICENSE
+  contact:
+    name: Carbyne Stack
+    url: https://carbynestack.io/
+tags:
+  - name: User facing
+    description: Used by clients for secret sharing, accessing, and managing secret shares and their tags.
+  - name: Inter VCP
+    description: Used for communication with other Virtual Cloud Providers in the same Virtual Cloud.
+  - name: Intra VCP
+    description: |
+      Used by services running in the same Virtual Cloud Provider to access locally stored secret shares, e.g. for
+      ingesting into a computation.
+paths:
+  /secret-shares/{secretId}:
+    delete:
+      summary: Delete SecretShare
+      description: Delete a SecretShare with a given id.
+      operationId: deleteSecretShare
+      tags:
+        - User facing
+      parameters:
+        - name: secretId
+          description: ID of the SecretShare to delete.
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        200:
+          description: OK
+        400:
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+        404:
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                type: string
+        500:
+          description: Internal Server Error
+          content:
+            text/plain:
+              schema:
+                type: string
+    get:
+      summary: Get SecretShare
+      description: |
+        Retrieve a SecretShare with the given ID. The SecretShare is provided as combination of its metadata
+        together with an OutputDeliveryObject which allows to verify its integrity.
+      operationId: getSecretShare
+      tags:
+        - User facing
+      parameters:
+        - name: secretId
+          description: ID of the requested SecretShare.
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: requestId
+          description: |
+            ID of the get request. Used to synchronize the computation of the OutputDeliveryObject across all VCPs.
+          in: query
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        200:
+          description: OK
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/VerifiableSecretShare'
+        400:
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+        404:
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                type: string
+        500:
+          description: Internal Server Error
+          content:
+            text/plain:
+              schema:
+                type: string
+  /secret-shares:
+    get:
+      summary: List SecretShares
+      description: Retrieve a page of Metadata for all stored SecretShares matching the given filters and criteria.
+      operationId: getObjectList
+      tags:
+        - User facing
+      parameters:
+        - name: filter
+          description: Filter configuration to be applied.
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: pageNumber
+          description: The page number to retrieve.
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 0
+        - name: pageSize
+          description: Number of entries per page.
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 0
+        - name: sort
+          description: The Tag key used for sorting.
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: dir
+          description: Sort direction.
+          in: query
+          required: false
+          schema:
+            type: string
+            enum:
+              - ASC
+              - DESC
+      responses:
+        200:
+          description: OK
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/MetadataPage'
+        400:
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+        500:
+          description: Internal Server Error
+          content:
+            text/plain:
+              schema:
+                type: string
+  /secret-shares/{secretId}/tags:
+    put:
+      summary: Replace Tags
+      description: Replaces all Tags of the referenced SecretShare.
+      operationId: updateTags
+      tags:
+        - User facing
+      parameters:
+        - name: secretId
+          description: ID of the SecretShare whose Tags to replace.
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Tag'
+        required: true
+      responses:
+        200:
+          description: OK
+        400:
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+        404:
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                type: string
+        500:
+          description: Internal Server Error
+          content:
+            text/plain:
+              schema:
+                type: string
+    post:
+      summary: Add new Tag
+      description: Add a new Tag to the referenced SecretShare.
+      operationId: createTag
+      tags:
+        - User facing
+      parameters:
+        - name: secretId
+          description: ID of the SecretShare to attach the Tag to.
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tag'
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            'application/json':
+              schema:
+                type: string
+                format: uri
+        400:
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+        404:
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                type: string
+        409:
+          description: Conflict
+          content:
+            text/plain:
+              schema:
+                type: string
+        500:
+          description: Internal Server Error
+          content:
+            text/plain:
+              schema:
+                type: string
+    get:
+      summary: List Tags
+      description: List all Tags of the referenced SecretShare.
+      operationId: getTags
+      tags:
+        - User facing
+      parameters:
+        - name: secretId
+          description: ID of the SecretShare whose Tags to list.
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag'
+        400:
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+        404:
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                type: string
+        500:
+          description: Internal Server Error
+          content:
+            text/plain:
+              schema:
+                type: string
+  /secret-shares/{secretId}/tags/{tagKey}:
+    put:
+      summary: Update Tag
+      description: Update the value of a Tag of the referenced SecretShare.
+      operationId: putTag
+      tags:
+        - User facing
+      parameters:
+        - name: secretId
+          description: ID of the SecretShare whose Tag to update.
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: tagKey
+          description: Key (identifier) of the Tag to update.
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tag'
+        required: true
+      responses:
+        200:
+          description: OK
+        400:
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+        404:
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                type: string
+        500:
+          description: Internal Server Error
+          content:
+            text/plain:
+              schema:
+                type: string
+    delete:
+      summary: Delete a Tag
+      description: Delete a Tag of the referenced SecretShare.
+      operationId: deleteTag
+      tags:
+        - User facing
+      parameters:
+        - name: secretId
+          description: ID of the SecretShare whose Tag to delete.
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: tagKey
+          description: Key (identifier) of the Tag to delete.
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+        400:
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+        404:
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                type: string
+        500:
+          description: Internal Server Error
+          content:
+            text/plain:
+              schema:
+                type: string
+    get:
+      summary: Get Tag
+      description: Retrieve a specific Tag.
+      operationId: getTag
+      tags:
+        - User facing
+      parameters:
+        - name: secretId
+          description: ID of the SecretShare whose Tag to retrieve.
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: tagKey
+          description: Key (identifier) of the Tag to retrieve.
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tag'
+        400:
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+        404:
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                type: string
+        500:
+          description: Internal Server Error
+          content:
+            text/plain:
+              schema:
+                type: string
+  /intra-vcp/secret-shares:
+    post:
+      summary: Store SecretShare
+      description: Store the provided (plain) SecretShare.
+      operationId: uploadSecretShare
+      tags:
+        - Intra VCP
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SecretShare'
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+                format: uri
+        400:
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+        409:
+          description: Conflict
+          content:
+            text/plain:
+              schema:
+                type: string
+        500:
+          description: Internal Server Error
+          content:
+            text/plain:
+              schema:
+                type: string
+  /intra-vcp/secret-shares/{secretId}:
+    get:
+      summary: Get SecretShare
+      description: Retrieve the plain SecretShare with the given ID.
+      operationId: downloadSecretShare
+      tags:
+        - Intra VCP
+      parameters:
+        - name: secretId
+          description: ID of the requested SecretShare
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SecretShare'
+        400:
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+        404:
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                type: string
+        500:
+          description: Internal Server Error
+          content:
+            text/plain:
+              schema:
+                type: string
+  /masked-inputs:
+    post:
+      summary: Upload a MaskedInput
+      description: |
+        A MaskedInput is used to securely secret share values with the participating parties. Amphora will then use this
+        MaskedInput to compute its individual SecretShare together with the provided tags.
+      operationId: upload
+      tags:
+        - User facing
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MaskedInput'
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+                format: uri
+        400:
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+        409:
+          description: Conflict
+          content:
+            text/plain:
+              schema:
+                type: string
+        500:
+          description: Internal Server Error
+          content:
+            text/plain:
+              schema:
+                type: string
+  /inter-vcp/open:
+    post:
+      summary: Store InterimValues
+      description: Used to exchange (open) InterimValues of a mpc-based multiplication.
+      operationId: open
+      tags:
+        - Inter VCP
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MultiplicationExchangeObject'
+        required: true
+      responses:
+        200:
+          description: OK
+        400:
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+        409:
+          description: Conflict
+          content:
+            text/plain:
+              schema:
+                type: string
+        500:
+          description: Internal Server Error
+          content:
+            text/plain:
+              schema:
+                type: string
+  /input-masks:
+    get:
+      summary: Get InputMaks
+      description: |
+        Retrieve a set of party individual InputMask shares. The InputMaks can be used to secret share confidential
+        data (compute a MaskedInput).
+      operationId: getInputMasks
+      tags:
+        - User facing
+      parameters:
+        - name: requestId
+          description: |
+            Identifier used to ensure each party provides the related shares of the InputMaks linked to the upload
+            (secret sharing) process. This ID must be re-used when uploading the MaskedInput.
+          in: query
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: count
+          description: The number of requested InputMasks.
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputDeliveryObject'
+        400:
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+        409:
+          description: Conflict
+          content:
+            text/plain:
+              schema:
+                type: string
+        500:
+          description: Internal Server Error
+          content:
+            text/plain:
+              schema:
+                type: string
+components:
+  schemas:
+    Tag:
+      type: object
+      description: A key-value pair used to describe characteristics of a SecretShare.
+      properties:
+        key:
+          type: string
+          description: |
+            The key identifier of the Tag. It must have a minimum length of 1 character and a maximum length of 128
+            characters containing only alphanumeric characters, periods (.), hyphens (-) and underscores (_).
+        value:
+          type: string
+          description: |
+            The value of the Tag. Must have a maximum length of 256 characters containing any character. It may be empty
+            if the Tag is to be used as a flag, but must not be null.
+        valueType:
+          type: string
+          description: Defines the content type of the Tag's value.
+          enum:
+            - STRING
+            - LONG
+      required:
+        - key
+        - value
+        - valueType
+    Metadata:
+      type: object
+      description: |
+        The Metadata is used to describe individual SecretShares.
+      properties:
+        secretId:
+          type: string
+          description: Identifier of the stored SecretShare.
+          format: uuid
+        tags:
+          type: array
+          description: A list of Tags used to describe the stored content.
+          items:
+            $ref: '#/components/schemas/Tag'
+      required:
+        - secretId
+    MetadataPage:
+      type: object
+      description: A paged to provide a (sub-)set of the SecretShares stored in this Amphora instance.
+      properties:
+        content:
+          type: array
+          description: The MetaData object contained in this page.
+          items:
+            $ref: '#/components/schemas/Metadata'
+        number:
+          type: integer
+          description: The page number.
+          format: int32
+        size:
+          type: integer
+          description: The number of MetaData objects (entries) provided with this page.
+          format: int32
+        totalElements:
+          type: integer
+          description: The total number of MetaData objects storied in Amphora that matches the request criteria.
+          format: int64
+        totalPages:
+          type: integer
+          description: The total number of pages available for the given request criteria.
+          format: int32
+    OutputDeliveryObject:
+      type: object
+      description: |
+        Allows the client to verify the integrity provided SecretShare as described in the following paper: \
+        Ivan Damgård, Kasper Damgård, Kurt Nielsen, Peter Sebastian Nordholt, Tomas Toft: \
+        Confidential Benchmarking based on Multiparty Computation. IACR Cryptology ePrint Archive 2015:
+        1006 (2015) \
+        [Confidential Benchmarking based on Multiparty Computation](https://eprint.iacr.org/2015/1006)
+      properties:
+        secretShares:
+          type: array
+          description: The actual share of the secret.
+          items:
+            type: string
+            format: byte
+        rShares:
+          type: array
+          description: The shares for the *random r*s.
+          items:
+            type: string
+            format: byte
+        vShares:
+          type: array
+          description: The shares for the *random v*s.
+          items:
+            type: string
+            format: byte
+        wShares:
+          type: array
+          description: The shares for the *authentication values w*s.
+          items:
+            type: string
+            format: byte
+        uShares:
+          type: array
+          description: The shares for the *authentication values u*s.
+          items:
+            type: string
+            format: byte
+    VerifiableSecretShare:
+      type: object
+      description: |
+        The combination of an OutputDeliveryObject and the Metadata  in one object used by the Amphora services to send
+        their individual SecretShare to the client.
+      properties:
+        metadata:
+          $ref: '#/components/schemas/Metadata'
+        outputDeliveryObject:
+          $ref: '#/components/schemas/OutputDeliveryObject'
+    SecretShare:
+      type: object
+      description: An individual secret share stored in Amphora.
+      properties:
+        data:
+          type: array
+          description: |
+            The actual data of the SecretShare stored in the gfp byte representation as consumed by the MP-SPDZ.
+          items:
+            type: string
+            format: byte
+        secretId:
+          type: string
+          description: Identifier of the stored secret.
+          format: uuid
+        tags:
+          type: array
+          description: List of Tag used to describe the stored content and purpose of the SecretShare.
+          items:
+            $ref: '#/components/schemas/Tag'
+      required:
+        - secretId
+    MaskedInputData:
+      type: object
+      description: Represents the actual data of a MaskedInput.
+      properties:
+        value:
+          type: array
+          items:
+            type: string
+            format: byte
+    MaskedInput:
+      type: object
+      description: |
+        A MaskedInput is used to securely secret share values with the participating parties. Amphora will then use this
+        MaskedInput to compute its individual SecretShare together with the provided tags.
+      properties:
+        secretId:
+          type: string
+          description: |
+            Identifier of the MaskedInput used to match the distributed shares of a secret amongst the VCPs.
+          format: uuid
+        data:
+          type: array
+          description: Stores the data of the MaskedInput. Holds in general a single value only.
+          items:
+            $ref: '#/components/schemas/MaskedInputData'
+        tags:
+          type: array
+          description: |
+            List of Tags used to describe the content and purpose of the SecretShare derived from this MaskedInput.
+          items:
+            $ref: '#/components/schemas/Tag'
+    FactorPair:
+      type: object
+      description: A pair of two values each representing a factor of a mpc-based multiplication.
+      properties:
+        a:
+          type: integer
+          description: First value representing a BigInteger factor.
+        b:
+          type: integer
+          description: Second value representing a BigInteger factor.
+    MultiplicationExchangeObject:
+      type: object
+      description: Represents a party's interim values from an MPC multiplication.
+      properties:
+        operationId:
+          type: string
+          description: |
+            Identifier of the shared information used to link the data to a specific MPC-based multiplication performed
+            amongst the involved players.
+          format: uuid
+        playerId:
+          type: integer
+          decription: The id of the player in the mpc cluster providing the object.
+          format: int32
+        interimValues:
+          type: array
+          description: The actual interim value(s) of the performed multiplication.
+          items:
+            $ref: '#/components/schemas/FactorPair'

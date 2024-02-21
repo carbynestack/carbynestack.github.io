@@ -6,21 +6,26 @@
 #
 nav:
   - Home: index.md
-  - Getting Started:
-      - getting-started/index.md
-      - Overview: getting-started/overview.md
-      - Prerequisites: getting-started/prerequisites.md
-      - Deployment:
-          - getting-started/deployment/index.md
-          - Manual:
-              - getting-started/deployment/manual/index.md
-              - Platform Setup: getting-started/deployment/manual/platform-setup.md
-              - Stack: getting-started/deployment/manual/stack.md
-          - Infrastructure as Code:
-              - getting-started/deployment/infrastructure-as-code/index.md
-              - Local: getting-started/deployment/infrastructure-as-code/local.md
-      - Configuring the CLI: getting-started/cli.md
-      - Millionaires Problem: getting-started/millionaires.md
+  - Documentation:
+      - Getting Started:
+          - getting-started/index.md
+          - Overview: getting-started/overview.md
+          - Prerequisites: getting-started/prerequisites.md
+          - Deployment:
+              - getting-started/deployment/index.md
+              - Manual:
+                  - getting-started/deployment/manual/index.md
+                  - Platform Setup: getting-started/deployment/manual/platform-setup.md
+                  - Stack: getting-started/deployment/manual/stack.md
+              - Infrastructure as Code:
+                  - getting-started/deployment/infrastructure-as-code/index.md
+                  - Local: getting-started/deployment/infrastructure-as-code/local.md
+          - Configuring the CLI: getting-started/cli.md
+          - Millionaires Problem: getting-started/millionaires.md
+      - Service API:
+          - Castor: openapi/castor_openapi.md
+          - Amphora: openapi/amphora_openapi.md
+          - Ephemeral: openapi/ephemeral_openapi.md
   - Blog: https://blog.carbynestack.io
   - Community:
       - Participate: community/participate.md
