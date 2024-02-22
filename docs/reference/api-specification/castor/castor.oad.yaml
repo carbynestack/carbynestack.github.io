@@ -3,17 +3,18 @@ info:
   title: Castor Service API
   description: |
     This API allows to interact with the Castor service. It provides methods to reserve and consume tuples, and to get
-    telemetry data. The service endpoints are separated into two categories: inter-VCP and intra-VCP.
+    telemetry data. The service endpoints are separated into two categories:
 
-    - Inter VCP (`/inter-vcp`): \
+    - Inter-VCP (`/inter-vcp`): \
       Endpoints for communication with other Virtual Cloud Providers in the same Virtual Cloud.
-    - Intra VCP (`/intra-vcp`): \
-      Endpoints that are to be consumed by the VCP internal services only. These endpoints are not intended to be
-      exposed to the public or other VCPs.
+      
+    - Intra-VCP (`/intra-vcp`): \
+      Endpoints that are to be consumed by the VCP internal services only. These endpoints are not exposed to the
+      public or other VCPs.
 
     Please note that Castor does not provide an interface to the clients of a Virtual Cloud. Input tuples required for
     up- and downloading secrets are channeled through Amphora.
-  version: 0.1.0
+  version: v0.1.1
   license:
     name: Apache-2.0
     url: https://github.com/carbynestack/castor/blob/eead173d1c28d51dff3aa677f76da2cd74bc81c2/LICENSE
@@ -21,12 +22,12 @@ info:
     name: Carbyne Stack
     url: https://carbynestack.io/
 tags:
-  - name: Inter VCP
+  - name: Inter-VCP
     description: Endpoints for communication with other Virtual Cloud Providers in the same Virtual Cloud.
-  - name: Intra VCP
+  - name: Intra-VCP
     description: |
-      Endpoints that are to be consumed by the VCP internal services only. These endpoints are not intended to be
-      exposed to the public or other VCPs.
+      Endpoints that are to be consumed by the VCP internal services only. These endpoints are not exposed to the
+      public or other VCPs.
 paths:
   /inter-vcp/reservation/{reservationId}:
     put:
@@ -34,7 +35,7 @@ paths:
       description: Sets the status of the referenced reservation to the provided value.
       operationId: updateReservationStatus
       tags:
-        - Inter VCP
+        - Inter-VCP
       parameters:
         - name: reservationId
           in: path
@@ -60,13 +61,13 @@ paths:
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         500:
           description: Internal Server Error
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
   /inter-vcp/reservation:
     post:
       summary: Store a shared reservation description
@@ -75,7 +76,7 @@ paths:
         activated.
       operationId: reserveTuples
       tags:
-        - Inter VCP
+        - Inter-VCP
       requestBody:
         content:
           application/json:
@@ -90,22 +91,22 @@ paths:
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         500:
           description: Internal Server Error
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
   /intra-vcp/telemetry:
     get:
       summary: GET intra-vcp/telemetry
       description: |
-        Retrieves the telemetry data (consumption per second and available tuples) for all types of tuple managed by
+        Retrieves the telemetry data (consumption per second and available tuples) for all types of tuples managed by
         this Castor service.
       operationId: getTelemetryData
       tags:
-        - Intra VCP
+        - Intra-VCP
       parameters:
         - name: interval
           in: query
@@ -126,20 +127,20 @@ paths:
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         500:
           description: Internal Server Error
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
   /intra-vcp/tuple-chunks/activate/{chunkId}:
     put:
       summary: Activate TupleChunk
       description: Mark a TupleChunk ready for consumption.
       operationId: activateTupleChunk
       tags:
-        - Intra VCP
+        - Intra-VCP
       parameters:
         - name: chunkId
           in: path
@@ -156,20 +157,20 @@ paths:
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         500:
           description: Internal Server Error
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
   /intra-vcp/tuples:
     get:
       summary: Get Tuples
       description: Download TupleShares stored in this Castor service.
       operationId: getTuples
       tags:
-        - Intra VCP
+        - Intra-VCP
       parameters:
         - name: tupletype
           in: query
@@ -214,13 +215,13 @@ paths:
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         500:
           description: Internal Server Error
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
 components:
   schemas:
     ReservationElement:
@@ -388,3 +389,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Tuple'
+    ErrorMessage:
+      type: string
+      description: Textual description of the error that has occurred.

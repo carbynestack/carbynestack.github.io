@@ -6,15 +6,16 @@ info:
     shared data as used for MPC-based distributed computation on encrypted data in the Carbyne Stack platform.
 
     The endpoints provided by Amphora are divided into three categories:
-    - User facing: \
-      Used by clients for secret sharing, accessing, and managing secret shares and their tags (*/input-masks*,
-      */masked-input*, */secret-shares*).
-    - Intra VCP (`/intra-vcp`): \
-      Used by services running in the same Virtual Cloud Provider to access locally stored secret shares, e.g. for
-      ingesting into a computation.
-    - Inter VCP (`/inter-vcp`): \
+    - User-facing (`/`): \
+      Used by clients for secret sharing, accessing, and managing secret shares and their tags.
+
+    - Intra-VCP (`/intra-vcp`): \
+      Used by Carbyne Stack microservices running in the same Virtual Cloud Provider to access locally stored secret
+      shares, e.g. for ingesting into a computation.
+
+    - Inter-VCP (`/inter-vcp`): \
       Used for communication with other Virtual Cloud Providers in the same Virtual Cloud.
-  version: 0.1.0
+  version: v0.1.1
   license:
     name: Apache-2.0
     url: https://github.com/carbynestack/amphora/blob/0b1866f9fbe1619729fc16fd8f9c7af679eaf979/LICENSE
@@ -22,14 +23,14 @@ info:
     name: Carbyne Stack
     url: https://carbynestack.io/
 tags:
-  - name: User facing
+  - name: User-facing
     description: Used by clients for secret sharing, accessing, and managing secret shares and their tags.
-  - name: Inter VCP
+  - name: Inter-VCP
     description: Used for communication with other Virtual Cloud Providers in the same Virtual Cloud.
-  - name: Intra VCP
+  - name: Intra-VCP
     description: |
-      Used by services running in the same Virtual Cloud Provider to access locally stored secret shares, e.g. for
-      ingesting into a computation.
+      Used by Carbyne Stack microservices running in the same Virtual Cloud Provider to access locally stored secret
+      shares, e.g. for ingesting into a computation.
 paths:
   /secret-shares/{secretId}:
     delete:
@@ -37,7 +38,7 @@ paths:
       description: Delete a SecretShare with a given id.
       operationId: deleteSecretShare
       tags:
-        - User facing
+        - User-facing
       parameters:
         - name: secretId
           description: ID of the SecretShare to delete.
@@ -54,19 +55,19 @@ paths:
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         404:
           description: Not Found
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         500:
           description: Internal Server Error
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
     get:
       summary: Get SecretShare
       description: |
@@ -74,7 +75,7 @@ paths:
         together with an OutputDeliveryObject which allows to verify its integrity.
       operationId: getSecretShare
       tags:
-        - User facing
+        - User-facing
       parameters:
         - name: secretId
           description: ID of the requested SecretShare.
@@ -95,7 +96,7 @@ paths:
         200:
           description: OK
           content:
-            'application/json':
+            application/json:
               schema:
                 $ref: '#/components/schemas/VerifiableSecretShare'
         400:
@@ -103,26 +104,26 @@ paths:
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         404:
           description: Not Found
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         500:
           description: Internal Server Error
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
   /secret-shares:
     get:
       summary: List SecretShares
       description: Retrieve a page of Metadata for all stored SecretShares matching the given filters and criteria.
       operationId: getObjectList
       tags:
-        - User facing
+        - User-facing
       parameters:
         - name: filter
           description: Filter configuration to be applied.
@@ -173,20 +174,20 @@ paths:
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         500:
           description: Internal Server Error
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
   /secret-shares/{secretId}/tags:
     put:
       summary: Replace Tags
       description: Replaces all Tags of the referenced SecretShare.
       operationId: updateTags
       tags:
-        - User facing
+        - User-facing
       parameters:
         - name: secretId
           description: ID of the SecretShare whose Tags to replace.
@@ -211,25 +212,25 @@ paths:
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         404:
           description: Not Found
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         500:
           description: Internal Server Error
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
     post:
       summary: Add new Tag
       description: Add a new Tag to the referenced SecretShare.
       operationId: createTag
       tags:
-        - User facing
+        - User-facing
       parameters:
         - name: secretId
           description: ID of the SecretShare to attach the Tag to.
@@ -257,31 +258,31 @@ paths:
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         404:
           description: Not Found
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         409:
           description: Conflict
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         500:
           description: Internal Server Error
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
     get:
       summary: List Tags
       description: List all Tags of the referenced SecretShare.
       operationId: getTags
       tags:
-        - User facing
+        - User-facing
       parameters:
         - name: secretId
           description: ID of the SecretShare whose Tags to list.
@@ -304,26 +305,26 @@ paths:
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         404:
           description: Not Found
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         500:
           description: Internal Server Error
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
   /secret-shares/{secretId}/tags/{tagKey}:
     put:
       summary: Update Tag
       description: Update the value of a Tag of the referenced SecretShare.
       operationId: putTag
       tags:
-        - User facing
+        - User-facing
       parameters:
         - name: secretId
           description: ID of the SecretShare whose Tag to update.
@@ -352,25 +353,25 @@ paths:
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         404:
           description: Not Found
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         500:
           description: Internal Server Error
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
     delete:
       summary: Delete a Tag
       description: Delete a Tag of the referenced SecretShare.
       operationId: deleteTag
       tags:
-        - User facing
+        - User-facing
       parameters:
         - name: secretId
           description: ID of the SecretShare whose Tag to delete.
@@ -393,25 +394,25 @@ paths:
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         404:
           description: Not Found
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         500:
           description: Internal Server Error
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
     get:
       summary: Get Tag
       description: Retrieve a specific Tag.
       operationId: getTag
       tags:
-        - User facing
+        - User-facing
       parameters:
         - name: secretId
           description: ID of the SecretShare whose Tag to retrieve.
@@ -438,26 +439,26 @@ paths:
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         404:
           description: Not Found
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         500:
           description: Internal Server Error
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
   /intra-vcp/secret-shares:
     post:
       summary: Store SecretShare
       description: Store the provided (plain) SecretShare.
       operationId: uploadSecretShare
       tags:
-        - Intra VCP
+        - Intra-VCP
       requestBody:
         content:
           application/json:
@@ -472,31 +473,32 @@ paths:
               schema:
                 type: string
                 format: uri
+                description: ID of the stored SecretShare
         400:
           description: Bad Request
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         409:
           description: Conflict
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         500:
           description: Internal Server Error
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
   /intra-vcp/secret-shares/{secretId}:
     get:
       summary: Get SecretShare
       description: Retrieve the plain SecretShare with the given ID.
       operationId: downloadSecretShare
       tags:
-        - Intra VCP
+        - Intra-VCP
       parameters:
         - name: secretId
           description: ID of the requested SecretShare
@@ -517,19 +519,19 @@ paths:
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         404:
           description: Not Found
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         500:
           description: Internal Server Error
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
   /masked-inputs:
     post:
       summary: Upload a MaskedInput
@@ -538,7 +540,7 @@ paths:
         MaskedInput to compute its individual SecretShare together with the provided tags.
       operationId: upload
       tags:
-        - User facing
+        - User-facing
       requestBody:
         content:
           application/json:
@@ -553,31 +555,32 @@ paths:
               schema:
                 type: string
                 format: uri
+                description: ID of the new (computed) SecretShare
         400:
           description: Bad Request
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         409:
           description: Conflict
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         500:
           description: Internal Server Error
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
   /inter-vcp/open:
     post:
       summary: Store InterimValues
-      description: Used to exchange (open) InterimValues of a mpc-based multiplication.
+      description: Used to exchange (open) InterimValues of a MPC-based multiplication.
       operationId: open
       tags:
-        - Inter VCP
+        - Inter-VCP
       requestBody:
         content:
           application/json:
@@ -592,19 +595,19 @@ paths:
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         409:
           description: Conflict
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         500:
           description: Internal Server Error
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
   /input-masks:
     get:
       summary: Get InputMaks
@@ -613,7 +616,7 @@ paths:
         data (compute a MaskedInput).
       operationId: getInputMasks
       tags:
-        - User facing
+        - User-facing
       parameters:
         - name: requestId
           description: |
@@ -643,19 +646,19 @@ paths:
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         409:
           description: Conflict
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
         500:
           description: Internal Server Error
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorMessage'
 components:
   schemas:
     Tag:
@@ -827,7 +830,7 @@ components:
             $ref: '#/components/schemas/Tag'
     FactorPair:
       type: object
-      description: A pair of two values each representing a factor of a mpc-based multiplication.
+      description: A pair of two values each representing a factor of a MPC-based multiplication.
       properties:
         a:
           type: integer
@@ -847,10 +850,13 @@ components:
           format: uuid
         playerId:
           type: integer
-          decription: The id of the player in the mpc cluster providing the object.
+          decription: The id of the player in the MPC cluster providing the object.
           format: int32
         interimValues:
           type: array
           description: The actual interim value(s) of the performed multiplication.
           items:
             $ref: '#/components/schemas/FactorPair'
+    ErrorMessage:
+      type: string
+      description: Textual description of the error that has occurred.
