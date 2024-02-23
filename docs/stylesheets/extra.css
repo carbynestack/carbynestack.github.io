@@ -80,3 +80,7 @@
 .announcement-bar a:where(:focus, :hover) {
   color: var(--md-typeset-a-color) !important;
 }
+
+.swagger-ui .info {
+  margin: 0 0;
+}

@@ -1,0 +1,87 @@
+openapi: 3.1.0
+info:
+  title: Ephemeral Service API
+  description: |
+    This API allows to interact with the Ephemeral service. It provides a single endpoint used to trigger computations.
+  version: v0.1.13
+  license:
+    name: Apache-2.0
+    url: https://github.com/carbynestack/ephemeral/blob/7ce9f830de3c5852afdc6c3c6c591fc5d04a50f7/LICENSE
+  contact:
+    name: Carbyne Stack
+    url: https://carbynestack.io/
+paths:
+  /:
+    post:
+      summary: Trigger MPC function
+      description: |
+        Triggers the execution of a MPC function. The result of the computation is stored as a new Amphora Secret referenced
+        by the gameID provided when triggering the computation.
+      operationId: activate
+      tags:
+        - ephemeral
+      parameters:
+        - name: compile
+          description: |
+            Indicates whether *new* MPC function code is provided with this request. If a function is provided, it will
+            be loaded into the container and compiled before executing the computation.
+          in: query
+          required: false
+          schema:
+            type: boolean
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Activation'
+      responses:
+        200:
+          description: OK
+        400:
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        500:
+          description: Internal Server Error
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+components:
+  schemas:
+    Activation:
+      type: object
+      properties:
+        gameID:
+          type: string
+          format: uuid
+          description: |
+            ID of the computation process. This is used to synchronize and link the computation processes of
+            the VC.
+        amphoraParams:
+          type: array
+          description: A list of Amphora SecretShare IDs which should be used as input to the computation.
+          items:
+            type: string
+            format: uuid
+        output:
+          type: string
+          description: |
+            Defines how and where the result of the computation is stored. Although multiple options are
+            available, this **must** be set to '**AMPHORASECRET**'.
+          enum:
+            - AMPHORASECRET
+            - SECRETSHARE
+            - PLAINTEXT
+        code:
+          type: string
+          description: MPC function code to be compiled and run for this computation process.
+      required:
+        - amphoraParams
+        - gameID
+        - output
+    ErrorMessage:
+      type: string
+      description: Textual description of the error that has occurred.
