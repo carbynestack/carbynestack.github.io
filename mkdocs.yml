@@ -71,6 +71,11 @@ plugins:
       minify_js: true
       htmlmin_opts:
         remove_comments: true
+  - swagger-ui-tag:
+      tryItOutEnabled: false
+      supportedSubmitMethods: []
+      extra_css:
+      - stylesheets/extra.css
 
 extra:
   social:

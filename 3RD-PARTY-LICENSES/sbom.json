@@ -2,5 +2,8 @@
   {
     "project": "https://github.com/knative/docs",
     "license": "Apache-2.0"
+  }, {
+    "project": "https://github.com/blueswen/mkdocs-swagger-ui-tag",
+    "license": "MIT"
   }
 ]
