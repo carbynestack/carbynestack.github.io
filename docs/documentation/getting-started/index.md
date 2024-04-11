@@ -7,10 +7,7 @@ Carbyne Stack MPC Cloud Platform and how they can be used to solve the
 Millionaires' Problem or to recognize handwritten letters via privacy-friendly
 Machine Learning.
 
-<video controls style="width: 100% !important; height: auto !important;">
-    <source src="https://d1g2d0fr19rt5z.cloudfront.net/kVOD/streaming.video.bosch.com/pd/p/102/sp/10200/serveFlavor/entryId/0_grchatrr/v/2/ev/4/flavorId/0_imfgecx3/name/a.mp4">
-    Sorry, your browser doesn't support embedded videos.
-</video>
+<iframe style="width: 100% !important; height: auto; aspect-ratio: 16/9; !important;" src="https://bosch-ext.mediaspace.de.kaltura.com/embed/secure/iframe/entryId/0_fpyhg6ki/uiConfId/23448904" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="fullscreen *; encrypted-media *" frameborder="0" title="Carbyne Stack Tutorial">Sorry, your browser doesn't support embedded videos.</iframe>
 
 ## Hands-On Tutorials
 
