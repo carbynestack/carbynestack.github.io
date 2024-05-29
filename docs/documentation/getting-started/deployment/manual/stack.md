@@ -58,10 +58,10 @@ clusters using the kind tool as described in the
         cd carbynestack/deployments
         ```
 
-1. Checkout Carbyne Stack SDK version 0.5.1 using:
+1. Checkout Carbyne Stack SDK version 0.7.0 using:
 
     ```shell
-    git checkout sdk-v0.5.1
+    git checkout sdk-v0.7.0
     ```
 
 1. Before deploying the virtual cloud providers make some common configuration
@@ -78,6 +78,7 @@ clusters using the kind tool as described in the
     export RELEASE_NAME=cs
     export DISCOVERY_MASTER_HOST=$APOLLO_FQDN
     export NO_SSL_VALIDATION=true
+    export PROTOCOL=http
     ```
 
 1. Configure the _Correlated Randomness Generator_ (CRG) used by Klyshko
@@ -119,7 +120,7 @@ clusters using the kind tool as described in the
     export IS_MASTER=false
     export AMPHORA_VC_PARTNER_URI=http://$APOLLO_FQDN/amphora
     kubectl config use-context kind-starbuck
-    helmfile apply
+    helmfile sync --set thymus.users.enabled=true
     ```
 
 1. Launch the `apollo` VCP using:
@@ -130,7 +131,7 @@ clusters using the kind tool as described in the
     export AMPHORA_VC_PARTNER_URI=http://$STARBUCK_FQDN/amphora
     export CASTOR_SLAVE_URI=http://$STARBUCK_FQDN/castor
     kubectl config use-context kind-apollo
-    helmfile apply
+    helmfile sync --set thymus.users.enabled=true
     ```
 
 1. Wait until all pods in both clusters are in the `ready` state.
