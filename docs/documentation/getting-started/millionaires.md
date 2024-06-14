@@ -12,7 +12,7 @@ these.
 
 In addition, this guide assumes that you have the following tools installed:
 
-- Java 8 (newer versions will not work)
+- Java 11 (newer versions will not work)
 
 ## The Billionaires Problem
 
@@ -31,14 +31,36 @@ see how things work, let's put ourselves in Elon's shoes.
 First, we upload the inputs into the Carbyne Stack
 [Amphora Secret Store](https://github.com/carbynestack/amphora). The inputs are
 the billionaires' net worth in billions. Note that this obviously has to be done
-in a private way by Jeff and Elon in a real-world setting.
+in a private way by Jeff and Elon in a real-world setting, simplified here by
+logging in as individual users.
+
+The first secret will be uploaded with the identity of Jeff. To do so please
+perform the following commands and login as Jeff using the E-Mail
+`jeff.bezos@amazon.com` and password `86KIo6<]!/V=`.
 
 ```shell
+java -jar cs.jar login
 # Create a secret representing Jeff's net worth (note that we work with 
 # billion USD here)
 export JEFFS_NET_WORTH_ID=$(java -jar cs.jar amphora create-secret 177 -t billionaire=Jeff)
+```
 
-# And another one for Elon
+!!! info
+    If you have authenticated yourself to the VCPs recently, your previous
+    session might still be cached using a browser cookie.
+
+    If you are not prompted for your credentials and not logged in as the 
+    desired user, please make sure to clear recent browser cache or cookies,
+    or re-open the tabs in private mode.
+
+Next we will log in as Elon to perform the remaining steps of the tutorial. The
+credentials for the development user Elon are as follows: <br>
+&ensp;&ensp;&ensp;&ensp;E-Mail: `elon.musk@tesla.com`Password: `2#Tv91*d-Z,M`. <br>
+(Please read the info box above if you are having trubles logging in as a different user.)
+
+```shell
+java -jar cs.jar login
+# And a secret for Elon
 export ELONS_NET_WORTH_ID=$(java -jar cs.jar amphora create-secret 151 -t billionaire=Elon)
 ```
 
@@ -51,7 +73,10 @@ java -jar cs.jar amphora get-secrets
 The output should resemble the following:
 
 !!! note
-    The output you see will differ wrt. identifiers and the `creation-date` tag.
+    The output you see will differ wrt. identifiers and the `creation-date` tag. <br>
+    Nevertheless, it will output both secrets, uploaded by Elon and Jeff even though
+    we are authenticated as Elon. This is to the fact of authentication, but not
+    authorization being integrated into Carbyne Stack for the time beeing.
 
 ```shell
 ab160f93-3b7e-468f-b687-f9c46fb535f3

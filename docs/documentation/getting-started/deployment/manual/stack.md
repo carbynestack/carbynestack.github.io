@@ -58,10 +58,10 @@ clusters using the kind tool as described in the
         cd carbynestack/deployments
         ```
 
-1. Checkout Carbyne Stack SDK version 0.5.0 using:
+1. Checkout Carbyne Stack SDK version 0.6.0 using:
 
     ```shell
-    git checkout sdk-v0.5.0
+    git checkout sdk-v0.6.0
     ```
 
 1. Before deploying the virtual cloud providers make some common configuration
@@ -119,7 +119,7 @@ clusters using the kind tool as described in the
     export IS_MASTER=false
     export AMPHORA_VC_PARTNER_URI=http://$APOLLO_FQDN/amphora
     kubectl config use-context kind-starbuck
-    helmfile apply
+    helmfile sync --set thymus.users.enabled=true
     ```
 
 1. Launch the `apollo` VCP using:
@@ -130,7 +130,7 @@ clusters using the kind tool as described in the
     export AMPHORA_VC_PARTNER_URI=http://$STARBUCK_FQDN/amphora
     export CASTOR_SLAVE_URI=http://$STARBUCK_FQDN/castor
     kubectl config use-context kind-apollo
-    helmfile apply
+    helmfile sync --set thymus.users.enabled=true
     ```
 
 1. Wait until all pods in both clusters are in the `ready` state.
