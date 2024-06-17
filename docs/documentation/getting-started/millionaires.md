@@ -12,7 +12,7 @@ these.
 
 In addition, this guide assumes that you have the following tools installed:
 
-- Java 8 (newer versions will not work)
+- Java 11 (newer versions will not work)
 
 ## The Billionaires Problem
 
