@@ -56,7 +56,7 @@ metallb-system       metallb-speaker-vmqj4                            1/1     Ru
 - [Helm](https://helm.sh/docs/intro/install/) v3.11.1
 - [Helmfile](https://github.com/roboll/helmfile) v0.142.0
 - [Helm Diff Plugin](https://github.com/databus23/helm-diff) v3.1.3
-- [OpenJDK](https://openjdk.java.net/install/) 8
+- [OpenJDK](https://openjdk.java.net/install/) 11
 
 For installation instructions for these tools see the
 [Prerequisites](../prerequisites) section.
@@ -373,3 +373,21 @@ Command Output: Error response from daemon: could not find an available, non-ove
 ```
 
 follow the advice given [here](https://stackoverflow.com/a/45694531).
+
+### kind
+
+In case one of your kind clusters doesn't start all pods, there might an issue
+with limited inotify resources on Ubuntu. You can check this by printing the
+logs of the faulty pods by, e.g.:
+
+```shell
+kubectl logs -n kube-system <pod-name>
+```
+
+If there is an output similar to this
+
+```shell
+ "command failed" err="failed complete: too many open files"
+```
+
+follow the advice given [here](https://kind.sigs.k8s.io/docs/user/known-issues/#pod-errors-due-to-too-many-open-files).
