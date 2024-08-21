@@ -112,12 +112,47 @@ clusters using the kind tool as described in the
 
         before you proceed.
 
+1. Configure TLS to enable secure communication to, and between the VCPs:
+
+    ```shell
+    export TLS_ENABLED=true # Enabled by default, set to false to disable
+    export PROTOCOL=http
+
+    if [ "$TLS_ENABLED" = true ]; then
+        # Use https
+        export PROTOCOL=https
+
+        # Create X.509 certificates
+        mkdir -p certs
+        openssl req -x509 -newkey rsa:4096 -keyout certs/apollo_key.pem -out certs/apollo_cert.pem -days 365 -nodes -subj "/CN=${APOLLO_FQDN}" -addext "subjectAltName=DNS:172.18.1.128.sslip.io,IP:172.18.1.128"
+        openssl req -x509 -newkey rsa:4096 -keyout certs/starbuck_key.pem -out certs/starbuck_cert.pem -days 365 -nodes -subj "/CN=${STARBUCK_FQDN}" -addext "subjectAltName=DNS:172.18.2.128.sslip.io,IP:172.18.2.128"
+
+        # Create kubernetes secrets using the generated keys and certificates
+        kubectl config use-context kind-apollo
+        kubectl create secret generic apollo-tls-secret-generic -n istio-system --from-file=tls.key=certs/apollo_key.pem --from-file=tls.crt=certs/apollo_cert.pem --from-file=cacert=certs/starbuck_cert.pem
+        kubectl get secret apollo-tls-secret-generic -n istio-system -o yaml | sed 's/namespace: istio-system/namespace: default/' | kubectl apply -n default -f -
+        kubectl config use-context kind-starbuck
+        kubectl create secret generic starbuck-tls-secret-generic -n istio-system --from-file=tls.key=certs/starbuck_key.pem --from-file=tls.crt=certs/starbuck_cert.pem --from-file=cacert=certs/apollo_cert.pem
+        kubectl get secret starbuck-tls-secret-generic -n istio-system -o yaml | sed 's/namespace: istio-system/namespace: default/' | kubectl apply -n default -f -
+
+        # Patch knative-ingress-gateway
+        kubectl config use-context kind-apollo
+        export TLS_SECRET_NAME=apollo-tls-secret-generic
+        kubectl patch gateway knative-ingress-gateway --namespace knative-serving --type=json -p="[{\"op\": \"add\", \"path\": \"/spec/servers/-\", \"value\": {\"hosts\": [\"*\"], \"port\": {\"name\": \"https\", \"number\": 443, \"protocol\": \"HTTPS\"}, \"tls\": {\"mode\": \"SIMPLE\", \"credentialName\": \"${TLS_SECRET_NAME}\"}}}]"
+        kubectl config use-context kind-starbuck
+        export TLS_SECRET_NAME=starbuck-tls-secret-generic
+        kubectl patch gateway knative-ingress-gateway --namespace knative-serving --type=json -p="[{\"op\": \"add\", \"path\": \"/spec/servers/-\", \"value\": {\"hosts\": [\"*\"], \"port\": {\"name\": \"https\", \"number\": 443, \"protocol\": \"HTTPS\"}, \"tls\": {\"mode\": \"SIMPLE\", \"credentialName\": \"${TLS_SECRET_NAME}\"}}}]"
+    fi
+    ```
+
+
 1. Launch the `starbuck` VCP using:
 
     ```shell
     export FRONTEND_URL=$STARBUCK_FQDN
     export IS_MASTER=false
-    export AMPHORA_VC_PARTNER_URI=http://$APOLLO_FQDN/amphora
+    export AMPHORA_VC_PARTNER_URI=$PROTOCOL://$APOLLO_FQDN/amphora
+    export TLS_SECRET_NAME=starbuck-tls-secret-generic
     kubectl config use-context kind-starbuck
     helmfile apply
     ```
@@ -127,8 +162,9 @@ clusters using the kind tool as described in the
     ```shell
     export FRONTEND_URL=$APOLLO_FQDN
     export IS_MASTER=true
-    export AMPHORA_VC_PARTNER_URI=http://$STARBUCK_FQDN/amphora
-    export CASTOR_SLAVE_URI=http://$STARBUCK_FQDN/castor
+    export AMPHORA_VC_PARTNER_URI=$PROTOCOL://$STARBUCK_FQDN/amphora
+    export CASTOR_SLAVE_URI=$PROTOCOL://$STARBUCK_FQDN/castor
+    export TLS_SECRET_NAME=apollo-tls-secret-generic
     kubectl config use-context kind-apollo
     helmfile apply
     ```
