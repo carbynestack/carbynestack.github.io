@@ -58,10 +58,10 @@ clusters using the kind tool as described in the
         cd carbynestack/deployments
         ```
 
-1. Checkout Carbyne Stack SDK version 0.5.0 using:
+1. Checkout Carbyne Stack SDK version 0.5.1 using:
 
     ```shell
-    git checkout sdk-v0.5.0
+    git checkout sdk-v0.5.1
     ```
 
 1. Before deploying the virtual cloud providers make some common configuration

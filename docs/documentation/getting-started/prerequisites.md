@@ -10,7 +10,7 @@ Carbyne Stack.
 
 ## Prerequisites
 
-This part of the tutorial is developed and tested with Ubuntu 20.04.
+This part of the tutorial is developed and tested with Ubuntu 22.04.
 Please refer to this [link](https://ubuntu.com/tutorials/install-ubuntu-desktop)
 for Ubuntu installation steps.
 
@@ -19,7 +19,7 @@ for Ubuntu installation steps.
 Software to be installed throughout this tutorial step:
 
 - [go](https://go.dev/doc/install) 1.18
-- [Docker Engine](https://docs.docker.com/engine/install/ubuntu/) v23.0.1
+- [Docker Engine](https://docs.docker.com/engine/install/ubuntu/) v25.0.5
 - [Kind](https://kind.sigs.k8s.io/) v0.17.0
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/) v1.26.1
 - [Helm](https://helm.sh/docs/intro/install/) v3.11.1
@@ -29,7 +29,7 @@ installation instructions.
 
 ```shell
 export go_ver=1.18
-export dock_ver=5:23.0.1-1~ubuntu.20.04~focal
+export dock_ver=5:25.0.5-1~ubuntu.22.04~jammy
 export kind_ver=0.17.0
 export kub_ver=1.26.1
 export helm_ver=3.11.1
@@ -295,7 +295,7 @@ Alternatively, you can install OpenJDK by following the instructions below.
 1. Install with the command.
 
     ```shell
-    sudo apt-get install openjdk-8-jdk
+    sudo apt-get install openjdk-11-jdk
     ```
 
 2. Verify your installation.
