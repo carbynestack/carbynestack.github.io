@@ -112,7 +112,13 @@ clusters using the kind tool as described in the
 
         before you proceed.
 
+<!-- markdownlint-disable MD013 -->
 1. Configure TLS to enable secure communication to, and between the VCPs:
+
+    !!! attention
+        Replace `172.18.1.128` and `172.18.2.128` in the following with the load balancer IPs
+        assigned to the Istio Ingress Gateway by MetalLB (see the
+        [Platform Setup](../platform-setup) guide).
 
     ```shell
     export TLS_ENABLED=true # Enabled by default, set to false to disable
@@ -144,7 +150,7 @@ clusters using the kind tool as described in the
         kubectl patch gateway knative-ingress-gateway --namespace knative-serving --type=json -p="[{\"op\": \"add\", \"path\": \"/spec/servers/-\", \"value\": {\"hosts\": [\"*\"], \"port\": {\"name\": \"https\", \"number\": 443, \"protocol\": \"HTTPS\"}, \"tls\": {\"mode\": \"SIMPLE\", \"credentialName\": \"${TLS_SECRET_NAME}\"}}}]"
     fi
     ```
-
+ <!-- markdownlint-enable MD013 -->
 
 1. Launch the `starbuck` VCP using:
 
