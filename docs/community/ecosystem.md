@@ -10,6 +10,20 @@ to conduct proof-of-concepts in multiple domains with various partners.
 
 ---
 
+<a name="cdpg"></a>
+![CDPG Logo](../images/ecosystem/cdpg-logo.png){ class="ecosystem-logo" }
+
+The [Centre of Data for Public Good][cdpg] (CDPG) focuses on leveraging data
+to address societal challenges. It serves as a hub for multidisciplinary
+research, bringing together experts from academia, industry, and government to
+harness the power of data to enhance public services and drive equitable
+growth. With a focus on ethical data use, privacy, and responsible AI, the
+centre aims to develop solutions that positively impact areas such as smart
+cities, agriculture, logistics, geospatial, environmental sustainability, and
+so on.
+
+---
+
 <a name="hri"></a>
 ![HRI Logo](../images/ecosystem/hri-logo-black.png){ class="ecosystem-logo" }
 
@@ -51,6 +65,7 @@ eventually be implemented by a UTS engineering team based on Carbyne Stack.
 ---
 
 [bosch]: https://www.bosch.com
+[cdpg]: https://dataforpublicgood.org.in
 [fa117]: https://www.foodagility.com/research/protecting-data-in-digital-agriculture
 [glaciation]: https://glaciation-project.eu/
 [hri]: https://www.honda-ri.de/
