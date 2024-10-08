@@ -141,13 +141,6 @@ clusters using the kind tool as described in the
         kubectl create secret generic starbuck-tls-secret-generic -n istio-system --from-file=tls.key=certs/starbuck_key.pem --from-file=tls.crt=certs/starbuck_cert.pem --from-file=cacert=certs/apollo_cert.pem
         kubectl get secret starbuck-tls-secret-generic -n istio-system -o yaml | sed 's/namespace: istio-system/namespace: default/' | kubectl apply -n default -f -
 
-        # Patch knative-ingress-gateway
-        kubectl config use-context kind-apollo
-        export TLS_SECRET_NAME=apollo-tls-secret-generic
-        kubectl patch gateway knative-ingress-gateway --namespace knative-serving --type=json -p="[{\"op\": \"add\", \"path\": \"/spec/servers/-\", \"value\": {\"hosts\": [\"*\"], \"port\": {\"name\": \"https\", \"number\": 443, \"protocol\": \"HTTPS\"}, \"tls\": {\"mode\": \"SIMPLE\", \"credentialName\": \"${TLS_SECRET_NAME}\"}}}]"
-        kubectl config use-context kind-starbuck
-        export TLS_SECRET_NAME=starbuck-tls-secret-generic
-        kubectl patch gateway knative-ingress-gateway --namespace knative-serving --type=json -p="[{\"op\": \"add\", \"path\": \"/spec/servers/-\", \"value\": {\"hosts\": [\"*\"], \"port\": {\"name\": \"https\", \"number\": 443, \"protocol\": \"HTTPS\"}, \"tls\": {\"mode\": \"SIMPLE\", \"credentialName\": \"${TLS_SECRET_NAME}\"}}}]"
     fi
     ```
  <!-- markdownlint-enable MD013 -->

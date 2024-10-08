@@ -323,6 +323,8 @@ The public IP eventually appears in column `EXTERNAL-IP`.
             ${EXTERNAL_IP}.sslip.io: ""
          defaults:
             max-revision-timeout-seconds: "36000"
+         istio:
+            gateway.default.cs-service-gateway: "istio-ingressgateway.istio-system.svc.cluster.local"
     EOF
     kubectl apply -f knative-serving.yaml
     ```
