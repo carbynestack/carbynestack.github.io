@@ -38,6 +38,22 @@ Stack to implement this vision.
 
 ---
 
+<a name="resolve"></a>
+![Resolve Logo](../images/ecosystem/resolve-logo.png){ class="ecosystem-logo" }
+
+[Resolve][resolve] is revolutionizing how data is applied in the advertising
+ecosystem through Federated learning and Secure Multi-Party Computation (SMPC).
+Resolve's approach leverages decentralized data processing and federated
+learning, ensuring partners retain full control over their data while
+benefiting from advanced insights and collaborative learning. Resolve utilizes
+Carbyne Stack and SMPC as components to succeed with scalable private analytics
+for secure aggregation in Federated Learning for the digital advertisement
+ecosystem. Through their contributions, Resolve aims to enable a privacy-safe
+ecosystem for digital advertising driven by cooperation, transparency, and
+innovation.
+
+---
+
 <a name="sap"></a>
 ![SAP Logo](../images/ecosystem/sap-logo.png){ class="ecosystem-logo" }
 
@@ -69,4 +85,5 @@ eventually be implemented by a UTS engineering team based on Carbyne Stack.
 [fa117]: https://www.foodagility.com/research/protecting-data-in-digital-agriculture
 [glaciation]: https://glaciation-project.eu/
 [hri]: https://www.honda-ri.de/
+[resolve]: https://resolve.tech/
 [sap]: https://www.sap.com/
