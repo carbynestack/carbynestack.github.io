@@ -34,6 +34,8 @@ nav:
       - Ecosystem: community/ecosystem.md
       - Events:
           - community/events/index.md
+          - CarbyneStackCon '24:
+              - community/events/csc24/index.md
           - CarbyneStackCon '23:
               - community/events/csc23/index.md
           - CarbyneStackCon '22:
