@@ -2,14 +2,21 @@
 
 ## Upcoming Events
 
+### [CarbyneStackCon '24][csc24]
+
+![CSC_Logo](/images/events/csc/csc22-logo-no-dates.png){ class="event-logo" }
+
+See the dedicated [event page][csc24] for detailed information about our
+upcoming hybrid Carbyne Stack community gathering in Renningen, Germany.
+
+## Past Events
+
 ### [CarbyneStackCon '23][csc23]
 
 ![CSC_Logo](/images/events/csc/csc22-logo-no-dates.png){ class="event-logo" }
 
 See the dedicated [event page][csc23] for detailed information about our
 upcoming hybrid Carbyne Stack community gathering in Renningen, Germany.
-
-## Past Events
 
 ### [Flower Summit '23][flower23]
 
@@ -199,6 +206,7 @@ APRIL 4 – 7, 2022 | VIRTUAL (Bosch internal)
 [gitsa22]: https://www.deutscher-it-sicherheitspreis.de/
 [csc22]: /community/events/csc22/
 [csc23]: /community/events/csc23/
+[csc24]: /community/events/csc24/
 [tpmpc22]: https://www.multipartycomputation.com/tpmpc-2022
 [ossna22]: https://events.linuxfoundation.org/open-source-summit-north-america/
 [ossna22-talk]: https://sched.co/11NhT
