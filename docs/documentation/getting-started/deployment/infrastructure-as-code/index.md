@@ -1,8 +1,8 @@
 # Infrastructure as Code
 
 !!! warning
-    Carbyne Stack Infrastructure as Code (IaC) is still in *proof-of-concept*
-    stage. Reach out in case you encounter problems.
+Carbyne Stack Infrastructure as Code (IaC) is still in *proof-of-concept*
+stage. Reach out in case you encounter problems.
 
 Carbyne Stack has adopted Infrastructure as Code (IaC) as a core principle.
 IaC is the process of managing and provisioning infrastructure through code
@@ -29,7 +29,7 @@ allows you to use a common programming language, in Carbyne Stack's
 case, Typescript, to define the infrastructure. This allows you to
 leverage the full power of a programming language to define your
 infrastructure, including the ability to use loops, conditionals,
-functions, and abstractions.  
+functions, and abstractions.
 
 ### Stacks
 
@@ -43,6 +43,12 @@ top of it.
 As of today, the following deployment targets are supported:
 
 - [Local deployment](./local) to [kind](https://kind.sigs.k8s.io/) clusters
+- [Azure](./azure) to
+  [Azure Kubernetes Service (AKS)](https://azure.microsoft.com/en-us/products/kubernetes-service)
+  clusters
+- [Azure Private](./azure-private) to
+  [Azure Kubernetes Service (AKS)](https://azure.microsoft.com/en-us/products/kubernetes-service)
+  private clusters
 
 ### Constructs
 
