@@ -372,9 +372,17 @@ in-person and virtual attendance in order to facilitate our planning.
 
 
 
+
+
 ???+ abstract "Abstract"
 
-Three years ago, we set sail on a quest to create the most advanced cloud-native Secure Multiparty Computation (MPC) platform. Our goal was to plant a seed for an open ecosystem where state-of-the-art MPC technology can thrive. Building Carbyne Stack “in the open” has been a deliberate choice and open source software plays a pivotal role as it fosters collaboration and transparency, allowing for continuous peer review and rapid identification of vulnerabilities. As we approach a state where Carbyne Stack implements all the essential features for deployment in real-world use cases, we believe it's time to rethink how we work together and decide on what a happy home for the Carbyne Stack community should look like. In this tag-team talk, Brian will discuss the history and  importance of open source in the development of cryptographic software, then Sven and Chris will relate what Brian discusses to the history of Carbyne Stack and shed some light on the way forward for the initiative. 
+    Three years ago, we set sail on a quest to create the most advanced cloud-native Secure Multiparty Computation (MPC) platform. 
+    Our goal was to plant a seed for an open ecosystem where state-of-the-art MPC technology can thrive. Building Carbyne Stack “in the open” has 
+    been a deliberate choice and open source software plays a pivotal role as it fosters collaboration and transparency, allowing for continuous peer 
+    review and rapid identification of vulnerabilities. As we approach a state where Carbyne Stack implements all the essential features for deployment in real-world use cases, 
+    we believe it's time to rethink how we work together and decide on what a happy home for the Carbyne Stack community should look like. In this tag-team talk, Brian will 
+    discuss the history and  importance of open source in the development of cryptographic software, then Sven and Chris will relate what Brian discusses to the history of Carbyne S
+    tack and shed some light on the way forward for the initiative. 
 
 
 ---
