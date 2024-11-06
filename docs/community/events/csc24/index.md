@@ -52,7 +52,7 @@ our planning.
 | **11:30 am - 12:00 pm** | Kert Tali                                                                 | [Self-Service Deployment in MPC-as-a-Service](#talk-4)                                                   |
 | **12:00 pm - 1:00 pm**  | -                                                                         | **Lunch Break & Group Photo**                                                                            |
 | **1:00 pm - 1:30 pm**   | Dr. Jonas Böhler                                                          | [Trees & Trade-offs for Secure Predictions](#talk-5)                                                     |
-| **1:30 pm - 2:00 pm**   | Dr. Christoph Bösch                                                       | [MPC as a Tool for Data Anonymization in Data Analytics](#talk-6)                                        |
+| **1:30 pm - 2:00 pm**   | Dr. Christoph Bösch <br> Prof. Dr. Thomas Hoeren <br> Merlin Rombach                                                 | [MPC as a Tool for Data Anonymization in Data Analytics](#talk-6)                                        |
 | **2:00 pm - 2:30 pm**   | Adrián Vaca Humanes <br> Daniele Romanini                                 | [Building a Privacy-First Ecosystem: SMPC in AdTech Analytics](#talk-7)                                  |
 | **2:30 pm - 3:00 pm**   | Dr. Ian Zhou <br> Vincent Rieder                                          | [Silentium: Low Communication & Hardware Acceleration for Beaver Triple Generation](#talk-8)             |
 | **3:00 pm - 3:15 pm**   | -                                                                         | **Coffee Break**                                                                                         |
@@ -202,11 +202,30 @@ Secure Predictions</span>
 <span id="talk-6" class="gsoc-topic-section-title">MPC as a Tool for Data
 Anonymization in Data Analytics: A Legal and Technical Perspective</span>
 
-???+ info "Dr. Christoph Bösch (Research Engineer, Bosch Research)"
+???+ info "Dr. Christoph Bösch (Research Engineer, Bosch Research), Prof. Dr. Thomas Hoeren (Head of ITM, University of Münster), and Merlin Rombach (Academic Associate, ITM, University of Münster)"
 
     Dr. Christoph Bösch is a research engineer at Bosch Research in the field of security, privacy, and cryptography in general, with a particular focus on applied cryptography 
     and the challenges associated with privacy engineering.
 
+    <div style="display: flex; align-items: flex-start; gap: 15px;">
+        <img src="images/speakers/Hoeren.webp" alt="Thomas Hoeren" style="width: 150px; border-radius: 8px;">
+        <p>Prof. Dr. Thomas Hoeren is Head of the Institute for Information, Telecommunications and 
+        Media Law (ITM) at the University of Münster and current lecturer at the University of Vienna, 
+        he is a experienced legal scholar and former judge at the Court of Appeal of Düsseldorf 
+        (Copyright Senate). Throughout his career, he has held various prestigious positions and has 
+        made significant contributions to the fields of information technology law and intellectual 
+        property rights.</p>
+    </div>
+    
+    <div style="display: flex; align-items: flex-start; gap: 15px; margin-top: 15px;">
+        <img src="images/speakers/Rombach.jpg" alt="Merlin Rombach" style="width: 150px; border-radius: 8px;">
+        <p>Merlin Rombach is a Academic Associate at the Institute for Information, Telecommunications 
+        and Media Law (ITM) at the University of Münster. His research interests span cybersecurity law,
+         data protection law, and AI regulation, with his doctoral research specifically exploring how 
+         cryptographic methods can enhance personal data protection and potentially even achieve 
+         anonymization. Through his work, he examines the legal framework for privacy-enhancing 
+         technologies in the digital age.</p>
+    </div>
 ???+ abstract "Abstract"
 
     As organizations increasingly rely on data to drive decision-making, handling sensitive information responsibly and in compliance with data protection regulations like the GDPR is essential. 
