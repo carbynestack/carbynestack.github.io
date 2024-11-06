@@ -1,61 +1,73 @@
 # CarbyneStackCon '24
 
 <p style="text-align: center; margin: 5em 0 5em 0;">
-    <img alt="CarbyneStackCon Logo" src="/images/events/csc/24/csc24-logo.png">
+  <img alt="CarbyneStackCon Logo" src="/images/events/csc/24/csc24-logo.png">
 </p>
 
-_CarbyneStackCon_ is the annual gathering of the Carbyne Stack Open Source Community, designed to foster collaboration, discussion, and knowledge sharing on the latest 
-advancements in secure multiparty computation (MPC).
+_CarbyneStackCon_ is the annual gathering of the Carbyne Stack Open Source
+Community, designed to foster collaboration, discussion, and knowledge sharing
+on the latest advancements in secure multiparty computation (MPC).
 
 ---
 
 ## Registration
 
-CarbyneStackCon '24 (CSC24) is an open event sponsored by Bosch Research taking place on **November 27th (talks)** and **28th (workshops)**, 2024 in Renningen, Germany. 
-Everyone interested in **enterprise-grade open MPC** is welcome to attend! However, seats for in-person participation are limited and registration is required for both 
-in-person and virtual attendance in order to facilitate our planning.
-
+CarbyneStackCon '24 (CSC24) is an open event sponsored by Bosch Research taking
+place on **November 27th (talks)** and **28th (workshops)**, 2024 in Renningen,
+Germany. Everyone interested in **enterprise-grade open MPC** is welcome to
+attend! However, seats for in-person participation are limited and registration
+is required for both in-person and virtual attendance in order to facilitate
+our planning.
 
 !!! important
-    Please use the event code **CSC24** to register on the EventXP platform. On the desktop version of the EventXP website, you must enter it in the the upper right corner 
-    of the UI. For the iOS mobile version, you will find a button at the very top. For Android use the hamburger menu button (:material-menu:).
+    Please use the event code **CSC24** to register on the EventXP platform.
+    On the desktop version of the EventXP website, you must enter it in the the
+    upper right corner of the UI. For the iOS mobile version, you will find a
+    button at the very top. For Android use the hamburger menu button
+    (:material-menu:).
 
 !!! warning "Registration closes on November 20th, 2024."
 
-<a href="https://register.event-xp.com" class="md-button md-button--primary">Register</a>
+<a href="https://register.event-xp.com" class="md-button md-button--primary">
+  Register
+</a>
 
 ---
+
 ## Program
+
 ### Conference Day (Nov 27)
 
-| Time                | Speaker                                                    | Title                                                                                                |
-|---------------------|------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
-| **8:30 am - 9:30 am** | -                                                        | Registration & Welcome Coffee                                                                        |
-| **9:30 am - 9:45 am** | Dr. Sven Trieflinger                                     | Welcome & Opening Remarks                                                                 |
-| **9:45 am - 10:15 am** | Dr. Marcel Keller                                       | [Future Prospects of MP-SPDZ](#talk-1)                                                               |
-| **10:15 am - 10:45 am** | Abhilash Venkatesh                                     | [TEE-based Secure Computation and its Application to Carbyne Stack](#talk-2)                         |
-| **10:45 am - 11:00 am** | -                                                      | **Coffee Break**                                                                                     |
-| **11:00 am - 11:30 am** | Dr. Ajith Suresh                                       | [Revitalizing Privacy-Preserving Machine Learning: Introducing FANNG-MPC](#talk-3)                   |
-| **11:30 am - 12:00 pm** | Kert Tali                                              | [Self-Service Deployment in MPC-as-a-Service](#talk-4)                                               |
-| **12:00 pm - 1:00 pm** | -                                                       | **Lunch Break & Group Photo**                                                                        |
-| **1:00 pm - 1:30 pm** | Dr. Jonas Böhler                                         | [Trees & Trade-offs for Secure Predictions](#talk-5)                                                 |
-| **1:30 pm - 2:00 pm** | Dr. Christoph Bösch                                      | [MPC as a Tool for Data Anonymization in Data Analytics](#talk-6)                                    |
-| **2:00 pm - 2:30 pm** | Adrián Vaca Humanes <br> Daniele Romanini                | [Building a Privacy-First Ecosystem: SMPC in AdTech Analytics](#talk-7)                              |
-| **2:30 pm - 3:00 pm** | Dr. Ian Zhou <br> Vincent Rieder                         | [Silentium: Low Communication & Hardware Acceleration for Beaver Triple Generation](#talk-8)         |
-| **3:00 pm - 3:15 pm** | -                                                        | **Coffee Break**                                                                                     |
-| **3:15 pm - 3:45 pm** | Dr. Sven Trieflinger <br> Sebastian Becker <br> Dr. Benjamin Hettwer | [Thymus: Adding essential Security Features to the Carbyne Stack platform the Cloud-Native Way](#talk-9)                                          |
-| **3:45 pm - 4:15 pm** | Dr. John Liagouris                                       | [Integrating the BU Secure Analytics Stack with Carbyne Stack](#talk-10)                                   |
-| **4:15 pm - 4:45 pm** | Dr. Brian LaMacchia <br> Dr. Sven Trieflinger <br> Dr. Christian Hoeppler | [Open Source and MPC](#talk-11)                  |
-| **4:45 pm - 5:00 pm** | -                                                        | Closing Remarks                                                                                      |
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable MD013 -->
+
+| Time                    | Speaker                                                                   | Title                                                                                                    |
+|-------------------------|---------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
+| **8:30 am - 9:30 am**   | -                                                                         | Registration & Welcome Coffee                                                                            |
+| **9:30 am - 9:45 am**   | Dr. Sven Trieflinger                                                      | Welcome & Opening Remarks                                                                                |
+| **9:45 am - 10:15 am**  | Dr. Marcel Keller                                                         | [Future Prospects of MP-SPDZ](#talk-1)                                                                   |
+| **10:15 am - 10:45 am** | Abhilash Venkatesh                                                        | [TEE-based Secure Computation and its Application to Carbyne Stack](#talk-2)                             |
+| **10:45 am - 11:00 am** | -                                                                         | **Coffee Break**                                                                                         |
+| **11:00 am - 11:30 am** | Dr. Ajith Suresh                                                          | [Revitalizing Privacy-Preserving Machine Learning: Introducing FANNG-MPC](#talk-3)                       |
+| **11:30 am - 12:00 pm** | Kert Tali                                                                 | [Self-Service Deployment in MPC-as-a-Service](#talk-4)                                                   |
+| **12:00 pm - 1:00 pm**  | -                                                                         | **Lunch Break & Group Photo**                                                                            |
+| **1:00 pm - 1:30 pm**   | Dr. Jonas Böhler                                                          | [Trees & Trade-offs for Secure Predictions](#talk-5)                                                     |
+| **1:30 pm - 2:00 pm**   | Dr. Christoph Bösch                                                       | [MPC as a Tool for Data Anonymization in Data Analytics](#talk-6)                                        |
+| **2:00 pm - 2:30 pm**   | Adrián Vaca Humanes <br> Daniele Romanini                                 | [Building a Privacy-First Ecosystem: SMPC in AdTech Analytics](#talk-7)                                  |
+| **2:30 pm - 3:00 pm**   | Dr. Ian Zhou <br> Vincent Rieder                                          | [Silentium: Low Communication & Hardware Acceleration for Beaver Triple Generation](#talk-8)             |
+| **3:00 pm - 3:15 pm**   | -                                                                         | **Coffee Break**                                                                                         |
+| **3:15 pm - 3:45 pm**   | Dr. Sven Trieflinger <br> Sebastian Becker <br> Dr. Benjamin Hettwer      | [Thymus: Adding essential Security Features to the Carbyne Stack platform the Cloud-Native Way](#talk-9) |
+| **3:45 pm - 4:15 pm**   | Dr. John Liagouris                                                        | [Integrating the BU Secure Analytics Stack with Carbyne Stack](#talk-10)                                 |
+| **4:15 pm - 4:45 pm**   | Dr. Brian LaMacchia <br> Dr. Sven Trieflinger <br> Dr. Christian Hoeppler | [Open Source MPC - Quo Vadis](#talk-11)                                                                  |
+| **4:45 pm - 5:00 pm**   | -                                                                         | Closing Remarks                                                                                          |
 
 ---
 
+#### Talk Details
 
-
-### Talk Details
 ---
 :octicons-clock-16: <span class="gsoc-legend">9:45 am - 10:15 am</span>  
-<span id="talk-1" class="gsoc-topic-section-title">Future Prospects of MP-SPDZ</span>  
+<span id="talk-1" class="gsoc-topic-section-title">Future Prospects of MP-SPDZ</span>
 
 ???+ info "Dr. Marcel Keller (Senior Research Scientist, CSIRO Data61)"
 
@@ -77,7 +89,8 @@ in-person and virtual attendance in order to facilitate our planning.
 
 ---
 :octicons-clock-16: <span class="gsoc-legend">10:15 am - 10:45 am</span>  
-<span id="talk-2" class="gsoc-topic-section-title">TEE-based Secure Computation and its Application to Carbyne Stack</span>  
+<span id="talk-2" class="gsoc-topic-section-title">TEE-based Secure Computation
+and its Application to Carbyne Stack</span>
 
 ???+ info "Abhilash Venkatesh (Lead Engineer, CDPG, IISc)"
 
@@ -89,7 +102,6 @@ in-person and virtual attendance in order to facilitate our planning.
         systems in general.</p>
     </div>
 
-
 ???+ abstract "Abstract"
 
     Trusted Execution Environment (TEE) is a hardware-based technology that provides data integrity, confidentiality, and code 
@@ -99,13 +111,14 @@ in-person and virtual attendance in order to facilitate our planning.
     will cover the integration of TEE with MPC to securely accelerate the MPC offline phase in collaboration with the Carbyne Stack team at Bosch Research. 
     The talk will also present the applications of TEEs to various privacy-enhancing use cases.
 
-
 ---
 :octicons-clock-16: <span class="gsoc-legend">10:45 am - 11:00 am</span>  
-:material-coffee: <span class="gsoc-legend">Coffee Break</span>  
+:material-coffee: <span class="gsoc-legend">Coffee Break</span>
 ---
 :octicons-clock-16: <span class="gsoc-legend">11:00 am - 11:30 am</span>  
-<span id="talk-3" class="gsoc-topic-section-title">Revitalizing Privacy-Preserving Machine Learning: Introducing FANNG-MPC for Actively Secure MLaaS</span>  
+<span id="talk-3" class="gsoc-topic-section-title">Revitalizing
+Privacy-Preserving Machine Learning: Introducing FANNG-MPC for Actively Secure
+MLaaS</span>
 
 ???+ info "Dr. Ajith Suresh (Senior MPC Researcher, Technology Innovation Institute, Abu Dhabi)"
 
@@ -114,11 +127,10 @@ in-person and virtual attendance in order to facilitate our planning.
         <p>Dr. Ajith Suresh is a Senior MPC Researcher at the Technology Innovation Institute (TII) in Abu Dhabi, affiliated with the 
         Cryptography Research Center. Prior to joining TII, he completed 1.5 years of post-doctoral research at the Cryptography 
         and Privacy Engineering (ENCRYPTO) group at the Technical University of Darmstadt, under the supervision of Prof. Thomas 
-        Schneider. He hold a PhD from the Indian Institute of Science Bangalore. His research focuses on the design and development 
+        Schneider. He holds a PhD from the Indian Institute of Science Bangalore. His research focuses on the design and development 
         of applied Multi-Party Computation (MPC) protocols, with additional interests in privacy-preserving machine learning and federated 
         learning.</p>
     </div>
-
 
 ???+ abstract "Abstract"
 
@@ -132,7 +144,8 @@ in-person and virtual attendance in order to facilitate our planning.
 
 ---
 :octicons-clock-16: <span class="gsoc-legend">11:30 am - 12:00 pm</span>  
-<span id="talk-4" class="gsoc-topic-section-title">Self-Service Deployment of Computation Tasks in a Multi-Tenant MPC-as-a-Service</span>  
+<span id="talk-4" class="gsoc-topic-section-title">Self-Service Deployment of
+Computation Tasks in a Multi-Tenant MPC-as-a-Service</span>
 
 ???+ info "Kert Tali (Architect, Sharemind MPC Product Development, Cybernetica)"
 
@@ -142,9 +155,8 @@ in-person and virtual attendance in order to facilitate our planning.
         challenges of MPC deployments, he began exploring ways to enhance the practicality of production-grade MPC. In 2022, Kert 
         defended his Master's thesis on scaling parallel algorithms on MPC. Shortly after, he set his sights on Carbyne Stack. Realizing 
         its immense potential for standardizing the way MPC is deployed, he spearheaded the initiative to integrate Sharemind MPC with 
-        the Carbyne Stack platform. As the team grew around this shared ambition, he assumed the role of architect.</p>
+        the Carbyne Stack platform. As the team grew around this shared ambition, he assumed the role of an architect.</p>
     </div>
-
 
 ???+ abstract "Abstract"
 
@@ -155,12 +167,14 @@ in-person and virtual attendance in order to facilitate our planning.
     accessible to non-technical users for securely and collaboratively organizing and executing MPC tasks. This talk expands on the 
     ongoing work in *JOCONDE*, a project between Eurostat and Cybernetica to specify an MPCaaS system for use in official statistics. 
     We will explore how general-purpose MPC platforms like Carbyne Stack play a vital role in powering this system.
+
 ---
 :octicons-clock-16: <span class="gsoc-legend">12:00 pm - 1:00 pm</span>  
 :material-food: <span class="gsoc-legend">Lunch Break & Group Photo</span>
 ---
 :octicons-clock-16: <span class="gsoc-legend">1:00 pm - 1:30 pm</span>  
-<span id="talk-5" class="gsoc-topic-section-title">Trees & Trade-offs for Secure Predictions</span>  
+<span id="talk-5" class="gsoc-topic-section-title">Trees & Trade-offs for
+Secure Predictions</span>
 
 ???+ info "Dr. Jonas Böhler (Lead AI Security & Privacy Researcher, SAP)"
 
@@ -174,7 +188,6 @@ in-person and virtual attendance in order to facilitate our planning.
         technologies with applications in cross-company collaborations.</p>
     </div>
 
-
 ???+ abstract "Abstract"
 
     Privacy-preserving edge-to-cloud data operations are central to the EU project *Glaciation*. SAP explores collaborative learning 
@@ -183,15 +196,16 @@ in-person and virtual attendance in order to facilitate our planning.
     However, secure multi-party training of tree-based models still incurs significant overhead. Fortunately, there exists a 
     spectrum between cloud-outsourced secure multi-party training and edge-local processing. This talk will delve into *Glaciation*’s 
     progress, discuss secure tree training, and examine various trade-offs considered to optimize the process.
+
 ---
 :octicons-clock-16: <span class="gsoc-legend">1:30 pm - 2:00 pm</span>  
-<span id="talk-6" class="gsoc-topic-section-title">MPC as a Tool for Data Anonymization in Data Analytics: A Legal and Technical Perspective</span>  
+<span id="talk-6" class="gsoc-topic-section-title">MPC as a Tool for Data
+Anonymization in Data Analytics: A Legal and Technical Perspective</span>
 
 ???+ info "Dr. Christoph Bösch (Research Engineer, Bosch Research)"
 
     Dr. Christoph Bösch is a research engineer at Bosch Research in the field of security, privacy, and cryptography in general, with a particular focus on applied cryptography 
     and the challenges associated with privacy engineering.
-
 
 ???+ abstract "Abstract"
 
@@ -199,10 +213,12 @@ in-person and virtual attendance in order to facilitate our planning.
     Multi-Party Computation (MPC) provides a secure way to process data for analytical purposes while meeting privacy standards. However, companies have been cautious in adopting MPC for 
     real-world applications due to legal uncertainties and unclear benefits. This talk presents the findings from a legal assessment of MPC’s potential as a tool for 
     data anonymization in line with GDPR, with a special focus on HR analytics, where sensitive employee data is involved.
+
 ---
 
 :octicons-clock-16: <span class="gsoc-legend">2:00 pm - 2:30 pm</span>  
-<span id="talk-7" class="gsoc-topic-section-title">Building a Privacy-First Ecosystem: How SMPC is Transforming AdTech Analytics</span>  
+<span id="talk-7" class="gsoc-topic-section-title">Building a Privacy-First
+Ecosystem: How SMPC is Transforming AdTech Analytics</span>
 
 ???+ info "Adrián Vaca Humanes (Engineering Lead, Resolve) and Daniele Romanini (Senior Privacy Engineer, Resolve)"
 
@@ -223,7 +239,6 @@ in-person and virtual attendance in order to facilitate our planning.
         measurement and analytics platform built with privacy-enhancing technologies at its core.</p>
     </div>
 
-
 ???+ abstract "Abstract"
 
     In a rapidly evolving landscape marked by growing user awareness of privacy and increasingly tightening privacy regulations, 
@@ -234,9 +249,12 @@ in-person and virtual attendance in order to facilitate our planning.
     will demonstrate how Carbyne Stack can be applied in programmatic advertising, detailing concrete use cases for collaborative 
     analytics. Additionally, the presentation will dive into technical aspects, addressing scalability and security challenges 
     encountered in real-world deployments.
+
 ---
 :octicons-clock-16: <span class="gsoc-legend">2:30 pm - 3:00 pm</span>  
-<span id="talk-8" class="gsoc-topic-section-title">Silentium: Beaver Triple Generation with Low Communication and Hardware Acceleration</span>  
+
+<span id="talk-8" class="gsoc-topic-section-title">Silentium: Beaver Triple
+Generation with Low Communication and Hardware Acceleration</span>
 
 ???+ info "Dr. Ian Zhou (Research Engineer, UTS) and Vincent Rieder (PhD Student, Bosch Research)"
 
@@ -257,7 +275,6 @@ in-person and virtual attendance in order to facilitate our planning.
         generating Beaver triples using a Pseudorandom Correlation Generator (PCG) with low communication overhead, named *Silentium*.</p>
     </div>
 
-
 ???+ abstract "Abstract"
 
     The MPC framework of Carbyne Stack relies on the SPDZ protocol, where the most resource-intensive task is the generation of 
@@ -268,16 +285,18 @@ in-person and virtual attendance in order to facilitate our planning.
     part will focus on how further enhance *Silentium*’s local phase with a GPU-optimized Number Theoretic Transform for large 
     degrees. Altogether, this talk discusses how *Silentium* can enhance Klyshko, the offline phase engine of Carbyne Stack, potentially 
     offering significant cost savings in future applications.
+
 ---
 :octicons-clock-16: <span class="gsoc-legend">3:00 pm - 3:15 pm</span>  
-:material-coffee: <span class="gsoc-legend">Coffee Break</span>  
+:material-coffee: <span class="gsoc-legend">Coffee Break</span>
 
 ---
-:octicons-clock-16: <span class="gsoc-legend">3:15 pm - 3:45 pm</span>  
+:octicons-clock-16: <span class="gsoc-legend">3:15 pm - 3:45 pm</span>
 
-<span id="talk-9" class="gsoc-topic-section-title">Thymus: Adding essential Security Features to the Carbyne Stack platform the Cloud-Native Way</span>  
+<span id="talk-9" class="gsoc-topic-section-title">Thymus: Adding essential
+Security Features to the Carbyne Stack platform the Cloud-Native Way</span>
 
-???+ info "Dr. Sven Trieflinger(Senior Project Manager, Bosch Research), Sebastian Becker(Research Engineer, Bosch Research), and Dr. Benjamin Hettwer(Research Engineer, Bosch Research)"
+???+ info "Dr. Sven Trieflinger (Senior Project Manager, Bosch Research), Sebastian Becker (Research Engineer, Bosch Research), and Dr. Benjamin Hettwer (Research Engineer, Bosch Research)"
 
     <div style="display: flex; align-items: flex-start; gap: 15px;">
         <img src="images/speakers/Sebastian_Becker.jpeg" alt="Sebastian Becker" style="width: 150px; border-radius: 8px;">
@@ -305,9 +324,11 @@ in-person and virtual attendance in order to facilitate our planning.
     There is a new kid on the block: Thymus adds eagerly awaited security-related capabilities to the Carbyne Stack platform. In this talk, we will share, how we are providing versatile 
     authentication via Ory Kratos, flexible authorisation based on the Open Policy Agent, and security for inter-VCP communication channels and user-facing APIs via 
     Istio Kubernetes-native network machinery. We will discuss the rationale behind technology choices and provide insights into how to use the new features.
+
 ---
- :octicons-clock-16: <span class="gsoc-legend">3:45 pm - 4:15 pm</span>  
-<span id="talk-10" class="gsoc-topic-section-title">Integrating the BU Secure Analytics Stack with Carbyne Stack</span>  
+:octicons-clock-16: <span class="gsoc-legend">3:45 pm - 4:15 pm</span>  
+<span id="talk-10" class="gsoc-topic-section-title">Integrating the BU Secure
+Analytics Stack with Carbyne Stack</span>
 
 ???+ info "Dr. John Liagouris (Assistant Professor, Boston University)"
 
@@ -323,7 +344,6 @@ in-person and virtual attendance in order to facilitate our planning.
         Hat Collaboratory Research Incubation Award.</p>
     </div>
 
-
 ???+ abstract "Abstract"
 
     In this talk, Dr. John Liagouris will present the latest developments in the BU secure analytics stack and its integration 
@@ -338,9 +358,10 @@ in-person and virtual attendance in order to facilitate our planning.
 
 ---
 :octicons-clock-16: <span class="gsoc-legend">4:15 pm - 4:45 pm</span>  
-<span id="talk-11" class="gsoc-topic-section-title">Open Source and MPC</span>  
+<span id="talk-11" class="gsoc-topic-section-title">Open Source MPC - Quo
+Vadis</span>
 
-???+ info "Dr. Brian LaMacchia (Executive Director, MPC Alliance), Dr. Sven Trieflinger (Senior Project Manager, Bosch Research), and Dr. Christian Hoeppler (TBD, Bosch Research)"
+???+ info "Dr. Brian LaMacchia (Executive Director, MPC Alliance), Dr. Sven Trieflinger (Senior Project Manager, Bosch Research), and Dr. Christian Höppler (TBD, Bosch Research)"
 
     <div style="display: flex; align-items: flex-start; gap: 15px; margin-top: 15px;">
         <img src="images/speakers/Brian_LaMacchia.jpg" alt="Brian LaMacchia" style="width: 150px; border-radius: 8px;">
@@ -370,10 +391,6 @@ in-person and virtual attendance in order to facilitate our planning.
         the automotive sector, mainly developing test automation software for hardware-in-the-loop testbenches.</p>
     </div>
 
-
-
-
-
 ???+ abstract "Abstract"
 
     Three years ago, we set sail on a quest to create the most advanced cloud-native Secure Multiparty Computation (MPC) platform. 
@@ -384,38 +401,48 @@ in-person and virtual attendance in order to facilitate our planning.
     discuss the history and  importance of open source in the development of cryptographic software, then Sven and Chris will relate what Brian discusses to the history of Carbyne S
     tack and shed some light on the way forward for the initiative. 
 
-
 ---
 :octicons-clock-16: <span class="gsoc-legend">4:45 pm - 5:00 pm</span>  
-:material-factory: <span class="gsoc-legend">Closing Remarks</span>  
+:material-factory: <span class="gsoc-legend">Closing Remarks</span>
 ---
-### **Workshop Day: Interactive Format (Nov 28)**
+
+### **Workshop Day (Nov 28)**
 
 :octicons-clock-16: <span class="gsoc-legend">9:00 am - 10:30 am</span>  
-<span class="gsoc-topic-section-title">Donating Carbyne Stack to an Open Source Foundation</span>  
+<span class="gsoc-topic-section-title">Donating Carbyne Stack to an Open Source
+Foundation</span>
 
 ???+ info "Details"
 
-    _Carbyne Stack is coming of age._ Initially launched as a Bosch Research initiative, we think it is time to transition the project to a community-driven model. This workshop will explore the benefits, potential foundation options, and the process required for such a donation. Key discussion points include:
+    _Carbyne Stack is coming of age._ Initially launched as a Bosch Research initiative,
+    we think it is time to transition the project to a community-driven model. This workshop
+    will explore the benefits, potential foundation options, and the process required for
+    such a donation. Key discussion points include:
 
-    - Advantages of transitioning Carbyne Stack to an open source foundation.
-    - Selection of the most suitable foundation.
-    - Steps and tasks involved in the donation process.
-    - Roles and responsibilities of funders post-donation.
-    - Governance structure for a community-led project.
+    - Advantages of transitioning Carbyne Stack to an open source foundation
+    - Selection of the most suitable foundation
+    - Steps and tasks involved in the donation process
+    - Roles and responsibilities of funders post-donation
+    - Governance structure for a community-led project
 
 ---
 
 :octicons-clock-16: <span class="gsoc-legend">10:30 am - 11:00 am</span>  
-:material-coffee: <span class="gsoc-legend">Coffee Break</span>  
+:material-coffee: <span class="gsoc-legend">Coffee Break</span>
 ---
 
 :octicons-clock-16: <span class="gsoc-legend">11:00 am - 12:30 pm</span>  
-<span class="gsoc-topic-section-title">Generalizing Carbyne Stack for Multi-Runtime / Multi-Protocol MPC Support</span>  
+<span class="gsoc-topic-section-title">Generalizing Carbyne Stack for
+Multi-Runtime / Multi-Protocol MPC Support</span>
 
 ???+ info "Details"
 
-    Carbyne Stack is currently tightly integrated with MP-SPDZ as the underlying MPC engine, specifically in a malicious majority setting. This approach prioritizes security, but it may not always be feasible due to performance and cost considerations. To maximize the platform's value, this workshop will discuss ongoing efforts by various partners to support additional protocols and explore how to create a unified, more flexible framework that supports multiple MPC engines and protocols.
+    Carbyne Stack is currently tightly integrated with MP-SPDZ as the underlying MPC engine,
+    specifically in a malicious majority setting. This approach prioritizes security, but it
+    may not always be feasible due to performance and cost considerations. To maximize the
+    platform's value, this workshop will discuss ongoing efforts by various partners to support
+    additional protocols and explore how to create a unified, more flexible framework that
+    supports multiple MPC engines and protocols.
 
 ---
 
@@ -424,7 +451,7 @@ in-person and virtual attendance in order to facilitate our planning.
 ---
 
 :octicons-clock-16: <span class="gsoc-legend">1:30 pm - 3:00 pm</span>  
-<span class="gsoc-topic-section-title">Walk-in Topics</span>  
+<span class="gsoc-topic-section-title">Walk-in Topics</span>
 
 ???+ info "Details"
 
@@ -432,25 +459,25 @@ in-person and virtual attendance in order to facilitate our planning.
 
 ---
 
-
+<!-- markdownlint-restore -->
 
 ## Venue Information
 
 <div class="grid cards" markdown>
 
-- <p>:octicons-location-16:{ .middle } Bosch Research Campus</p>
-
+  - <p>:octicons-location-16:{ .middle } Bosch Research Campus</p>
+  
     ---
 
     ![Bosch Research Campus][bosch-research-campus]
-
-    <img alt="CarbyneStackCon Logo" src="/images/events/csc/24/clubhouse-rng.jpg">
-
+  
+    <img alt="CarbyneStackCon Logo" src="/images/events/csc/24/clubhouse-rng.jpg"/>
+  
     **Address**
-
+  
     Robert-Bosch-Campus 1 <br>
     71272 Renningen, Germany
-
+  
     [:octicons-arrow-right-24:{ .middle } Bosch Research website][bosch-research]
 
 </div>
@@ -482,6 +509,9 @@ Food and beverages during the event will be complementary.
 ---
 
 [bosch-research]: https://www.bosch.com/research/
+
 [bosch-research-campus]: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/BoschRenningen-pjt.jpg/1280px-BoschRenningen-pjt.jpg
+
 [bosch-research-campus-directions]: rng_directions.pdf
+
 [hotel-campo]: https://www.campo-renningen.de/en
