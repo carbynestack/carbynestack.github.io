@@ -287,7 +287,7 @@ Generation with Low Communication and Hardware Acceleration</span>
     </div>
     
     <div style="display: flex; align-items: flex-start; gap: 15px; margin-top: 15px;">
-        <img src="images/speakers/vincent_rieder.jpeg" alt="Vincent Rieder" style="width: 150px; border-radius: 8px; margin-top: 10px;">
+        <img src="images/speakers/vincent-rieder.jpeg" alt="Vincent Rieder" style="width: 150px; border-radius: 8px; margin-top: 10px;">
         <p> Vincent Rieder is a PhD student at Bosch Research in Renningen, focusing on Secure Multi-Party Computation (MPC). Holding a 
         Master’s degree in mathematics, his research centers on the algorithmic aspects of MPC. He aims to introduce new protocols 
         into the Carbyne Stack MPC cloud platform, specifically by optimizing and implementing an enhanced MPC offline phase for 
