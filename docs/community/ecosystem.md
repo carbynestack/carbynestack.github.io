@@ -10,6 +10,21 @@ to conduct proof-of-concepts in multiple domains with various partners.
 
 ---
 
+<a name="cybernetica"></a>
+![Cybernetica Logo](../images/ecosystem/cybernetica-logo-black.png){ class="ecosystem-logo" }
+
+[Cybernetica][cybernetica] is a research-driven technology company specializing
+in secure data solutions. Leveraging over 15 years of experience deploying MPC,
+they are modernizing their product, Sharemind MPC, by integrating it with
+Carbyne Stack and following cloud-native design patterns. This integration will
+unlock new possibilities for privacy-preserving data analysis and
+collaboration, adding valuable capabilities to the Carbyne Stack ecosystem.
+Cybernetica is also committed to simplify the process for others to integrate
+their MPC runtimes into Carbyne Stack, ultimately positioning it as the go-to
+platform for all MPC needs.
+
+---
+
 <a name="cdpg"></a>
 ![CDPG Logo](../images/ecosystem/cdpg-logo.png){ class="ecosystem-logo" }
 
@@ -82,6 +97,7 @@ eventually be implemented by a UTS engineering team based on Carbyne Stack.
 
 [bosch]: https://www.bosch.com
 [cdpg]: https://dataforpublicgood.org.in
+[cybernetica]: https://cyber.ee/
 [fa117]: https://www.foodagility.com/research/protecting-data-in-digital-agriculture
 [glaciation]: https://glaciation-project.eu/
 [hri]: https://www.honda-ri.de/
