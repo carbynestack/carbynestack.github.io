@@ -45,7 +45,7 @@ our planning.
 |-------------------------|---------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
 | **8:30 am - 9:30 am**   | -                                                                         | Registration & Welcome Coffee                                                                            |
 | **9:30 am - 9:45 am**   | Dr. Sven Trieflinger                                                      | Welcome & Opening Remarks                                                                                |
-| **9:45 am - 10:15 am**  | Dr. Marcel Keller                                                         | [Future Prospects of MP-SPDZ](#talk-1)                                                                   |
+| **9:45 am - 10:15 am**  | Dr. Marcel Keller                                                         | [MP-SPDZ After 6 Years](#talk-1)                                                                   |
 | **10:15 am - 10:45 am** | Abhilash Venkatesh                                                        | [TEE-based Secure Computation and its Application to Carbyne Stack](#talk-2)                             |
 | **10:45 am - 11:00 am** | -                                                                         | **Coffee Break**                                                                                         |
 | **11:00 am - 11:30 am** | Dr. Ajith Suresh                                                          | [Revitalizing Privacy-Preserving Machine Learning: Introducing FANNG-MPC](#talk-3)                       |
@@ -67,7 +67,7 @@ our planning.
 
 ---
 :octicons-clock-16: <span class="gsoc-legend">9:45 am - 10:15 am</span>  
-<span id="talk-1" class="gsoc-topic-section-title">Future Prospects of MP-SPDZ</span>
+<span id="talk-1" class="gsoc-topic-section-title">MP-SPDZ After 6 Years</span>
 
 ???+ info "Dr. Marcel Keller (Senior Research Scientist, CSIRO Data61)"
 
@@ -380,7 +380,7 @@ Analytics Stack with Carbyne Stack</span>
 <span id="talk-11" class="gsoc-topic-section-title">Open Source MPC - Quo
 Vadis</span>
 
-???+ info "Dr. Brian LaMacchia (Executive Director, MPC Alliance), Dr. Sven Trieflinger (Senior Project Manager, Bosch Research), and Dr. Christian Höppler (TBD, Bosch Research)"
+???+ info "Dr. Brian LaMacchia (Executive Director, MPC Alliance), Dr. Sven Trieflinger (Senior Project Manager, Bosch Research), and Dr. Christian Höppler (Open Source Officer, Bosch Research)"
 
     <div style="display: flex; align-items: flex-start; gap: 15px; margin-top: 15px;">
         <img src="images/speakers/brian-lamacchia.jpg" alt="Brian LaMacchia" style="width: 150px; border-radius: 8px;">
