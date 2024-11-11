@@ -16,6 +16,7 @@ CLI that can be used to interact with a virtual cloud from the command line.
     ```shell
     export APOLLO_FQDN="172.18.1.128.sslip.io"
     export STARBUCK_FQDN="172.18.2.128.sslip.io"
+    export TLS_ENABLED=true # set to false to disable
     ```
 
 1. Next, configure the CLI to talk to the virtual cloud you just deployed by
@@ -23,6 +24,12 @@ CLI that can be used to interact with a virtual cloud from the command line.
 
     ```shell
     mkdir -p ~/.cs
+    if [ "$TLS_ENABLED" = true ]; then
+        PROTOCOL="https"
+    else
+        PROTOCOL="http"
+    fi
+
     cat <<EOF | envsubst > ~/.cs/config
     {
       "prime" : 198766463529478683931867765928436695041,
@@ -30,17 +37,17 @@ CLI that can be used to interact with a virtual cloud from the command line.
       "noSslValidation" : true,
       "trustedCertificates" : [ ],
       "providers" : [ {
-        "amphoraServiceUrl" : "http://$APOLLO_FQDN/amphora",
-        "castorServiceUrl" : "http://$APOLLO_FQDN/castor",
-        "ephemeralServiceUrl" : "http://$APOLLO_FQDN/",
+        "amphoraServiceUrl" : "$PROTOCOL://$APOLLO_FQDN/amphora",
+        "castorServiceUrl" : "$PROTOCOL://$APOLLO_FQDN/castor",
+        "ephemeralServiceUrl" : "$PROTOCOL://$APOLLO_FQDN/",
         "id" : 1,
-        "baseUrl" : "http://$APOLLO_FQDN/"
+        "baseUrl" : "$PROTOCOL://$APOLLO_FQDN/"
       }, {
-        "amphoraServiceUrl" : "http://$STARBUCK_FQDN/amphora",
-        "castorServiceUrl" : "http://$STARBUCK_FQDN/castor",
-        "ephemeralServiceUrl" : "http://$STARBUCK_FQDN/",
+        "amphoraServiceUrl" : "$PROTOCOL://$STARBUCK_FQDN/amphora",
+        "castorServiceUrl" : "$PROTOCOL://$STARBUCK_FQDN/castor",
+        "ephemeralServiceUrl" : "$PROTOCOL://$STARBUCK_FQDN/",
         "id" : 2,
-        "baseUrl" : "http://$STARBUCK_FQDN/"
+        "baseUrl" : "$PROTOCOL://$STARBUCK_FQDN/"
       } ],
       "rinv" : 133854242216446749056083838363708373830
     }
