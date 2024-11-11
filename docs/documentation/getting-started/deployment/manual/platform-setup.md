@@ -175,6 +175,22 @@ You can switch between the clusters easily using:
                     name: ephemeral-mpc-engine-port-3
                   - port: 30004
                     name: ephemeral-mpc-engine-port-4
+        egressGateways:
+          - name: istio-egressgateway
+            enabled: true
+            k8s:
+              resources:
+                requests:
+                  cpu: 10m
+                  memory: 40Mi
+              service:
+                ports:
+                  - port: 80
+                    targetPort: 8080
+                    name: TCP
+                  - port: 443
+                    targetPort: 8443
+                    name: https
         pilot:
           k8s:
             env:

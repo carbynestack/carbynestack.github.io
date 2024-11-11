@@ -152,6 +152,7 @@ clusters using the kind tool as described in the
     export IS_MASTER=false
     export AMPHORA_VC_PARTNER_URI=$PROTOCOL://$APOLLO_FQDN/amphora
     export TLS_SECRET_NAME=starbuck-tls-secret-generic
+    export PARTNER_URLS=$APOLLO_FQDN
     kubectl config use-context kind-starbuck
     helmfile apply
     ```
@@ -164,6 +165,7 @@ clusters using the kind tool as described in the
     export AMPHORA_VC_PARTNER_URI=$PROTOCOL://$STARBUCK_FQDN/amphora
     export CASTOR_SLAVE_URI=$PROTOCOL://$STARBUCK_FQDN/castor
     export TLS_SECRET_NAME=apollo-tls-secret-generic
+    export PARTNER_URLS=$STARBUCK_FQDN
     kubectl config use-context kind-apollo
     helmfile apply
     ```
