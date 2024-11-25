@@ -36,7 +36,7 @@ our planning.
 | **8:30 am - 9:30 am**   | -                                                                         | Registration & Welcome Coffee                                                                            |
 | **9:30 am - 9:45 am**   | Dr. Sven Trieflinger                                                      | Welcome & Opening Remarks                                                                                |
 | **9:45 am - 10:15 am**  | Dr. Marcel Keller                                                         | [MP-SPDZ After 6 Years](#talk-1)                                                                   |
-| **10:15 am - 10:45 am** | Abhilash Venkatesh                                                        | [TEE-based Secure Computation and its Application to Carbyne Stack](#talk-2)                             |
+| **10:15 am - 10:45 am** | Sarthak Sharma                                                        | [TEE-based Secure Computation and its Application to Carbyne Stack](#talk-2)                             |
 | **10:45 am - 11:00 am** | -                                                                         | **Coffee Break**                                                                                         |
 | **11:00 am - 11:30 am** | Dr. Ajith Suresh                                                          | [Revitalizing Privacy-Preserving Machine Learning: Introducing FANNG-MPC](#talk-3)                       |
 | **11:30 am - 12:00 pm** | Kert Tali                                                                 | [Self-Service Deployment in MPC-as-a-Service](#talk-4)                                                   |
@@ -82,14 +82,14 @@ our planning.
 <span id="talk-2" class="gsoc-topic-section-title">TEE-based Secure Computation
 and its Application to Carbyne Stack</span>
 
-???+ info "Abhilash Venkatesh (Lead Engineer, CDPG, IISc)"
+???+ info "Sarthak Sharma (Engineer, CDPG, IISc)"
 
     <div style="display: flex; align-items: center; gap: 15px;">
-        <img src="images/speakers/abhilash-venkatesh.jpg" alt="Abhilash Venkatesh" style="width: 150px; border-radius: 8px;">
-        <p>Abhilash is a Lead Engineer at the Centre of Data for Public Good (CDPG), Foundation of Society (FSID), Innovation and 
-        Development, IISc. He works primarily on container, cloud-based technologies and Secure Enclave, SMPC-based privacy-enhancing 
-        technology (PET) at CDPG's research division. He loves Linux, computer networks, security, privacy, and anything related to 
-        systems in general.</p>
+        <img src="images/speakers/Sarthak_Pic.jpeg" alt="Sarthak Sharma" style="width: 150px; border-radius: 8px;">
+        <p>Sarthak is a member of the Research Unit at the Center for Data for Public Good (CDPG), Foundation for Science Innovation and Development (FSID), 
+        Indian Institute of Science. His contributions at CDPG include extending the anonymization pipeline to support categorical data and enhancing Motion2NX's 
+        functionality to implement CNN inferencing. Sarthak is deeply passionate about privacy and Privacy-Enhancing Technologies (PETs) and enjoys exploring sci-fi 
+        and high fantasy in his leisure time.</p>
     </div>
 
 ???+ abstract "Abstract"
