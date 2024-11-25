@@ -36,7 +36,7 @@ our planning.
 | **8:30 am - 9:30 am**   | -                                                                         | Registration & Welcome Coffee                                                                            |
 | **9:30 am - 9:45 am**   | Dr. Sven Trieflinger                                                      | Welcome & Opening Remarks                                                                                |
 | **9:45 am - 10:15 am**  | Dr. Marcel Keller                                                         | [MP-SPDZ After 6 Years](#talk-1)                                                                   |
-| **10:15 am - 10:45 am** | Abhilash Venkatesh                                                        | [TEE-based Secure Computation and its Application to Carbyne Stack](#talk-2)                             |
+| **10:15 am - 10:45 am** | Sarthak Sharma                                                        | [TEE-based Secure Computation and its Application to Carbyne Stack](#talk-2)                             |
 | **10:45 am - 11:00 am** | -                                                                         | **Coffee Break**                                                                                         |
 | **11:00 am - 11:30 am** | Dr. Ajith Suresh                                                          | [Revitalizing Privacy-Preserving Machine Learning: Introducing FANNG-MPC](#talk-3)                       |
 | **11:30 am - 12:00 pm** | Kert Tali                                                                 | [Self-Service Deployment in MPC-as-a-Service](#talk-4)                                                   |
@@ -62,7 +62,7 @@ our planning.
 ???+ info "Dr. Marcel Keller (Senior Research Scientist, CSIRO Data61)"
 
     <div style="display: flex; align-items: center; gap: 15px;">
-        <img src="images/speakers/marcel-keller.jpg" alt="Dr. Marcel Keller" style="width: 150px; border-radius: 8px;">
+        <img src="images/speakers/Marcel_Keller.jpg" alt="Dr. Marcel Keller" style="width: 150px; border-radius: 8px;">
         <p>Dr. Marcel Keller is a senior research scientist with CSIRO's Data61, a research unit of Australia's national science agency. 
         After completing his PhD with Ivan Damgård at Aarhus University, he spent a few years at the University of Bristol under 
         the supervision of Nigel Smart. There, he started working on an implementation of multi-party computation that eventually 
@@ -82,14 +82,14 @@ our planning.
 <span id="talk-2" class="gsoc-topic-section-title">TEE-based Secure Computation
 and its Application to Carbyne Stack</span>
 
-???+ info "Abhilash Venkatesh (Lead Engineer, CDPG, IISc)"
+???+ info "Sarthak Sharma (Engineer, CDPG, IISc)"
 
     <div style="display: flex; align-items: center; gap: 15px;">
-        <img src="images/speakers/abhilash-venkatesh.jpg" alt="Abhilash Venkatesh" style="width: 150px; border-radius: 8px;">
-        <p>Abhilash is a Lead Engineer at the Centre of Data for Public Good (CDPG), Foundation of Society (FSID), Innovation and 
-        Development, IISc. He works primarily on container, cloud-based technologies and Secure Enclave, SMPC-based privacy-enhancing 
-        technology (PET) at CDPG's research division. He loves Linux, computer networks, security, privacy, and anything related to 
-        systems in general.</p>
+        <img src="images/speakers/Sarthak_Pic.jpeg" alt="Sarthak Sharma" style="width: 150px; border-radius: 8px;">
+        <p>Sarthak is a member of the Research Unit at the Center for Data for Public Good (CDPG), Foundation for Science Innovation and Development (FSID), 
+        Indian Institute of Science. His contributions at CDPG include extending the anonymization pipeline to support categorical data and enhancing Motion2NX's 
+        functionality to implement CNN inferencing. Sarthak is deeply passionate about privacy and Privacy-Enhancing Technologies (PETs) and enjoys exploring sci-fi 
+        and high fantasy in his leisure time.</p>
     </div>
 
 ???+ abstract "Abstract"
@@ -113,7 +113,7 @@ MLaaS</span>
 ???+ info "Dr. Ajith Suresh (Senior MPC Researcher, Technology Innovation Institute, Abu Dhabi)"
 
     <div style="display: flex; align-items: center; gap: 15px;">
-        <img src="images/speakers/ajith-suresh.jpg" alt="Dr. Ajith Suresh" style="width: 150px; border-radius: 8px;">
+        <img src="images/speakers/Ajith_Suresh.jpg" alt="Dr. Ajith Suresh" style="width: 150px; border-radius: 8px;">
         <p>Dr. Ajith Suresh is a Senior MPC Researcher at the Technology Innovation Institute (TII) in Abu Dhabi, affiliated with the 
         Cryptography Research Center. Prior to joining TII, he completed 1.5 years of post-doctoral research at the Cryptography 
         and Privacy Engineering (ENCRYPTO) group at the Technical University of Darmstadt, under the supervision of Prof. Thomas 
@@ -140,7 +140,7 @@ Computation Tasks in a Multi-Tenant MPC-as-a-Service</span>
 ???+ info "Kert Tali (Architect, Sharemind MPC Product Development, Cybernetica)"
 
     <div style="display: flex; align-items: center; gap: 15px;">
-        <img src="images/speakers/kert-tali.png" alt="Kert Tali" style="width: 150px; border-radius: 8px;">
+        <img src="images/speakers/Kert_Tali.png" alt="Kert Tali" style="width: 150px; border-radius: 8px;">
         <p>Kert joined the Sharemind MPC product development team at Cybernetica in 2021 as a programmer. Fascinated by the engineering 
         challenges of MPC deployments, he began exploring ways to enhance the practicality of production-grade MPC. In 2022, Kert 
         defended his Master's thesis on scaling parallel algorithms on MPC. Shortly after, he set his sights on Carbyne Stack. Realizing 
@@ -169,7 +169,7 @@ Secure Predictions</span>
 ???+ info "Dr. Jonas Böhler (Lead AI Security & Privacy Researcher, SAP)"
 
     <div style="display: flex; align-items: center; gap: 15px;">
-        <img src="images/speakers/jonas-boehler.jpg" alt="Dr. Jonas Böhler" style="width: 150px; border-radius: 8px;">
+        <img src="images/speakers/Jonas_Böhler.jpg" alt="Dr. Jonas Böhler" style="width: 150px; border-radius: 8px;">
         <p>Dr. Jonas Böhler is the lead AI security & privacy researcher for the SAP Foundation Model, SAP's table-native AI solution for 
         prediction tasks on tabular data. Previously, he was a senior researcher at SAP Security Research and also serves as SAP's 
         project lead for the EU project *Glaciation*, focusing on privacy-preserving collaborative learning. Jonas received his PhD 
@@ -198,7 +198,7 @@ Anonymization in Data Analytics: A Legal and Technical Perspective</span>
     and the challenges associated with privacy engineering.
 
     <div style="display: flex; align-items: flex-start; gap: 15px;">
-        <img src="images/speakers/thomas-hoeren.webp" alt="Thomas Hoeren" style="width: 150px; border-radius: 8px;">
+        <img src="images/speakers/Hoeren.webp" alt="Thomas Hoeren" style="width: 150px; border-radius: 8px;">
         <p>Prof. Dr. Thomas Hoeren is Head of the Institute for Information, Telecommunications and 
         Media Law (ITM) at the University of Münster and current lecturer at the University of Vienna, 
         he is a experienced legal scholar and former judge at the Court of Appeal of Düsseldorf 
@@ -208,7 +208,7 @@ Anonymization in Data Analytics: A Legal and Technical Perspective</span>
     </div>
     
     <div style="display: flex; align-items: flex-start; gap: 15px; margin-top: 15px;">
-        <img src="images/speakers/merlin-rombach.jpg" alt="Merlin Rombach" style="width: 150px; border-radius: 8px;">
+        <img src="images/speakers/Rombach.jpg" alt="Merlin Rombach" style="width: 150px; border-radius: 8px;">
         <p>Merlin Rombach is a Academic Associate at the Institute for Information, Telecommunications 
         and Media Law (ITM) at the University of Münster. His research interests span cybersecurity law,
          data protection law, and AI regulation, with his doctoral research specifically exploring how 
@@ -232,7 +232,7 @@ Ecosystem: How SMPC is Transforming AdTech Analytics</span>
 ???+ info "Adrián Vaca Humanes (Engineering Lead, Resolve) and Daniele Romanini (Senior Privacy Engineer, Resolve)"
 
     <div style="display: flex; align-items: flex-start; gap: 15px;">
-        <img src="images/speakers/adrian-vaca-humanes.jpg" alt="Adrián Vaca Humanes" style="width: 150px; border-radius: 8px;">
+        <img src="images/speakers/Adrián_Vaca_Humanes.jpg" alt="Adrián Vaca Humanes" style="width: 150px; border-radius: 8px;">
         <p>Adrián Vaca Humanes is the Engineering Lead at Resolve, focusing on Data Analytics and Cloud Architecture. 
         His experience spans various industries, including banking, consumer discretionary, and telecommunications. At Resolve, he is dedicated to 
         building privacy-preserving solutions for the AdTech industry, with a current focus on data engineering, platform optimization, 
@@ -240,7 +240,7 @@ Ecosystem: How SMPC is Transforming AdTech Analytics</span>
     </div>
     
     <div style="display: flex; align-items: flex-start; gap: 15px; margin-top: 15px;">
-        <img src="images/speakers/daniele-romanini.jpg" alt="Daniele Romanini" style="width: 150px; border-radius: 8px;">
+        <img src="images/speakers/Daniele_Romanini.jpg" alt="Daniele Romanini" style="width: 150px; border-radius: 8px;">
         <p>Daniele Romanini is a Senior Privacy Engineer at Resolve, bringing expertise in both data science and software engineering. 
         His background includes experience in academia, government organizations, and the AdTech industry. Daniele is an advocate for 
         privacy-by-design and a privacy tech enthusiast, actively integrating privacy threat modeling and a privacy-first approach 
@@ -268,7 +268,7 @@ Generation with Low Communication and Hardware Acceleration</span>
 ???+ info "Dr. Ian Zhou (Research Engineer, UTS) and Vincent Rieder (PhD Student, Bosch Research)"
 
     <div style="display: flex; align-items: flex-start; gap: 15px; margin-top: 10px;">
-        <img src="images/speakers/ian-zhou.jpg" alt="Dr. Ian Zhou" style="width: 150px; border-radius: 8px; margin-top: 10px;">
+        <img src="images/speakers/Ian_Zhou.jpg" alt="Dr. Ian Zhou" style="width: 150px; border-radius: 8px; margin-top: 10px;">
         <p> Dr. Ian Zhou received his B.S. degree in computer science from The University of Sydney in 2016 and completed his M.B.A. and 
         Ph.D. degrees at the University of Technology Sydney in 2019 and 2023, respectively. His Ph.D. research focused on 
         machine learning-based frost monitoring systems. Currently, Dr. Zhou is a Research Engineer specializing in privacy-preserving 
@@ -277,7 +277,7 @@ Generation with Low Communication and Hardware Acceleration</span>
     </div>
     
     <div style="display: flex; align-items: flex-start; gap: 15px; margin-top: 15px;">
-        <img src="images/speakers/vincent-rieder.jpeg" alt="Vincent Rieder" style="width: 150px; border-radius: 8px; margin-top: 10px;">
+        <img src="images/speakers/Vincent_ Rieder.jpeg" alt="Vincent Rieder" style="width: 150px; border-radius: 8px; margin-top: 10px;">
         <p> Vincent Rieder is a PhD student at Bosch Research in Renningen, focusing on Secure Multi-Party Computation (MPC). Holding a 
         Master’s degree in mathematics, his research centers on the algorithmic aspects of MPC. He aims to introduce new protocols 
         into the Carbyne Stack MPC cloud platform, specifically by optimizing and implementing an enhanced MPC offline phase for 
@@ -308,20 +308,20 @@ Security Features to the Carbyne Stack platform the Cloud-Native Way</span>
 ???+ info "Dr. Sven Trieflinger (Senior Project Manager, Bosch Research), Sebastian Becker (Research Engineer, Bosch Research), and Dr. Benjamin Hettwer (Research Engineer, Bosch Research)"
 
     <div style="display: flex; align-items: flex-start; gap: 15px;">
-        <img src="images/speakers/sebastian-becker.jpeg" alt="Sebastian Becker" style="width: 150px; border-radius: 8px;">
+        <img src="images/speakers/Sebastian_Becker.jpeg" alt="Sebastian Becker" style="width: 150px; border-radius: 8px;">
         <p>Sebastian Becker is a Research Engineer at Robert Bosch GmbH. His work focuses on making privacy-enhancing technologies easily adaptable to the needs of the wide range of 
         application domains at Bosch. In this context, Sebastian also works as one of the maintainers of and main contributors to Carbyne Stack.</p>
     </div>
     
     <div style="display: flex; align-items: flex-start; gap: 15px; margin-top: 15px;">
-        <img src="images/speakers/benjamin-hettwer.jpeg" alt="Benjamin Hettwer" style="width: 150px; border-radius: 8px;">
+        <img src="images/speakers/Benjamin_Hettwer.jpeg" alt="Benjamin Hettwer" style="width: 150px; border-radius: 8px;">
         <p> Dr. Benjamin Hettwer is a research engineer at Robert Bosch Corporate Research in Renningen, Germany. He received his Ph.D. in Electrical Engineering and Information Technology 
         from Ruhr-Universität Bochum, Germany, in 2020. His research interests focus on the intersection of hardware security and machine learning. Recently, he also started 
         working on privacy-enhancing technologies such as the secure multi-party computation solution Carbyne Stack and its application to industrial use cases.</p>
     </div>
 
     <div style="display: flex; align-items: flex-start; gap: 15px; margin-top: 15px;">
-        <img src="images/speakers/sven-trieflinger.png" alt="Sven Trieflinger " style="width: 150px; border-radius: 8px;">
+        <img src="images/speakers/Sven_Trieflinger.png" alt="Sven Trieflinger " style="width: 150px; border-radius: 8px;">
         <p> Dr. Sven Trieflinger is a Senior Project Manager, Group Manager for Security, Privacy, and Safety, Research Engineer, and open source software maintainer at Bosch Research. 
         He has over 15 years of experience in the design, architecture, and implementation of distributed systems and cloud platforms. With his team at Bosch, Sven drives innovation in 
         the area of privacy-preserving computing technologies and is spearheading open source computing on encrypted data technology with the Carbyne Stack cloud-native Secure Multiparty 
@@ -342,7 +342,7 @@ Analytics Stack with Carbyne Stack</span>
 ???+ info "Dr. John Liagouris (Assistant Professor, Boston University)"
 
     <div style="display: flex; align-items: flex-start; gap: 15px; margin-top: 15px;">
-        <img src="images/speakers/john-liagouris.jpeg" alt="Dr. John Liagouris" style="width: 150px; border-radius: 8px;">
+        <img src="images/speakers/John_liagouris.jpeg" alt="Dr. John Liagouris" style="width: 150px; border-radius: 8px;">
         <p> Dr. John Liagouris is an assistant professor of Computer Science at Boston University, where he co-leads the Complex Analytics 
         and Scalable Processing research lab (CASP). He is a member of the Systems Group and is also affiliated with the Security 
         Group at BU. John's research focuses on distributed systems, cloud computing, security & privacy, and data management. 
@@ -373,7 +373,7 @@ Vadis</span>
 ???+ info "Dr. Brian LaMacchia (Executive Director, MPC Alliance), Dr. Sven Trieflinger (Senior Project Manager, Bosch Research), and Dr. Christian Höppler (Open Source Officer, Bosch Research)"
 
     <div style="display: flex; align-items: flex-start; gap: 15px; margin-top: 15px;">
-        <img src="images/speakers/brian-lamacchia.jpg" alt="Brian LaMacchia" style="width: 150px; border-radius: 8px;">
+        <img src="images/speakers/Brian_LaMacchia.jpg" alt="Brian LaMacchia" style="width: 150px; border-radius: 8px;">
         <p> Dr. Brian LaMacchia is an applied cryptographer and currently the Executive Director of the MPC Alliance, a consortium of over 50 organizations promoting secure multi-party 
         computation (MPC) technology. After a 25-year career at Microsoft Corporation, where he served as Distinguished Engineer for Cryptography and led the Security and Cryptography 
         team at Microsoft Research, Brian retired in December 2022. He also co-founded and chaired the Microsoft Cryptography Review Board. Beyond his role at the MPC Alliance, Brian is an 
@@ -384,7 +384,7 @@ Vadis</span>
     </div>
 
     <div style="display: flex; align-items: flex-start; gap: 15px; margin-top: 15px;">
-        <img src="images/speakers/sven-trieflinger.png" alt="Sven Trieflinger " style="width: 150px; border-radius: 8px;">
+        <img src="images/speakers/Sven_Trieflinger.png" alt="Sven Trieflinger " style="width: 150px; border-radius: 8px;">
         <p> Dr. Sven Trieflinger is a Senior Project Manager, Group Manager for Security, Privacy, and Safety, Research Engineer, and open source software maintainer at Bosch Research. 
         He has over 15 years of experience in the design, architecture, and implementation of distributed systems and cloud platforms. With his team at Bosch, Sven drives innovation in 
         the area of privacy-preserving computing technologies and is spearheading open source computing on encrypted data technology with the Carbyne Stack cloud-native Secure Multiparty 
@@ -392,7 +392,7 @@ Vadis</span>
     </div>
 
     <div style="display: flex; align-items: flex-start; gap: 15px; margin-top: 15px;">
-        <img src="images/speakers/christian-hoeppler.jpg" alt="Christian Höppler" style="width: 150px; border-radius: 8px;">
+        <img src="images/speakers/Christian_Hoeppler.jpg" alt="Christian Höppler" style="width: 150px; border-radius: 8px;">
         <p> Dr. Christian Höppler is Open Source Officer at Bosch Research and member of Bosch's corporate Open Source Expert Team. Since joining Bosch Research a decade ago Chris has been 
         working on a wide range of open source topics from compliance to strategy. Currently, he focuses on working with internal teams to help with their open source contributions both 
         within Bosch Research and beyond. To support that work and to reduce some of the friction encountered he has begun to automate the contribution lifecycle. Additionally, Chris has 
