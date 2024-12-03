@@ -2,14 +2,16 @@
 
 ## Upcoming Events
 
+Nothing to see here yet. Check back soon!
+
+## Past Events
+
 ### [CarbyneStackCon '24][csc24]
 
 ![CSC_Logo](/images/events/csc/csc22-logo-no-dates.png){ class="event-logo" }
 
 See the dedicated [event page][csc24] for detailed information about our
 upcoming hybrid Carbyne Stack community gathering in Renningen, Germany.
-
-## Past Events
 
 ### [CarbyneStackCon '23][csc23]
 
