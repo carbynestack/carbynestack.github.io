@@ -1,5 +1,7 @@
 # CarbyneStackCon '24
 
+!!! warning "CarbyneStackCon '24 is over. Stay tuned for CarbyneStackCon '25!"
+
 <p style="text-align: center; margin: 5em 0 5em 0;">
   <img alt="CarbyneStackCon Logo" src="/images/events/csc/24/csc24-logo.png">
 </p>
