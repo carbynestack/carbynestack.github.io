@@ -34,19 +34,20 @@ the billionaires' net worth in billions. Note that this obviously has to be done
 in a private way by Jeff and Elon in a real-world setting, simplified here by
 logging in as individual users.
 
-The first secret will be uploaded with the identity of Jeff. To do so please
-perform the following commands and login as Jeff using the E-Mail
+The first secret will be uploaded with the identity of Jeff. To do so perform
+the following commands and login as Jeff using the following credentials
 <table>
-    <tr>
-        <td>E-Mail:</td>
-        <td>`jeff@carbynestack.io`</td>
-    </tr><tr>
-        <td>Password:</td>
-        <td>`86KIo6<]!/V=`</td>
-</tr></table>
+  <tr>
+    <td>E-Mail:</td>
+    <td>`jeff@carbynestack.io`</td>
+  </tr><tr>
+    <td>Password:</td>
+    <td>`86KIo6<]!/V=`</td>
+  </tr>
+</table>
 
 !!! info
-    If you have authenticated yourself to the VCPs recently, your previous
+    If you have recently authenticated yourself to the VCPs, your previous
     session might still be cached using a browser cookie.
 
     If you are not prompted for your credentials and not logged in as the 
@@ -60,14 +61,19 @@ java -jar cs.jar login
 export JEFFS_NET_WORTH_ID=$(java -jar cs.jar amphora create-secret 177 -t billionaire=Jeff -t accessPolicy=carbynestack.def -t authorizedPrograms=ephemeral-generic)
 ```
 
-Next we will log in as Elon to perform the remaining steps of the tutorial. The
+Next log in as Elon to perform the remaining steps of the tutorial. The
 credentials for the development user Elon are as follows:
-<table><tr>
-<td>E-Mail:</td><td>`elon@carbynestack.io`</td>
-</tr><tr>
-<td>Password:</td><td>`2#Tv91*d-Z,M`</td>
-</tr></table>
-(Please read the info box above if you are having trubles logging in as a different user.)
+<table>
+  <tr>
+    <td>E-Mail:</td>
+    <td>`elon@carbynestack.io`</td>
+  </tr><tr>
+    <td>Password:</td>
+    <td>`2#Tv91*d-Z,M`</td>
+  </tr>
+</table>
+
+Please read the info box above if you are having troubles logging in as a different user.
 
 ```shell
 java -jar cs.jar login
@@ -84,24 +90,26 @@ java -jar cs.jar amphora get-secrets
 The output should resemble the following:
 
 !!! note
-    The output you see will differ wrt. identifiers and the `creation-date` tag. <br>
-    Nevertheless, it will output both secrets, uploaded by Elon and Jeff even though
-    we are authenticated as Elon. This is to the fact of authentication, but not
-    authorization being integrated into Carbyne Stack for the time beeing.
+    The output you see will differ wrt. identifiers and the `creation-date` tag.
+    <br>
+    Nevertheless, it will output both secrets, uploaded by Elon and Jeff even
+    though we are authenticated as Elon. However, accessing secrets to which a 
+    user is not authorized - as defined by the policy attached to the secret -
+    will result in an `Unauthorized` error.
 
 ```shell
 09261bd8-b668-483a-8e4b-6095829f0ffa
-	creation-date -> 1734525549919
-	accessPolicy -> carbynestack.def
-	billionaire -> Jeff
-	owner -> 366e17fc-8aa9-47de-9a3c-80b3793dc27e
-	authorizedPrograms -> ephemeral-generic
+  creation-date -> 1734525549919
+  accessPolicy -> carbynestack.def
+  billionaire -> Jeff
+  owner -> 366e17fc-8aa9-47de-9a3c-80b3793dc27e
+  authorizedPrograms -> ephemeral-generic
 23602d07-7381-49a0-9528-e116ff290efc
-	owner -> ca15ffbb-a140-49e9-88f1-f442397bad8f
-	billionaire -> Elon
-	creation-date -> 1734526180174
-	authorizedPrograms -> ephemeral-generic
-	accessPolicy -> carbynestack.def
+  owner -> ca15ffbb-a140-49e9-88f1-f442397bad8f
+  billionaire -> Elon
+  creation-date -> 1734526180174
+  authorizedPrograms -> ephemeral-generic
+  accessPolicy -> carbynestack.def
 ```
 
 ### Invoke the Billionaires Function
@@ -164,10 +172,10 @@ The output being `0` tells Elon that unfortunately Jeff is still the alpha:
 
 ```shell
 [0]
-	gameID -> 56effe1e-d85c-4af0-8894-846f3b62e4db
-	creation-date -> 1734526737566
-	derived-from -> 56580701-5334-4bf4-a1c0-354d51a6e6d8, 64050fa9-f48d-4ec1-838a-6fbcf354827d
-	owner -> 64050fa9-f48d-4ec1-838a-6fbcf354827d
+  gameID -> 56effe1e-d85c-4af0-8894-846f3b62e4db
+  creation-date -> 1734526737566
+  derived-from -> 56580701-5334-4bf4-a1c0-354d51a6e6d8, 64050fa9-f48d-4ec1-838a-6fbcf354827d
+  owner -> 64050fa9-f48d-4ec1-838a-6fbcf354827d
 ```
 
 After buying a bunch of the fabulous new (and completely fictional) _Carbyne
