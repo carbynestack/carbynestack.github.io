@@ -31,15 +31,54 @@ see how things work, let's put ourselves in Elon's shoes.
 First, we upload the inputs into the Carbyne Stack
 [Amphora Secret Store](https://github.com/carbynestack/amphora). The inputs are
 the billionaires' net worth in billions. Note that this obviously has to be done
-in a private way by Jeff and Elon in a real-world setting.
+in a private way by Jeff and Elon in a real-world setting, simplified here by
+logging in as individual users.
+
+The first secret will be uploaded with the identity of Jeff. To do so perform
+the following commands and login as Jeff using the following credentials
+<table>
+  <tr>
+    <td>E-Mail:</td>
+    <td>`jeff@carbynestack.io`</td>
+  </tr><tr>
+    <td>Password:</td>
+    <td>`86KIo6<]!/V=`</td>
+  </tr>
+</table>
+
+!!! info
+    If you have recently authenticated yourself to the VCPs, your previous
+    session might still be cached using a browser cookie.
+
+    If you are not prompted for your credentials and not logged in as the 
+    desired user, please make sure to clear recent browser cache or cookies,
+    or re-open the tabs in private mode.
 
 ```shell
+java -jar cs.jar login
 # Create a secret representing Jeff's net worth (note that we work with 
 # billion USD here)
-export JEFFS_NET_WORTH_ID=$(java -jar cs.jar amphora create-secret 177 -t billionaire=Jeff)
+export JEFFS_NET_WORTH_ID=$(java -jar cs.jar amphora create-secret 177 -t billionaire=Jeff -t accessPolicy=carbynestack.def -t authorizedPrograms=ephemeral-generic)
+```
 
-# And another one for Elon
-export ELONS_NET_WORTH_ID=$(java -jar cs.jar amphora create-secret 151 -t billionaire=Elon)
+Next log in as Elon to perform the remaining steps of the tutorial. The
+credentials for the development user Elon are as follows:
+<table>
+  <tr>
+    <td>E-Mail:</td>
+    <td>`elon@carbynestack.io`</td>
+  </tr><tr>
+    <td>Password:</td>
+    <td>`2#Tv91*d-Z,M`</td>
+  </tr>
+</table>
+
+Please read the info box above if you are having troubles logging in as a different user.
+
+```shell
+java -jar cs.jar login
+# And a secret for Elon
+export ELONS_NET_WORTH_ID=$(java -jar cs.jar amphora create-secret 151 -t billionaire=Elon -t accessPolicy=carbynestack.def -t authorizedPrograms=ephemeral-generic)
 ```
 
 We can check the secrets have been created using:
@@ -52,14 +91,25 @@ The output should resemble the following:
 
 !!! note
     The output you see will differ wrt. identifiers and the `creation-date` tag.
+    <br>
+    Nevertheless, it will output both secrets, uploaded by Elon and Jeff even
+    though we are authenticated as Elon. However, accessing secrets to which a 
+    user is not authorized - as defined by the policy attached to the secret -
+    will result in an `Unauthorized` error.
 
 ```shell
-ab160f93-3b7e-468f-b687-f9c46fb535f3
-    billionaire -> Jeff
-    creation-date -> 1630660117946
-ef3e867f-9233-46fb-9cde-7a09c99bc32f
-    billionaire -> Elon
-    creation-date -> 1630660125951
+09261bd8-b668-483a-8e4b-6095829f0ffa
+  creation-date -> 1734525549919
+  accessPolicy -> carbynestack.def
+  billionaire -> Jeff
+  owner -> 366e17fc-8aa9-47de-9a3c-80b3793dc27e
+  authorizedPrograms -> ephemeral-generic
+23602d07-7381-49a0-9528-e116ff290efc
+  owner -> ca15ffbb-a140-49e9-88f1-f442397bad8f
+  billionaire -> Elon
+  creation-date -> 1734526180174
+  authorizedPrograms -> ephemeral-generic
+  accessPolicy -> carbynestack.def
 ```
 
 ### Invoke the Billionaires Function
@@ -122,8 +172,10 @@ The output being `0` tells Elon that unfortunately Jeff is still the alpha:
 
 ```shell
 [0]
-    creation-date -> 1630661192626
-    gameID -> 7899b23c-4509-4ff8-a9ae-d9b59fa77fea
+  gameID -> 56effe1e-d85c-4af0-8894-846f3b62e4db
+  creation-date -> 1734526737566
+  derived-from -> 56580701-5334-4bf4-a1c0-354d51a6e6d8, 64050fa9-f48d-4ec1-838a-6fbcf354827d
+  owner -> 64050fa9-f48d-4ec1-838a-6fbcf354827d
 ```
 
 After buying a bunch of the fabulous new (and completely fictional) _Carbyne
@@ -134,7 +186,7 @@ evaluation of the Billionaires Problem logic again using:
 
 ```shell
 java -jar cs.jar amphora delete-secrets $ELONS_NET_WORTH_ID
-export ELONS_NET_WORTH_ID=$(java -jar cs.jar amphora create-secret 179 -t billionaire=Elon)
+export ELONS_NET_WORTH_ID=$(java -jar cs.jar amphora create-secret 179 -t billionaire=Elon -t accessPolicy=carbynestack.def -t authorizedPrograms=ephemeral-generic)
 export RESULT_ID=$(cat billionaires.mpc | java -jar cs.jar ephemeral execute \
   -i $JEFFS_NET_WORTH_ID \
   -i $ELONS_NET_WORTH_ID \
