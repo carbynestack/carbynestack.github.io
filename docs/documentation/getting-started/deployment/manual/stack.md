@@ -78,7 +78,8 @@ clusters using the kind tool as described in the
     export RELEASE_NAME=cs
     export DISCOVERY_MASTER_HOST=$APOLLO_FQDN
     export NO_SSL_VALIDATION=true
-    export PROTOCOL=http
+    export TLS_ENABLED=true # Enabled by default, set to false to disable
+    export PROTOCOL=https
     ```
 
 1. Configure the _Correlated Randomness Generator_ (CRG) used by Klyshko
@@ -114,7 +115,7 @@ clusters using the kind tool as described in the
         before you proceed.
 
 <!-- markdownlint-disable MD013 -->
-1. Configure TLS to enable secure communication to, and between the VCPs:
+1. Configure TLS for secure communication to, and between the VCPs:
 
     !!! attention
         Replace `172.18.1.128` and `172.18.2.128` in the following with the load balancer IPs
@@ -122,27 +123,18 @@ clusters using the kind tool as described in the
         [Platform Setup](../platform-setup) guide).
 
     ```shell
-    export TLS_ENABLED=true # Enabled by default, set to false to disable
-    export PROTOCOL=http
+     # Create X.509 certificates
+     mkdir -p certs
+     openssl req -x509 -newkey rsa:4096 -keyout certs/apollo_key.pem -out certs/apollo_cert.pem -days 365 -nodes -subj "/CN=${APOLLO_FQDN}" -addext "subjectAltName=DNS:172.18.1.128.sslip.io,IP:172.18.1.128"
+     openssl req -x509 -newkey rsa:4096 -keyout certs/starbuck_key.pem -out certs/starbuck_cert.pem -days 365 -nodes -subj "/CN=${STARBUCK_FQDN}" -addext "subjectAltName=DNS:172.18.2.128.sslip.io,IP:172.18.2.128"
 
-    if [ "$TLS_ENABLED" = true ]; then
-        # Use https
-        export PROTOCOL=https
-
-        # Create X.509 certificates
-        mkdir -p certs
-        openssl req -x509 -newkey rsa:4096 -keyout certs/apollo_key.pem -out certs/apollo_cert.pem -days 365 -nodes -subj "/CN=${APOLLO_FQDN}" -addext "subjectAltName=DNS:172.18.1.128.sslip.io,IP:172.18.1.128"
-        openssl req -x509 -newkey rsa:4096 -keyout certs/starbuck_key.pem -out certs/starbuck_cert.pem -days 365 -nodes -subj "/CN=${STARBUCK_FQDN}" -addext "subjectAltName=DNS:172.18.2.128.sslip.io,IP:172.18.2.128"
-
-        # Create kubernetes secrets using the generated keys and certificates
-        kubectl config use-context kind-apollo
-        kubectl create secret generic apollo-tls-secret-generic -n istio-system --from-file=tls.key=certs/apollo_key.pem --from-file=tls.crt=certs/apollo_cert.pem --from-file=cacert=certs/starbuck_cert.pem
-        kubectl get secret apollo-tls-secret-generic -n istio-system -o yaml | sed 's/namespace: istio-system/namespace: default/' | kubectl apply -n default -f -
-        kubectl config use-context kind-starbuck
-        kubectl create secret generic starbuck-tls-secret-generic -n istio-system --from-file=tls.key=certs/starbuck_key.pem --from-file=tls.crt=certs/starbuck_cert.pem --from-file=cacert=certs/apollo_cert.pem
-        kubectl get secret starbuck-tls-secret-generic -n istio-system -o yaml | sed 's/namespace: istio-system/namespace: default/' | kubectl apply -n default -f -
-
-    fi
+     # Create kubernetes secrets using the generated keys and certificates
+     kubectl config use-context kind-apollo
+     kubectl create secret generic apollo-tls-secret-generic -n istio-system --from-file=tls.key=certs/apollo_key.pem --from-file=tls.crt=certs/apollo_cert.pem --from-file=cacert=certs/starbuck_cert.pem
+     kubectl get secret apollo-tls-secret-generic -n istio-system -o yaml | sed 's/namespace: istio-system/namespace: default/' | kubectl apply -n default -f -
+     kubectl config use-context kind-starbuck
+     kubectl create secret generic starbuck-tls-secret-generic -n istio-system --from-file=tls.key=certs/starbuck_key.pem --from-file=tls.crt=certs/starbuck_cert.pem --from-file=cacert=certs/apollo_cert.pem
+     kubectl get secret starbuck-tls-secret-generic -n istio-system -o yaml | sed 's/namespace: istio-system/namespace: default/' | kubectl apply -n default -f -
     ```
  <!-- markdownlint-enable MD013 -->
 
