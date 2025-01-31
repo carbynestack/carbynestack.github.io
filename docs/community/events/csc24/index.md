@@ -33,25 +33,25 @@ our planning.
 <!-- markdownlint-capture -->
 <!-- markdownlint-disable MD013 -->
 
-| Time                    | Speaker                                                                   | Title                                                                                                    |
-|-------------------------|---------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
-| **8:30 am - 9:30 am**   | -                                                                         | Registration & Welcome Coffee                                                                            |
-| **9:30 am - 9:45 am**   | Dr. Sven Trieflinger                                                      | Welcome & Opening Remarks                                                                                |
-| **9:45 am - 10:15 am**  | Dr. Marcel Keller                                                         | [MP-SPDZ After 6 Years](#talk-1)                                                                   |
-| **10:15 am - 10:45 am** | Sarthak Sharma                                                        | [TEE-based Secure Computation and its Application to Carbyne Stack](#talk-2)                             |
-| **10:45 am - 11:00 am** | -                                                                         | **Coffee Break**                                                                                         |
-| **11:00 am - 11:30 am** | Dr. Ajith Suresh                                                          | [Revitalizing Privacy-Preserving Machine Learning: Introducing FANNG-MPC](#talk-3)                       |
-| **11:30 am - 12:00 pm** | Kert Tali                                                                 | [Self-Service Deployment in MPC-as-a-Service](#talk-4)                                                   |
-| **12:00 pm - 1:00 pm**  | -                                                                         | **Lunch Break & Group Photo**                                                                            |
-| **1:00 pm - 1:30 pm**   | Dr. Jonas Böhler                                                          | [Trees & Trade-offs for Secure Predictions](#talk-5)                                                     |
-| **1:30 pm - 2:00 pm**   | Dr. Christoph Bösch <br> Prof. Dr. Thomas Hoeren <br> Merlin Rombach                                                 | [MPC as a Tool for Data Anonymization in Data Analytics](#talk-6)                                        |
-| **2:00 pm - 2:30 pm**   | Adrián Vaca Humanes <br> Daniele Romanini                                 | [Building a Privacy-First Ecosystem: SMPC in AdTech Analytics](#talk-7)                                  |
-| **2:30 pm - 3:00 pm**   | Dr. Ian Zhou <br> Vincent Rieder                                          | [Silentium: Low Communication & Hardware Acceleration for Beaver Triple Generation](#talk-8)             |
-| **3:00 pm - 3:15 pm**   | -                                                                         | **Coffee Break**                                                                                         |
-| **3:15 pm - 3:45 pm**   | Dr. Sven Trieflinger <br> Sebastian Becker <br> Dr. Benjamin Hettwer      | [Thymus: Adding essential Security Features to the Carbyne Stack platform the Cloud-Native Way](#talk-9) |
-| **3:45 pm - 4:15 pm**   | Dr. John Liagouris                                                        | [Integrating the BU Secure Analytics Stack with Carbyne Stack](#talk-10)                                 |
-| **4:15 pm - 4:45 pm**   | Dr. Brian LaMacchia <br> Dr. Sven Trieflinger <br> Dr. Christian Hoeppler | [Open Source MPC - Quo Vadis](#talk-11)                                                                  |
-| **4:45 pm - 5:00 pm**   | -                                                                         | Closing Remarks                                                                                          |
+| Time                         | Speaker                                                                   | Title                                                                                                    |
+|------------------------------|---------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
+| **8:30 am - 9:30 am**        | -                                                                         | Registration & Welcome Coffee                                                                            |
+| **9:30 am - 9:45 am**        | Dr. Sven Trieflinger                                                      | Welcome & Opening Remarks                                                                                |
+| **9:45 am - 10:15 am**       | Dr. Marcel Keller                                                         | [MP-SPDZ After 6 Years](#talk-1)                                                                         |
+| **10:15 am - 10:45 am**      | Sarthak Sharma                                                            | [TEE-based Secure Computation and its Application to Carbyne Stack](#talk-2)                             |
+| **10:45 am - 11:00 am**      | -                                                                         | **Coffee Break**                                                                                         |
+| **11:00 am - 11:30 am**      | Dr. Ajith Suresh                                                          | [Revitalizing Privacy-Preserving Machine Learning: Introducing FANNG-MPC](#talk-3)                       |
+| **11:30 am - 12:00 pm**      | Kert Tali                                                                 | [Self-Service Deployment in MPC-as-a-Service](#talk-4)                                                   |
+| **12:00 pm - 1:00 pm**       | -                                                                         | **Lunch Break & Group Photo**                                                                            |
+| **1:00 pm - 1:30 pm**        | Dr. Jonas Böhler                                                          | [Trees & Trade-offs for Secure Predictions](#talk-5)                                                     |
+| **1:30 pm - 2:00 pm**        | Dr. Christoph Bösch <br> Prof. Dr. Thomas Hoeren <br> Merlin Rombach      | [MPC as a Tool for Data Anonymization in Data Analytics](#talk-6)                                        |
+| **2:00 pm - 2:30 pm**        | Adrián Vaca Humanes <br> Daniele Romanini                                 | [Building a Privacy-First Ecosystem: SMPC in AdTech Analytics](#talk-7)                                  |
+| **2:30 pm - 3:00 pm**        | Dr. Ian Zhou <br> Vincent Rieder                                          | [Silentium: Low Communication & Hardware Acceleration for Beaver Triple Generation](#talk-8)             |
+| **3:00 pm - 3:15 pm**        | -                                                                         | **Coffee Break**                                                                                         |
+| **3:15 pm - 3:45 pm**        | Dr. Sven Trieflinger <br> Sebastian Becker <br> Dr. Benjamin Hettwer      | [Thymus: Adding essential Security Features to the Carbyne Stack platform the Cloud-Native Way](#talk-9) |
+| <s>**3:45 pm - 4:15 pm**</s> | <s>Dr. John Liagouris</s>                                                 | <s>[Integrating the BU Secure Analytics Stack with Carbyne Stack](#talk-10)</s>                          |
+| **4:15 pm - 4:45 pm**        | Dr. Brian LaMacchia <br> Dr. Sven Trieflinger <br> Dr. Christian Hoeppler | [Open Source MPC - Quo Vadis](#talk-11)                                                                  |
+| **4:45 pm - 5:00 pm**        | -                                                                         | Closing Remarks                                                                                          |
 
 ---
 
@@ -60,6 +60,8 @@ our planning.
 ---
 :octicons-clock-16: <span class="gsoc-legend">9:45 am - 10:15 am</span>  
 <span id="talk-1" class="gsoc-topic-section-title">MP-SPDZ After 6 Years</span>
+
+:material-video: [Recording](https://bosch-ext.mediaspace.de.kaltura.com/media/+CSC24+-+MP-SPDZ+After+6+Years/0_bv8zefyf)
 
 ???+ info "Dr. Marcel Keller (Senior Research Scientist, CSIRO Data61)"
 
@@ -83,6 +85,8 @@ our planning.
 :octicons-clock-16: <span class="gsoc-legend">10:15 am - 10:45 am</span>  
 <span id="talk-2" class="gsoc-topic-section-title">TEE-based Secure Computation
 and its Application to Carbyne Stack</span>
+
+:material-video: [Recording](https://bosch-ext.mediaspace.de.kaltura.com/media/CSC24+-+TEE-based+Secure+Computation+and+its+Application+to+Carbyne+Stack/0_z8dr7lvn)
 
 ???+ info "Sarthak Sharma (Engineer, CDPG, IISc)"
 
@@ -112,6 +116,8 @@ and its Application to Carbyne Stack</span>
 Privacy-Preserving Machine Learning: Introducing FANNG-MPC for Actively Secure
 MLaaS</span>
 
+:material-video: [Recording](https://bosch-ext.mediaspace.de.kaltura.com/media/CSC24+-+Revitalizing+Privacy-Preserving+Machine+Learning%3A+Introducing+FANNG-MPC+for+Actively+Secure+MLaaS/0_m1lwvl2p)
+
 ???+ info "Dr. Ajith Suresh (Senior MPC Researcher, Technology Innovation Institute, Abu Dhabi)"
 
     <div style="display: flex; align-items: center; gap: 15px;">
@@ -138,6 +144,8 @@ MLaaS</span>
 :octicons-clock-16: <span class="gsoc-legend">11:30 am - 12:00 pm</span>  
 <span id="talk-4" class="gsoc-topic-section-title">Self-Service Deployment of
 Computation Tasks in a Multi-Tenant MPC-as-a-Service</span>
+
+:material-video: [Recording](https://bosch-ext.mediaspace.de.kaltura.com/media/CSC24+-+Self-Service+Deployment+of+Computation+Tasks+in+a+Multi-Tenant+MPC-as-a-Service/0_en0n5gws)
 
 ???+ info "Kert Tali (Architect, Sharemind MPC Product Development, Cybernetica)"
 
@@ -168,6 +176,8 @@ Computation Tasks in a Multi-Tenant MPC-as-a-Service</span>
 <span id="talk-5" class="gsoc-topic-section-title">Trees & Trade-offs for
 Secure Predictions</span>
 
+:material-video: [Recording](https://bosch-ext.mediaspace.de.kaltura.com/media/CSC24+-+Trees++Trade-offs+for+Secure+Predictions/0_dzz4gpfw)
+
 ???+ info "Dr. Jonas Böhler (Lead AI Security & Privacy Researcher, SAP)"
 
     <div style="display: flex; align-items: center; gap: 15px;">
@@ -193,6 +203,8 @@ Secure Predictions</span>
 :octicons-clock-16: <span class="gsoc-legend">1:30 pm - 2:00 pm</span>  
 <span id="talk-6" class="gsoc-topic-section-title">MPC as a Tool for Data
 Anonymization in Data Analytics: A Legal and Technical Perspective</span>
+
+:material-video: [Recording](https://bosch-ext.mediaspace.de.kaltura.com/media/CSC24+-+MPC+as+a+Tool+for+Data+Anonymization+in+Data+Analytics%3A+A+Legal+and+Technical+Perspective/0_gz7ajl2i)
 
 ???+ info "Dr. Christoph Bösch (Research Engineer, Bosch Research), Prof. Dr. Thomas Hoeren (Head of ITM, University of Münster), and Merlin Rombach (Academic Associate, ITM, University of Münster)"
 
@@ -231,6 +243,8 @@ Anonymization in Data Analytics: A Legal and Technical Perspective</span>
 <span id="talk-7" class="gsoc-topic-section-title">Building a Privacy-First
 Ecosystem: How SMPC is Transforming AdTech Analytics</span>
 
+:material-video: [Recording](https://bosch-ext.mediaspace.de.kaltura.com/media/CSC24+-+Building+a+Privacy-First+Ecosystem%3A+How+SMPC+is+Transforming+AdTech+Analytics/0_a10gxw67)
+
 ???+ info "Adrián Vaca Humanes (Engineering Lead, Resolve) and Daniele Romanini (Senior Privacy Engineer, Resolve)"
 
     <div style="display: flex; align-items: flex-start; gap: 15px;">
@@ -266,6 +280,8 @@ Ecosystem: How SMPC is Transforming AdTech Analytics</span>
 
 <span id="talk-8" class="gsoc-topic-section-title">Silentium: Beaver Triple
 Generation with Low Communication and Hardware Acceleration</span>
+
+:material-video: [Recording](https://bosch-ext.mediaspace.de.kaltura.com/media/CSC24+-+Silentium%3A+Beaver+Triple+Generation+with+Low+Communication+and+Hardware+Acceleration/0_x7re6ogm)
 
 ???+ info "Dr. Ian Zhou (Research Engineer, UTS) and Vincent Rieder (PhD Student, Bosch Research)"
 
@@ -307,6 +323,8 @@ Generation with Low Communication and Hardware Acceleration</span>
 <span id="talk-9" class="gsoc-topic-section-title">Thymus: Adding essential
 Security Features to the Carbyne Stack platform the Cloud-Native Way</span>
 
+:material-video: [Recording](https://bosch-ext.mediaspace.de.kaltura.com/media/CSC24+-+Thymus%3A+Adding+essential+Security+Features+to+the+Carbyne+Stack+platform+the+Cloud-Native+Way/0_lk4x4iff)
+
 ???+ info "Dr. Sven Trieflinger (Senior Project Manager, Bosch Research), Sebastian Becker (Research Engineer, Bosch Research), and Dr. Benjamin Hettwer (Research Engineer, Bosch Research)"
 
     <div style="display: flex; align-items: flex-start; gap: 15px;">
@@ -337,9 +355,12 @@ Security Features to the Carbyne Stack platform the Cloud-Native Way</span>
     Istio Kubernetes-native network machinery. We will discuss the rationale behind technology choices and provide insights into how to use the new features.
 
 ---
-:octicons-clock-16: <span class="gsoc-legend">3:45 pm - 4:15 pm</span>  
-<span id="talk-10" class="gsoc-topic-section-title">Integrating the BU Secure
-Analytics Stack with Carbyne Stack</span>
+:octicons-clock-16: <span class="gsoc-legend"><s>3:45 pm - 4:15 pm</s></span>
+<span id="talk-10" class="gsoc-topic-section-title"><s>Integrating the BU
+Secure Analytics Stack with Carbyne Stack</s></span>
+
+!!! info
+    This talk was cancelled.
 
 ???+ info "Dr. John Liagouris (Assistant Professor, Boston University)"
 
@@ -371,6 +392,8 @@ Analytics Stack with Carbyne Stack</span>
 :octicons-clock-16: <span class="gsoc-legend">4:15 pm - 4:45 pm</span>  
 <span id="talk-11" class="gsoc-topic-section-title">Open Source MPC - Quo
 Vadis</span>
+
+:material-video: [Recording](https://bosch-ext.mediaspace.de.kaltura.com/media/CSC24+-+Open+Source+MPC+-+Quo+Vadis/0_ytmwke7x)
 
 ???+ info "Dr. Brian LaMacchia (Executive Director, MPC Alliance), Dr. Sven Trieflinger (Senior Project Manager, Bosch Research), and Dr. Christian Höppler (Open Source Officer, Bosch Research)"
 
