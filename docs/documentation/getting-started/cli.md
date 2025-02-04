@@ -12,7 +12,7 @@ CLI that can be used to interact with a virtual cloud from the command line.
 1. Install the CLI using:
 
     ```shell
-    export CLI_VERSION=0.4.1
+    export CLI_VERSION=0.6.0
     curl -o cs.jar -L https://github.com/carbynestack/cli/releases/download/cli-v$CLI_VERSION/cli-$CLI_VERSION.jar
     ```
 
@@ -54,6 +54,7 @@ CLI that can be used to interact with a virtual cloud from the command line.
         "amphoraServiceUrl" : "$PROTOCOL://$APOLLO_FQDN/amphora",
         "castorServiceUrl" : "$PROTOCOL://$APOLLO_FQDN/castor",
         "ephemeralServiceUrl" : "$PROTOCOL://$APOLLO_FQDN/",
+        "thymusServiceUrl" : "$PROTOCOL://$APOLLO_FQDN/iam/policies",
         "oauth2ClientId": "$APOLLO_OAUTH2_CLIENT_ID",
         "oauth2AuthEndpointUri": "$PROTOCOL://$APOLLO_FQDN/iam/oauth/oauth2/auth",
         "oauth2TokenEndpointUri": "$PROTOCOL://$APOLLO_FQDN/iam/oauth/oauth2/token",
@@ -64,6 +65,7 @@ CLI that can be used to interact with a virtual cloud from the command line.
         "amphoraServiceUrl" : "$PROTOCOL://$STARBUCK_FQDN/amphora",
         "castorServiceUrl" : "$PROTOCOL://$STARBUCK_FQDN/castor",
         "ephemeralServiceUrl" : "$PROTOCOL://$STARBUCK_FQDN/",
+        "thymusServiceUrl" : "$PROTOCOL://$STARBUCK_FQDN/iam/policies",
         "oauth2ClientId": "$STARBUCK_OAUTH2_CLIENT_ID",
         "oauth2AuthEndpointUri": "$PROTOCOL://$STARBUCK_FQDN/iam/oauth/oauth2/auth",
         "oauth2TokenEndpointUri": "$PROTOCOL://$STARBUCK_FQDN/iam/oauth/oauth2/token",
