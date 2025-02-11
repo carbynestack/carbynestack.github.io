@@ -100,6 +100,15 @@ You can switch between the clusters easily using:
     Complete the remaining steps of this guide for the `apollo` cluster and then
     repeat for `starbuck`.
 
+### Configuration
+
+1. Before setting up the platform make some common configuration available 
+   using:
+
+    ```shell
+    export RELEASE_NAME=cs
+    ```
+
 ### Istio
 
 1. Install
@@ -131,7 +140,13 @@ You can switch between the clusters easily using:
       name: cs-istiocontrolplane
     spec:
       meshConfig:
+        defaultConfig:
+          proxyMetadata:
+            ISTIO_META_DNS_AUTO_ALLOCATE: "true"
+            ISTIO_META_DNS_CAPTURE: "true"
         accessLogFile: /dev/stdout
+        #outboundTrafficPolicy:
+        #  mode: REGISTRY_ONLY
       components:
         ingressGateways:
           - name: istio-ingressgateway
@@ -158,10 +173,12 @@ You can switch between the clusters easily using:
                   - port: 443
                     targetPort: 8443
                     name: https
-                  - port: 31400
-                    targetPort: 31400
-                    name: tcp
-                    # This is the port where sni routing happens
+                  - port: 1443
+                    targetPort: 9443
+                    name: https-mtls
+                  - port: 2379
+                    targetPort: 9379
+                    name: etcd-mtls
                   - port: 15443
                     targetPort: 15443
                     name: tls
@@ -187,10 +204,22 @@ You can switch between the clusters easily using:
                 ports:
                   - port: 80
                     targetPort: 8080
-                    name: TCP
-                  - port: 443
-                    targetPort: 8443
-                    name: https
+                    name: http-0
+                  - port: 81
+                    targetPort: 8081
+                    name: http-1
+                  - port: 82
+                    targetPort: 8082
+                    name: http-2
+                  - port: 83
+                    targetPort: 8083
+                    name: http-3
+                  - port: 84
+                    targetPort: 8084
+                    name: http-4
+                  - port: 2379
+                    targetPort: 8379
+                    name: etcd-tcp
         pilot:
           k8s:
             env:
@@ -203,6 +232,7 @@ You can switch between the clusters easily using:
       values:
         global:
           proxy:
+            autoInject: disabled
             resources:
               requests:
                 cpu: 10m
@@ -214,8 +244,24 @@ You can switch between the clusters easily using:
             autoscaleEnabled: false
           istio-ingressgateway:
             autoscaleEnabled: false
+        sidecarInjectorWebhook:
+          alwaysInjectSelector:
+            - matchExpressions:
+              - {key: sidecar/inject, operator: Exists}
+            - matchExpressions:
+              - {key: app.kubernetes.io/name, operator: In, values: [amphora, castor]}
+            - matchExpressions:
+              - {key: control-plane, operator: In, values: [controller-manager]}
+            - matchExpressions:
+              - {key: app, operator: In, values: [${RELEASE_NAME}-ephemeral-discovery]}
     EOF
     kubectl apply -f istio-control-plane.yaml
+    ```
+
+1. Enable istio auto sidecar injection for the default namespace using:
+
+    ```shell
+    kubectl label namespace default istio-injection=enabled
     ```
 
 ### MetalLB
@@ -334,13 +380,27 @@ The public IP eventually appears in column `EXTERNAL-IP`.
         - URL: https://github.com/carbynestack/serving/releases/download/v1.8.2-multiport-patch/serving-core.yaml
         - URL: https://github.com/knative/net-istio/releases/download/v1.8.2/release.yaml
         - URL: https://github.com/knative/net-certmanager/releases/download/v1.8.2/release.yaml
+      ingress:
+        istio:
+          enabled: true
+          knative-ingress-gateway:
+            selector:
+              istio: ingressgateway
+            servers:
+              - hosts:
+                - '*' 
+                port:
+                  number: 443
+                  name: https 
+                  protocol: HTTPS
+                  target_port: 443
       config:
          domain:
             ${EXTERNAL_IP}.sslip.io: ""
          defaults:
             max-revision-timeout-seconds: "36000"
          istio:
-            gateway.default.cs-service-gateway: "istio-ingressgateway.istio-system.svc.cluster.local"
+            gateway.knative-serving.knative-ingress-gateway: "istio-ingressgateway.istio-system.svc.cluster.local"
     EOF
     kubectl apply -f knative-serving.yaml
     ```

@@ -73,8 +73,10 @@ clusters using the kind tool as described in the
         [Platform Setup](../platform-setup) guide).
 
     ```shell
+    export APOLLO_IP="172.18.1.128"
     export APOLLO_FQDN="172.18.1.128.sslip.io"
     export STARBUCK_FQDN="172.18.2.128.sslip.io"
+    export STARBUCK_IP="172.18.2.128"
     export RELEASE_NAME=cs
     export DISCOVERY_MASTER_HOST=$APOLLO_FQDN
     export NO_SSL_VALIDATION=true
@@ -138,14 +140,26 @@ clusters using the kind tool as described in the
     ```
  <!-- markdownlint-enable MD013 -->
 
+1. Patch Knative to secure its gateway using TLS with the generated certificates:
+
+    ```shell
+    kubectl config use-context kind-apollo
+    kubectl patch gateway knative-ingress-gateway --namespace knative-serving --type=json --patch="[{\"op\": \"add\", \"path\": \"/spec/servers/0/tls\", \"value\": {\"mode\": \"SIMPLE\", \"credentialName\": \"apollo-tls-secret-generic\"}}]"
+    kubectl config use-context kind-starbuck
+    kubectl patch gateway knative-ingress-gateway --namespace knative-serving --type=json --patch="[{\"op\": \"add\", \"path\": \"/spec/servers/0/tls\", \"value\": {\"mode\": \"SIMPLE\", \"credentialName\": \"starbuck-tls-secret-generic\"}}]"
+    ```
+
 1. Launch the `starbuck` VCP using:
 
     ```shell
     export FRONTEND_URL=$STARBUCK_FQDN
     export IS_MASTER=false
-    export AMPHORA_VC_PARTNER_URI=$PROTOCOL://$APOLLO_FQDN/amphora
+    export AMPHORA_VC_PARTNER_URI=http://$APOLLO_FQDN/amphora
     export TLS_SECRET_NAME=starbuck-tls-secret-generic
-    export PARTNER_URLS=$APOLLO_FQDN
+    export PARTNER_URL_0=$APOLLO_FQDN
+    export ETCD_MASTER_URL=$APOLLO_FQDN
+    export ETCD_MASTER_IP=$APOLLO_IP
+    export KLYSHKO_ETCD_ENDPOINT=$ETCD_MASTER_URL:2379
     kubectl config use-context kind-starbuck
     helmfile sync --set thymus.users.enabled=true
     ```
@@ -155,10 +169,10 @@ clusters using the kind tool as described in the
     ```shell
     export FRONTEND_URL=$APOLLO_FQDN
     export IS_MASTER=true
-    export AMPHORA_VC_PARTNER_URI=$PROTOCOL://$STARBUCK_FQDN/amphora
-    export CASTOR_SLAVE_URI=$PROTOCOL://$STARBUCK_FQDN/castor
+    export AMPHORA_VC_PARTNER_URI=http://$STARBUCK_FQDN/amphora
+    export CASTOR_SLAVE_URI=http://$STARBUCK_FQDN/castor
     export TLS_SECRET_NAME=apollo-tls-secret-generic
-    export PARTNER_URLS=$STARBUCK_FQDN
+    export PARTNER_URL_0=$STARBUCK_FQDN
     kubectl config use-context kind-apollo
     helmfile sync --set thymus.users.enabled=true
     ```
