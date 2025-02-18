@@ -46,6 +46,6 @@ nav:
       - Acknowledgements: community/acknowledgements.md
   - Legal Information:
       - Privacy Policy: legal/privacy-policy.md
-      - Corporate Information: legal/corporate-information.md
+    #   - Corporate Information: legal/corporate-information.md
       - Branding Guidelines: legal/branding-guidelines.md
       - Export Control: legal/export-control.md

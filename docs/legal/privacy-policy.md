@@ -1,6 +1,7 @@
 # Privacy Policy
+[Privacy Policy](https://www.linuxfoundation.org/legal/privacy-policy) and [Terms of Use](https://www.linuxfoundation.org/legal/terms)
 
-## GitHub Pages Service
+<!-- ## GitHub Pages Service
 
 This Website is hosted as a GitHub Pages website. GitHub may collect User
 Personal Information from visitors to this GitHub Pages website, including logs
@@ -47,4 +48,4 @@ Additional links might occur in the documentation.
 
 [github-tos]: https://help.github.com/en/github/site-policy/github-terms-of-service
 
-[fathom]: https://usefathom.com/compliance
+[fathom]: https://usefathom.com/compliance -->

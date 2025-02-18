@@ -11,7 +11,10 @@ site_url: https://carbynestack.io/
 site_author: Carbyne Stack Community
 site_description: >-
   Carbyne Stack Documentation
-copyright: "Copyright © 2021-2023 The Carbyne Stack Authors"
+copyright: >
+  Copyright © Linux Foundation Europe.<br>
+  For web site terms of use, trademark policy and other project policies<br>
+  please see <a href="https://linuxfoundation.eu/en/policies">https://linuxfoundation.eu/en/policies</a>.
 
 extra_css:
   - stylesheets/extra.css
