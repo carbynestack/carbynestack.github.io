@@ -119,6 +119,9 @@ clusters using the kind tool as described in the
 <!-- markdownlint-disable MD013 -->
 1. Configure TLS for secure communication to, and between the VCPs:
 
+    As secrets must exist in the namespace of the proxy and components using the certificates, they are created in the 
+    `istio-system` namespace and then copy to the `knative-serving` and `default` namespace.
+
     !!! attention
         Replace `172.18.1.128` and `172.18.2.128` in the following with the load balancer IPs
         assigned to the Istio Ingress Gateway by MetalLB (see the
@@ -133,9 +136,11 @@ clusters using the kind tool as described in the
      # Create kubernetes secrets using the generated keys and certificates
      kubectl config use-context kind-apollo
      kubectl create secret generic apollo-tls-secret-generic -n istio-system --from-file=tls.key=certs/apollo_key.pem --from-file=tls.crt=certs/apollo_cert.pem --from-file=cacert=certs/starbuck_cert.pem
+     kubectl get secret apollo-tls-secret-generic -n istio-system -o yaml | sed 's/namespace: istio-system/namespace: knative-serving/' | kubectl apply -n knative-serving -f -
      kubectl get secret apollo-tls-secret-generic -n istio-system -o yaml | sed 's/namespace: istio-system/namespace: default/' | kubectl apply -n default -f -
      kubectl config use-context kind-starbuck
      kubectl create secret generic starbuck-tls-secret-generic -n istio-system --from-file=tls.key=certs/starbuck_key.pem --from-file=tls.crt=certs/starbuck_cert.pem --from-file=cacert=certs/apollo_cert.pem
+     kubectl get secret starbuck-tls-secret-generic -n istio-system -o yaml | sed 's/namespace: istio-system/namespace: knative-serving/' | kubectl apply -n knative-serving -f -
      kubectl get secret starbuck-tls-secret-generic -n istio-system -o yaml | sed 's/namespace: istio-system/namespace: default/' | kubectl apply -n default -f -
     ```
  <!-- markdownlint-enable MD013 -->
