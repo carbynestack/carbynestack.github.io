@@ -120,7 +120,7 @@ clusters using the kind tool as described in the
 1. Configure TLS for secure communication to, and between the VCPs:
 
     As secrets must exist in the namespace of the proxy and components using the certificates, they are created in the 
-    `istio-system` namespace and then copy to the `knative-serving` and `default` namespace.
+    `istio-system` namespace and then copied to the `knative-serving` and `default` namespace.
 
     ```shell
      # Create X.509 certificates

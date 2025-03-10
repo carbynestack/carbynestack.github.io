@@ -145,8 +145,6 @@ You can switch between the clusters easily using:
             ISTIO_META_DNS_AUTO_ALLOCATE: "true"
             ISTIO_META_DNS_CAPTURE: "true"
         accessLogFile: /dev/stdout
-        #outboundTrafficPolicy:
-        #  mode: REGISTRY_ONLY
       components:
         ingressGateways:
           - name: istio-ingressgateway
