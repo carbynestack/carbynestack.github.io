@@ -22,6 +22,7 @@ CLI that can be used to interact with a virtual cloud from the command line.
     ```shell
     export APOLLO_FQDN="172.18.1.128.sslip.io"
     export STARBUCK_FQDN="172.18.2.128.sslip.io"
+    export TLS_ENABLED=true # set to false to disable
     ```
 
 1. Export the Thymus OAuth2 client IDs for both VCPs.
@@ -44,6 +45,12 @@ CLI that can be used to interact with a virtual cloud from the command line.
 
     ```shell
     mkdir -p ~/.cs
+    if [ "$TLS_ENABLED" = true ]; then
+        PROTOCOL="https"
+    else
+        PROTOCOL="http"
+    fi
+
     cat <<EOF | envsubst > ~/.cs/config
     {
       "prime" : 198766463529478683931867765928436695041,
