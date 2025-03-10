@@ -22,7 +22,6 @@ CLI that can be used to interact with a virtual cloud from the command line.
     ```shell
     export APOLLO_FQDN="172.18.1.128.sslip.io"
     export STARBUCK_FQDN="172.18.2.128.sslip.io"
-    export TLS_ENABLED=true # set to false to disable
     export PROTOCOL="https" # set to http if TLS is disabled
     ```
 
