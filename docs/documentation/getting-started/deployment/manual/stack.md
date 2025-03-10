@@ -74,9 +74,9 @@ clusters using the kind tool as described in the
 
     ```shell
     export APOLLO_IP="172.18.1.128"
-    export APOLLO_FQDN="172.18.1.128.sslip.io"
-    export STARBUCK_FQDN="172.18.2.128.sslip.io"
+    export APOLLO_FQDN="${APOLLO_IP}.sslip.io"
     export STARBUCK_IP="172.18.2.128"
+    export STARBUCK_FQDN="${STARBUCK_IP}.sslip.io"
     export RELEASE_NAME=cs
     export DISCOVERY_MASTER_HOST=$APOLLO_FQDN
     export NO_SSL_VALIDATION=true
@@ -122,16 +122,11 @@ clusters using the kind tool as described in the
     As secrets must exist in the namespace of the proxy and components using the certificates, they are created in the 
     `istio-system` namespace and then copy to the `knative-serving` and `default` namespace.
 
-    !!! attention
-        Replace `172.18.1.128` and `172.18.2.128` in the following with the load balancer IPs
-        assigned to the Istio Ingress Gateway by MetalLB (see the
-        [Platform Setup](../platform-setup) guide).
-
     ```shell
      # Create X.509 certificates
      mkdir -p certs
-     openssl req -x509 -newkey rsa:4096 -keyout certs/apollo_key.pem -out certs/apollo_cert.pem -days 365 -nodes -subj "/CN=${APOLLO_FQDN}" -addext "subjectAltName=DNS:172.18.1.128.sslip.io,IP:172.18.1.128"
-     openssl req -x509 -newkey rsa:4096 -keyout certs/starbuck_key.pem -out certs/starbuck_cert.pem -days 365 -nodes -subj "/CN=${STARBUCK_FQDN}" -addext "subjectAltName=DNS:172.18.2.128.sslip.io,IP:172.18.2.128"
+     openssl req -x509 -newkey rsa:4096 -keyout certs/apollo_key.pem -out certs/apollo_cert.pem -days 365 -nodes -subj "/CN=${APOLLO_FQDN}" -addext "subjectAltName=DNS:${APOLLO_FQDN},IP:${APOLLO_IP}"
+     openssl req -x509 -newkey rsa:4096 -keyout certs/starbuck_key.pem -out certs/starbuck_cert.pem -days 365 -nodes -subj "/CN=${STARBUCK_FQDN}" -addext "subjectAltName=DNS:${STARBUCK_FQDN},IP:${STARBUCK_IP}"
 
      # Create kubernetes secrets using the generated keys and certificates
      kubectl config use-context kind-apollo
