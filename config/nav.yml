@@ -20,6 +20,8 @@ nav:
               - Infrastructure as Code:
                   - documentation/getting-started/deployment/infrastructure-as-code/index.md
                   - Local: documentation/getting-started/deployment/infrastructure-as-code/local.md
+                  - Azure: documentation/getting-started/deployment/infrastructure-as-code/azure.md
+                  - Azure-Private: documentation/getting-started/deployment/infrastructure-as-code/azure-private.md
           - Configuring the CLI: documentation/getting-started/cli.md
           - Millionaires Problem: documentation/getting-started/millionaires.md
       - Reference:
