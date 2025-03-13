@@ -77,8 +77,12 @@ clusters using the kind tool as described in the
     export APOLLO_FQDN="${APOLLO_IP}.sslip.io"
     export STARBUCK_IP="172.18.2.128"
     export STARBUCK_FQDN="${STARBUCK_IP}.sslip.io"
+    export PARTNER_COUNT=2
+    export PARTNER_FQDN_0=$APOLLO_FQDN
+    export PARTNER_FQDN_1=$STARBUCK_FQDN
+    export ETCD_MASTER_URL=$APOLLO_FQDN
+    export ETCD_MASTER_IP=$APOLLO_IP
     export RELEASE_NAME=cs
-    export DISCOVERY_MASTER_HOST=$APOLLO_FQDN
     export NO_SSL_VALIDATION=true
     export TLS_ENABLED=true # Enabled by default, set to false to disable
     export PROTOCOL=https
@@ -116,12 +120,13 @@ clusters using the kind tool as described in the
 
         before you proceed.
 
-<!-- markdownlint-disable MD013 -->
 1. Configure TLS for secure communication to, and between the VCPs:
 
-    As secrets must exist in the namespace of the proxy and components using the certificates, they are created in the 
-    `istio-system` namespace and then copied to the `knative-serving` and `default` namespace.
+    As secrets must exist in the namespace of the proxy and components using
+    the certificates, they are created in the `istio-system` namespace and then
+    copied to the `knative-serving` and `default` namespace.
 
+<!-- markdownlint-disable MD013 -->
     ```shell
      # Create X.509 certificates
      mkdir -p certs
@@ -142,24 +147,20 @@ clusters using the kind tool as described in the
 
 1. Patch Knative to secure its gateway using TLS with the generated certificates:
 
+<!-- markdownlint-disable MD013 -->
     ```shell
     kubectl config use-context kind-apollo
     kubectl patch gateway knative-ingress-gateway --namespace knative-serving --type=json --patch="[{\"op\": \"add\", \"path\": \"/spec/servers/0/tls\", \"value\": {\"mode\": \"SIMPLE\", \"credentialName\": \"apollo-tls-secret-generic\"}}]"
     kubectl config use-context kind-starbuck
     kubectl patch gateway knative-ingress-gateway --namespace knative-serving --type=json --patch="[{\"op\": \"add\", \"path\": \"/spec/servers/0/tls\", \"value\": {\"mode\": \"SIMPLE\", \"credentialName\": \"starbuck-tls-secret-generic\"}}]"
     ```
+ <!-- markdownlint-enable MD013 -->
 
 1. Launch the `starbuck` VCP using:
 
     ```shell
-    export FRONTEND_URL=$STARBUCK_FQDN
-    export IS_MASTER=false
-    export AMPHORA_VC_PARTNER_URI=http://$APOLLO_FQDN/amphora
+    export PLAYER_ID=1
     export TLS_SECRET_NAME=starbuck-tls-secret-generic
-    export PARTNER_URL_0=$APOLLO_FQDN
-    export ETCD_MASTER_URL=$APOLLO_FQDN
-    export ETCD_MASTER_IP=$APOLLO_IP
-    export KLYSHKO_ETCD_ENDPOINT=$ETCD_MASTER_URL:2379
     kubectl config use-context kind-starbuck
     helmfile sync --set thymus.users.enabled=true
     ```
@@ -167,12 +168,8 @@ clusters using the kind tool as described in the
 1. Launch the `apollo` VCP using:
 
     ```shell
-    export FRONTEND_URL=$APOLLO_FQDN
-    export IS_MASTER=true
-    export AMPHORA_VC_PARTNER_URI=http://$STARBUCK_FQDN/amphora
-    export CASTOR_SLAVE_URI=http://$STARBUCK_FQDN/castor
+    export PLAYER_ID=0
     export TLS_SECRET_NAME=apollo-tls-secret-generic
-    export PARTNER_URL_0=$STARBUCK_FQDN
     kubectl config use-context kind-apollo
     helmfile sync --set thymus.users.enabled=true
     ```
