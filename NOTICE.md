@@ -11,6 +11,8 @@ file in the Carbyne Stack
 
 ### Robert Bosch GmbH
 
+- Becker Sebastian <sebastian.becker@de.bosch.com>
+- Hettwer Benjamin <benjamin.hettwer@de.bosch.com>
 - Trieflinger Sven <sven.trieflinger@de.bosch.com>
 - Veselin Vlasakiev <veselin@veselin.org>
 - Weinfurtner Jared <jared.weinfurtner@de.bosch.com>
