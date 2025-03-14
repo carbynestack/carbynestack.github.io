@@ -30,8 +30,9 @@ instructions can be found [here](https://squidfunk.github.io/mkdocs-material/ins
 
 ## License
 
-The Carbyne Stack website is open-sourced under the Apache License 2.0. See the
-[LICENSE](LICENSE) file for details.
+The Carbyne Stack website is open-sourced under the Creative Commons
+Attribution 4.0 International license. See the [LICENSE](LICENSE) file for
+details.
 
 ### 3rd Party Licenses
 
