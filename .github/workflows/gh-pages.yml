@@ -2,7 +2,7 @@
 # Copyright (c) 2021-2025 - for information on the respective copyright owner
 # see the NOTICE file and/or the repository https://github.com/carbynestack/carbynestack.github.io.
 #
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: CC-BY-4.0
 #
 name: Deploy to Github Pages
 on:
