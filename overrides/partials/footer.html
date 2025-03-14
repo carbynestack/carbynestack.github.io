@@ -91,6 +91,9 @@
                     {{ config.copyright }}
                 </div>
                 {% endif %}
+                <div class="footer-links md-footer-copyright">
+                    For website terms of use, trademark policy and other project policies please see <a href="https://linuxfoundation.eu/en/policies">https://linuxfoundation.eu/en/policies</a>.
+                </div>
                 {% if not config.extra.generator == false %}
                 Made with
                 <a
@@ -101,14 +104,6 @@
                 </a>
                 {% endif %}
                 {{ extracopyright }}
-            </div>
-
-            <!-- Addition of link section for legal information -->
-            <div class="footer-links md-footer-copyright">
-                <a href="{{ 'legal/privacy-policy/' | url }}">Privacy Policy</a> |
-                <a href="{{ 'legal/corporate-information/' | url }}">Corporate Information</a> |
-                <a href="{{ 'legal/branding-guidelines/' | url }}">Branding Guidelines</a> |
-                <a href="{{ '/legal/export-control/' | url }}">Export Control</a>
             </div>
 
             <!-- Social links -->
