@@ -5,6 +5,7 @@ for deploying a two-party Carbyne Stack Virtual Cloud. After completing the
 steps described below, you should have two kind K8s clusters called `apollo` and
 `starbuck` with the following pods deployed:
 
+<!-- markdownlint-disable MD013 -->
 ```shell
 kubectl get pods -A
 NAMESPACE            NAME                                             READY   STATUS    RESTARTS   AGE
@@ -34,6 +35,7 @@ local-path-storage   local-path-provisioner-c8855d4bb-zhl9t           1/1     Ru
 metallb-system       metallb-controller-777d84cdd5-2jjkd              1/1     Running   0          8m44s
 metallb-system       metallb-speaker-vmqj4                            1/1     Running   0          8m44s
 ```
+ <!-- markdownlint-enable MD013 -->
 
 ## Prerequisites
 
@@ -100,12 +102,22 @@ You can switch between the clusters easily using:
     Complete the remaining steps of this guide for the `apollo` cluster and then
     repeat for `starbuck`.
 
+### Configuration
+
+1. Before setting up the platform make some common configuration available
+   using:
+
+    ```shell
+    export RELEASE_NAME=cs
+    ```
+
 ### Istio
 
 1. Install
    the [Istio Operator](https://istio.io/latest/docs/setup/install/operator/)
    v1.17.0 using:
 
+<!-- markdownlint-disable MD013 -->
     ```shell
     curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.17.0 TARGET_ARCH=x86_64 sh -
     helm install istio-operator istio-1.17.0/manifests/charts/istio-operator \
@@ -114,9 +126,22 @@ You can switch between the clusters easily using:
       --set hub="docker.io/istio" \
       --set tag="1.17.0"
     ```
+ <!-- markdownlint-enable MD013 -->
 
 1. Create an Istio Control Plane in a dedicated namespace using:
 
+    !!! info
+        The configuration as used below defines 5 ports for the egress
+        gateway in the range of 80-84. These ports are used for the routing
+        of inter-VC communication, where each port is automatically linked to
+        the traffic of a specific partner VC. The convention for the port
+        associated to a specific vs is `80+i`, where `i` is the id of the
+        partner VC.<br>
+        This given configuration limits the number of partner VCs to 5. If you
+        need more partner VCs, you have to adjust the configuration
+        accordingly.
+
+<!-- markdownlint-disable MD013 -->
     ```shell
     cat <<EOF > istio-control-plane.yaml
     apiVersion: v1
@@ -131,6 +156,10 @@ You can switch between the clusters easily using:
       name: cs-istiocontrolplane
     spec:
       meshConfig:
+        defaultConfig:
+          proxyMetadata:
+            ISTIO_META_DNS_AUTO_ALLOCATE: "true"
+            ISTIO_META_DNS_CAPTURE: "true"
         accessLogFile: /dev/stdout
       components:
         ingressGateways:
@@ -140,7 +169,7 @@ You can switch between the clusters easily using:
               resources:
                 requests:
                   cpu: 10m
-                  memory: 40Mi
+                  memory: 256Mi
               service:
                 ports:
                   ## You can add custom gateway ports in user values overrides,
@@ -158,10 +187,12 @@ You can switch between the clusters easily using:
                   - port: 443
                     targetPort: 8443
                     name: https
-                  - port: 31400
-                    targetPort: 31400
-                    name: tcp
-                    # This is the port where sni routing happens
+                  - port: 1443
+                    targetPort: 9443
+                    name: https-mtls
+                  - port: 2379
+                    targetPort: 9379
+                    name: etcd-mtls
                   - port: 15443
                     targetPort: 15443
                     name: tls
@@ -175,6 +206,34 @@ You can switch between the clusters easily using:
                     name: ephemeral-mpc-engine-port-3
                   - port: 30004
                     name: ephemeral-mpc-engine-port-4
+        egressGateways:
+          - name: istio-egressgateway
+            enabled: true
+            k8s:
+              resources:
+                requests:
+                  cpu: 10m
+                  memory: 40Mi
+              service:
+                ports:
+                  - port: 80
+                    targetPort: 8080
+                    name: http-0
+                  - port: 81
+                    targetPort: 8081
+                    name: http-1
+                  - port: 82
+                    targetPort: 8082
+                    name: http-2
+                  - port: 83
+                    targetPort: 8083
+                    name: http-3
+                  - port: 84
+                    targetPort: 8084
+                    name: http-4
+                  - port: 2379
+                    targetPort: 8379
+                    name: etcd-tcp
         pilot:
           k8s:
             env:
@@ -187,6 +246,7 @@ You can switch between the clusters easily using:
       values:
         global:
           proxy:
+            autoInject: disabled
             resources:
               requests:
                 cpu: 10m
@@ -198,14 +258,32 @@ You can switch between the clusters easily using:
             autoscaleEnabled: false
           istio-ingressgateway:
             autoscaleEnabled: false
+        sidecarInjectorWebhook:
+          alwaysInjectSelector:
+            - matchExpressions:
+              - {key: sidecar/inject, operator: Exists}
+            - matchExpressions:
+              - {key: app.kubernetes.io/name, operator: In, values: [amphora, castor]}
+            - matchExpressions:
+              - {key: control-plane, operator: In, values: [controller-manager]}
+            - matchExpressions:
+              - {key: app, operator: In, values: [${RELEASE_NAME}-ephemeral-discovery]}
     EOF
     kubectl apply -f istio-control-plane.yaml
+    ```
+ <!-- markdownlint-enable MD013 -->
+
+1. Enable istio auto sidecar injection for the default namespace using:
+
+    ```shell
+    kubectl label namespace default istio-injection=enabled
     ```
 
 ### MetalLB
 
 1. Install [MetalLB](https://metallb.universe.tf/) v0.13.9 using:
 
+<!-- markdownlint-disable MD013 -->
     ```shell
     helm repo add metallb https://metallb.github.io/metallb
     kubectl create namespace metallb-system
@@ -221,6 +299,7 @@ You can switch between the clusters easily using:
     EOF
     helm install metallb metallb/metallb --version 0.13.9 -n metallb-system -f metallb-values.yaml
     ```
+ <!-- markdownlint-enable MD013 -->
 
 1. Configure MetalLB using:
 
@@ -281,9 +360,11 @@ The public IP eventually appears in column `EXTERNAL-IP`.
 
 1. Export the external IP for later use:
 
+<!-- markdownlint-disable MD013 -->
     ```shell
     export EXTERNAL_IP=$(kubectl get services --namespace istio-system istio-ingressgateway --output jsonpath='{.status.loadBalancer.ingress[0].ip}')
     ```
+ <!-- markdownlint-enable MD013 -->
 
 ### Knative
 
@@ -291,9 +372,11 @@ The public IP eventually appears in column `EXTERNAL-IP`.
    [Knative Operator](https://knative.dev/docs/install/operator/knative-with-operators/)
    v1.8.2 using:
 
+<!-- markdownlint-disable MD013 -->
     ```shell
     kubectl apply -f https://github.com/knative/operator/releases/download/knative-v1.8.2/operator.yaml
     ```
+ <!-- markdownlint-enable MD013 -->
 
 1. Create a namespace for Knative Serving using:
 
@@ -304,6 +387,7 @@ The public IP eventually appears in column `EXTERNAL-IP`.
 1. Install the patched Knative Serving component with a
    [sslip.io](https://sslip.io/) custom domain using:
 
+<!-- markdownlint-disable MD013 -->
     ```shell
     cat <<EOF | envsubst > knative-serving.yaml
     apiVersion: operator.knative.dev/v1beta1
@@ -318,14 +402,31 @@ The public IP eventually appears in column `EXTERNAL-IP`.
         - URL: https://github.com/carbynestack/serving/releases/download/v1.8.2-multiport-patch/serving-core.yaml
         - URL: https://github.com/knative/net-istio/releases/download/v1.8.2/release.yaml
         - URL: https://github.com/knative/net-certmanager/releases/download/v1.8.2/release.yaml
+      ingress:
+        istio:
+          enabled: true
+          knative-ingress-gateway:
+            selector:
+              istio: ingressgateway
+            servers:
+              - hosts:
+                - '*' 
+                port:
+                  number: 443
+                  name: https 
+                  protocol: HTTPS
+                  target_port: 443
       config:
          domain:
             ${EXTERNAL_IP}.sslip.io: ""
          defaults:
             max-revision-timeout-seconds: "36000"
+         istio:
+            gateway.knative-serving.knative-ingress-gateway: "istio-ingressgateway.istio-system.svc.cluster.local"
     EOF
     kubectl apply -f knative-serving.yaml
     ```
+ <!-- markdownlint-enable MD013 -->
 
     The configuration above will also increase Knative's default
     [max-revision-timeout-seconds](https://knative.dev/v1.9-docs/serving/configuration/config-defaults/#revision-timeout-seconds)
@@ -339,10 +440,12 @@ Deploy the
 [Zalando Postgres operator](https://github.com/zalando/postgres-operator) v1.9.0
 using:
 
+<!-- markdownlint-disable MD013 -->
 ```shell
 curl -sL https://github.com/zalando/postgres-operator/archive/refs/tags/v1.9.0.tar.gz | tar -xz
 helm install postgres-operator postgres-operator-1.9.0/charts/postgres-operator
 ```
+ <!-- markdownlint-enable MD013 -->
 
 ## Clean Up
 
@@ -367,10 +470,12 @@ If you no longer need the cluster you can tear it down using:
 In case you use OpenVPN and encounter an error message when launching a kind
 cluster like
 
+<!-- markdownlint-disable MD013 -->
 ```shell
 ERROR: failed to create cluster: failed to ensure docker network: command "docker network create -d=bridge -o com.docker.network.bridge.enable_ip_masquerade=true -o com.docker.network.driver.mtu=1500 --ipv6 --subnet fc00:f853:ccd:e793::/64 kind" failed with error: exit status 1
 Command Output: Error response from daemon: could not find an available, non-overlapping IPv4 address pool among the default
 ```
+ <!-- markdownlint-enable MD013 -->
 
 follow the advice given [here](https://stackoverflow.com/a/45694531).
 

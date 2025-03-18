@@ -2,7 +2,11 @@
 
 !!! warning
     Carbyne Stack Infrastructure as Code (IaC) is still in *proof-of-concept*
-    stage. Reach out in case you encounter problems.
+    stage and should be used as a reference only.<br>
+    The implementation is using **outdated components** and is not actively 
+    maintained.<br>
+    For the most up-to-date deployment instructions, please refer to the
+    [manual deployment](../manual) guide.
 
 Carbyne Stack has adopted Infrastructure as Code (IaC) as a core principle.
 IaC is the process of managing and provisioning infrastructure through code
