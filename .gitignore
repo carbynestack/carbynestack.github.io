@@ -8,3 +8,5 @@ target
 # MkDocs files
 .cache
 
+# MAC OS files
+.DS_Store
