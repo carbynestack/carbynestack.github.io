@@ -126,7 +126,7 @@ clusters using the kind tool as described in the
     the certificates, they are created in the `istio-system` namespace and then
     copied to the `knative-serving` and `default` namespace.
 
-<!-- markdownlint-disable MD013 -->
+    <!-- markdownlint-disable MD013 -->
     ```shell
      # Create X.509 certificates
      mkdir -p certs
@@ -143,18 +143,18 @@ clusters using the kind tool as described in the
      kubectl get secret starbuck-tls-secret-generic -n istio-system -o yaml | sed 's/namespace: istio-system/namespace: knative-serving/' | kubectl apply -n knative-serving -f -
      kubectl get secret starbuck-tls-secret-generic -n istio-system -o yaml | sed 's/namespace: istio-system/namespace: default/' | kubectl apply -n default -f -
     ```
- <!-- markdownlint-enable MD013 -->
+    <!-- markdownlint-enable MD013 -->
 
 1. Patch Knative to secure its gateway using TLS with the generated certificates:
 
-<!-- markdownlint-disable MD013 -->
+    <!-- markdownlint-disable MD013 -->
     ```shell
     kubectl config use-context kind-apollo
     kubectl patch gateway knative-ingress-gateway --namespace knative-serving --type=json --patch="[{\"op\": \"add\", \"path\": \"/spec/servers/0/tls\", \"value\": {\"mode\": \"SIMPLE\", \"credentialName\": \"apollo-tls-secret-generic\"}}]"
     kubectl config use-context kind-starbuck
     kubectl patch gateway knative-ingress-gateway --namespace knative-serving --type=json --patch="[{\"op\": \"add\", \"path\": \"/spec/servers/0/tls\", \"value\": {\"mode\": \"SIMPLE\", \"credentialName\": \"starbuck-tls-secret-generic\"}}]"
     ```
- <!-- markdownlint-enable MD013 -->
+    <!-- markdownlint-enable MD013 -->
 
 1. Launch the `starbuck` VCP using:
 

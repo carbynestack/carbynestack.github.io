@@ -117,7 +117,7 @@ You can switch between the clusters easily using:
    the [Istio Operator](https://istio.io/latest/docs/setup/install/operator/)
    v1.17.0 using:
 
-<!-- markdownlint-disable MD013 -->
+    <!-- markdownlint-disable MD013 -->
     ```shell
     curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.17.0 TARGET_ARCH=x86_64 sh -
     helm install istio-operator istio-1.17.0/manifests/charts/istio-operator \
@@ -126,7 +126,7 @@ You can switch between the clusters easily using:
       --set hub="docker.io/istio" \
       --set tag="1.17.0"
     ```
- <!-- markdownlint-enable MD013 -->
+    <!-- markdownlint-enable MD013 -->
 
 1. Create an Istio Control Plane in a dedicated namespace using:
 
@@ -141,7 +141,7 @@ You can switch between the clusters easily using:
         need more partner VCs, you have to adjust the configuration
         accordingly.
 
-<!-- markdownlint-disable MD013 -->
+    <!-- markdownlint-disable MD013 -->
     ```shell
     cat <<EOF > istio-control-plane.yaml
     apiVersion: v1
@@ -271,7 +271,7 @@ You can switch between the clusters easily using:
     EOF
     kubectl apply -f istio-control-plane.yaml
     ```
- <!-- markdownlint-enable MD013 -->
+    <!-- markdownlint-enable MD013 -->
 
 1. Enable istio auto sidecar injection for the default namespace using:
 
@@ -283,7 +283,7 @@ You can switch between the clusters easily using:
 
 1. Install [MetalLB](https://metallb.universe.tf/) v0.13.9 using:
 
-<!-- markdownlint-disable MD013 -->
+    <!-- markdownlint-disable MD013 -->
     ```shell
     helm repo add metallb https://metallb.github.io/metallb
     kubectl create namespace metallb-system
@@ -299,7 +299,7 @@ You can switch between the clusters easily using:
     EOF
     helm install metallb metallb/metallb --version 0.13.9 -n metallb-system -f metallb-values.yaml
     ```
- <!-- markdownlint-enable MD013 -->
+    <!-- markdownlint-enable MD013 -->
 
 1. Configure MetalLB using:
 
@@ -360,11 +360,11 @@ The public IP eventually appears in column `EXTERNAL-IP`.
 
 1. Export the external IP for later use:
 
-<!-- markdownlint-disable MD013 -->
+    <!-- markdownlint-disable MD013 -->
     ```shell
     export EXTERNAL_IP=$(kubectl get services --namespace istio-system istio-ingressgateway --output jsonpath='{.status.loadBalancer.ingress[0].ip}')
     ```
- <!-- markdownlint-enable MD013 -->
+    <!-- markdownlint-enable MD013 -->
 
 ### Knative
 
@@ -372,11 +372,11 @@ The public IP eventually appears in column `EXTERNAL-IP`.
    [Knative Operator](https://knative.dev/docs/install/operator/knative-with-operators/)
    v1.8.2 using:
 
-<!-- markdownlint-disable MD013 -->
+    <!-- markdownlint-disable MD013 -->
     ```shell
     kubectl apply -f https://github.com/knative/operator/releases/download/knative-v1.8.2/operator.yaml
     ```
- <!-- markdownlint-enable MD013 -->
+    <!-- markdownlint-enable MD013 -->
 
 1. Create a namespace for Knative Serving using:
 
@@ -387,7 +387,7 @@ The public IP eventually appears in column `EXTERNAL-IP`.
 1. Install the patched Knative Serving component with a
    [sslip.io](https://sslip.io/) custom domain using:
 
-<!-- markdownlint-disable MD013 -->
+    <!-- markdownlint-disable MD013 -->
     ```shell
     cat <<EOF | envsubst > knative-serving.yaml
     apiVersion: operator.knative.dev/v1beta1
@@ -426,7 +426,7 @@ The public IP eventually appears in column `EXTERNAL-IP`.
     EOF
     kubectl apply -f knative-serving.yaml
     ```
- <!-- markdownlint-enable MD013 -->
+    <!-- markdownlint-enable MD013 -->
 
     The configuration above will also increase Knative's default
     [max-revision-timeout-seconds](https://knative.dev/v1.9-docs/serving/configuration/config-defaults/#revision-timeout-seconds)
@@ -445,7 +445,7 @@ using:
 curl -sL https://github.com/zalando/postgres-operator/archive/refs/tags/v1.9.0.tar.gz | tar -xz
 helm install postgres-operator postgres-operator-1.9.0/charts/postgres-operator
 ```
- <!-- markdownlint-enable MD013 -->
+<!-- markdownlint-enable MD013 -->
 
 ## Clean Up
 
@@ -475,7 +475,7 @@ cluster like
 ERROR: failed to create cluster: failed to ensure docker network: command "docker network create -d=bridge -o com.docker.network.bridge.enable_ip_masquerade=true -o com.docker.network.driver.mtu=1500 --ipv6 --subnet fc00:f853:ccd:e793::/64 kind" failed with error: exit status 1
 Command Output: Error response from daemon: could not find an available, non-overlapping IPv4 address pool among the default
 ```
- <!-- markdownlint-enable MD013 -->
+<!-- markdownlint-enable MD013 -->
 
 follow the advice given [here](https://stackoverflow.com/a/45694531).
 
