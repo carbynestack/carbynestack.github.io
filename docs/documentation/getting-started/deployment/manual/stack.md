@@ -58,10 +58,10 @@ clusters using the kind tool as described in the
         cd carbynestack/deployments
         ```
 
-1. Checkout Carbyne Stack SDK version 0.7.0 using:
+1. Checkout Carbyne Stack SDK version 0.8.0 using:
 
     ```shell
-    git checkout sdk-v0.7.0
+    git checkout sdk-v0.8.0
     ```
 
 1. Before deploying the virtual cloud providers make some common configuration
@@ -73,12 +73,19 @@ clusters using the kind tool as described in the
         [Platform Setup](../platform-setup) guide).
 
     ```shell
-    export APOLLO_FQDN="172.18.1.128.sslip.io"
-    export STARBUCK_FQDN="172.18.2.128.sslip.io"
+    export APOLLO_IP="172.18.1.128"
+    export APOLLO_FQDN="${APOLLO_IP}.sslip.io"
+    export STARBUCK_IP="172.18.2.128"
+    export STARBUCK_FQDN="${STARBUCK_IP}.sslip.io"
+    export PARTNER_COUNT=2
+    export PARTNER_FQDN_0=$APOLLO_FQDN
+    export PARTNER_FQDN_1=$STARBUCK_FQDN
+    export ETCD_MASTER_URL=$APOLLO_FQDN
+    export ETCD_MASTER_IP=$APOLLO_IP
     export RELEASE_NAME=cs
-    export DISCOVERY_MASTER_HOST=$APOLLO_FQDN
     export NO_SSL_VALIDATION=true
-    export PROTOCOL=http
+    export TLS_ENABLED=true # Enabled by default, set to false to disable
+    export PROTOCOL=https
     ```
 
 1. Configure the _Correlated Randomness Generator_ (CRG) used by Klyshko
@@ -113,12 +120,47 @@ clusters using the kind tool as described in the
 
         before you proceed.
 
+1. Configure TLS for secure communication to, and between the VCPs:
+
+    As secrets must exist in the namespace of the proxy and components using
+    the certificates, they are created in the `istio-system` namespace and then
+    copied to the `knative-serving` and `default` namespace.
+
+    <!-- markdownlint-disable MD013 -->
+    ```shell
+     # Create X.509 certificates
+     mkdir -p certs
+     openssl req -x509 -newkey rsa:4096 -keyout certs/apollo_key.pem -out certs/apollo_cert.pem -days 365 -nodes -subj "/CN=${APOLLO_FQDN}" -addext "subjectAltName=DNS:${APOLLO_FQDN},IP:${APOLLO_IP}"
+     openssl req -x509 -newkey rsa:4096 -keyout certs/starbuck_key.pem -out certs/starbuck_cert.pem -days 365 -nodes -subj "/CN=${STARBUCK_FQDN}" -addext "subjectAltName=DNS:${STARBUCK_FQDN},IP:${STARBUCK_IP}"
+
+     # Create kubernetes secrets using the generated keys and certificates
+     kubectl config use-context kind-apollo
+     kubectl create secret generic apollo-tls-secret-generic -n istio-system --from-file=tls.key=certs/apollo_key.pem --from-file=tls.crt=certs/apollo_cert.pem --from-file=cacert=certs/starbuck_cert.pem
+     kubectl get secret apollo-tls-secret-generic -n istio-system -o yaml | sed 's/namespace: istio-system/namespace: knative-serving/' | kubectl apply -n knative-serving -f -
+     kubectl get secret apollo-tls-secret-generic -n istio-system -o yaml | sed 's/namespace: istio-system/namespace: default/' | kubectl apply -n default -f -
+     kubectl config use-context kind-starbuck
+     kubectl create secret generic starbuck-tls-secret-generic -n istio-system --from-file=tls.key=certs/starbuck_key.pem --from-file=tls.crt=certs/starbuck_cert.pem --from-file=cacert=certs/apollo_cert.pem
+     kubectl get secret starbuck-tls-secret-generic -n istio-system -o yaml | sed 's/namespace: istio-system/namespace: knative-serving/' | kubectl apply -n knative-serving -f -
+     kubectl get secret starbuck-tls-secret-generic -n istio-system -o yaml | sed 's/namespace: istio-system/namespace: default/' | kubectl apply -n default -f -
+    ```
+    <!-- markdownlint-enable MD013 -->
+
+1. Patch Knative to secure its gateway using TLS with the generated certificates:
+
+    <!-- markdownlint-disable MD013 -->
+    ```shell
+    kubectl config use-context kind-apollo
+    kubectl patch gateway knative-ingress-gateway --namespace knative-serving --type=json --patch="[{\"op\": \"add\", \"path\": \"/spec/servers/0/tls\", \"value\": {\"mode\": \"SIMPLE\", \"credentialName\": \"apollo-tls-secret-generic\"}}]"
+    kubectl config use-context kind-starbuck
+    kubectl patch gateway knative-ingress-gateway --namespace knative-serving --type=json --patch="[{\"op\": \"add\", \"path\": \"/spec/servers/0/tls\", \"value\": {\"mode\": \"SIMPLE\", \"credentialName\": \"starbuck-tls-secret-generic\"}}]"
+    ```
+    <!-- markdownlint-enable MD013 -->
+
 1. Launch the `starbuck` VCP using:
 
     ```shell
-    export FRONTEND_URL=$STARBUCK_FQDN
-    export IS_MASTER=false
-    export AMPHORA_VC_PARTNER_URI=http://$APOLLO_FQDN/amphora
+    export PLAYER_ID=1
+    export TLS_SECRET_NAME=starbuck-tls-secret-generic
     kubectl config use-context kind-starbuck
     helmfile sync --set thymus.users.enabled=true
     ```
@@ -126,10 +168,8 @@ clusters using the kind tool as described in the
 1. Launch the `apollo` VCP using:
 
     ```shell
-    export FRONTEND_URL=$APOLLO_FQDN
-    export IS_MASTER=true
-    export AMPHORA_VC_PARTNER_URI=http://$STARBUCK_FQDN/amphora
-    export CASTOR_SLAVE_URI=http://$STARBUCK_FQDN/castor
+    export PLAYER_ID=0
+    export TLS_SECRET_NAME=apollo-tls-secret-generic
     kubectl config use-context kind-apollo
     helmfile sync --set thymus.users.enabled=true
     ```

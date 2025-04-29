@@ -39,10 +39,10 @@ the following commands and login as Jeff using the following credentials
 <table>
   <tr>
     <td>E-Mail:</td>
-    <td>`jeff@carbynestack.io`</td>
+    <td>jeff@carbynestack.io</td>
   </tr><tr>
     <td>Password:</td>
-    <td>`86KIo6<]!/V=`</td>
+    <td>86KIo6<]!/V=</td>
   </tr>
 </table>
 
@@ -66,10 +66,10 @@ credentials for the development user Elon are as follows:
 <table>
   <tr>
     <td>E-Mail:</td>
-    <td>`elon@carbynestack.io`</td>
+    <td>elon@carbynestack.io</td>
   </tr><tr>
     <td>Password:</td>
-    <td>`2#Tv91*d-Z,M`</td>
+    <td>2#Tv91*d-Z,M</td>
   </tr>
 </table>
 
