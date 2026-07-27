@@ -20,4 +20,4 @@ and news.
 </div>
 
 [bosch-cs-blog-post]: https://www.bosch.com/stories/open-source-carbyne-stack/
-[bosch-cs-blog-post-image]: https://assets.bosch.com/media/global/stories/forschung/carbyne_stack_for_cloud_native_secure_multiparty_computation/blog-header-carbyne-stack-16x9_res_1280x720.png
+[bosch-cs-blog-post-image]: /images/media/bosch-carbyne-stack-blog.webp
