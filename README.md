@@ -10,23 +10,17 @@ This repository contains the source code for the
 
 ## Developing
 
-See the
-[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/getting-started/)
-getting started for instructions on how to get prepared for running a local copy
-of the Carbyne Stack website.
-
-After tool setup is done you can launch the preview server using:
+Install the required tooling and launch the preview server:
 
 ```shell
 git clone git@github.com:carbynestack/carbynestack.github.io.git
 cd carbynestack.github.io
+pip install \
+  mkdocs-material==9.7.0 \
+  mkdocs-minify-plugin==0.7.1 \
+  mkdocs-swagger-ui-tag==0.6.11
 mkdocs serve
 ```
-
-### MkDocs Material Insiders
-
-We use components of the MkDocs Material Insiders sponsorware. Installation
-instructions can be found [here](https://squidfunk.github.io/mkdocs-material/insiders/getting-started/#installation).
 
 ## License
 
