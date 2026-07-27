@@ -1,0 +1,165 @@
+/*
+ * The original file belongs to the Knative Docs project (https://github.com/knative/docs). For license information see
+ * 3RD-PARTY-LICENSED/github.com/knative/docs.
+ *
+ * Modifications:
+ * 2021/09/28: Removed unnecessary parts, renamed classes, addition of directives (sven.trieflinger@de.bosch.com)
+ */
+.md-grid {
+  /* Reduce the width of the content somewhat (original value is 61rem) */
+  max-width: 50rem;
+}
+
+.md-main__inner {
+  margin: 0;
+  max-width: 100%;
+}
+
+.md-main__inner .md-content__inner,
+.md-sidebar--primary:not([hidden]) ~ .md-content > .md-content__inner {
+  margin: 0;
+  padding: 0;
+}
+
+.md-sidebar--secondary {
+  display: none !important;
+}
+
+.md-main__inner .md-content__inner::before {
+  display: none;
+}
+
+@media screen and (min-width: 60em) {
+  .md-sidebar--secondary {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary {
+    display: none;
+  }
+}
+
+.md-typeset img,
+.md-typeset svg {
+  max-width: initial;
+}
+
+section.hero-section {
+  min-height: 435px;
+  justify-content: center;
+  color: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to bottom, var(--md-accent-fg-color), #504886);
+  padding-bottom: 40px;
+}
+
+.hero-section > .md-typeset {
+  flex-grow: 2;
+}
+
+body {
+  color: var(--md-primary-bg-color);
+  background: var(--md-primary-bg-color);
+}
+
+.hero-section,
+.image-with-text {
+  margin: 0;
+  border: 0;
+  padding-top: 2em;
+  padding-bottom: 1em;
+}
+
+.hero-section .md-button {
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  color: var(--md-primary-bg-color);
+}
+
+.hero-section .md-button--primary {
+  background-color: var(--md-primary-bg-color);
+  color: var(--md-primary-fg-color);
+  border-color: var(--md-primary-bg-color);
+}
+
+.hero-section .md-typeset .md-button--primary:where(:focus, :hover) {
+  background-color: var(--md-accent-fg-color);
+  color: var(--md-primary-bg-color);
+  border-color: var(--md-accent-fg-color);
+}
+
+.hero-section h1 {
+  color: var(--md-primary-bg-color);
+  font-weight: bolder;
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+
+.hero-section h2 {
+  margin: 0;
+}
+
+.image-with-text {
+  color: var(--md-typeset-color);
+}
+
+.left {
+  float: left;
+  margin: 0 2em 0 0;
+}
+
+.image-with-text img {
+  height: 15em;
+}
+
+.right {
+  float: right;
+  margin: 0 0 0 2em;
+}
+
+.image-with-text div div {
+  overflow: hidden;
+}
+
+.image-with-text h3 {
+  font-weight: bolder;
+}
+
+@media only screen and (max-width: 1440px) {
+  .hero-section,
+  .image-with-text {
+    padding: 40px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .component-flex {
+    flex-wrap: wrap;
+  }
+
+  .image-with-text img {
+    display: block;
+    margin: 0 auto;
+    float: none;
+  }
+}
+
+.svg-icon-in-button {
+  margin-right: 10px;
+  font-size: x-large;
+  vertical-align: middle !important;
+}
+
+.used-by-logo-banner {
+  display: block;
+}
+
+.used-by-logo {
+  width: auto;
+  height: 40px !important;
+  margin: 20px;
+}
