@@ -396,6 +396,6 @@ Marienstraße 29 <br>
 
 [brauhaus]: https://sophies-brauhaus.de/en/
 [google-maps-brauhaus]: https://g.page/SophiesBrauhausStuttgart?share
-[connectory-stuttgart]: https://stuttgartconnectory.com/
-[connectory-stuttgart-img]: https://stuttgartconnectory.com//wp-content/uploads/sites/24/2020/11/Image-9.png
+[connectory-stuttgart]: https://www.wilhelmsbau-stuttgart.de/projects/connectory/
+[connectory-stuttgart-img]: /images/events/csc/csc22-connectory-stuttgart.png
 [google-maps-connectory]: https://goo.gl/maps/dPWcdNBsvz9mqgYs5
