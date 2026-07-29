@@ -74,14 +74,14 @@ clusters using the kind tool as described in the
 
     ```shell
     export APOLLO_IP="172.18.1.128"
-    export APOLLO_FQDN="${APOLLO_IP}.sslip.io"
     export STARBUCK_IP="172.18.2.128"
-    export STARBUCK_FQDN="${STARBUCK_IP}.sslip.io"
     export PARTNER_COUNT=2
-    export PARTNER_FQDN_0=$APOLLO_FQDN
-    export PARTNER_FQDN_1=$STARBUCK_FQDN
-    export ETCD_MASTER_URL=$APOLLO_FQDN
-    export ETCD_MASTER_IP=$APOLLO_IP
+    export PARTNER_IP_0=$APOLLO_IP
+    export PARTNER_IP_1=$STARBUCK_IP
+    export PARTNER_FQDN_0="${PARTNER_IP_0}.sslip.io"
+    export PARTNER_FQDN_1="${PARTNER_IP_1}.sslip.io"
+    export ETCD_MASTER_URL=$PARTNER_FQDN_0
+    export ETCD_MASTER_IP=$PARTNER_IP_0
     export RELEASE_NAME=cs
     export NO_SSL_VALIDATION=true
     export TLS_ENABLED=true # Enabled by default, set to false to disable
@@ -130,8 +130,8 @@ clusters using the kind tool as described in the
     ```shell
      # Create X.509 certificates
      mkdir -p certs
-     openssl req -x509 -newkey rsa:4096 -keyout certs/apollo_key.pem -out certs/apollo_cert.pem -days 365 -nodes -subj "/CN=${APOLLO_FQDN}" -addext "subjectAltName=DNS:${APOLLO_FQDN},IP:${APOLLO_IP}"
-     openssl req -x509 -newkey rsa:4096 -keyout certs/starbuck_key.pem -out certs/starbuck_cert.pem -days 365 -nodes -subj "/CN=${STARBUCK_FQDN}" -addext "subjectAltName=DNS:${STARBUCK_FQDN},IP:${STARBUCK_IP}"
+     openssl req -x509 -newkey rsa:4096 -keyout certs/apollo_key.pem -out certs/apollo_cert.pem -days 365 -nodes -subj "/CN=${PARTNER_FQDN_0}" -addext "subjectAltName=DNS.1:${PARTNER_FQDN_0},DNS.2:P0,IP:${PARTNER_IP_0}"
+     openssl req -x509 -newkey rsa:4096 -keyout certs/starbuck_key.pem -out certs/starbuck_cert.pem -days 365 -nodes -subj "/CN=${PARTNER_FQDN_1}" -addext "subjectAltName=DNS.1:${PARTNER_FQDN_1},DNS.2:P1,IP:${PARTNER_IP_1}"
 
      # Create kubernetes secrets using the generated keys and certificates
      kubectl config use-context kind-apollo
